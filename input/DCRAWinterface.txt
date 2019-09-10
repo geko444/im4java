@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.1 $
+# $Revision: 1.2 $
 #
 !validInterface=true
 !toolName=dcraw
@@ -28,13 +28,13 @@
 #
        -w|useCameraWB
        -a|useAverageWB
-       -A|calcAverageWB Integer:pLeft Integer:pTop Integer:pWidth Integer:pHeight
-       -r|setWB Double:pMult0 Double:pMult1 Double:pMult2 Double:pMult3
+       -A|calcAverageWB Integer:pLeft _ Integer:pTop _ Integer:pWidth _ Integer:pHeight
+       -r|setWB Double:pMult0 _ Double:pMult1 _ Double:pMult2 _ Double:pMult3
        +M|useColorMatrix
        -M|ignoreColorMatrix
        -o|setOutputColorSpace Integer:pMethod
        -o|setOutputColorSpace String:pColorProfileFile
-       -o|setCameraColorSpace String:pColorProfileFile
+       -p|setCameraColorSpace String:pColorProfileFile
 #
        -d|grayscale
        -D|grayscaleRaw
@@ -45,6 +45,8 @@
 #
        -W|fixedWhiteLevel
        -b|brightness Double:pLevel
+       -g|setGamma Double:pPower _ Double:pToeSlope
+       -6|depth16withGamma
        -4|depth16
        -T|createTIFF
        -t|flipImage Integer:pValue

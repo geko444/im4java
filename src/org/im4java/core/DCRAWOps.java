@@ -337,7 +337,7 @@ public class DCRAWOps extends Operation {
      (see the documentation of dcraw for details).
   */
 
-  public DCRAWOps calcAverageWB(Integer pLeft, Integer pWidth) {
+  public DCRAWOps calcAverageWB(Integer pLeft, Integer pTop, Integer pWidth, Integer pHeight) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
@@ -346,11 +346,26 @@ public class DCRAWOps extends Operation {
     if (pLeft != null) {
       buf.append(pLeft.toString());
     }
-    if (pLeft != null || pWidth != null) {
-      buf.append("Integer:pTop");
+    if (pLeft != null || pTop != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (pTop != null) {
+      buf.append(pTop.toString());
+    }
+    if (pTop != null || pWidth != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
     }
     if (pWidth != null) {
       buf.append(pWidth.toString());
+    }
+    if (pWidth != null || pHeight != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (pHeight != null) {
+      buf.append(pHeight.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -365,7 +380,7 @@ public class DCRAWOps extends Operation {
      (see the documentation of dcraw for details).
   */
 
-  public DCRAWOps setWB(Double pMult0, Double pMult2) {
+  public DCRAWOps setWB(Double pMult0, Double pMult1, Double pMult2, Double pMult3) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
@@ -374,11 +389,26 @@ public class DCRAWOps extends Operation {
     if (pMult0 != null) {
       buf.append(pMult0.toString());
     }
-    if (pMult0 != null || pMult2 != null) {
-      buf.append("Double:pMult1");
+    if (pMult0 != null || pMult1 != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (pMult1 != null) {
+      buf.append(pMult1.toString());
+    }
+    if (pMult1 != null || pMult2 != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
     }
     if (pMult2 != null) {
       buf.append(pMult2.toString());
+    }
+    if (pMult2 != null || pMult3 != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (pMult3 != null) {
+      buf.append(pMult3.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -449,7 +479,7 @@ public class DCRAWOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     Add option -o to the dcraw commandline
+     Add option -p to the dcraw commandline
      (see the documentation of dcraw for details).
   */
 
@@ -457,7 +487,7 @@ public class DCRAWOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-    iCmdArgs.add("-o");
+    iCmdArgs.add("-p");
 
     if (pColorProfileFile != null) {
       buf.append(pColorProfileFile.toString());
@@ -623,6 +653,54 @@ public class DCRAWOps extends Operation {
     if (pLevel != null) {
       buf.append(pLevel.toString());
     }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -g to the dcraw commandline
+     (see the documentation of dcraw for details).
+  */
+
+  public DCRAWOps setGamma(Double pPower, Double pToeSlope) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-g");
+
+    if (pPower != null) {
+      buf.append(pPower.toString());
+    }
+    if (pPower != null || pToeSlope != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (pToeSlope != null) {
+      buf.append(pToeSlope.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -6 to the dcraw commandline
+     (see the documentation of dcraw for details).
+  */
+
+  public DCRAWOps depth16withGamma() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-6");
+
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }

@@ -1,4 +1,19 @@
+2012-06-01
+
+	* doc-src/xdocs/relnotes.xml: added release-notes for 1.3.2
+
+	* doc-src/xdocs/index.xml: changed version to 1.3.2
+
+	* src/org/im4java/test/TestCase19.java: added setGamma-method
+
+	* input/DCRAWinterface.txt: fixed various errors added options -g
+	  and -6
+
 2012-04-04
+
+	* version.inc: upgraded version to 1.3.2
+
+	* ChangeLog: upated ChangeLog for version 1.3.1
 
 	* doc-src/xdocs/relnotes.xml: added release-notes for 1.3.1
 

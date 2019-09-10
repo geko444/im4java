@@ -5,7 +5,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.10 $
+  $Revision: 1.11 $
   $Author: bablokb $
 -->
 
@@ -17,6 +17,17 @@
     <note>
       For a detailed list of changes, have a look at the ChangeLog.
     </note>
+
+    <section id="R_1_3_2">
+      <title>Release 1.3.2</title>
+      <ul>
+	<li>
+	  The interface-definition for dcraw had various bugs. This
+	  version fixes the bugs and added two new methods
+	  (<code>setGamma</code> and <code>depth16withGamma</code>).
+	</li>
+      </ul>
+    </section>
 
     <section id="R_1_3_1">
       <title>Release 1.3.1</title>

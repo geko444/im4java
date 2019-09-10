@@ -28,7 +28,7 @@ import org.im4java.process.*;
 /**
    This class implements a test of the dcraw-command.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
  
    @since 1.0.0
@@ -82,8 +82,9 @@ public class TestCase19 extends AbstractTestCase {
     DCRAWOperation op = new DCRAWOperation();
     op.halfSize();
     op.createTIFF();
+    op.setGamma(2.4,12.92);         // use sRGB gamma
     op.write2stdout();
-    op.addImage(infile);                                 // input-filename
+    op.addImage(infile);            // input-filename
 
     // create pipe for output
     FileOutputStream fos = new FileOutputStream(outfile);
