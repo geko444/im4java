@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<document id="relnotes">
+<!--
+  Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
+
+  $Revision: 1.4 $
+  $Author: bablokb $
+-->
+
+  <header>
+    <title>Release Notes</title>
+  </header>
+
+  <body>
+    <note>
+      For a detailed list of changes, have a look at the ChangeLog.
+    </note>
+
+    <section id="R_1_0_0">
+      <title>Release 1.0.0</title>
+      <ul>
+	<li>Relaunch of the project-web, adding a lot of documentation</li>
+	<li>Refactored Test.java</li>
+	<li>All tests now work under Windows</li>
+	<li>Added script-generator</li>
+	<li>Support the environment-variable IM4JAVA_TOOLPATH to set the
+	  searchpath for tools externally
+	</li>
+	<li>Removed generated files (including doc) from the source distribution</li>
+	<li>Removed source from the binary distribution</li>
+      </ul>
+    </section>
+
+    <section id="R_0_99_0">
+      <title>Release 0.99.0</title>
+      <ul>
+	<li>Added support for defining search paths</li>
+	<li>Minor fixes to interface-definition-files</li>
+      </ul>
+    </section>
+
+    <section id="R_0_98_0">
+      <title>Release 0.98.0</title>
+      <ul>
+	<li>Added support for exiftool</li>
+	<li>Added support for dcraw</li>
+	<li>minor fixes to interface-definition-files</li>
+      </ul>
+    </section>
+
+    <section id="R_0_97_0">
+      <title>Release 0.97.0</title>
+      <ul>
+	<li>Added support for ufraw</li>
+	<li>Added support for asynchronous execution of commands</li>
+	<li>Source-generation now supports commands with long-style
+	  (--foo=bar) options
+	</li>
+      </ul>
+    </section>
+
+
+    <section id="R_0_96_0">
+      <title>Release 0.96.0</title>
+      <ul>
+	<li>Source-generation now supports more than one
+	  interface-definition-file
+	</li>
+	<li>Added support for GraphicsMagick. You can hard-code
+	  GM-usage, but if you stick to the common subset of IM and GM
+	  commands, you can switch to GM at runtime by setting the
+	  system-property im4java.useGM=true.
+	</li>
+	<li>Added support for jpegtran</li>
+	<li>Added some utility-classes in org.im4java.process</li>
+	<li>ImageCommand now sends stdout to System.out as default</li>
+	<li>
+	  Incompatible change to IdentifyCmd: output is not
+	  captured by default anymore. To capture output, use the new
+	  class org.im4java.process.ArrayListOutputConsumer. See
+	  org.im4java.test.Test.testIdentify() for an example.
+	</li>
+      </ul>
+    </section>
+
+    <section id="R_0_95_0">
+      <title>Release 0.95.0</title>
+      <ul>
+	<li>Initial release</li>
+      </ul>
+    </section>
+  </body>
+</document>

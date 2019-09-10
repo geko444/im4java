@@ -34,7 +34,7 @@ import java.util.LinkedList;
    This class implements the processing of os-commands using a
    ProcessBuilder. 
 
-   @version $Revision: 1.20 $
+   @version $Revision: 1.21 $
    @author  $Author: bablokb $
 */
 
@@ -105,6 +105,16 @@ public class ProcessStarter {
   */
   private LinkedList<ProcessListener> iProcessListener;
   
+  //////////////////////////////////////////////////////////////////////////////
+
+  /** 
+      Static initializer
+  */
+
+  static {
+    iGlobalSearchPath=System.getenv("IM4JAVA_TOOLPATH");
+  }
+
   //////////////////////////////////////////////////////////////////////////////
 
   /**

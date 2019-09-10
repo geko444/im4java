@@ -24,11 +24,14 @@ package org.im4java.core;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Properties;
 import java.util.List;
 import java.util.ListIterator;
 import javax.imageio.ImageIO;
@@ -37,13 +40,16 @@ import javax.imageio.ImageIO;
 import org.im4java.process.ErrorConsumer;
 import org.im4java.process.ProcessStarter;
 import org.im4java.process.StandardStream;
+import org.im4java.script.ScriptGenerator;
+import org.im4java.script.BashScriptGenerator;
+import org.im4java.script.CmdScriptGenerator;
 
 /**
    This class implements the processing of image operations. It replaces
    placeholders within the argument-stack and passes all arguments to the
    generic run-method of ProcessStarter.
 
-   @version $Revision: 1.13 $
+   @version $Revision: 1.19 $
    @author  $Author: bablokb $
 */
 
@@ -84,6 +90,36 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     The default ScriptGenerator. 
+  */
+
+  private static ScriptGenerator iDefaultScriptGenerator;
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     The ScriptGenerator of this ImageCommand. 
+  */
+
+  private ScriptGenerator iScriptGenerator = null;
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Static initializer for default script-generator.
+  */
+
+  static {
+    if (System.getProperty("os.name").startsWith("Windows")) {
+      iDefaultScriptGenerator = new CmdScriptGenerator();
+    } else {
+      iDefaultScriptGenerator = new BashScriptGenerator();
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
    * Constructor.
    */
 
@@ -116,6 +152,16 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
     for (String cmd:pCommands) {
       iCommands.add(cmd);
     }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Get the command.
+   */
+
+  public LinkedList<String> getCommand() {
+    return iCommands;
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -287,5 +333,88 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
     } catch (Exception e) {
       // ignore, since if we can't delete the file, we can't do anything about it
     }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Set the default ScriptGenerator.
+   */
+
+  public static void setDefaultScriptGenerator(ScriptGenerator pGen) {
+    iDefaultScriptGenerator =  pGen;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Set the ScriptGenerator.
+   */
+
+  public void setScriptGenerator(ScriptGenerator pGen) {
+    iScriptGenerator =  pGen;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Generate a script.
+   */
+
+  public void createScript(PrintWriter pWriter, Operation pOp, Properties pProps) {
+    ScriptGenerator sg = iScriptGenerator;
+    if (sg == null) {
+      sg = iDefaultScriptGenerator;
+    }
+    
+    // add command as a property
+    StringBuilder builder = new StringBuilder();
+    for (String token:getCommand()) {
+      builder.append(token).append(' ');
+    }
+    pProps.setProperty("im4java.cmd",builder.toString());
+
+    // add search-paths as properties
+    String globalPath=getGlobalSearchPath();
+    if (globalPath==null) {
+      globalPath="";
+    }
+    String localPath=getSearchPath();
+    if (localPath==null) {
+      localPath="";
+    }
+    pProps.setProperty("im4java.globalSearchPath",globalPath);
+    pProps.setProperty("im4java.localSearchPath",localPath);
+
+    sg.init(pWriter,pOp,pProps);
+    sg.createScript();
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Generate a script. The method will automatically append the
+   * extension ".cmd" on a windows-plattform.
+   */
+
+  public void createScript(String pFilename, Operation pOp, Properties pProps) 
+                                                   throws FileNotFoundException {
+    if (System.getProperty("os.name").startsWith("Windows")) {
+      pFilename=pFilename+".cmd";
+    }
+    PrintWriter pw = new PrintWriter(pFilename);
+    createScript(pw,pOp,pProps);
+    pw.close();
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Generate a script. Convenience-method without a Properties-object.
+   */
+
+  public void createScript(String pFilename, Operation pOp)
+                                                  throws FileNotFoundException {
+    createScript(pFilename,pOp,new Properties());
   }
 }

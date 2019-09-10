@@ -7,12 +7,13 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.16 $
+# $Revision: 1.18 $
 #
 !toolName=ImageMagick
 #
                -adaptive-blur Double:radius x Double:sigma
                -adaptive-resize Integer:width x Integer:height @ Character:special
+               -adaptive-resize Integer:width x Integer:height @ String:special
                -adaptive-sharpen Double:radius x Double:sigma
                -adjoin
                +adjoin
@@ -69,6 +70,7 @@
                -contrast-stretch Integer:blackPoint x Integer:whitePoint @ Boolean:percent
                -convolve Integer:k1 , Integer:k2 , Integer:k3 , Integer:k4 , Integer:k5 , Integer:k6 , Integer:k7 , Integer:k8 , Integer:k9 , Integer:k10 , Integer:k11 , Integer:k12 , Integer:k13 , Integer:k14 , Integer:k15 , Integer:k16
                -crop Integer:width x Integer:height + Integer:x + Integer:y @ Character:special
+               -crop Integer:width x Integer:height + Integer:x + Integer:y @ String:special
                -cycle Integer:amount
                +debug
                -debug String:events
@@ -181,6 +183,7 @@
                -orient String:imageOrientation
                +page
                -page Integer:width x Integer:height + Integer:x + Integer:y @ Character:special
+               -page Integer:width x Integer:height + Integer:x + Integer:y @ String:special
                -paint Double:radius
                -path String:path
                -pause Integer:seconds
@@ -214,13 +217,14 @@
                -repage Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -resample Integer:horizontal x Integer:vertical
                -resize Integer:width x Integer:height @ Character:special
+               -resize Integer:width x Integer:height @ String:special
                -respect-parenthesis
                -reverse
                -roll Integer:x + Integer:y
                -rotate Double:degrees @ Character:special
                -sample Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -sampling-factor Double:horizontalFactor x Double:verticalFactor
-               -sarse-color String:method _ String:cinfo
+               -sparse-color String:method _ String:cinfo
                -scale Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -scene Integer:value
                -screen
@@ -259,6 +263,7 @@
                -texture String:filename
                -threshold Integer:red , Integer:green , Integer:blue , Integer:opacity @ Boolean:percent
                -thumbnail Integer:width x Integer:height @ Character:special
+               -thumbnail Integer:width x Integer:height @ String:special
                -tile Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -tile-offset Integer:x + Integer:y
                -tile String:filename

@@ -1,7 +1,7 @@
 /**************************************************************************
 /* This class wraps the IM command display.
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2009-2010 by Bernhard Bablok (mail@bablokb.de)
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
    This class wraps the IM command display.
 
-   @version $Revision: 1.11 $
+   @version $Revision: 1.13 $
    @author  $Author: bablokb $
 */
 
@@ -39,12 +39,7 @@ public class DisplayCmd extends ImageCommand {
   */
 
   public  DisplayCmd() {
-    super();
-    if (!Boolean.getBoolean("im4java.useGM")) {
-      setCommand("display");
-    } else {
-      setCommand("gm","display");
-    }
+    this(Boolean.getBoolean("im4java.useGM"));
   }
 
  //////////////////////////////////////////////////////////////////////////////
@@ -56,9 +51,17 @@ public class DisplayCmd extends ImageCommand {
   public  DisplayCmd(boolean useGM) {
     super();
     if (useGM) {
-      setCommand("gm","display");
+      if (System.getProperty("os.name").startsWith("Windows")) {
+	setCommand("gmdisplay");
+      } else {
+	setCommand("gm","display");
+      }
     } else {
-      setCommand("display");
+      if (System.getProperty("os.name").startsWith("Windows")) {
+	setCommand("imdisplay");
+      } else {
+	setCommand("display");
+      }
     }
   }
 

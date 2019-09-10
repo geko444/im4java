@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN"
+"http://forrest.apache.org/dtd/document-v20.dtd">
+<!--
+  Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
+
+  $Revision: 1.4 $
+  $Author: bablokb $
+-->
+
+<document id="devguide">
+  <header>
+    <title>Developer's Guide</title>
+  </header>
+
+  <body>
+    <section id="intro">
+      <title>Introduction</title>
+
+      <p>
+	This guide is an introduction to the im4java-library. You
+	should be familiar with java-programming and should know how
+	to read the <a href="ext:im4javaapi">API
+	  documentation</a>. Also, this is no guide for the usage of
+	the underlying tools (<a
+	  href="ext:imagemagick">ImageMagick</a>, <a
+	  href="ext:graphicsmagick">GraphicsMagick</a> and so on). You
+	should be familiar with them and know how to read the
+	respective documentation.
+      </p>
+    </section>
+
+    <section id="environment">
+      <title>Before you begin: Setting up the Environment</title>
+      <p>
+	To use the im4java-library, you should add the im4java-jarfile
+	to you classpath. This is the first part of the setup. The
+	second part is optional and only necessary, if the <a
+	  href="../tools/index.html">tools</a> you want to use
+	(e.g. <code>convert</code> or <code>exiftool</code>) are not
+	on your <em>PATH</em>. This is typically a problem on
+	Windows-systems. 
+      </p>
+      <p>
+	To setup your searchpath for the tools you have three options:
+      </p>
+      <ul>
+	  <li>
+	    Set the environment-variable
+	    <em>IM4JAVA_TOOLPATH</em>. This variable should contain a
+	    list of directories to search for your tools separated by
+	    your platform-pathdelemiter (on *NIX typically ":", on
+	    Windows ";").
+	  </li>
+	  <li>
+	    Globally set the searchpath from within your java-progam:
+	    <source>
+	      String myPath="C:\\Programs\\ImageMagick;C:\\Programs\\exiftool";
+	      ProcessStarter.setGlobalSearchPath(myPath);
+	    </source>
+	    This will override any values set with
+	    <em>IM4JAVA_TOOLPATH</em>. 
+	  </li>
+	  <li>
+	    Set the search path for an individual command:
+	    <source>
+	      String imPath="C:\\Programs\\ImageMagick";
+	      ConvertCmd cmd = new ConvertCmd();
+	      cmd.setSearchPath(imPath);
+	    </source>
+	    This will override any values set with
+	    <em>IM4JAVA_TOOLPATH</em> or with
+	    <code>ProcessStarter.setGlobalSearchPath()</code>.
+	  </li>
+	</ul>
+      <warning>
+	Note that I also encountered a problem using OpenJDK with a
+	language-setting of <em>LANG=de_DE.UTF-8</em>. With
+	<em>LANG=C</em> everything worked fine. With SUN's JDK, there
+	were no problems regardless of the language-setting.
+      </warning>
+    </section>
+
+    <section id="simpleUse">
+      <title>Simple Use</title>
+      <p>
+	Basically, to use im4java, you need objects of two classes: an
+	<code>ImageCommand</code> like <code>ConvertCmd</code>, and an
+	<code>Operation</code> like <code>IMOperation</code>. The
+	<code>ImageCommand</code> is more or less static, you would
+	create an instance once and reuse it for the lifetime of your
+	program. In contrast, the <em>Operation</em> is the object
+	wrapping all the commandline options you intend to pass to the
+	given command. So you would typically create one
+	<code>Operation</code> for every action (resizing, conversion)
+	you intend to do.
+      </p>
+
+      <p>
+	As an example, consider resizing an image:
+      </p>
+      <source>
+	// create command
+	ConvertCmd cmd = new ConvertCmd();
+
+	// create the operation, add images and operators/options
+	IMOperation op = new IMOperation();
+	op.addImage("myimage.jpg");
+	op.resize(800,600);
+	op.addImage("myimage_small.jpg");
+
+	// execute the operation
+	cmd.run(op);
+      </source>
+    </section>
+
+    <section id="reusingOperations">
+      <title>Reusing Operations</title>
+      <p>
+	In the example above, image-names were hard-coded. The
+	im4java-library supports an alternative use. Instead of
+	hard-coding the image-names, you just add placeholders and
+	resolve the image-names at execution time. This allows the
+	reuse of operations for example within a loop.
+      </p>
+      <p>
+	The following example extends the example of the first section
+	and loops over all images passed as method parameters:
+      </p>
+      <source>
+	public void resizeImages(String... pImageNames) {
+	  // create command
+	  ConvertCmd cmd = new ConvertCmd();
+
+	  // create the operation, add images and operators/options
+	  IMOperation op = new IMOperation();
+	  op.addImage();
+	  op.resize(800,600);
+	  op.addImage();
+
+	  for (String srcImage:pImageNames) {
+	    int lastDot = srcImage.lastIndexOf('.');
+	    String dstImage=srcImage.substring(1,lastDot-1)+"_small.jpg";
+	    cmd.run(op,srcImage,dstImage);
+	  }
+	}
+      </source>
+      <p>
+	Note that <code>op.addImage()</code> is actually a short form
+	for <code>op.addImage(Operation.IMG_PLACEHOLDER)</code>. You
+	can also add more than one placeholder at the same time with
+	<code>op.addImage(int count)</code>. 
+      </p>
+      <p>
+	You can pass an arbitrary
+	number of image-names to <code>cmd.run()</code>, you can even
+	pass an array of image-names. In the latter case you have to
+	cast the array to <code>Object[]</code>,
+	e.g. <code>cmd.run(op,(Object[]) imgNames)</code>.
+      </p>
+    </section>
+
+    <section id="AddingOperations">
+      <title>Adding Operations to Operations</title>
+      <p>
+	Im4java supports a second variant of operation-reuse. You can
+	define one <code>Operation</code> and just add it to another
+	one. The following snippet defines a
+	<em>rotate-resize-frame</em>-operation and adds it to another
+	operation: 
+      </p>
+	<source>
+	  IMOperation frame = new IMOperation();
+	  frame.rotate("90");
+	  frame.resize(640);
+	  frame.border(10,10);
+
+	  IMOperation row = new IMOperation();
+	  row.addImages(3);
+	  row.add(frame);
+	  row.p_append();
+	</source>
+      <p>
+	Adding operations as just described is valid for all
+	supported im4java-tools. <a
+	  href="ext:imagemagick">ImageMagick</a> additionally supports
+	options and operations within parenthesis thus limiting the
+	effect of settings and operators on everything within the
+	parenthesis. You add parenthesis with the methods
+	<code>op.openOperation()</code> and
+	<code>op.closeOperation()</code>:  
+      </p>
+	<source>
+	  IMOperation frame = new IMOperation();
+          frame.openOperation();
+	  frame.rotate("90");
+	  frame.resize(640);
+	  frame.border(10,10);
+	  frame.closeOperation();
+	</source>
+      <p>
+	An alternatative way of coding this is:
+      </p>
+	<source>
+	  IMOperation frame = new IMOperation();
+	  frame.rotate("90");
+	  frame.resize(640);
+	  frame.border(10,10);
+
+	  IMOperation row = new IMOperation();
+	  row.addImages(3);
+	  row.addSubOperation(frame);
+	  row.p_append();
+	</source>
+      <p>
+	The <code>op.addSubOperation()</code>-method just adds the
+	surrounding parenthesis.
+      </p>
+    </section>
+
+    <section id="dynamicOperations">
+      <title>Dynamic Operations</title>
+      <p>
+	<em>Dynamic Operations</em> are an advanced
+	technique. Sometimes you only want to apply some operations to
+	images fulfilling some requirements. <a
+	  href="ext:imagemagick">ImageMagick</a> itself has some
+	special option-flags for this purpose, e.g. an image is only
+	scaled (down) if it has a larger size than the
+	target-size. For special cases not directly supported by
+	ImageMagick, you can make use of im4java's <em>Dynamic
+	  Operations</em>. Basically, you implement the interface
+	<code>org.im4java.core.DynamicOperation</code>, which has
+	exactly one method <em>resolveOperation()</em>. At execution
+	time, this method gets all argument images passed as
+	parameters, and it must return an <code>Operation</code>. The
+	returned object could also be <em>null</em>, in this case no
+	<code>Operation</code> is added.
+      </p>
+      <p>
+	The test-case class <code>org.im4java.test.TestCase11</code>
+	shows an example of dynamic operations. In this case, the
+	<code>despeckle()</code> method is only added for images with
+	a high iso-noise level.
+      </p>
+    </section>
+
+    <section id="capturingOutput">
+      <title>Capturing Output</title>
+      <p>
+	The default behaviour of all <code>ImageCommand</code>s is to
+	pass all output of the wrapped commands to stdout, and to
+	capture everything from stderr in an
+	<code>CommandException</code>-object. You can change this
+	behaviour with the methods
+	<code>ImageCommand.setOutputConsumer(OutputConsumer oc)</code>
+	and <code>ImageCommand.setErrorConsumer(ErrorConsumer
+	  ec)</code>. Both <code>OutputConsumer</code> and
+	<code>ErrorConsumer</code> are interfaces in the
+	<code>org.im4java.process</code>-package with single methods
+	(<code>consumeOutput()</code> and
+	<code>consumeError()</code>). These methods just read
+	everything from the argument <code>InputStream</code>.
+      </p>
+      <p>
+	In the process-package there is an utility-class called
+	<code>ArrayListOutputConsumer</code> which collects all lines
+	of output in a String-array.
+      </p>
+    </section>
+
+    <section id="piping">
+      <title>Piping</title>
+      <p>
+	Most commandline tools allow piping of input or output. With
+	the im4java-library you can create instances of
+	<code>org.im4java.process.Pipe</code> to mimic this
+	behaviour. This class implements the
+	<code>OutputConsumer</code> and
+	<code>ErrorConsumer</code>-interfaces mentionedabove and are
+	useful for 
+	piping the output of a commandline tool to an
+	<code>OutputStream</code> (e.g. a network-socket). To use the
+	pipe, instantiate it with an <code>OutputStream</code> and use
+	the method <code>ImageCommand.setOutputConsumer(pipe)</code>.
+      </p>
+      <p>
+	If you want to provide input to stdin of a commandline tool,
+	you have to create a pipe-object initialized with an
+	<code>InputStream</code> and use the method
+	<code>ImageCommand.setInputProvider(pipe)</code>. The pipe
+	will read from the <code>InputStream</code> and write to the
+	stdin of the respective <code>ImageCommand</code>.
+      </p>
+      <p>
+	The test-case <code>org.im4java.test.TestCase10</code>
+	features pipes, reading from one image and writing to
+	another. In real-life, you would of course process the files
+	directly, but the example just wants to demonstrate what to do:
+      </p>
+      <source>
+	IMOperation op = new IMOperation();
+	op.addImage("-");                   // read from stdin
+	op.addImage("tif:-");               // write to stdout in tif-format
+
+	// set up pipe(s): you can use one or two pipe objects
+	FileInputStream fis = new FileInputStream(iImageDir+"ipomoea.jpg");
+	FileOutputStream fos = new FileOutputStream(iImageDir+"ipomoea.tif");
+	// Pipe pipe = new Pipe(fis,fos);
+	Pipe pipeIn  = new Pipe(fis,null);
+	Pipe pipeOut = new Pipe(null,fos);
+
+	// set up command
+	ConvertCmd convert = new ConvertCmd();
+	convert.setInputProvider(pipeIn);
+	convert.setOutputConsumer(pipeOut);
+	convert.run(op);
+	fis.close();
+	fos.close();
+      </source>
+    </section>
+
+    <section id="bufferedImages">
+      <title>Using BufferedImages</title>
+      <p>
+	A <code>BufferedImage</code> is in a way the <em>java
+	  native</em> represantation of an image-object. No
+	commandline tool can deal directly with a
+	<code>BufferedImage</code>. The good news is that im4java uses
+	objects of type <code>BufferedImage</code> transparently, if
+	you use pass these objects at invocation time:
+      </p>
+      <source>
+	IMOperation op = new IMOperation();
+	op.addImage();                        // input
+	op.blur(2.0).paint(10.0);
+	op.addImage();                        // output
+
+	ConvertCmd convert = new ConvertCmd();
+	BufferedImage img = ...;
+	String outfile = ...;
+	...
+	convert.run(op,img,outfile);
+      </source>
+      <p>
+	Note that using <code>BufferedImage</code>s is not foolproof,
+	since it is impossible to exactly identify input images and output
+	images. The code takes the following heuristic approach: every
+	image-placesholder except the last is interpreted as an input
+	images, the last image-placeholder, if it is of type
+	<code>BufferedImage</code> is used as an output image. This
+	only works in all cases for ImageMagick/GraphicsMagick, since
+	in this case the output-file is definitely the last token on
+	the commandline.
+      </p>
+      <p>
+	If you need to write to a <code>BufferedImage</code>, it is
+	better to pipe the output of the commandline-tool to stdout,
+	create an instance of the class 
+	<code>org.im4java.core.Stream2BufferedImage</code> and set it
+	as the <code>OutputConsumer</code> of the command:
+      </p>
+      <source>
+	IMOperation op = new IMOperation();
+	op.addImage();                        // input
+        ....
+	op.addImage("png:-");                 // output: stdout
+	
+	
+	// set up command
+	ConvertCmd convert = new ConvertCmd();
+	Stream2BufferedImage s2b = new Stream2BufferedImage();
+	convert.setOutputConsumer(s2b);
+	convert.run(op,(Object[]) images);
+      </source>
+    </section>
+
+    <section id="asynchronousExecution">
+      <title>Asynchronous Execution</title>
+      <p>
+	Long running operations belong into a seperate thread,
+	especially in graphical applications. The im4java-library
+	supports asynchronous operations with and without callbacks.
+      </p>
+      <p>
+	The latter case is simple (fire-and-forget). Befor you start the
+	command, you just set the aynchronous-mode to true:
+      </p>
+      <source>
+	ConvertCmd cmd = new ConvertCmd();
+	cmd.setAsyncMode(true);
+	...
+	cmd.run(op);
+      </source>
+      <p>
+	In this case, you will know nothing about success or
+	failure. If you need feedback (e.g. because you want to
+	asynchronously convert a file and load the result into a
+	window), you must write a class implementing the interface
+	<code>org.im4java.process.ProcessListener</code>. This
+	interface defines two methods: <code>processStarted()</code>
+	and <code>processTerminated()</code>. With these two
+	methods you will receive callbacks from the asynchronous
+	thread. See <code>org.im4java.test.TestCase16</code> for a
+	complete example.
+      </p>
+    </section>
+
+    <section id="graphicsMagick">
+      <title>Using GraphicsMagick</title>
+      <p>
+	<a href="ext:graphicsmagick">GraphicsMagick</a> is a fork of
+	<a href="ext:imagemagick">ImageMagick</a>. GraphicsMagick has
+	a number of advantages compared to ImageMagick, the most
+	prominent is it's superior performance. Since the fork
+	ImageMagick has improved the expressive power of it's
+	command-line syntax, therefore, an ImageMagick commandline is
+	not necessarely compatible with GraphicsMagick. But for most
+	single-operation conversions it still is.
+      </p>
+      <p>
+	With im4java, you have three options if you want to use
+	GraphicsMagick: 
+      </p>
+      <ul>
+	<li>
+	  use GraphicsMagick explicitely, passing the command at
+	  object-creation: <code>GraphicsMagickCmd cmd = new
+	    GraphicsMagickCmd("convert");</code>. 
+	</li>
+	<li>
+	  use GraphicsMagick explicitely, using wrapper classes:
+	  <code>ConvertCmd cmd = new ConvertCmd(true);</code>.
+	</li>
+	<li>
+	  decide at runtime: setting the system-property
+	  <em>im4java.useGM</em> to true will select GraphicsMagick
+	  at runtime. You can use this feature to compare the
+	  results and timings of both toolsets, provided that the
+	  commandline is compatible.
+	</li>
+      </ul>
+    </section>
+
+    <section id="debug">
+      <title>Debugging</title>
+      <p>
+	Since version 1.0 im4java has a new method
+	<code>ImageCommand.createScript()</code> to aid in debugging:
+      </p>
+      <source>
+	IMOperation op = new IMOperation();
+	...
+	ConvertCmd cmd = new ConvertCmd();
+	cmd.createScript("myscript.sh",op);
+      </source>
+      <p>
+	This will dump your command and operation to a
+	script-file. You should change the execution-permission of the
+	file and try the script to make sure that you in fact generate
+	the commandline you intend to use.
+      </p>
+      <p>Note that on windows-platforms,
+	<code>createScript()</code>-method will automatically add the
+	extension <code>.cmd</code> to the filename passed to the
+	method.
+      </p>
+    </section>
+  </body>
+</document>

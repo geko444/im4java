@@ -2,14 +2,17 @@
 # Makefile for im4java
 #
 # $Author: bablokb $
-# $Revision: 1.29 $
+# $Revision: 1.39 $
 #
 # License: GPL2 (see COPYING)
 # -----------------------------------------------------------------------------
 
-.PHONY: all src test test-prepare jar clean distclean \
+.PHONY: all src test test-prepare clean distclean \
+        compile compile-lib compile-contrib \
+        jar jar-lib jar-contrib \
         forrest api-doc show-news update-changelog \
         srcdist bindist predist srcarch binarch postdist \
+        upload-files update-web \
         inc-dist-major inc-dist-minor inc-dist-pl
 
 export 
@@ -18,8 +21,11 @@ VERSION  = $(DIST_MAJOR).$(DIST_MINOR).$(DIST_PL)
 
 DIST       := im4java
 DIST_NAME  := $(DIST)-$(VERSION)
+DIST_DIR   := release/$(DIST_NAME)
 DIST_STUFF := $(wildcard README* NEWS TODO INSTALL ChangeLog COPYING*) Makefile \
-	      version.inc bin input images.src src
+	      version.inc bin input doc-src images.src src contrib
+
+SF_DIR := /home/frs/project/i/im/im4java
 
 JAVA_PACKAGE=org.im4java.core
 JAVA_TEST_CLASS=org.im4java.test.Test
@@ -37,16 +43,17 @@ SHAREDIR  = $(PREFIX)/share/$(DIST)
 
 default:
 	@echo -e "\nmain targets:\n"
-	@echo -e "\tall:       recreates source and jar from scratch"
-	@echo -e "\tsrc:       create java-sources from interface-definitions"
-	@echo -e "\tcompile:   compile source-code"
-	@echo -e "\tjar:       create im4java-library file $(DIST_NAME).jar"
-	@echo -e "\ttest:      run test-suite\n"
-	@echo -e "\tdoc:       create documentation\n"
-	@echo -e "\tsrcdist:   create source-distribution"
-	@echo -e "\tbindist:   create binary-distribution (also includes source)\n"
-	@echo -e "\tclean:     cleanup after compile and test"
-	@echo -e "\tdistclean: complete cleanup"
+	@echo -e "\tall:         recreates source and jar from scratch"
+	@echo -e "\tsrc:         create java-sources from interface-definitions"
+	@echo -e "\tcompile:     compile source-code"
+	@echo -e "\tjar:         create im4java-library file $(DIST_NAME).jar"
+	@echo -e "\tjar-contrib: create im4java-library file $(DIST_NAME)-contrib.jar"
+	@echo -e "\ttest:        run test-suite\n"
+	@echo -e "\tdoc:         create documentation\n"
+	@echo -e "\tsrcdist:     create source-distribution"
+	@echo -e "\tbindist:     create binary-distribution (also includes source)\n"
+	@echo -e "\tclean:       cleanup after compile and test"
+	@echo -e "\tdistclean:   complete cleanup"
 	@echo -e ""
 
 all: clean src jar
@@ -54,32 +61,44 @@ all: clean src jar
 src:
 	bin/mk-im4java -p $(JAVA_PACKAGE)
 
-compile:
+compile: compile-lib
+
+compile-lib:
 	rm -fr build/*
 	mkdir -p build
-	javac -Xlint:unchecked -d build/ -cp src `find src -name "*.java"`
+	javac -Xlint:unchecked -d build/  `find src -name "*.java"`
 
-jar: compile
+compile-contrib: compile-lib
+	rm -fr build.contrib/*
+	mkdir -p build.contrib
+	javac -Xlint:unchecked -d build.contrib/ \
+                       -cp build `find contrib -name "*.java"`
+
+jar: jar-lib
+
+jar-lib: compile-lib
 	jar cmf input/manifest.mf $(DIST_NAME).jar -C build/ .
 
-TESTS=all
-test-prepare:
-	rm -fr images
-	cp -a images.src images
-	cp -a "images/tulip2.jpg" "images/tulip 2.jpg"
-	chmod +w images/*.jpg
+jar-contrib: compile-contrib
+	jar cmf input/manifest.mf $(DIST_NAME)-contrib.jar -C build.contrib/ .
 
+# targets (test) --------------------------------------------------------------
+
+test-prepare:
+	bin/test-prepare
+
+TESTS=all
 test: test-prepare
 	java $(JAVA_OPTS) -cp build $(JAVA_TEST_CLASS) $(TESTS)
 
 # targets (documentation) -----------------------------------------------------
 
 DOC_SRC_DIR=./doc-src
-FORREST_API_ROOT="$(DOC_SRC_DIR)/xdocs/ref"
+DOC_DIR=./doc
 
 NAME      = The im4java Library
 HOMEPAGE  = http://im4java.sourceforge.net/
-COPYRIGHT = Released under the LGPL, (c) Bernhard Bablok 2008-2009
+COPYRIGHT = Released under the LGPL, (c) Bernhard Bablok 2008-2010
 WTITLE    = "$(NAME)"
 DTITLE    = "$(NAME), Version $(VERSION)"
 DBOTTOM   = "$(COPYRIGHT)<br>Homepage: <a href="$(HOMEPAGE)">$(HOMEPAGE)</a>"
@@ -90,11 +109,12 @@ doc: api-doc forrest
 
 forrest:
 	cd $(DOC_SRC_DIR); \
-	forrest; \
-	cp -avu build/site/* ../doc
+	forrest && \
+	cp -au build/site/* ../$(DOC_DIR)
 
 api-doc:
-	javadoc -sourcepath src -d $(FORREST_API_ROOT) -windowtitle $(WTITLE) \
+	mkdir -p $(DOC_DIR)/api
+	javadoc -sourcepath src -d $(DOC_DIR)/api -windowtitle $(WTITLE) \
                 -doctitle $(DTITLE) -footer $(DFOOTER) -header $(DHEADER) \
                 -bottom $(DBOTTOM) \
                 -version -author -subpackages org.im4java
@@ -102,8 +122,9 @@ api-doc:
 # targets (cleanup and distribution) ------------------------------------------
 
 clean:
-	rm -fr $(DIST)-*.tar.bz2 build/* doc/* doc-src/build/* \
-                 $(FORREST_API_ROOT)/* images $(DIST_NAME).jar
+	rm -fr $(DIST)-*.tar.bz2 build/* build.contrib/* $(DIST_DIR) \
+                 $(DOC_DIR)/* $(DOC_SRC_DIR)/build/* \
+                    images $(DIST_NAME).jar $(DIST_NAME)-contrib.jar
 
 distclean: clean
 	rm -fr src/$(subst .,/,$(JAVA_PACKAGE))/*Ops.java
@@ -123,29 +144,39 @@ srcdist: predist srcarch postdist
 bindist: predist binarch postdist
 
 predist:
-	rm -f $(DIST_NAME)-*.tar.bz2
 	tar -cpzf $(DIST_NAME).tgz --exclude "CVS" \
            --exclude ".cvsignore" --exclude ".project" \
-           --exclude ".classpath" $(DIST_STUFF)
+           --exclude ".classpath" --exclude ".settings" $(DIST_STUFF)
 	rm -fr $(DIST_NAME)
 	mkdir $(DIST_NAME)
+	mkdir -p $(DIST_DIR)
 
 srcarch:
+	rm -f $(DIST_DIR)/$(DIST_NAME)-src.tar.bz2
 	(cd $(DIST_NAME); tar -xpzf ../$(DIST_NAME).tgz; \
-         $(MAKE) distclean src \
+         $(MAKE) distclean \
         )
-	tar -cpjf $(DIST_NAME)-src.tar.bz2 $(DIST_NAME)
+	tar -cpjf $(DIST_DIR)/$(DIST_NAME)-src.tar.bz2 $(DIST_NAME)
 
 binarch:
+	rm -f $(DIST_DIR)/$(DIST_NAME)-bin.tar.bz2
 	(cd $(DIST_NAME); tar -xpzf ../$(DIST_NAME).tgz; \
-         $(MAKE) distclean src jar; \
-         rm -fr build/* \
+         $(MAKE) distclean src jar doc; \
+         rm -fr Makefile version.inc build src contrib doc-src input \
         )
-	tar -cpjf $(DIST_NAME)-bin.tar.bz2 $(DIST_NAME)
+	tar -cpjf  $(DIST_DIR)/$(DIST_NAME)-bin.tar.bz2 $(DIST_NAME)
 
 postdist:
 	rm -fr $(DIST_NAME) $(DIST_NAME).tgz
 
+
+# targets (release management)  -----------------------------------------------
+
+upload-files:
+	rsync -avP -e ssh $(DIST_DIR) bablokb,im4java@frs.sourceforge.net:$(SF_DIR)
+
+update-web:
+	rsync -avP -e ssh doc/  bablokb,im4java@web.sourceforge.net:htdocs/
 
 # targets (version management)  -----------------------------------------------
 

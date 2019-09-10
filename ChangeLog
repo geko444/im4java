@@ -1,4 +1,250 @@
+2010-03-22
+
+	* doc-src/xdocs/: index.xml, docs/dev-guide.xml, relnotes.xml:
+	  fixed version number (1.0.0 instead of 1.00.0)
+
+	* version.inc: upgraded version to 1.0.0
+
+2010-03-19
+
+	* .cvsignore: added release
+
+	* bin/test-prepare: initial entry
+
+	* doc-src/xdocs/images/: group-logo.gif, group.svg, icon.png,
+	  project.svg, usemap.gif: not needed
+
+	* doc-src/xdocs/docs/tests.xml: fixed section about running tests
+
+	* Makefile: moved commands for test-prepare to a script
+
+	* Makefile: also remove Makefile and version.inc from binary
+	  distribution
+
+	* Makefile: fine-tuned srcarch and binarch
+
+	* README: added note about the missing documentation in the
+	  source-distribution
+
+	* doc-src/xdocs/install/index.xml: added note about recreating the
+	  documentation using forrest
+
+	* doc-src/xdocs/site.xml: added forrest as an external ref
+
+	* doc-src/xdocs/relnotes.xml: added note about source-distribution
+
+2010-03-16
+
+	* doc-src/xdocs/site.xml: added external reference to the posting
+	  about the JNI-hazard on the jmagick-users mailing list
+
+	* doc-src/xdocs/index.xml: link the "JNI-hazard" to the FAQ
+
+	* doc-src/xdocs/docs/dev-guide.xml: fixed bug in xml-markup
+
+	* doc-src/xdocs/docs/faq.xml: finished faq about the JNI-hazard
+
+2010-03-14
+
+	* misc/make-release: updated todo-list for a new release
+
+	* doc-src/xdocs/relnotes.xml: added more items to the 1.00.0
+	  release-notes
+
+	* doc-src/xdocs/docs/dev-guide.xml: added note that createScript()
+	  automatically appends ".cmd" on windows-platforms
+
+	* contrib/org/im4java/examples/Thumbnail.java,
+	  src/org/im4java/test/TestCase1.java,
+	  src/org/im4java/test/TestCase4.java: refactored platform-check
+	  for createScript() to ImageCommand
+
+	* src/org/im4java/core/ImageCommand.java: createScript(): add
+	  ".cmd" on windows-platforms to filename passed as argument
+
+	* Makefile: added jar-contrib to list of main targets echoed with
+	  target "default:"
+
+2010-03-12
+
+	* doc-src/xdocs/images/project-logo.gif: created dumb project-logo
+
+	* doc-src/xdocs/index.xml: removed the SF-logo section (now within
+	  skinconf.xml)
+
+	* Makefile: added doc-src to DIST_STUFF
+
+	* doc-src/xdocs/: index.xml, relnotes.xml, roadmap.xml, site.xml,
+	  tabs.xml, docs/dev-guide.xml, docs/faq.xml,
+	  docs/howto-template.xml, docs/howtos.xml, docs/index.xml,
+	  docs/new-tools.xml, docs/reference.xml, docs/tests.xml,
+	  install/index.xml, tools/index.xml: initial entry
+
+	* doc-src/sitemap.xmap: no longer needed
+
+	* doc-src/skinconf.xml: updated copyright / add link to
+	  sourceforge-logo
+
+2010-03-07
+
+	* src/org/im4java/script/: BashScriptGenerator.java,
+	  CmdScriptGenerator.java: set search-path
+
+	* src/org/im4java/core/ImageCommand.java: path global and local
+	  searchpath to ScriptGenerator.init()
+
+	* src/org/im4java/script/AbstractScriptGenerator.java: new method
+	  getSearchPath()
+
+	* src/org/im4java/script/: AbstractScriptGenerator.java,
+	  ScriptGenerator.java: removed init() method without
+	  Properties-argument
+
+	* src/org/im4java/core/ImageCommand.java: removed ImageCommand from
+	  init() methods / pass command as a property during initialization
+
+	* src/org/im4java/script/AbstractScriptGenerator.java: removed
+	  ImageCommand from init() methods / writeCommand() now uses a
+	  property
+
+	* src/org/im4java/script/ScriptGenerator.java: removed ImageCommand
+	  from init() methods
+
+	* input/IMinterface.txt: bugfix: -sarse-color should read
+	  -sparse-color
+
+	* Makefile: splitup of lib and contrib
+
+	* .cvsignore: added build.contrib
+
+	* input/manifest-contrib.mf: initial entry
+
+2010-01-30
+
+	* src/org/im4java/test/: AbstractTestCase.java, TestCase1.java,
+	  TestCase11.java, TestCase14.java, TestCase16.java,
+	  TestCase2.java, TestCase3.java, TestCase4.java, TestCase7.java,
+	  TestCase9.java: Windows does not support x: so replaced all
+	  occurences with alternative code
+
+	* bin/test-prepare.bat: initial entry
+
+	* src/org/im4java/core/DisplayCmd.java: changed command from "gm
+	  display" to "gmdisplay" for Windows-platform
+
+	* src/org/im4java/core/DisplayCmd.java: changed command from
+	  display to imdisplay for Windows-platform
+
+2010-01-29
+
+	* src/org/im4java/script/CmdScriptGenerator.java: initial entry
+
+	* src/org/im4java/test/TestCase4.java,
+	  contrib/org/im4java/examples/Thumbnail.java,
+	  src/org/im4java/test/TestCase1.java: set script-filename
+	  according to os.name
+
+	* src/org/im4java/core/ImageCommand.java: set
+	  iDefaultScriptGenerator depending on os.name
+
+	* src/org/im4java/process/ProcessStarter.java: statically
+	  initialize iGlobalSearchPath with IM4JAVA_TOOLPATH
+
+	* src/org/im4java/script/: AbstractScriptGenerator.java,
+	  BashScriptGenerator.java: refactored code from
+	  BashScriptGenerator to AbstractScriptGenerator
+
+	* src/org/im4java/script/BashScriptGenerator.java: some changes to
+	  ease code-refactoring
+
+	* contrib/org/im4java/examples/Thumbnail.java: bugfix: added import
+	  statement for ArrayList
+
+2010-01-26
+
+	* contrib/org/im4java/examples/Thumbnail.java: initial entry
+
+	* Makefile: create api-documentation below doc
+
+2010-01-20
+
+	* README: added license-statement. Refer to HTML documentation
+
+	* doc-src/template.xml: updated template
+
+2010-01-19
+
+	* input/IMinterface.txt: support String arguments for special-chars
+	  in geometry-arguments (e.g. -resize)
+
+2010-01-15
+
+	* NEWS: moved contents to HTML-documentation
+
+	* src/org/im4java/script/BashScriptGenerator.java: fixed quoting
+
+2009-12-19
+
+	* Makefile: changed copyright notice in api-doc
+
+2009-12-18
+
+	* src/org/im4java/test/: TestCase4.java, TestCase1.java: use new
+	  createScript() method
+
+	* src/org/im4java/script/BashScriptGenerator.java: handle dynamic
+	  images / handle indentation of "(" and ")"
+
+	* src/org/im4java/script/BashScriptGenerator.java: initial entry
+
+	* src/org/im4java/core/ImageCommand.java: added support for
+	  script-generation
+
+	* src/org/im4java/script/AbstractScriptGenerator.java: fitted to
+	  new interface
+
+	* src/org/im4java/script/ScriptGenerator.java: redesigned the
+	  interface
+
+	* src/org/im4java/core/ImageCommand.java: added getCommand()
+
+2009-12-17
+
+	* src/org/im4java/script/: AbstractScriptGenerator.java,
+	  ScriptGenerator.java: initial entry
+
+	* src/org/im4java/test/Test.java: use TestCaseXX-classes and delete
+	  code moved to the TestCaseXX-classes
+
+2009-12-16
+
+	* misc/make-release: added note about CVS-tagging
+
+	* src/org/im4java/test/: AbstractTestCase.java, TestCase.java,
+	  TestCase1.java, TestCase10.java, TestCase11.java,
+	  TestCase12.java, TestCase13.java, TestCase14.java,
+	  TestCase15.java, TestCase16.java, TestCase17.java,
+	  TestCase18.java, TestCase19.java, TestCase2.java,
+	  TestCase20.java, TestCase3.java, TestCase4.java, TestCase5.java,
+	  TestCase6.java, TestCase7.java, TestCase8.java, TestCase9.java:
+	  initial entry
+
+	* src/org/im4java/test/Test.java: replaced images/ with iImageDir
+	  to make image-names platform independent
+
+	* Makefile: create distribution-archives in subdir web
+
+	* misc/file-release: updated description
+
 2009-12-14
+
+	* misc/make-release: added some notes
+
+	* web/index.html: bugfix in markup
+
+	* Makefile: added target update-web
+
+	* ChangeLog: upated ChangeLog for version 0.99.0
 
 	* version.inc: upgraded version to 0.99.0
 

@@ -4,134 +4,25 @@ INTRODUCTION
 im4java is a pure-java interface to the ImageMagick
 commandline. It is not meant as a replacement for JMagick, but as an addition.
 
-JMagick is a thin JNI layer above the ImageMagick C-API. im4java in
-contrast just generates the commandline for the ImageMagick commands and
-passes the generated line to the selected IM-command (using the 
-java.lang.ProcessBuilder.start()-method).
 
-Disadvantages of the approach: your are limited to the capabilities of the
-IM commands. With JMagick, you have access to the low-level interface of
-IM and therefore you have a very detailed control of the processing of images.
+LICENSE
+=======
 
-Advantages of im4java: the interface of the IM commandline is quite stable,
-so your java program (and the im4java-library) will work across many versions.
-im4java also provides a better OO interface (the "language" of the
-IM-commandline with it's postfix-operation notation translates very easily
-into OO-notation). And most important: you can use im4java everywhere
-JMagick can't be used because of the JNI hazard (e.g. java application servers).
+im4java is licensed under the LGPL (see file COPYING.LIB). Since
+im4java is a wrapper libary, you should also make sure that you comply
+to the individual license-statements of all the tools you use
+indirectly through im4java.
 
 
-Features
-========
+DOCUMENTATION
+=============
 
-- supports most ImageMagick commands
-- reuse a commandline multiple times for different set of images
-- IM options and operators translate into similar method-names, e.g.
-    -resize 1024           -> .resize(1024) or .resize(1024,null)
-    -resize 1024x768       -> .resize(1024,768)
-    -resize x768           -> .resize(null,768)
-    -sigmoidal-contrast 20 -> .sigmoidalContrast(20.)
-    -append                -> .append()
-    +append                -> .p_append()
-- you can pipe input to and from ImageMagick commands
-- you can execute the commands asynchronously
-- BufferedImage support, i.e you can use BufferedImages as input to
-  IM commands and pipe output of IM commands into a BufferedImage
-- scarce documentation (but many examples in src/org/im4java/test/Test.java)
-- the architecture supports arbitrary commandline-tools (already implemented:
-  ImageMagick, GraphicsMagick, jpegtran, ufraw, exiftool, dcraw)
+All documentation is now available in HTML and PDF. Point your browser
+to doc/index.html. The documentation in the downloaded package usually
+is a copy of the documentation available on the im4java-website.
 
-
-INSTALLATION
-============
-
-There is no formal installation method. If you have downloaded the
-source-distribution, you should run
-
-$ > make jar
-
-This will compile all source-files and generate the im4java library.
-
-Running
-
-$ > make test
-
-will exercise a number of tests.
-
-If you downloaded the binary-distribution, run
-
-$ > make test-prepare
-$ > java -jar im4java-<version>.jar all
-
-to run all the tests.
-
-
-Setting PATH
-============
-
-im4java calls commands just by their name (no path-component).
-Therefore you must insure to add the relevant directories to you PATH.
-
-Windows-users watch out: there is a convert.exe in you system32-directory!
-
-Adding the directories of the IM-binaries to the PATH is the preferred method,
-but since this is not always possible (not every user has full control
-over the execution environment), I have added a new feature to im4java-0.99.
-
-Since im4java 0.99, you can also set the search path from within
-your java program using:
-
-ProcessStarter.setGlobalSearchPath(myPath);
-
-As an alternative, you can also set the search path for each command-object
-seperately:
-
-ConvertCmd convert = new ConvertCmd();
-convert.setSearchPath(myPath);
-
-Since this feature is new I would be glad to receive some feedback on
-this approach. I would especially appreciate feedback from Windows and
-Mac-users on this issue, since I don't have access to these platforms.
-
-
-USAGE
-=====
-
-The central class of the im4java-package is IMOperation. A very simple
-code-snippet is:
-
-import org.im4java.core.*;
-
-IMOperation op = new IMOperation();
-op.addImage("myimage.jpg");
-op.resize(1024,768);
-op.addImage("myimage-small.jpg");
-ConvertCmd convert = new ConvertCmd();
-convert.run(op);
-
-You can also reuse an IMOperation:
-
-IMOperation op = new IMOperation();
-op.addImage().addImage();           // adds placeholders
-op.append();
-op.addImage();                      // placeholder for output-file
-
-String[] images = new String[] {"image1.jpg","image2.jpg","result1.tif"};
-
-ConvertCmd convert = new ConvertCmd();
-convert.run(op,images);
-convert.run(op,"image3.jpg","image4.jpg","result2.tif");
-
-As you can see, you can pass an array of images or a variable number
-of image names to the run()-method.
-
-There are a number of subclasses of IMOperation (e.g. ChannelMixer,
-NoiseFilter) which wrap more complex image manipulation operations based
-on a combination of IM operators. The list of subclasses is likely to
-grow in the future.
-
-For more examples see the file src/org/im4java/test/Test.java.
-
+Note that the source-distribution only contains the source for the
+documentation (in doc-src/xdocs).
 
 FEEDBACK
 ========
