@@ -74,13 +74,8 @@ public class JPTOps extends Operation {
 
   public JPTOps optimize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-optimize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -93,13 +88,8 @@ public class JPTOps extends Operation {
 
   public JPTOps progressive() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-progressive");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -134,13 +124,8 @@ public class JPTOps extends Operation {
 
   public JPTOps grayscale() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-grayscale");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -175,13 +160,8 @@ public class JPTOps extends Operation {
 
   public JPTOps perfect() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-perfect");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -216,13 +196,8 @@ public class JPTOps extends Operation {
 
   public JPTOps transpose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transpose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -235,13 +210,8 @@ public class JPTOps extends Operation {
 
   public JPTOps transverse() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transverse");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -254,13 +224,8 @@ public class JPTOps extends Operation {
 
   public JPTOps trim() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-trim");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -339,13 +304,8 @@ public class JPTOps extends Operation {
 
   public JPTOps verbose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-verbose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -358,13 +318,22 @@ public class JPTOps extends Operation {
 
   public JPTOps debug() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-debug");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -arithmetic to the jpegtran commandline
+     (see the documentation of jpegtran for details).
+  */
+
+  public JPTOps arithmetic() {
+
+    iCmdArgs.add("-arithmetic");
+
     return this;
   }
 

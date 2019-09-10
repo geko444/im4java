@@ -52,13 +52,8 @@ public class GMOps extends Operation {
 
   public GMOps adjoin() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-adjoin");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -71,13 +66,8 @@ public class GMOps extends Operation {
 
   public GMOps p_adjoin() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+adjoin");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -90,13 +80,8 @@ public class GMOps extends Operation {
 
   public GMOps affine() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-affine");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -331,13 +316,8 @@ public class GMOps extends Operation {
 
   public GMOps antialias() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-antialias");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -350,13 +330,8 @@ public class GMOps extends Operation {
 
   public GMOps p_antialias() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+antialias");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -369,13 +344,8 @@ public class GMOps extends Operation {
 
   public GMOps append() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-append");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -388,13 +358,8 @@ public class GMOps extends Operation {
 
   public GMOps p_append() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+append");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -407,13 +372,8 @@ public class GMOps extends Operation {
 
   public GMOps authenticate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-authenticate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -448,13 +408,8 @@ public class GMOps extends Operation {
 
   public GMOps average() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-average");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -467,13 +422,8 @@ public class GMOps extends Operation {
 
   public GMOps backdrop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-backdrop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -486,13 +436,8 @@ public class GMOps extends Operation {
 
   public GMOps background() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-background");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -527,13 +472,8 @@ public class GMOps extends Operation {
 
   public GMOps blackThreshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-black-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -596,13 +536,8 @@ public class GMOps extends Operation {
 
   public GMOps bluePrimary() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-blue-primary");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -665,13 +600,8 @@ public class GMOps extends Operation {
 
   public GMOps blur() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-blur");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -734,13 +664,8 @@ public class GMOps extends Operation {
 
   public GMOps bordercolor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-bordercolor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -775,13 +700,8 @@ public class GMOps extends Operation {
 
   public GMOps borderwidth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-borderwidth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -979,13 +899,8 @@ public class GMOps extends Operation {
 
   public GMOps p_borderwidth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+borderwidth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -998,13 +913,8 @@ public class GMOps extends Operation {
 
   public GMOps border() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-border");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1067,13 +977,8 @@ public class GMOps extends Operation {
 
   public GMOps box() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-box");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1108,13 +1013,8 @@ public class GMOps extends Operation {
 
   public GMOps channel() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-channel");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1149,13 +1049,8 @@ public class GMOps extends Operation {
 
   public GMOps charcoal() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-charcoal");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1190,13 +1085,8 @@ public class GMOps extends Operation {
 
   public GMOps chop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-chop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1394,13 +1284,8 @@ public class GMOps extends Operation {
 
   public GMOps clip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1413,13 +1298,8 @@ public class GMOps extends Operation {
 
   public GMOps clippath() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clippath");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1432,13 +1312,8 @@ public class GMOps extends Operation {
 
   public GMOps coalesce() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-coalesce");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1451,13 +1326,8 @@ public class GMOps extends Operation {
 
   public GMOps colorize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-colorize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1554,13 +1424,8 @@ public class GMOps extends Operation {
 
   public GMOps colors() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-colors");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1595,13 +1460,8 @@ public class GMOps extends Operation {
 
   public GMOps colorspace() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-colorspace");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1636,13 +1496,8 @@ public class GMOps extends Operation {
 
   public GMOps comment() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-comment");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1677,13 +1532,8 @@ public class GMOps extends Operation {
 
   public GMOps p_compress() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+compress");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1696,13 +1546,8 @@ public class GMOps extends Operation {
 
   public GMOps compress() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-compress");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1737,13 +1582,8 @@ public class GMOps extends Operation {
 
   public GMOps contrast() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-contrast");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1756,13 +1596,8 @@ public class GMOps extends Operation {
 
   public GMOps p_contrast() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+contrast");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1775,13 +1610,8 @@ public class GMOps extends Operation {
 
   public GMOps convolve() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-convolve");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2866,13 +2696,8 @@ public class GMOps extends Operation {
 
   public GMOps crop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-crop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3069,13 +2894,8 @@ public class GMOps extends Operation {
 
   public GMOps cycle() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-cycle");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3110,13 +2930,8 @@ public class GMOps extends Operation {
 
   public GMOps p_debug() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+debug");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3129,13 +2944,8 @@ public class GMOps extends Operation {
 
   public GMOps debug() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-debug");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3170,13 +2980,8 @@ public class GMOps extends Operation {
 
   public GMOps deconstruct() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-deconstruct");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3189,13 +2994,8 @@ public class GMOps extends Operation {
 
   public GMOps define() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-define");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3230,13 +3030,8 @@ public class GMOps extends Operation {
 
   public GMOps p_define() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+define");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3271,13 +3066,8 @@ public class GMOps extends Operation {
 
   public GMOps delay() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-delay");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3373,13 +3163,8 @@ public class GMOps extends Operation {
 
   public GMOps density() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-density");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3442,13 +3227,8 @@ public class GMOps extends Operation {
 
   public GMOps depth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-depth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3483,13 +3263,8 @@ public class GMOps extends Operation {
 
   public GMOps despeckle() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-despeckle");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3502,13 +3277,8 @@ public class GMOps extends Operation {
 
   public GMOps display() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-display");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3605,13 +3375,8 @@ public class GMOps extends Operation {
 
   public GMOps dispose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-dispose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3646,13 +3411,8 @@ public class GMOps extends Operation {
 
   public GMOps p_dither() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+dither");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3665,13 +3425,8 @@ public class GMOps extends Operation {
 
   public GMOps dither() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-dither");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3706,13 +3461,8 @@ public class GMOps extends Operation {
 
   public GMOps draw() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-draw");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3747,13 +3497,8 @@ public class GMOps extends Operation {
 
   public GMOps edge() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-edge");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3788,13 +3533,8 @@ public class GMOps extends Operation {
 
   public GMOps emboss() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-emboss");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3829,13 +3569,8 @@ public class GMOps extends Operation {
 
   public GMOps encoding() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-encoding");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3870,13 +3605,8 @@ public class GMOps extends Operation {
 
   public GMOps p_endian() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+endian");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3889,13 +3619,8 @@ public class GMOps extends Operation {
 
   public GMOps endian() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-endian");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3930,13 +3655,8 @@ public class GMOps extends Operation {
 
   public GMOps enhance() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-enhance");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3949,13 +3669,8 @@ public class GMOps extends Operation {
 
   public GMOps equalize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-equalize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3968,13 +3683,8 @@ public class GMOps extends Operation {
 
   public GMOps fill() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-fill");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4009,13 +3719,8 @@ public class GMOps extends Operation {
 
   public GMOps filter() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-filter");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4050,13 +3755,8 @@ public class GMOps extends Operation {
 
   public GMOps flatten() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-flatten");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4069,13 +3769,8 @@ public class GMOps extends Operation {
 
   public GMOps flip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-flip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4088,13 +3783,8 @@ public class GMOps extends Operation {
 
   public GMOps flop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-flop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4107,13 +3797,8 @@ public class GMOps extends Operation {
 
   public GMOps font() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-font");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4148,13 +3833,8 @@ public class GMOps extends Operation {
 
   public GMOps frame() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-frame");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4300,13 +3980,8 @@ public class GMOps extends Operation {
 
   public GMOps p_frame() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+frame");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4319,13 +3994,8 @@ public class GMOps extends Operation {
 
   public GMOps fuzz() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-fuzz");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4388,13 +4058,8 @@ public class GMOps extends Operation {
 
   public GMOps gamma() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-gamma");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4429,13 +4094,8 @@ public class GMOps extends Operation {
 
   public GMOps p_gamma() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+gamma");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4470,13 +4130,8 @@ public class GMOps extends Operation {
 
   public GMOps gaussian() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-gaussian");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4539,13 +4194,8 @@ public class GMOps extends Operation {
 
   public GMOps geometry() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-geometry");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4691,13 +4341,8 @@ public class GMOps extends Operation {
 
   public GMOps gravity() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-gravity");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4732,13 +4377,8 @@ public class GMOps extends Operation {
 
   public GMOps greenPrimary() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-green-primary");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4801,13 +4441,8 @@ public class GMOps extends Operation {
 
   public GMOps help() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-help");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4820,13 +4455,8 @@ public class GMOps extends Operation {
 
   public GMOps implode() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-implode");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4861,13 +4491,8 @@ public class GMOps extends Operation {
 
   public GMOps intent() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-intent");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4902,13 +4527,8 @@ public class GMOps extends Operation {
 
   public GMOps interlace() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-interlace");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4943,13 +4563,8 @@ public class GMOps extends Operation {
 
   public GMOps p_label() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+label");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4962,13 +4577,8 @@ public class GMOps extends Operation {
 
   public GMOps label() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-label");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5003,13 +4613,8 @@ public class GMOps extends Operation {
 
   public GMOps lat() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-lat");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5152,13 +4757,8 @@ public class GMOps extends Operation {
 
   public GMOps level() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-level");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5295,13 +4895,8 @@ public class GMOps extends Operation {
 
   public GMOps limit() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-limit");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5336,13 +4931,8 @@ public class GMOps extends Operation {
 
   public GMOps list() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-list");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5377,13 +4967,8 @@ public class GMOps extends Operation {
 
   public GMOps log() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-log");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5418,13 +5003,8 @@ public class GMOps extends Operation {
 
   public GMOps loop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-loop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5459,13 +5039,8 @@ public class GMOps extends Operation {
 
   public GMOps p_map() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+map");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5478,13 +5053,8 @@ public class GMOps extends Operation {
 
   public GMOps map() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-map");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5519,13 +5089,8 @@ public class GMOps extends Operation {
 
   public GMOps p_mask() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+mask");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5538,13 +5103,8 @@ public class GMOps extends Operation {
 
   public GMOps mask() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-mask");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5579,13 +5139,8 @@ public class GMOps extends Operation {
 
   public GMOps matte() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-matte");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5598,13 +5153,8 @@ public class GMOps extends Operation {
 
   public GMOps p_matte() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+matte");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5617,13 +5167,8 @@ public class GMOps extends Operation {
 
   public GMOps median() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-median");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5658,13 +5203,8 @@ public class GMOps extends Operation {
 
   public GMOps modulate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-modulate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5761,13 +5301,8 @@ public class GMOps extends Operation {
 
   public GMOps monitor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-monitor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5780,13 +5315,8 @@ public class GMOps extends Operation {
 
   public GMOps monochrome() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-monochrome");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5799,13 +5329,8 @@ public class GMOps extends Operation {
 
   public GMOps morph() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-morph");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5840,13 +5365,8 @@ public class GMOps extends Operation {
 
   public GMOps mosaic() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-mosaic");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5859,13 +5379,8 @@ public class GMOps extends Operation {
 
   public GMOps motionBlur() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-motion-blur");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5965,13 +5480,8 @@ public class GMOps extends Operation {
 
   public GMOps negate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-negate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5984,13 +5494,8 @@ public class GMOps extends Operation {
 
   public GMOps p_negate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+negate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6003,13 +5508,8 @@ public class GMOps extends Operation {
 
   public GMOps noise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-noise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6044,13 +5544,8 @@ public class GMOps extends Operation {
 
   public GMOps p_noise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+noise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6085,13 +5580,8 @@ public class GMOps extends Operation {
 
   public GMOps noop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-noop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6104,13 +5594,8 @@ public class GMOps extends Operation {
 
   public GMOps normalize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-normalize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6123,13 +5608,8 @@ public class GMOps extends Operation {
 
   public GMOps opaque() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-opaque");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6164,13 +5644,8 @@ public class GMOps extends Operation {
 
   public GMOps operator() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-operator");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6312,13 +5787,8 @@ public class GMOps extends Operation {
 
   public GMOps orderedDither() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-ordered-dither");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6382,13 +5852,8 @@ public class GMOps extends Operation {
 
   public GMOps outputDirectory() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-output-directory");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6423,13 +5888,8 @@ public class GMOps extends Operation {
 
   public GMOps p_page() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+page");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6442,13 +5902,8 @@ public class GMOps extends Operation {
 
   public GMOps page() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-page");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6645,13 +6100,8 @@ public class GMOps extends Operation {
 
   public GMOps paint() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-paint");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6686,13 +6136,8 @@ public class GMOps extends Operation {
 
   public GMOps pause() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-pause");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6727,13 +6172,8 @@ public class GMOps extends Operation {
 
   public GMOps pen() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-pen");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6768,13 +6208,8 @@ public class GMOps extends Operation {
 
   public GMOps ping() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-ping");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6787,13 +6222,8 @@ public class GMOps extends Operation {
 
   public GMOps p_ping() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+ping");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6806,13 +6236,8 @@ public class GMOps extends Operation {
 
   public GMOps pointsize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-pointsize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6847,13 +6272,8 @@ public class GMOps extends Operation {
 
   public GMOps preview() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-preview");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6888,13 +6308,8 @@ public class GMOps extends Operation {
 
   public GMOps process() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-process");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6929,13 +6344,8 @@ public class GMOps extends Operation {
 
   public GMOps profile() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-profile");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6970,13 +6380,8 @@ public class GMOps extends Operation {
 
   public GMOps p_profile() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+profile");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7011,13 +6416,8 @@ public class GMOps extends Operation {
 
   public GMOps p_progress() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+progress");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7030,13 +6430,8 @@ public class GMOps extends Operation {
 
   public GMOps quality() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-quality");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7071,13 +6466,8 @@ public class GMOps extends Operation {
 
   public GMOps raise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-raise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7140,13 +6530,8 @@ public class GMOps extends Operation {
 
   public GMOps p_raise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+raise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7209,13 +6594,8 @@ public class GMOps extends Operation {
 
   public GMOps randomThreshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-random-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7314,13 +6694,8 @@ public class GMOps extends Operation {
 
   public GMOps redPrimary() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-red-primary");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7383,13 +6758,8 @@ public class GMOps extends Operation {
 
   public GMOps region() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-region");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7535,13 +6905,8 @@ public class GMOps extends Operation {
 
   public GMOps p_remap() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+remap");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7554,13 +6919,8 @@ public class GMOps extends Operation {
 
   public GMOps render() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-render");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7573,13 +6933,8 @@ public class GMOps extends Operation {
 
   public GMOps p_render() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+render");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7592,13 +6947,8 @@ public class GMOps extends Operation {
 
   public GMOps resample() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-resample");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7661,13 +7011,8 @@ public class GMOps extends Operation {
 
   public GMOps resize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-resize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7763,13 +7108,8 @@ public class GMOps extends Operation {
 
   public GMOps roll() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-roll");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7835,13 +7175,8 @@ public class GMOps extends Operation {
 
   public GMOps rotate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-rotate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7903,13 +7238,8 @@ public class GMOps extends Operation {
 
   public GMOps sample() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sample");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8055,13 +7385,8 @@ public class GMOps extends Operation {
 
   public GMOps samplingFactor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sampling-factor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8124,13 +7449,8 @@ public class GMOps extends Operation {
 
   public GMOps scale() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-scale");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8276,13 +7596,8 @@ public class GMOps extends Operation {
 
   public GMOps scene() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-scene");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8317,13 +7632,8 @@ public class GMOps extends Operation {
 
   public GMOps seed() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-seed");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8336,13 +7646,8 @@ public class GMOps extends Operation {
 
   public GMOps segment() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-segment");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8405,13 +7710,8 @@ public class GMOps extends Operation {
 
   public GMOps set() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-set");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8475,13 +7775,8 @@ public class GMOps extends Operation {
 
   public GMOps shade() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shade");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8544,13 +7839,8 @@ public class GMOps extends Operation {
 
   public GMOps p_shade() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+shade");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8613,13 +7903,8 @@ public class GMOps extends Operation {
 
   public GMOps sharpen() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sharpen");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8682,13 +7967,8 @@ public class GMOps extends Operation {
 
   public GMOps shave() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shave");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8785,13 +8065,8 @@ public class GMOps extends Operation {
 
   public GMOps shear() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shear");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8854,13 +8129,8 @@ public class GMOps extends Operation {
 
   public GMOps size() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-size");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8960,13 +8230,8 @@ public class GMOps extends Operation {
 
   public GMOps solarize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-solarize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9001,13 +8266,8 @@ public class GMOps extends Operation {
 
   public GMOps spread() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-spread");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9042,13 +8302,8 @@ public class GMOps extends Operation {
 
   public GMOps stroke() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-stroke");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9083,13 +8338,8 @@ public class GMOps extends Operation {
 
   public GMOps strokewidth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-strokewidth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9124,13 +8374,8 @@ public class GMOps extends Operation {
 
   public GMOps swirl() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-swirl");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9165,13 +8410,8 @@ public class GMOps extends Operation {
 
   public GMOps texture() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-texture");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9206,13 +8446,8 @@ public class GMOps extends Operation {
 
   public GMOps threshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9275,13 +8510,8 @@ public class GMOps extends Operation {
 
   public GMOps tile() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-tile");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9316,13 +8546,8 @@ public class GMOps extends Operation {
 
   public GMOps transform() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transform");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9335,13 +8560,8 @@ public class GMOps extends Operation {
 
   public GMOps transparent() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transparent");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9376,13 +8596,8 @@ public class GMOps extends Operation {
 
   public GMOps treedepth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-treedepth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9417,13 +8632,8 @@ public class GMOps extends Operation {
 
   public GMOps trim() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-trim");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9436,13 +8646,8 @@ public class GMOps extends Operation {
 
   public GMOps type() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-type");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9477,13 +8682,8 @@ public class GMOps extends Operation {
 
   public GMOps undercolor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-undercolor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9518,13 +8718,8 @@ public class GMOps extends Operation {
 
   public GMOps units() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-units");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9559,13 +8754,8 @@ public class GMOps extends Operation {
 
   public GMOps unsharp() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-unsharp");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9711,13 +8901,8 @@ public class GMOps extends Operation {
 
   public GMOps verbose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-verbose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9730,13 +8915,8 @@ public class GMOps extends Operation {
 
   public GMOps version() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-version");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9749,13 +8929,8 @@ public class GMOps extends Operation {
 
   public GMOps view() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-view");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9790,13 +8965,8 @@ public class GMOps extends Operation {
 
   public GMOps virtualPixel() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-virtual-pixel");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9831,13 +9001,8 @@ public class GMOps extends Operation {
 
   public GMOps wave() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-wave");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9900,13 +9065,8 @@ public class GMOps extends Operation {
 
   public GMOps whitePoint() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-white-point");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9969,13 +9129,8 @@ public class GMOps extends Operation {
 
   public GMOps whiteThreshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-white-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10038,13 +9193,8 @@ public class GMOps extends Operation {
 
   public GMOps write() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-write");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10079,13 +9229,8 @@ public class GMOps extends Operation {
 
   public GMOps p_write() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+write");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 

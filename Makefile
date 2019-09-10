@@ -2,7 +2,7 @@
 # Makefile for im4java
 #
 # $Author: bablokb $
-# $Revision: 1.44 $
+# $Revision: 1.45 $
 #
 # License: GPL2 (see COPYING)
 # -----------------------------------------------------------------------------
@@ -198,7 +198,7 @@ postdist:
 upload-files:
 	rsync -avP -e ssh $(DIST_DIR) bablokb,im4java@frs.sourceforge.net:$(SF_DIR)
 
-update-web: doc
+update-web: doc-clean doc
 	rsync -avP -e ssh doc/  bablokb,im4java@web.sourceforge.net:htdocs/
 
 # targets (version management)  -----------------------------------------------

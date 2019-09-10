@@ -52,13 +52,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps verbose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-v");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -71,13 +66,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps write2stdout() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-c");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -90,13 +80,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps extractThumbnail() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-e");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -109,13 +94,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps changeTimestamp() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-z");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -128,13 +108,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps identify() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-i");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -301,13 +276,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps useCameraWB() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-w");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -320,13 +290,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps useAverageWB() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-a");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -425,13 +390,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps useColorMatrix() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+M");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -444,13 +404,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps ignoreColorMatrix() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-M");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -507,13 +462,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps grayscale() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-d");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -526,13 +476,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps grayscaleRaw() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-D");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -545,13 +490,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps halfSize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-h");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -586,13 +526,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps use4ColorRGB() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-f");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -627,13 +562,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps fixedWhiteLevel() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-W");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -697,13 +627,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps depth16withGamma() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-6");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -716,13 +641,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps depth16() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-4");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -735,13 +655,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps createTIFF() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-T");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -776,13 +691,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps tilt45() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-j");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -817,13 +727,8 @@ public class DCRAWOps extends Operation {
 
   public DCRAWOps selectAllImages() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-s");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 

@@ -1,7 +1,8 @@
 /**************************************************************************
 /* This class implements an image-information object.
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2009-2013 by Bernhard Bablok (mail@bablokb.de)
+/*                            Mihaly Koles <mihaly@koles.hu>
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -25,6 +26,8 @@ import java.util.*;
 import java.io.*;
 
 import org.im4java.process.ArrayListOutputConsumer;
+import org.im4java.process.Pipe;
+import org.im4java.process.InputProvider;
 
 /**
    This class implements an image-information object. The one-argument
@@ -37,8 +40,9 @@ import org.im4java.process.ArrayListOutputConsumer;
    requested and parsed.
 
    <p>
-   Since the output of "identify -verbose" is meant as an human-readable
-   interface parsing it is inherently flawed. This implementation
+   Since the output of "identify -verbose" is meant as a human-readable
+   interface and not for parsing, this class is inherently flawed.
+   This implementation
    interprets every line with a colon as a key-value-pair. This is not
    necessarely correct, e.g. the comment-field could be multi-line with
    colons within the comment.
@@ -49,7 +53,7 @@ import org.im4java.process.ArrayListOutputConsumer;
    the wrapper for it provided by im4java.
    </p>
 
-   @version $Revision: 1.14 $
+   @version $Revision: 1.15 $
    @author  $Author: bablokb $
  
    @since 0.95
@@ -69,7 +73,7 @@ public class  Info {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     List of hashtables with image-attributes. Ther is one element for every
+     List of hashtables with image-attributes. There is one element for every
      scene in the image.
 
      @since 1.3.0
@@ -105,7 +109,28 @@ public class  Info {
   */
 
   public Info(String pImage) throws InfoException {
-    getCompleteInfo(pImage);
+    getCompleteInfo(pImage,null);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     This contstructor will automatically parse the full output
+     of identify -verbose. This version of the constructor expects an
+     InputStream as an additional parameter. The source image-name should
+     be either "-" or "format:-".
+ 
+     @param pImage  Name of the source-image
+     @param pInput  Image provided as an InputStream
+
+     @since 1.4.0
+  */
+
+  public Info(String pImage, InputStream pInput) throws InfoException {
+    if (pInput != null && !(pImage.equals("-") || pImage.endsWith(":-"))) {
+      throw new IllegalArgumentException("illegal filename for piped input");
+    }
+    getCompleteInfo(pImage,pInput);
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -120,11 +145,38 @@ public class  Info {
   */
 
   public Info(String pImage, boolean basic) throws InfoException {
-
     if (!basic) {
-      getCompleteInfo(pImage);
+      getCompleteInfo(pImage,null);
     } else {
-      getBaseInfo(pImage);
+      getBaseInfo(pImage,null);
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     This constructor creates an Info-object with basic or complete
+     image-information (depending on the third argument).  This version
+     of the constructor expects an
+     InputStream as an additional parameter. The source image-name should
+     be either "-" or "format:-".
+ 
+     @param pImage  Source image
+     @param basic   Set to true for basic information, to false for complete info
+     @param pInput  Image provided as an InputStream
+
+     @since 1.4.0
+  */
+
+  public Info(String pImage, InputStream pInput,
+                                            boolean basic) throws InfoException {
+    if (pInput != null && !(pImage.equals("-") || pImage.endsWith(":-"))) {
+      throw new IllegalArgumentException("illegal filename for piped input");
+    }
+    if (!basic) {
+      getCompleteInfo(pImage,pInput);
+    } else {
+      getBaseInfo(pImage,pInput);
     }
   }
 
@@ -134,10 +186,12 @@ public class  Info {
      Query complete image-information.
  
      @param pImage  Source image
+     @param pInput  InputStream (must not be null for pImage=="-")
      @since 1.2.0
   */
 
-  private void getCompleteInfo(String pImage) throws InfoException {
+  private void getCompleteInfo(String pImage, InputStream pInput)
+                                                          throws InfoException {
     IMOperation op = new IMOperation();
     op.verbose();
     op.addImage(pImage);
@@ -146,6 +200,10 @@ public class  Info {
       IdentifyCmd identify = new IdentifyCmd();
       ArrayListOutputConsumer output = new ArrayListOutputConsumer();
       identify.setOutputConsumer(output);
+      if (pInput != null) {
+        Pipe inputPipe = new Pipe(pInput,null);
+	identify.setInputProvider(inputPipe);
+      }
       identify.run(op);
       ArrayList<String> cmdOutput = output.getOutput();
 
@@ -260,10 +318,12 @@ public class  Info {
      Query basic image-information.
  
      @param pImage  Source image
+     @param pInput  InputStream (must not be null for pImage=="-")
+
      @since 1.2.0
   */
 
-  private void getBaseInfo(String pImage) throws InfoException {
+  private void getBaseInfo(String pImage, InputStream pInput) throws InfoException {
     // create operation
     IMOperation op = new IMOperation();
     op.ping();
@@ -275,6 +335,10 @@ public class  Info {
       IdentifyCmd identify = new IdentifyCmd();
       ArrayListOutputConsumer output = new ArrayListOutputConsumer();
       identify.setOutputConsumer(output);
+      if (pInput != null) {
+        Pipe inputPipe = new Pipe(pInput,null);
+	identify.setInputProvider(inputPipe);
+      }
       identify.run(op);
 
       // ... and parse result

@@ -74,13 +74,8 @@ public class ETOps extends Operation {
 
   public ETOps allowDuplicates() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-duplicates");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -93,13 +88,8 @@ public class ETOps extends Operation {
 
   public ETOps supressDuplicates() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--duplicates");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -112,13 +102,8 @@ public class ETOps extends Operation {
 
   public ETOps binary() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-binary");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -175,13 +160,8 @@ public class ETOps extends Operation {
 
   public ETOps decimal() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-decimal");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -194,13 +174,8 @@ public class ETOps extends Operation {
 
   public ETOps composite() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--composite");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -213,13 +188,8 @@ public class ETOps extends Operation {
 
   public ETOps escapeHTML() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-escapeHTML");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -232,13 +202,8 @@ public class ETOps extends Operation {
 
   public ETOps extractEmbedded() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-extractEmbedded");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -295,13 +260,8 @@ public class ETOps extends Operation {
 
   public ETOps forcePrint() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-forcePrint");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -336,13 +296,8 @@ public class ETOps extends Operation {
 
   public ETOps fast() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-fast");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -399,13 +354,8 @@ public class ETOps extends Operation {
 
   public ETOps htmlFormat() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-htmlFormat");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -418,13 +368,8 @@ public class ETOps extends Operation {
 
   public ETOps hex() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-hex");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -503,13 +448,8 @@ public class ETOps extends Operation {
 
   public ETOps json() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-json");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -522,13 +462,8 @@ public class ETOps extends Operation {
 
   public ETOps pause() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-pause");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -541,13 +476,8 @@ public class ETOps extends Operation {
 
   public ETOps longOutputFormat() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-long");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -560,13 +490,8 @@ public class ETOps extends Operation {
 
   public ETOps latin() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-latin");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -579,13 +504,8 @@ public class ETOps extends Operation {
 
   public ETOps list() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-list");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -598,13 +518,8 @@ public class ETOps extends Operation {
 
   public ETOps listw() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-listw");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -617,13 +532,8 @@ public class ETOps extends Operation {
 
   public ETOps listf() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-listf");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -636,13 +546,8 @@ public class ETOps extends Operation {
 
   public ETOps listwf() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-listwf");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -655,13 +560,8 @@ public class ETOps extends Operation {
 
   public ETOps listg() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-listg");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -696,13 +596,8 @@ public class ETOps extends Operation {
 
   public ETOps ignoreMinorErrors() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-ignoreMinorErrors");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -715,13 +610,8 @@ public class ETOps extends Operation {
 
   public ETOps noPrintConv() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-n");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -734,13 +624,8 @@ public class ETOps extends Operation {
 
   public ETOps printConv() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--printConv");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -775,13 +660,8 @@ public class ETOps extends Operation {
 
   public ETOps overwrite_original() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-overwrite_original");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -794,13 +674,8 @@ public class ETOps extends Operation {
 
   public ETOps overwrite_original_in_place() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-overwrite_original_in_place");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -835,13 +710,8 @@ public class ETOps extends Operation {
 
   public ETOps preserve() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-preserve");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -854,13 +724,8 @@ public class ETOps extends Operation {
 
   public ETOps quiet() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-quiet");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -873,13 +738,8 @@ public class ETOps extends Operation {
 
   public ETOps recurse() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-recurse");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -892,13 +752,8 @@ public class ETOps extends Operation {
 
   public ETOps shortOutputFormat() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-short");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -911,13 +766,8 @@ public class ETOps extends Operation {
 
   public ETOps veryShortOutputFormat() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-veryShort");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -930,13 +780,8 @@ public class ETOps extends Operation {
 
   public ETOps scanForXMP() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-scanForXMP");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -971,13 +816,8 @@ public class ETOps extends Operation {
 
   public ETOps tab() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-tab");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -990,13 +830,8 @@ public class ETOps extends Operation {
 
   public ETOps table() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-table");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1031,13 +866,8 @@ public class ETOps extends Operation {
 
   public ETOps unknown() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-unknown");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1050,13 +880,8 @@ public class ETOps extends Operation {
 
   public ETOps unknown2() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-unknown2");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1069,13 +894,8 @@ public class ETOps extends Operation {
 
   public ETOps verbose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-verbose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1088,13 +908,8 @@ public class ETOps extends Operation {
 
   public ETOps ver() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-ver");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1151,13 +966,8 @@ public class ETOps extends Operation {
 
   public ETOps xmlFormat() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-xmlFormat");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1170,13 +980,8 @@ public class ETOps extends Operation {
 
   public ETOps zip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-zip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1189,13 +994,8 @@ public class ETOps extends Operation {
 
   public ETOps common_args() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-common_args");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1208,13 +1008,8 @@ public class ETOps extends Operation {
 
   public ETOps execute() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-execute");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 

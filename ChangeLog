@@ -1,4 +1,55 @@
+2012-12-27
+
+	* version.inc: upgraded version to 1.4.0
+
+	* doc-src/xdocs/relnotes.xml: added release-notes for version 1.4.0
+
+	* doc-src/xdocs/index.xml: updated version-number to 1.4.0
+
+2012-12-21
+
+	* input/UFRawinterface.txt: updated options to ufraw 0.18
+
+	* input/JPTinterface.txt: added option -arithmetic
+
+	* bin/mk-im4java: optimized code-generation for no-arg methods
+
+	* input/IMinterface.txt: added new options
+
+	* src/org/im4java/core/Info.java: support files from an InputStream
+
+	* src/org/im4java/test/TestCase8.java: support basic-info for
+	  images via stdin
+
+	* src/org/im4java/test/TestCase8.java: support image piped via
+	  stdin
+
+2012-12-20
+
+	* src/org/im4java/process/: ArrayListConsumer.java,
+	  ArrayListErrorConsumer.java: initial entry
+
+	* src/org/im4java/process/ArrayListOutputConsumer.java: refactor
+	  code to ArrayListConsumer
+
+	* src/org/im4java/test/TestCase24.java: use ArrayListErrorConsumer
+	  instead of printing metric direct to stderr
+
+2012-12-13
+
+	* src/org/im4java/test/TestCase24.java: the test-case now accepts
+	  the metric as an argument
+
+2012-06-04
+
+	* Makefile: made doc-clean a prereq of upload-web to force
+	  recreation of docs
+
+	* version.inc: upgraded version to 1.3.3
+
 2012-06-01
+
+	* ChangeLog: upated ChangeLog for version 1.3.2
 
 	* doc-src/xdocs/relnotes.xml: added release-notes for 1.3.2
 

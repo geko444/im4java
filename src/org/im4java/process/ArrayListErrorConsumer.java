@@ -1,5 +1,5 @@
 /**************************************************************************
-/* This class is an OutputConsumer which saves the output to an ArrayList.
+/* This class is an ErrorConsumer which saves the output to an ArrayList.
 /*
 /* Copyright (c) 2009-2013 by Bernhard Bablok (mail@bablokb.de)
 /*
@@ -29,24 +29,26 @@ import java.util.ArrayList;
 
 
 /**
-   This class is an OutputConsumer which saves the output to an ArrayList.
+   This class is an ErrorConsumer which saves the output to an ArrayList.
 
-   @version $Revision: 1.5 $
+   @version $Revision: 1.1 $
    @author  $Author: bablokb $
  
-   @since 0.95
+   @since 1.4.0
 */
 
-public class ArrayListOutputConsumer extends ArrayListConsumer 
-                                                     implements OutputConsumer {
+public class ArrayListErrorConsumer extends ArrayListConsumer 
+                                                     implements ErrorConsumer {
 
   //////////////////////////////////////////////////////////////////////////////
 
   /**
      Default Constructor.
+
+     @since 1.4.0
   */
 
-  public  ArrayListOutputConsumer() {
+  public  ArrayListErrorConsumer() {
     super();
   }
 
@@ -56,9 +58,11 @@ public class ArrayListOutputConsumer extends ArrayListConsumer
      Constructor taking a charset-name as argument.
 
      @param pCharset charset-name for internal InputStreamReader
+
+     @since 1.4.0
   */
 
-  public  ArrayListOutputConsumer(String pCharset) {
+  public  ArrayListErrorConsumer(String pCharset) {
     super(pCharset);
   }
 
@@ -66,11 +70,13 @@ public class ArrayListOutputConsumer extends ArrayListConsumer
 
   /**
      Read command output and save in an internal field.
-     @see org.im4java.process.OutputConsumer#consumeOutput(java.io.InputStream)
+     @see org.im4java.process.ErrorConsumer#consumeError(java.io.InputStream)
+
+     @since 1.4.0
   */
 
 
-  public void consumeOutput(InputStream pInputStream) throws IOException {
+  public void consumeError(InputStream pInputStream) throws IOException {
     consume(pInputStream);
   }
 }

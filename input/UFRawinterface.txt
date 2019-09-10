@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.3 $
+# $Revision: 1.4 $
 #
 !validInterface=true
 !toolName=ufraw
@@ -27,11 +27,13 @@
 --contrast= Double:pContrast
 --saturation= Double:pSaturation
 --wavelet-denoising-threshold= Double:pThreshold
+--hotpixel-sensitivity= Double:pValue
 --exposure= String:pAuto
 --exposure= Double:pExposure
 --black-point= String:pAuto
 --black-point= Double:pBlack
 --interpolation= String:pType
+--color-smoothing
 --grayscale= String:pType
 --shrink= Double:pFactor
 --size= Integer:pSize
@@ -49,8 +51,10 @@
 --crop-right= Integer:pCount
 --crop-top= Integer:pCount
 --crop-bottom= Integer:pCount
+--lensfun= String:pType
 --out-path= String:pPath
 --output= String:pFilename
 --darkframe= String:pFilename
 --overwrite
+--maximize-window
 --silent

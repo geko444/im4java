@@ -1,7 +1,7 @@
 /**************************************************************************
 /* This class implements a test of the Info-class.
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2009-2013 by Bernhard Bablok (mail@bablokb.de)
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -27,7 +27,13 @@ import org.im4java.core.*;
 /**
    This class implements a test of the Info-class.
 
-   @version $Revision: 1.9 $
+   The first argument is an image filename. If the image-name is "-" or
+   "format:-", this test-case expects the file from stdin.
+
+   The second argument is either true or false and controls if the program
+   prints only basic image-information or the complete set available.
+
+   @version $Revision: 1.11 $
    @author  $Author: bablokb $
  
    @since 1.0.0
@@ -72,8 +78,39 @@ public class TestCase8 extends AbstractTestCase {
       imgName = iArgs[0];
     }
 
+    // check if basic-info is requested
+    boolean onlyBasic=false;
+    if (iArgs != null && iArgs.length > 1) {
+      onlyBasic = Boolean.parseBoolean(iArgs[1]);
+    }
+
     // create and output complete information
-    Info imageInfo = new Info(imgName);
+    if (!onlyBasic) {
+      showCompleteInfo(imgName);
+      if (imgName.equals("-") || imgName.endsWith(":-")) {
+	return;
+      }
+    }
+
+    // create and output basic information
+    showBasicInfo(imgName);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Show complete-info for a file.
+
+     @since 1.4.0
+  */
+
+  private void showCompleteInfo(String pImgName) throws InfoException {
+    Info imageInfo;
+    if (pImgName.equals("-") || pImgName.endsWith(":-")) {
+      imageInfo = new Info(pImgName,System.in);
+    } else {
+      imageInfo = new Info(pImgName);
+    }
 
     // dump all that is available
     Enumeration<String> props = imageInfo.getPropertyNames();
@@ -106,12 +143,26 @@ public class TestCase8 extends AbstractTestCase {
 
     // check that basic information is also available
     dumpBasicInfo(imageInfo);
-    System.out.println("\n==================================");
-    System.out.println("basic information (base only)");
-    System.out.println("==================================\n");
+  }
 
-    // create and output basic information
-    imageInfo = new Info(imgName,true);
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Show basic-info for a file.
+
+     @since 1.4.0
+  */
+
+  private void showBasicInfo(String pImgName) throws InfoException {
+    System.out.println("\n=================");
+    System.out.println("basic information");
+    System.out.println("=================\n");
+    Info imageInfo;
+    if (pImgName.equals("-") || pImgName.endsWith(":-")) {
+      imageInfo = new Info(pImgName,System.in,true);
+    } else {
+      imageInfo = new Info(pImgName,true);
+    }
     dumpBasicInfo(imageInfo);
   }
 

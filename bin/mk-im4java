@@ -4,7 +4,7 @@
 # interface-definition-file
 #
 # $Author: bablokb $
-# $Revision: 1.33 $
+# $Revision: 1.34 $
 #
 # License: GPL2
 # -----------------------------------------------------------------------------
@@ -245,10 +245,12 @@ EOF
   echo -e ") {\n"
 
   # add start of code
-  cat  <<EOF
+  if [ $maxArgs -gt 0 ]; then
+    cat  <<EOF
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
 EOF
+  fi
 
   if [ "$optionType" = "short" -a $attachVarToOption -eq 0 ]; then
     echo -e "    iCmdArgs.add(\"$optionName\");\n"
@@ -277,9 +279,12 @@ writeMethodBody() {
 # write method-tail   ---------------------------------------------------------
 
 writeMethodTail() {
-  echo -e "    if (buf.length()>0) {"
-  echo -e "      iCmdArgs.add(buf.toString());"
-  echo -e "    }"
+  local maxArgs="$1"
+  if [ $maxArgs -gt 0 ]; then
+    echo -e "    if (buf.length()>0) {"
+    echo -e "      iCmdArgs.add(buf.toString());"
+    echo -e "    }"
+  fi
   echo -e "    return this;\n  }\n"
 }
 

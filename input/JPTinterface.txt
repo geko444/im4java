@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.3 $
+# $Revision: 1.4 $
 #
 !validInterface=true
 !toolName=jpegtran
@@ -31,4 +31,5 @@
 -outfile String:pFilename
 -verbose
 -debug
+-arithmetic
 -scans String:pFilename

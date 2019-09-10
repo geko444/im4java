@@ -21,6 +21,8 @@
 
 package org.im4java.test;
 
+import java.util.*;
+
 import org.im4java.core.*;
 import org.im4java.process.*;
 import org.im4java.utils.*;
@@ -28,7 +30,7 @@ import org.im4java.utils.*;
 /**
    This class implements a test for the IM compare command.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
  
    @since 1.3.0
@@ -66,6 +68,12 @@ public class TestCase24 extends AbstractTestCase {
 
   public void run() throws Exception {
     System.err.println(" 24. Testing compare ...");
+
+    String metric="RMSE";   // root mean squared (normalized root mean squared)
+    if (iArgs != null && iArgs.length > 0) {
+      metric = iArgs[0];    // alternative metric passed in as argument
+    }
+
     IMOperation op = new IMOperation();
 
     // sharpen the firelily
@@ -75,18 +83,28 @@ public class TestCase24 extends AbstractTestCase {
     ConvertCmd convert = new ConvertCmd();
     convert.run(op);
 
-    // run the diff
+    // run the diff (metric-output goes to stderr)
     CompareCmd  compare = new CompareCmd();
-    compare.setErrorConsumer(StandardStream.STDERR);  // for metric-output
+    ArrayListErrorConsumer errorConsumer = new ArrayListErrorConsumer();
+    compare.setErrorConsumer(errorConsumer);
+
     IMOperation cmpOp = new IMOperation();
     cmpOp.addImage();
     cmpOp.addImage();
-    cmpOp.metric("RMSE");  // root mean squared (normalized root mean squared)
+    cmpOp.metric(metric);
     cmpOp.addImage();
+    System.err.print(metric + ": ");
     compare.run(cmpOp,iImageDir+"firelily.jpg",
                       iImageDir+"firelily-sharpen.jpg",
                       iImageDir+"firelily-diff.jpg");
 
+    // dump output
+    ArrayList<String> cmdOutput = errorConsumer.getOutput();
+    for (String line:cmdOutput) {
+      System.out.println(line);
+    }
+
+    // show diff-image
     DisplayCmd.show(iImageDir+"firelily-diff.jpg");
   }
 }

@@ -5,7 +5,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.11 $
+  $Revision: 1.13 $
   $Author: bablokb $
 -->
 
@@ -17,6 +17,30 @@
     <note>
       For a detailed list of changes, have a look at the ChangeLog.
     </note>
+
+    <section id="R_1_4_0">
+      <title>Release 1.4.0</title>
+      <ul>
+	<li>
+	  Added class <code>ArrayListErrorConsumer</code>. This class
+	  is useful to catch the metric-output of the
+	  <code>compare</code>-command.
+	</li>
+	<li>
+	  The <code>Info</code>-class now also accepts images from an
+	  <code>InputStream</code>. Thanks to Mihaly Koles for
+	  suggesting this change and for providing an initial
+	  implementation.
+	</li>
+	<li>Updated interfaces for ufraw, jpegtran and
+	  ImageMagick. Since the last release, there were 27 (!) new
+	  ImageMagick-options.
+	</li>
+	<li>Optimized code-generation (removed unnessary code from
+	  methods without arguments).
+	</li>
+      </ul>
+    </section>
 
     <section id="R_1_3_2">
       <title>Release 1.3.2</title>

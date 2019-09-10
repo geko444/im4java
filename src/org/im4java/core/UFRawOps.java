@@ -376,6 +376,28 @@ public class UFRawOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option --hotpixel-sensitivity= to the ufraw commandline
+     (see the documentation of ufraw for details).
+  */
+
+  public UFRawOps hotpixelSensitivity(Double pValue) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    buf.append("--hotpixel-sensitivity=");
+
+    if (pValue != null) {
+      buf.append(pValue.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option --exposure= to the ufraw commandline
      (see the documentation of ufraw for details).
   */
@@ -436,6 +458,20 @@ public class UFRawOps extends Operation {
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option --color-smoothing to the ufraw commandline
+     (see the documentation of ufraw for details).
+  */
+
+  public UFRawOps colorSmoothing() {
+
+    iCmdArgs.add("--color-smoothing");
+
     return this;
   }
 
@@ -602,13 +638,8 @@ public class UFRawOps extends Operation {
 
   public UFRawOps exif() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--exif");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -621,13 +652,8 @@ public class UFRawOps extends Operation {
 
   public UFRawOps noexif() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--noexif");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -640,13 +666,8 @@ public class UFRawOps extends Operation {
 
   public UFRawOps zip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--zip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -659,13 +680,8 @@ public class UFRawOps extends Operation {
 
   public UFRawOps nozip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--nozip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -678,13 +694,8 @@ public class UFRawOps extends Operation {
 
   public UFRawOps embeddedImage() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--embedded-image");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -801,6 +812,28 @@ public class UFRawOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option --lensfun= to the ufraw commandline
+     (see the documentation of ufraw for details).
+  */
+
+  public UFRawOps lensfun(String pType) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    buf.append("--lensfun=");
+
+    if (pType != null) {
+      buf.append(pType.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option --out-path= to the ufraw commandline
      (see the documentation of ufraw for details).
   */
@@ -873,13 +906,22 @@ public class UFRawOps extends Operation {
 
   public UFRawOps overwrite() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--overwrite");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option --maximize-window to the ufraw commandline
+     (see the documentation of ufraw for details).
+  */
+
+  public UFRawOps maximizeWindow() {
+
+    iCmdArgs.add("--maximize-window");
+
     return this;
   }
 
@@ -892,13 +934,8 @@ public class UFRawOps extends Operation {
 
   public UFRawOps silent() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("--silent");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 

@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.22 $
+# $Revision: 1.23 $
 #
 !toolName=ImageMagick
 #
@@ -26,6 +26,8 @@
                +append
                -attenuate Double:value
                -authenticate String:password
+               -auto-gamma
+               -auto-level
                -auto-orient
                -average
                -backdrop String:color
@@ -36,16 +38,20 @@
                -black-point-compensation
                -black-threshold Double:threshold @ Boolean:percent
                -blue-primary Double:x , Double:y
+               -blue-shift Double:factor
                -blur Double:radius x Double:sigma
                -bordercolor String:color
                -border Integer:width x Integer:height
                -borderwidth Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
+               -brightness-contrast Double:brightness x Double:contrast @ Boolean:percent
                -cache Double:threshold
                -caption String:text
+               -cdl String:filename
                +channel
                -channel String:type
                -charcoal Integer:factor
                -chop Integer:width x Integer:height + Integer:x + Integer:y @ Boolean:percent
+               -clamp
                -clip
                -clip-mask
                -clip-path String:id
@@ -88,6 +94,7 @@
                -descend
                -deskew Double:threshold
                -despeckle
+               -direction String:type
                -displace Double:horizontalScale x Double:verticalScale
                -display String:host : Integer:display . Integer:screen
                +dispose
@@ -99,6 +106,8 @@
                +dither
                -dither String:method
                -draw String:string
+               -duplicate Integer:count , String:indices
+               +duplicate
                -edge Double:radius
                -emboss Double:radius
                -encipher String:filename
@@ -108,8 +117,12 @@
                -enhance
                -equalize
                -evaluate String:operator _ String:constant
+               -evaluate-sequence String:operator
                -extent Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -extract Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
+               -family String:fontFamily
+               -features String:distance
+               -fft
                -fill String:color
                -filter String:type
                -flatten
@@ -120,6 +133,7 @@
                -foreground String:color
                -format String:type
                -frame Integer:width x Integer:height + Integer:outerBevelWidth + Integer:innerBevelWidth
+               -function String:name _ String:parameter
                -fuzz Double:distance @ Boolean:percent
                -fx String:expression
                -gamma Double:value
@@ -134,13 +148,15 @@
                -iconGeometry Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -iconic
                -identify
+               -ift
                -immutable
                -implode Double:factor
                -insert Integer:index
                -intent String:type
                -interlace String:type
+               -interline-spacing Double:value
                -interpolate String:type
-               -interword-spacing Integer:value
+               -interword-spacing Double:value
                -kerning Integer:value
                +label
                -label String:name
@@ -171,6 +187,7 @@
                -monitor
                -monochrome
                -morph Integer:frames
+               -morphology String:method _ String:kernel
                -mosaic
                -motion-blur Double:radius x Double:sigma + Double:angle
                -name
@@ -190,11 +207,14 @@
                -path String:path
                -passphrase String:filename
                -pause Integer:seconds
+               -perceptible Double:epsilon
                -ping
                -pointsize Integer:value
                -polaroid Double:angle
                +polaroid
+               -poly String:args
                -posterize Integer:levels
+               -precision Integer:digits
                -preview String:type
                -print String:text
                -process String:command
@@ -228,6 +248,7 @@
                -rotate Double:degrees @ Character:special
                -sample Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -sampling-factor Double:horizontalFactor x Double:verticalFactor
+               -selective-blur Double:radius x Double:sigma + Double:threshold
                -sparse-color String:method _ String:cinfo
                -scale Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -scene Integer:value
@@ -249,16 +270,20 @@
                -silent
                -size Integer:width x Integer:height + Integer:offset
                -sketch Double:radius x Double:sigma + Double:angle
+               -smush Integer:offset
                -snaps Integer:value
                -solarize Double:threshold
                -splice Double:width x Double:height + Double:x + Double:y @ Boolean:percent
                -spread Integer:amount
                -stegano Integer:offset
                -stereo Integer:x + Integer:y
+               -statistic String:type _ Integer:width x Integer:height + Integer:x + Integer:y @ String:special
                -storage-type String:type
+               -stretch String:fontStretchType
                -strip
                -stroke String:color
                -strokewidth Integer:value
+               -style String:fontStyle
                -subimage-search
                +swap
                -swap Integer:pos1 , Integer:pos2
@@ -296,6 +321,8 @@
                -visual String:type
                -watermark Double:brightness
                -wave Double:amplitude x Double:wavelength
+               -weight String:fontWeight
+               -weight Integer:fontWeight
                -white-point Double:x , Double:y
                -white-threshold Double:threshold @ Boolean:percent
                -window-group

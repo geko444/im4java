@@ -52,13 +52,8 @@ public class IMOps extends Operation {
 
   public IMOps adaptiveBlur() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-adaptive-blur");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -121,13 +116,8 @@ public class IMOps extends Operation {
 
   public IMOps adaptiveResize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-adaptive-resize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -256,13 +246,8 @@ public class IMOps extends Operation {
 
   public IMOps adaptiveSharpen() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-adaptive-sharpen");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -325,13 +310,8 @@ public class IMOps extends Operation {
 
   public IMOps adjoin() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-adjoin");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -344,13 +324,8 @@ public class IMOps extends Operation {
 
   public IMOps p_adjoin() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+adjoin");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -363,13 +338,8 @@ public class IMOps extends Operation {
 
   public IMOps affine() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-affine");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -604,13 +574,8 @@ public class IMOps extends Operation {
 
   public IMOps alpha() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-alpha");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -645,13 +610,8 @@ public class IMOps extends Operation {
 
   public IMOps annotate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-annotate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -850,13 +810,8 @@ public class IMOps extends Operation {
 
   public IMOps antialias() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-antialias");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -869,13 +824,8 @@ public class IMOps extends Operation {
 
   public IMOps p_antialias() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+antialias");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -888,13 +838,8 @@ public class IMOps extends Operation {
 
   public IMOps append() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-append");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -907,13 +852,8 @@ public class IMOps extends Operation {
 
   public IMOps p_append() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+append");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -926,13 +866,8 @@ public class IMOps extends Operation {
 
   public IMOps attenuate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-attenuate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -967,13 +902,8 @@ public class IMOps extends Operation {
 
   public IMOps authenticate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-authenticate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1002,19 +932,42 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -auto-gamma to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps autoGamma() {
+
+    iCmdArgs.add("-auto-gamma");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -auto-level to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps autoLevel() {
+
+    iCmdArgs.add("-auto-level");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -auto-orient to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps autoOrient() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-auto-orient");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1027,13 +980,8 @@ public class IMOps extends Operation {
 
   public IMOps average() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-average");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1046,13 +994,8 @@ public class IMOps extends Operation {
 
   public IMOps backdrop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-backdrop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1087,13 +1030,8 @@ public class IMOps extends Operation {
 
   public IMOps background() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-background");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1128,13 +1066,8 @@ public class IMOps extends Operation {
 
   public IMOps bench() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-bench");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1169,13 +1102,8 @@ public class IMOps extends Operation {
 
   public IMOps blend() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-blend");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1238,13 +1166,8 @@ public class IMOps extends Operation {
 
   public IMOps bias() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-bias");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1307,13 +1230,8 @@ public class IMOps extends Operation {
 
   public IMOps blackPointCompensation() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-black-point-compensation");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1326,13 +1244,8 @@ public class IMOps extends Operation {
 
   public IMOps blackThreshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-black-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1395,13 +1308,8 @@ public class IMOps extends Operation {
 
   public IMOps bluePrimary() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-blue-primary");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1458,19 +1366,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -blue-shift to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps blueShift() {
+
+    iCmdArgs.add("-blue-shift");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -blue-shift to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps blueShift(Double factor) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-blue-shift");
+
+    if (factor != null) {
+      buf.append(factor.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -blur to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps blur() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-blur");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1533,13 +1472,8 @@ public class IMOps extends Operation {
 
   public IMOps bordercolor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-bordercolor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1574,13 +1508,8 @@ public class IMOps extends Operation {
 
   public IMOps border() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-border");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1643,13 +1572,8 @@ public class IMOps extends Operation {
 
   public IMOps borderwidth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-borderwidth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1789,19 +1713,112 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -brightness-contrast to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps brightnessContrast() {
+
+    iCmdArgs.add("-brightness-contrast");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -brightness-contrast to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps brightnessContrast(Double brightness) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-brightness-contrast");
+
+    if (brightness != null) {
+      buf.append(brightness.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -brightness-contrast to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps brightnessContrast(Double brightness, Double contrast) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-brightness-contrast");
+
+    if (brightness != null) {
+      buf.append(brightness.toString());
+    }
+    if (brightness != null || contrast != null) {
+      buf.append("x");
+    }
+    if (contrast != null) {
+      buf.append(contrast.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -brightness-contrast to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps brightnessContrast(Double brightness, Double contrast, Boolean percent) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-brightness-contrast");
+
+    if (brightness != null) {
+      buf.append(brightness.toString());
+    }
+    if (brightness != null || contrast != null) {
+      buf.append("x");
+    }
+    if (contrast != null) {
+      buf.append(contrast.toString());
+    }
+    if (contrast != null || percent != null) {
+    }
+    if (percent != null) {
+      if (percent.booleanValue())
+        buf.append("%");
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -cache to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps cache() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-cache");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1836,13 +1853,8 @@ public class IMOps extends Operation {
 
   public IMOps caption() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-caption");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1871,19 +1883,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -cdl to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps cdl() {
+
+    iCmdArgs.add("-cdl");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -cdl to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps cdl(String filename) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-cdl");
+
+    if (filename != null) {
+      buf.append(filename.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option +channel to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps p_channel() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+channel");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1896,13 +1939,8 @@ public class IMOps extends Operation {
 
   public IMOps channel() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-channel");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1937,13 +1975,8 @@ public class IMOps extends Operation {
 
   public IMOps charcoal() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-charcoal");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -1978,13 +2011,8 @@ public class IMOps extends Operation {
 
   public IMOps chop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-chop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2176,19 +2204,28 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -clamp to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps clamp() {
+
+    iCmdArgs.add("-clamp");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -clip to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps clip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2201,13 +2238,8 @@ public class IMOps extends Operation {
 
   public IMOps clipMask() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clip-mask");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2220,13 +2252,8 @@ public class IMOps extends Operation {
 
   public IMOps clipPath() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clip-path");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2261,13 +2288,8 @@ public class IMOps extends Operation {
 
   public IMOps p_clipPath() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+clip-path");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2302,13 +2324,8 @@ public class IMOps extends Operation {
 
   public IMOps p_clone() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+clone");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2321,13 +2338,8 @@ public class IMOps extends Operation {
 
   public IMOps clone() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clone");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2446,13 +2458,8 @@ public class IMOps extends Operation {
 
   public IMOps clut() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clut");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2465,13 +2472,8 @@ public class IMOps extends Operation {
 
   public IMOps coalesce() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-coalesce");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2484,13 +2486,8 @@ public class IMOps extends Operation {
 
   public IMOps colorize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-colorize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2587,13 +2584,8 @@ public class IMOps extends Operation {
 
   public IMOps colormap() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-colormap");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2628,13 +2620,8 @@ public class IMOps extends Operation {
 
   public IMOps colorMatrix() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-color-matrix");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2669,13 +2656,8 @@ public class IMOps extends Operation {
 
   public IMOps colors() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-colors");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2710,13 +2692,8 @@ public class IMOps extends Operation {
 
   public IMOps colorspace() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-colorspace");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2751,13 +2728,8 @@ public class IMOps extends Operation {
 
   public IMOps combine() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-combine");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2770,13 +2742,8 @@ public class IMOps extends Operation {
 
   public IMOps comment() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-comment");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2811,13 +2778,8 @@ public class IMOps extends Operation {
 
   public IMOps compose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-compose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2852,13 +2814,8 @@ public class IMOps extends Operation {
 
   public IMOps composite() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-composite");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2871,13 +2828,8 @@ public class IMOps extends Operation {
 
   public IMOps p_compress() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+compress");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2890,13 +2842,8 @@ public class IMOps extends Operation {
 
   public IMOps compress() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-compress");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2931,13 +2878,8 @@ public class IMOps extends Operation {
 
   public IMOps contrast() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-contrast");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2950,13 +2892,8 @@ public class IMOps extends Operation {
 
   public IMOps p_contrast() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+contrast");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -2969,13 +2906,8 @@ public class IMOps extends Operation {
 
   public IMOps contrastStretch() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-contrast-stretch");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -3072,13 +3004,8 @@ public class IMOps extends Operation {
 
   public IMOps convolve() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-convolve");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4163,13 +4090,8 @@ public class IMOps extends Operation {
 
   public IMOps crop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-crop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4417,13 +4339,8 @@ public class IMOps extends Operation {
 
   public IMOps cycle() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-cycle");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4458,13 +4375,8 @@ public class IMOps extends Operation {
 
   public IMOps p_debug() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+debug");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4477,13 +4389,8 @@ public class IMOps extends Operation {
 
   public IMOps debug() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-debug");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4518,13 +4425,8 @@ public class IMOps extends Operation {
 
   public IMOps decipher() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-decipher");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4559,13 +4461,8 @@ public class IMOps extends Operation {
 
   public IMOps deconstruct() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-deconstruct");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4578,13 +4475,8 @@ public class IMOps extends Operation {
 
   public IMOps p_define() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+define");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4619,13 +4511,8 @@ public class IMOps extends Operation {
 
   public IMOps define() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-define");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4660,13 +4547,8 @@ public class IMOps extends Operation {
 
   public IMOps delay() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-delay");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4762,13 +4644,8 @@ public class IMOps extends Operation {
 
   public IMOps p_delete() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+delete");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4781,13 +4658,8 @@ public class IMOps extends Operation {
 
   public IMOps delete() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-delete");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4906,13 +4778,8 @@ public class IMOps extends Operation {
 
   public IMOps density() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-density");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -4975,13 +4842,8 @@ public class IMOps extends Operation {
 
   public IMOps depth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-depth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5016,13 +4878,8 @@ public class IMOps extends Operation {
 
   public IMOps descend() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-descend");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5035,13 +4892,8 @@ public class IMOps extends Operation {
 
   public IMOps deskew() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-deskew");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5076,10 +4928,41 @@ public class IMOps extends Operation {
 
   public IMOps despeckle() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-despeckle");
 
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -direction to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps direction() {
+
+    iCmdArgs.add("-direction");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -direction to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps direction(String type) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-direction");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }
@@ -5095,13 +4978,8 @@ public class IMOps extends Operation {
 
   public IMOps displace() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-displace");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5164,13 +5042,8 @@ public class IMOps extends Operation {
 
   public IMOps display() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-display");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5267,13 +5140,8 @@ public class IMOps extends Operation {
 
   public IMOps p_dispose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+dispose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5286,13 +5154,8 @@ public class IMOps extends Operation {
 
   public IMOps dispose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-dispose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5327,13 +5190,8 @@ public class IMOps extends Operation {
 
   public IMOps dissimilarityThreshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-dissimilarity-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5368,13 +5226,8 @@ public class IMOps extends Operation {
 
   public IMOps dissolve() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-dissolve");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5409,13 +5262,8 @@ public class IMOps extends Operation {
 
   public IMOps distort() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-distort");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5479,13 +5327,8 @@ public class IMOps extends Operation {
 
   public IMOps p_distort() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+distort");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5549,13 +5392,8 @@ public class IMOps extends Operation {
 
   public IMOps p_dither() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+dither");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5568,13 +5406,8 @@ public class IMOps extends Operation {
 
   public IMOps dither() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-dither");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5609,13 +5442,8 @@ public class IMOps extends Operation {
 
   public IMOps draw() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-draw");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5644,19 +5472,92 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -duplicate to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps duplicate() {
+
+    iCmdArgs.add("-duplicate");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -duplicate to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps duplicate(Integer count) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-duplicate");
+
+    if (count != null) {
+      buf.append(count.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -duplicate to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps duplicate(Integer count, String indices) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-duplicate");
+
+    if (count != null) {
+      buf.append(count.toString());
+    }
+    if (count != null || indices != null) {
+      buf.append(",");
+    }
+    if (indices != null) {
+      buf.append(indices.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option +duplicate to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps p_duplicate() {
+
+    iCmdArgs.add("+duplicate");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -edge to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps edge() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-edge");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5691,13 +5592,8 @@ public class IMOps extends Operation {
 
   public IMOps emboss() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-emboss");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5732,13 +5628,8 @@ public class IMOps extends Operation {
 
   public IMOps encipher() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-encipher");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5773,13 +5664,8 @@ public class IMOps extends Operation {
 
   public IMOps encoding() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-encoding");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5814,13 +5700,8 @@ public class IMOps extends Operation {
 
   public IMOps p_endian() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+endian");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5833,13 +5714,8 @@ public class IMOps extends Operation {
 
   public IMOps endian() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-endian");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5874,13 +5750,8 @@ public class IMOps extends Operation {
 
   public IMOps enhance() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-enhance");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5893,13 +5764,8 @@ public class IMOps extends Operation {
 
   public IMOps equalize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-equalize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5912,13 +5778,8 @@ public class IMOps extends Operation {
 
   public IMOps evaluate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-evaluate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -5976,19 +5837,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -evaluate-sequence to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps evaluateSequence() {
+
+    iCmdArgs.add("-evaluate-sequence");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -evaluate-sequence to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps evaluateSequence(String operator) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-evaluate-sequence");
+
+    if (operator != null) {
+      buf.append(operator.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -extent to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps extent() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-extent");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6134,13 +6026,8 @@ public class IMOps extends Operation {
 
   public IMOps extract() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-extract");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6280,19 +6167,100 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -family to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps family() {
+
+    iCmdArgs.add("-family");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -family to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps family(String fontFamily) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-family");
+
+    if (fontFamily != null) {
+      buf.append(fontFamily.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -features to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps features() {
+
+    iCmdArgs.add("-features");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -features to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps features(String distance) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-features");
+
+    if (distance != null) {
+      buf.append(distance.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -fft to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps fft() {
+
+    iCmdArgs.add("-fft");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -fill to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps fill() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-fill");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6327,13 +6295,8 @@ public class IMOps extends Operation {
 
   public IMOps filter() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-filter");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6368,13 +6331,8 @@ public class IMOps extends Operation {
 
   public IMOps flatten() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-flatten");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6387,13 +6345,8 @@ public class IMOps extends Operation {
 
   public IMOps flip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-flip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6406,13 +6359,8 @@ public class IMOps extends Operation {
 
   public IMOps floodfill() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-floodfill");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6528,13 +6476,8 @@ public class IMOps extends Operation {
 
   public IMOps flop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-flop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6547,13 +6490,8 @@ public class IMOps extends Operation {
 
   public IMOps font() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-font");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6588,13 +6526,8 @@ public class IMOps extends Operation {
 
   public IMOps foreground() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-foreground");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6629,13 +6562,8 @@ public class IMOps extends Operation {
 
   public IMOps format() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-format");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6670,13 +6598,8 @@ public class IMOps extends Operation {
 
   public IMOps frame() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-frame");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6816,19 +6739,79 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -function to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps function() {
+
+    iCmdArgs.add("-function");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -function to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps function(String name) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-function");
+
+    if (name != null) {
+      buf.append(name.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -function to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps function(String name, String parameter) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-function");
+
+    if (name != null) {
+      buf.append(name.toString());
+    }
+    if (name != null || parameter != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (parameter != null) {
+      buf.append(parameter.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -fuzz to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps fuzz() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-fuzz");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6891,13 +6874,8 @@ public class IMOps extends Operation {
 
   public IMOps fx() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-fx");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6932,13 +6910,8 @@ public class IMOps extends Operation {
 
   public IMOps gamma() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-gamma");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -6973,13 +6946,8 @@ public class IMOps extends Operation {
 
   public IMOps p_gamma() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+gamma");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7014,13 +6982,8 @@ public class IMOps extends Operation {
 
   public IMOps gaussianBlur() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-gaussian-blur");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7083,13 +7046,8 @@ public class IMOps extends Operation {
 
   public IMOps geometry() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-geometry");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7235,13 +7193,8 @@ public class IMOps extends Operation {
 
   public IMOps gravity() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-gravity");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7276,13 +7229,8 @@ public class IMOps extends Operation {
 
   public IMOps greenPrimary() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-green-primary");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7345,13 +7293,8 @@ public class IMOps extends Operation {
 
   public IMOps help() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-help");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7364,13 +7307,8 @@ public class IMOps extends Operation {
 
   public IMOps haldClut() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-hald-clut");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7383,13 +7321,8 @@ public class IMOps extends Operation {
 
   public IMOps highlightColor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-highlight-color");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7424,13 +7357,8 @@ public class IMOps extends Operation {
 
   public IMOps iconGeometry() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-iconGeometry");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7576,13 +7504,8 @@ public class IMOps extends Operation {
 
   public IMOps iconic() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-iconic");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7595,13 +7518,22 @@ public class IMOps extends Operation {
 
   public IMOps identify() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-identify");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -ift to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps ift() {
+
+    iCmdArgs.add("-ift");
+
     return this;
   }
 
@@ -7614,13 +7546,8 @@ public class IMOps extends Operation {
 
   public IMOps immutable() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-immutable");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7633,13 +7560,8 @@ public class IMOps extends Operation {
 
   public IMOps implode() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-implode");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7674,13 +7596,8 @@ public class IMOps extends Operation {
 
   public IMOps insert() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-insert");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7715,13 +7632,8 @@ public class IMOps extends Operation {
 
   public IMOps intent() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-intent");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7756,13 +7668,8 @@ public class IMOps extends Operation {
 
   public IMOps interlace() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-interlace");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7791,19 +7698,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -interline-spacing to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps interlineSpacing() {
+
+    iCmdArgs.add("-interline-spacing");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -interline-spacing to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps interlineSpacing(Double value) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-interline-spacing");
+
+    if (value != null) {
+      buf.append(value.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -interpolate to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps interpolate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-interpolate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7838,13 +7776,8 @@ public class IMOps extends Operation {
 
   public IMOps interwordSpacing() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-interword-spacing");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7855,7 +7788,7 @@ public class IMOps extends Operation {
      (see the documentation of ImageMagick for details).
   */
 
-  public IMOps interwordSpacing(Integer value) {
+  public IMOps interwordSpacing(Double value) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
@@ -7879,13 +7812,8 @@ public class IMOps extends Operation {
 
   public IMOps kerning() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-kerning");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7920,13 +7848,8 @@ public class IMOps extends Operation {
 
   public IMOps p_label() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+label");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7939,13 +7862,8 @@ public class IMOps extends Operation {
 
   public IMOps label() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-label");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -7980,13 +7898,8 @@ public class IMOps extends Operation {
 
   public IMOps lat() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-lat");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8129,13 +8042,8 @@ public class IMOps extends Operation {
 
   public IMOps layers() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-layers");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8170,13 +8078,8 @@ public class IMOps extends Operation {
 
   public IMOps levelColors() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-level-colors");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8239,13 +8142,8 @@ public class IMOps extends Operation {
 
   public IMOps p_levelColors() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+level-colors");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8308,13 +8206,8 @@ public class IMOps extends Operation {
 
   public IMOps level() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-level");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8451,13 +8344,8 @@ public class IMOps extends Operation {
 
   public IMOps p_level() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+level");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8594,13 +8482,8 @@ public class IMOps extends Operation {
 
   public IMOps limit() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-limit");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8635,13 +8518,8 @@ public class IMOps extends Operation {
 
   public IMOps linearStretch() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-linear-stretch");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8738,13 +8616,8 @@ public class IMOps extends Operation {
 
   public IMOps linewidth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-linewidth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8757,13 +8630,8 @@ public class IMOps extends Operation {
 
   public IMOps liquidRescale() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-liquid-rescale");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8909,13 +8777,8 @@ public class IMOps extends Operation {
 
   public IMOps list() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-list");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8950,13 +8813,8 @@ public class IMOps extends Operation {
 
   public IMOps log() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-log");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -8991,13 +8849,8 @@ public class IMOps extends Operation {
 
   public IMOps loop() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-loop");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9032,13 +8885,8 @@ public class IMOps extends Operation {
 
   public IMOps lowlightColor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-lowlight-color");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9073,13 +8921,8 @@ public class IMOps extends Operation {
 
   public IMOps magnify() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-magnify");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9114,13 +8957,8 @@ public class IMOps extends Operation {
 
   public IMOps p_map() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+map");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9133,13 +8971,8 @@ public class IMOps extends Operation {
 
   public IMOps map() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-map");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9174,13 +9007,8 @@ public class IMOps extends Operation {
 
   public IMOps p_mask() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+mask");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9193,13 +9021,8 @@ public class IMOps extends Operation {
 
   public IMOps mask() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-mask");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9234,13 +9057,8 @@ public class IMOps extends Operation {
 
   public IMOps mattecolor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-mattecolor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9275,13 +9093,8 @@ public class IMOps extends Operation {
 
   public IMOps median() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-median");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9316,13 +9129,8 @@ public class IMOps extends Operation {
 
   public IMOps metric() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-metric");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9357,13 +9165,8 @@ public class IMOps extends Operation {
 
   public IMOps mode() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-mode");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9398,13 +9201,8 @@ public class IMOps extends Operation {
 
   public IMOps modulate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-modulate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9501,13 +9299,8 @@ public class IMOps extends Operation {
 
   public IMOps monitor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-monitor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9520,13 +9313,8 @@ public class IMOps extends Operation {
 
   public IMOps monochrome() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-monochrome");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9539,13 +9327,8 @@ public class IMOps extends Operation {
 
   public IMOps morph() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-morph");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9574,19 +9357,79 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -morphology to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps morphology() {
+
+    iCmdArgs.add("-morphology");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -morphology to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps morphology(String method) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-morphology");
+
+    if (method != null) {
+      buf.append(method.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -morphology to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps morphology(String method, String kernel) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-morphology");
+
+    if (method != null) {
+      buf.append(method.toString());
+    }
+    if (method != null || kernel != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (kernel != null) {
+      buf.append(kernel.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -mosaic to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps mosaic() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-mosaic");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9599,13 +9442,8 @@ public class IMOps extends Operation {
 
   public IMOps motionBlur() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-motion-blur");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9705,13 +9543,8 @@ public class IMOps extends Operation {
 
   public IMOps name() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-name");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9724,13 +9557,8 @@ public class IMOps extends Operation {
 
   public IMOps negate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-negate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9743,13 +9571,8 @@ public class IMOps extends Operation {
 
   public IMOps p_negate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+negate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9762,13 +9585,8 @@ public class IMOps extends Operation {
 
   public IMOps noise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-noise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9803,13 +9621,8 @@ public class IMOps extends Operation {
 
   public IMOps p_noise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+noise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9844,13 +9657,8 @@ public class IMOps extends Operation {
 
   public IMOps normalize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-normalize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9863,13 +9671,8 @@ public class IMOps extends Operation {
 
   public IMOps opaque() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-opaque");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9904,13 +9707,8 @@ public class IMOps extends Operation {
 
   public IMOps p_opaque() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+opaque");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -9945,13 +9743,8 @@ public class IMOps extends Operation {
 
   public IMOps orderedDither() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-ordered-dither");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10014,13 +9807,8 @@ public class IMOps extends Operation {
 
   public IMOps orient() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-orient");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10055,13 +9843,8 @@ public class IMOps extends Operation {
 
   public IMOps p_page() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+page");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10074,13 +9857,8 @@ public class IMOps extends Operation {
 
   public IMOps page() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-page");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10328,13 +10106,8 @@ public class IMOps extends Operation {
 
   public IMOps paint() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-paint");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10369,13 +10142,8 @@ public class IMOps extends Operation {
 
   public IMOps path() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-path");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10410,13 +10178,8 @@ public class IMOps extends Operation {
 
   public IMOps passphrase() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-passphrase");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10451,13 +10214,8 @@ public class IMOps extends Operation {
 
   public IMOps pause() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-pause");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10486,19 +10244,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -perceptible to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps perceptible() {
+
+    iCmdArgs.add("-perceptible");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -perceptible to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps perceptible(Double epsilon) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-perceptible");
+
+    if (epsilon != null) {
+      buf.append(epsilon.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -ping to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps ping() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-ping");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10511,13 +10300,8 @@ public class IMOps extends Operation {
 
   public IMOps pointsize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-pointsize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10552,13 +10336,8 @@ public class IMOps extends Operation {
 
   public IMOps polaroid() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-polaroid");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10593,10 +10372,41 @@ public class IMOps extends Operation {
 
   public IMOps p_polaroid() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+polaroid");
 
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -poly to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps poly() {
+
+    iCmdArgs.add("-poly");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -poly to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps poly(String args) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-poly");
+
+    if (args != null) {
+      buf.append(args.toString());
+    }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }
@@ -10612,13 +10422,8 @@ public class IMOps extends Operation {
 
   public IMOps posterize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-posterize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10647,19 +10452,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -precision to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps precision() {
+
+    iCmdArgs.add("-precision");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -precision to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps precision(Integer digits) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-precision");
+
+    if (digits != null) {
+      buf.append(digits.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -preview to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps preview() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-preview");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10694,13 +10530,8 @@ public class IMOps extends Operation {
 
   public IMOps print() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-print");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10735,13 +10566,8 @@ public class IMOps extends Operation {
 
   public IMOps process() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-process");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10776,13 +10602,8 @@ public class IMOps extends Operation {
 
   public IMOps profile() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-profile");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10817,13 +10638,8 @@ public class IMOps extends Operation {
 
   public IMOps p_profile() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+profile");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10858,13 +10674,8 @@ public class IMOps extends Operation {
 
   public IMOps quality() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-quality");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10899,13 +10710,8 @@ public class IMOps extends Operation {
 
   public IMOps quantize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-quantize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10940,13 +10746,8 @@ public class IMOps extends Operation {
 
   public IMOps quiet() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-quiet");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -10959,13 +10760,8 @@ public class IMOps extends Operation {
 
   public IMOps radialBlur() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-radial-blur");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11000,13 +10796,8 @@ public class IMOps extends Operation {
 
   public IMOps raise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-raise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11069,13 +10860,8 @@ public class IMOps extends Operation {
 
   public IMOps p_raise() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+raise");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11138,13 +10924,8 @@ public class IMOps extends Operation {
 
   public IMOps randomThreshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-random-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11241,13 +11022,8 @@ public class IMOps extends Operation {
 
   public IMOps recolor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-recolor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11282,13 +11058,8 @@ public class IMOps extends Operation {
 
   public IMOps redPrimary() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-red-primary");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11351,13 +11122,8 @@ public class IMOps extends Operation {
 
   public IMOps regardWarnings() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-regard-warnings");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11370,13 +11136,8 @@ public class IMOps extends Operation {
 
   public IMOps region() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-region");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11522,13 +11283,8 @@ public class IMOps extends Operation {
 
   public IMOps p_remap() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+remap");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11541,13 +11297,8 @@ public class IMOps extends Operation {
 
   public IMOps remap() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-remap");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11582,13 +11333,8 @@ public class IMOps extends Operation {
 
   public IMOps remote() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-remote");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11601,13 +11347,8 @@ public class IMOps extends Operation {
 
   public IMOps render() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-render");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11620,13 +11361,8 @@ public class IMOps extends Operation {
 
   public IMOps p_render() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+render");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11639,13 +11375,8 @@ public class IMOps extends Operation {
 
   public IMOps p_repage() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+repage");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11658,13 +11389,8 @@ public class IMOps extends Operation {
 
   public IMOps repage() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-repage");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11810,13 +11536,8 @@ public class IMOps extends Operation {
 
   public IMOps resample() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-resample");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -11879,13 +11600,8 @@ public class IMOps extends Operation {
 
   public IMOps resize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-resize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12014,13 +11730,8 @@ public class IMOps extends Operation {
 
   public IMOps respectParentheses() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-respect-parentheses");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12033,13 +11744,8 @@ public class IMOps extends Operation {
 
   public IMOps respectParenthesis() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-respect-parenthesis");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12052,13 +11758,8 @@ public class IMOps extends Operation {
 
   public IMOps reverse() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-reverse");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12071,13 +11772,8 @@ public class IMOps extends Operation {
 
   public IMOps roll() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-roll");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12143,13 +11839,8 @@ public class IMOps extends Operation {
 
   public IMOps rotate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-rotate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12211,13 +11902,8 @@ public class IMOps extends Operation {
 
   public IMOps sample() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sample");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12363,13 +12049,8 @@ public class IMOps extends Operation {
 
   public IMOps samplingFactor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sampling-factor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12426,19 +12107,115 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -selective-blur to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps selectiveBlur() {
+
+    iCmdArgs.add("-selective-blur");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -selective-blur to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps selectiveBlur(Double radius) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-selective-blur");
+
+    if (radius != null) {
+      buf.append(radius.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -selective-blur to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps selectiveBlur(Double radius, Double sigma) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-selective-blur");
+
+    if (radius != null) {
+      buf.append(radius.toString());
+    }
+    if (radius != null || sigma != null) {
+      buf.append("x");
+    }
+    if (sigma != null) {
+      buf.append(sigma.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -selective-blur to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps selectiveBlur(Double radius, Double sigma, Double threshold) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-selective-blur");
+
+    if (radius != null) {
+      buf.append(radius.toString());
+    }
+    if (radius != null || sigma != null) {
+      buf.append("x");
+    }
+    if (sigma != null) {
+      buf.append(sigma.toString());
+    }
+    if (sigma != null || threshold != null) {
+      oper="+";
+      if (threshold.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (threshold != null) {
+      buf.append(threshold.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -sparse-color to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps sparseColor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sparse-color");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12502,13 +12279,8 @@ public class IMOps extends Operation {
 
   public IMOps scale() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-scale");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12654,13 +12426,8 @@ public class IMOps extends Operation {
 
   public IMOps scene() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-scene");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12695,13 +12462,8 @@ public class IMOps extends Operation {
 
   public IMOps screen() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-screen");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12714,13 +12476,8 @@ public class IMOps extends Operation {
 
   public IMOps seed() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-seed");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12733,13 +12490,8 @@ public class IMOps extends Operation {
 
   public IMOps segment() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-segment");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12802,13 +12554,8 @@ public class IMOps extends Operation {
 
   public IMOps separate() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-separate");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12821,13 +12568,8 @@ public class IMOps extends Operation {
 
   public IMOps sepiaTone() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sepia-tone");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12862,13 +12604,8 @@ public class IMOps extends Operation {
 
   public IMOps set() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-set");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -12932,13 +12669,8 @@ public class IMOps extends Operation {
 
   public IMOps shade() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shade");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13001,13 +12733,8 @@ public class IMOps extends Operation {
 
   public IMOps p_shade() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+shade");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13070,13 +12797,8 @@ public class IMOps extends Operation {
 
   public IMOps shadow() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shadow");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13274,13 +12996,8 @@ public class IMOps extends Operation {
 
   public IMOps sharedMemory() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shared-memory");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13293,13 +13010,8 @@ public class IMOps extends Operation {
 
   public IMOps sharpen() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sharpen");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13362,13 +13074,8 @@ public class IMOps extends Operation {
 
   public IMOps shave() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shave");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13465,13 +13172,8 @@ public class IMOps extends Operation {
 
   public IMOps shear() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-shear");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13534,13 +13236,8 @@ public class IMOps extends Operation {
 
   public IMOps sigmoidalContrast() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sigmoidal-contrast");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13603,13 +13300,8 @@ public class IMOps extends Operation {
 
   public IMOps p_sigmoidalContrast() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+sigmoidal-contrast");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13672,13 +13364,8 @@ public class IMOps extends Operation {
 
   public IMOps silent() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-silent");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13691,13 +13378,8 @@ public class IMOps extends Operation {
 
   public IMOps size() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-size");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13797,13 +13479,8 @@ public class IMOps extends Operation {
 
   public IMOps sketch() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-sketch");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13897,19 +13574,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -smush to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps smush() {
+
+    iCmdArgs.add("-smush");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -smush to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps smush(Integer offset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-smush");
+
+    if (offset != null) {
+      buf.append(offset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -snaps to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps snaps() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-snaps");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13944,13 +13652,8 @@ public class IMOps extends Operation {
 
   public IMOps solarize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-solarize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -13985,13 +13688,8 @@ public class IMOps extends Operation {
 
   public IMOps splice() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-splice");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14189,13 +13887,8 @@ public class IMOps extends Operation {
 
   public IMOps spread() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-spread");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14230,13 +13923,8 @@ public class IMOps extends Operation {
 
   public IMOps stegano() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-stegano");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14271,13 +13959,8 @@ public class IMOps extends Operation {
 
   public IMOps stereo() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-stereo");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14337,19 +14020,269 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -statistic to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps statistic() {
+
+    iCmdArgs.add("-statistic");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -statistic to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps statistic(String type) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-statistic");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -statistic to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps statistic(String type, Integer width) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-statistic");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (type != null || width != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -statistic to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps statistic(String type, Integer width, Integer height) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-statistic");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (type != null || width != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -statistic to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps statistic(String type, Integer width, Integer height, Integer x) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-statistic");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (type != null || width != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || x != null) {
+      oper="+";
+      if (x.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (x != null) {
+      buf.append(x.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -statistic to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps statistic(String type, Integer width, Integer height, Integer x, Integer y) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-statistic");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (type != null || width != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || x != null) {
+      oper="+";
+      if (x.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (x != null) {
+      buf.append(x.toString());
+    }
+    if (x != null || y != null) {
+      oper="+";
+      if (y.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (y != null) {
+      buf.append(y.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -statistic to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps statistic(String type, Integer width, Integer height, Integer x, Integer y, String special) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-statistic");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (type != null || width != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || x != null) {
+      oper="+";
+      if (x.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (x != null) {
+      buf.append(x.toString());
+    }
+    if (x != null || y != null) {
+      oper="+";
+      if (y.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (y != null) {
+      buf.append(y.toString());
+    }
+    if (y != null || special != null) {
+    }
+    if (special != null) {
+      buf.append(special.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -storage-type to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps storageType() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-storage-type");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14378,19 +14311,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -stretch to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps stretch() {
+
+    iCmdArgs.add("-stretch");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -stretch to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps stretch(String fontStretchType) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-stretch");
+
+    if (fontStretchType != null) {
+      buf.append(fontStretchType.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -strip to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps strip() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-strip");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14403,13 +14367,8 @@ public class IMOps extends Operation {
 
   public IMOps stroke() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-stroke");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14444,13 +14403,8 @@ public class IMOps extends Operation {
 
   public IMOps strokewidth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-strokewidth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14479,19 +14433,50 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -style to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps style() {
+
+    iCmdArgs.add("-style");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -style to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps style(String fontStyle) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-style");
+
+    if (fontStyle != null) {
+      buf.append(fontStyle.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -subimage-search to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps subimageSearch() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-subimage-search");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14504,13 +14489,8 @@ public class IMOps extends Operation {
 
   public IMOps p_swap() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+swap");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14523,13 +14503,8 @@ public class IMOps extends Operation {
 
   public IMOps swap() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-swap");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14592,13 +14567,8 @@ public class IMOps extends Operation {
 
   public IMOps swirl() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-swirl");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14633,13 +14603,8 @@ public class IMOps extends Operation {
 
   public IMOps synchronize() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-synchronize");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14652,13 +14617,8 @@ public class IMOps extends Operation {
 
   public IMOps taint() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-taint");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14671,13 +14631,8 @@ public class IMOps extends Operation {
 
   public IMOps textFont() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-text-font");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14712,13 +14667,8 @@ public class IMOps extends Operation {
 
   public IMOps texture() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-texture");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14753,13 +14703,8 @@ public class IMOps extends Operation {
 
   public IMOps threshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -14942,13 +14887,8 @@ public class IMOps extends Operation {
 
   public IMOps thumbnail() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-thumbnail");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15077,13 +15017,8 @@ public class IMOps extends Operation {
 
   public IMOps tile() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-tile");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15229,13 +15164,8 @@ public class IMOps extends Operation {
 
   public IMOps tileOffset() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-tile-offset");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15323,13 +15253,8 @@ public class IMOps extends Operation {
 
   public IMOps tint() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-tint");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15364,13 +15289,8 @@ public class IMOps extends Operation {
 
   public IMOps title() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-title");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15405,13 +15325,8 @@ public class IMOps extends Operation {
 
   public IMOps transform() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transform");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15424,13 +15339,8 @@ public class IMOps extends Operation {
 
   public IMOps transparentColor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transparent-color");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15465,13 +15375,8 @@ public class IMOps extends Operation {
 
   public IMOps transparent() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transparent");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15506,13 +15411,8 @@ public class IMOps extends Operation {
 
   public IMOps transpose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transpose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15525,13 +15425,8 @@ public class IMOps extends Operation {
 
   public IMOps transverse() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-transverse");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15544,13 +15439,8 @@ public class IMOps extends Operation {
 
   public IMOps treedepth() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-treedepth");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15585,13 +15475,8 @@ public class IMOps extends Operation {
 
   public IMOps trim() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-trim");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15604,13 +15489,8 @@ public class IMOps extends Operation {
 
   public IMOps type() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-type");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15645,13 +15525,8 @@ public class IMOps extends Operation {
 
   public IMOps undercolor() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-undercolor");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15686,13 +15561,8 @@ public class IMOps extends Operation {
 
   public IMOps uniqueColors() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-unique-colors");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15705,13 +15575,8 @@ public class IMOps extends Operation {
 
   public IMOps units() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-units");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15746,13 +15611,8 @@ public class IMOps extends Operation {
 
   public IMOps unsharp() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-unsharp");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15898,13 +15758,8 @@ public class IMOps extends Operation {
 
   public IMOps update() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-update");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15939,13 +15794,8 @@ public class IMOps extends Operation {
 
   public IMOps verbose() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-verbose");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15958,13 +15808,8 @@ public class IMOps extends Operation {
 
   public IMOps version() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-version");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -15977,13 +15822,8 @@ public class IMOps extends Operation {
 
   public IMOps view() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-view");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16018,13 +15858,8 @@ public class IMOps extends Operation {
 
   public IMOps vignette() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-vignette");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16222,13 +16057,8 @@ public class IMOps extends Operation {
 
   public IMOps virtualPixel() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-virtual-pixel");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16263,13 +16093,8 @@ public class IMOps extends Operation {
 
   public IMOps visual() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-visual");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16304,13 +16129,8 @@ public class IMOps extends Operation {
 
   public IMOps watermark() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-watermark");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16345,13 +16165,8 @@ public class IMOps extends Operation {
 
   public IMOps wave() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-wave");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16408,19 +16223,72 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -weight to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps weight() {
+
+    iCmdArgs.add("-weight");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -weight to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps weight(String fontWeight) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-weight");
+
+    if (fontWeight != null) {
+      buf.append(fontWeight.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -weight to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps weight(Integer fontWeight) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-weight");
+
+    if (fontWeight != null) {
+      buf.append(fontWeight.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -white-point to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
 
   public IMOps whitePoint() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-white-point");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16483,13 +16351,8 @@ public class IMOps extends Operation {
 
   public IMOps whiteThreshold() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-white-threshold");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16552,13 +16415,8 @@ public class IMOps extends Operation {
 
   public IMOps windowGroup() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-window-group");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16571,13 +16429,8 @@ public class IMOps extends Operation {
 
   public IMOps window() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-window");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16612,13 +16465,8 @@ public class IMOps extends Operation {
 
   public IMOps write() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-write");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
@@ -16653,13 +16501,8 @@ public class IMOps extends Operation {
 
   public IMOps p_write() {
 
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("+write");
 
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
     return this;
   }
 
