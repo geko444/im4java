@@ -25,7 +25,7 @@ package org.im4java.core;
 /**
    This class wraps the IM command composite.
 
-   @version $Revision: 1.3 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
 */
 
@@ -38,6 +38,26 @@ public class CompositeCmd extends ImageCommand {
   */
 
   public  CompositeCmd() {
-    super("composite");
+    super();
+    if (!Boolean.getBoolean("im4java.useGM")) {
+      setCommand("composite");
+    } else {
+      setCommand("gm","composite");
+    }
+  }
+
+ //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Constructor with option to use GraphicsMagick.
+  */
+
+  public  CompositeCmd(boolean useGM) {
+    super();
+    if (useGM) {
+      setCommand("gm","composite");
+    } else {
+      setCommand("composite");
+    }
   }
 }

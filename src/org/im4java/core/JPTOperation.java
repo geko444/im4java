@@ -1,5 +1,5 @@
 /**************************************************************************
-/* This class wraps the IM command identify.
+/* This class models the command-line of jpegtran.
 /*
 /* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
 /*
@@ -21,50 +21,22 @@
 
 package org.im4java.core;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
-import org.im4java.process.OutputConsumer;
 
 /**
-   This class wraps the IM command identify.
+   This class models the command-line of jpegtran. 
 
-   @version $Revision: 1.13 $
+   @version $Revision: 1.1 $
    @author  $Author: bablokb $
 */
 
-public class IdentifyCmd extends ImageCommand {
+public class JPTOperation extends JPTOps {
 
- //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     Constructor. This saves the output into an internal field (array-list).
-  */
-
-  public  IdentifyCmd() {
-    super();
-    if (!Boolean.getBoolean("im4java.useGM")) {
-      setCommand("identify");
-    } else {
-      setCommand("gm","identify");
-    }
-  }
-
- //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
 
   /**
-     Constructor with option to use GraphicsMagick.
+     Constructor.
   */
 
-  public  IdentifyCmd(boolean useGM) {
-    super();
-    if (useGM) {
-      setCommand("gm","identify");
-    } else {
-      setCommand("identify");
-    }
+  public JPTOperation() {
   }
 }

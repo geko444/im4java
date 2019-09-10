@@ -6,15 +6,30 @@ BUGS
 
 - probably some wrong or missing interface-definitions
 
-TODO
-====
 
-- GraphicsMagick
-  * add input/GMinterface.txt to generate GMOps.java
-  * add src.org.im4java.core.GMOperation extends GMOps
-  * change mk-im4java to process all interface files
-  * update src/org/im4java/core/*Cmd.java to support GM
-  * define and use system property to switch between IM and GM at runtime
+TODO/WISHLIST
+=============
+
+- support exiftool
+  * create idf input/ETinterface.txt
+  * create org.im4java.core.ETOperation extends ETOps
+  * create org.im4java.core.ExiftoolCmd
+  * add test-case
+
+- support ufraw
+  * create idf input/UFRinterface.txt
+  * create org.im4java.core.UFROperation extends UFROps
+  * create org.im4java.core.UfrawCmd
+  * add test-case
+
+- add documentation
+
+- build system
+  * bin/mk-im4java: support config-settings in idfs
+  * add and support setting for completely validated idfs
+    (don't automatically create all possible methods)
+
+- validate IM and GM interfaces
 
 - Info
   * change to initially collect only a small number of properties

@@ -27,14 +27,18 @@ import java.io.IOException;
 
 
 /**
-   This class implements a pipe.
-   input for a process.
+   This class implements a pipe. Useful for piping input to a process
+   or piping output/error from a process to other streams.
 
-   @version $Revision: 1.3 $
+   <p>You can use the same Pipe-object for both ends of a process-pipeline.
+   But you cannot use the same Pipe-object as an OutputConsumer and
+   ErrorConsumer at the same time.</p>
+
+   @version $Revision: 1.4 $
    @author  $Author: bablokb $
 */
 
-public class Pipe implements InputProvider, OutputConsumer {
+public class Pipe implements InputProvider, OutputConsumer, ErrorConsumer {
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -89,6 +93,19 @@ public class Pipe implements InputProvider, OutputConsumer {
   */
 
   public void consumeOutput(InputStream pInputStream) throws IOException {
+    if (iSink != null) {
+      copyBytes(pInputStream,iSink);
+    }
+  }
+
+ //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     The ErrorConsumer must read the error of a process from the given
+     InputStream.
+  */
+
+  public void consumeError(InputStream pInputStream) throws IOException {
     if (iSink != null) {
       copyBytes(pInputStream,iSink);
     }

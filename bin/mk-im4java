@@ -4,7 +4,7 @@
 # interface-definition-file
 #
 # $Author: bablokb $
-# $Revision: 1.16 $
+# $Revision: 1.17 $
 #
 # License: GPL2
 # -----------------------------------------------------------------------------
@@ -13,9 +13,8 @@
 
 usage() {
   echo -e "\n`basename $0`: create core im4java methods\n\
-  \nusage: `basename $0` [options]\n\
+  \nusage: `basename $0` [options] [interface-definition-file [...]]\n\
   possible options:\n\
-    -i file     use interface-definition-file file (default: $idf)\n\
     -o dir      create results in dir (default: $outputDir)\n\
     -p package  create im4java class in package (default: $package)\n\
     -h          show this help\n\
@@ -32,8 +31,9 @@ setDefaults() {
  outputDir="$binDir/../src"
  inputDir="$binDir/../input"
  package="org.im4java.core"
- idf="$binDir/../input/IMinterface.txt"
- CLASS_HEAD="$inputDir/IMOps.java.head"
+ eval idfs=(`find "$binDir/../input/" -type f \
+                                       -name "*interface.txt" -printf '"%p" '`)
+ CLASS_HEAD="$inputDir/java.class.head"
  DEBUG=0
  quiet=0
 }
@@ -41,9 +41,8 @@ setDefaults() {
 # parse arguments and set variables -------------------------------------------
 
 parseArguments() {
-  while getopts ":i:o:p:hqvd" opt; do
+  while getopts ":o:p:hqvd" opt; do
     case $opt in
-      i) idf="$OPTARG";;
       o) outputDir="$OPTARG";;
       p) package="$OPTARG";;
       h) usage;;
@@ -54,24 +53,40 @@ parseArguments() {
            usage;;
     esac
   done
-  #shift $((OPTIND-1))
+  shift $((OPTIND-1))
+  [ "$#" -gt 0 ] && idfs=("$@")
 }
 
 # check arguments   -----------------------------------------------------------
 
 checkArguments() {
-  if [ ! -f "$idf" ]; then
-    echo "error: interface-definition-file does not exist!" >&2
-    usage
-  elif [ ! -d "$outputDir" ]; then
+  if [ ! -d "$outputDir" ]; then
     echo "error: output-directory $outputDir does not exist!" >&2
     usage
   fi
 
   targetDir="$outputDir/${package//.//}"
   mkdir -p "$targetDir"
-  targetFile="$targetDir/IMOps.java"
 }
+
+# process interface definition files   ----------------------------------------
+
+processInterfaceFiles() {
+  for f in "${idfs[@]}"; do
+    echo -e "processing $f" >&2
+    code="${f##*/}"
+
+    # set target-filename from interface-definition
+    code="${code%interface.txt}"
+    targetFile="$targetDir/${code}Ops.java"
+
+    allMethods=""
+    writeClassHeader                                 # write class-header
+    writeMethods "$f"                                # generate methods
+    writeClassTail                                   # and class-tail
+  done
+}
+
 
 # parse a single line of the idf   --------------------------------------------
 
@@ -120,7 +135,8 @@ dumpDefs() {
 # write class-header   --------------------------------------------------------
 
 writeClassHeader() {
-  sed -e "s/_PACKAGE_/$package/" "$CLASS_HEAD" > "$targetFile"
+  sed -e "s/_PACKAGE_/$package/" "$CLASS_HEAD" \
+                                          -e "s/_CODE_/$code/g" > "$targetFile"
 }
 
 # write method-header   -------------------------------------------------------
@@ -133,14 +149,14 @@ writeMethodHeader() {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     $optionName (see ImageMagick-Documentation for details).
+     $optionName (see documentation of the underlying tool for details).
   */
 
 EOF
 
   # add method-signature
   declare -i i
-  echo -en "  public IMOps $methodName(" >> "$targetFile"
+  echo -en "  public ${code}Ops $methodName(" >> "$targetFile"
   for (( i=0; i<$maxArgs-1; ++i )); do
     echo -en "${varType[$i]} ${varName[$i]}, "
   done  >> "$targetFile"
@@ -246,7 +262,7 @@ writeMethods() {
     parseLine $line                                # parse given line
     [ $DEBUG -gt 0 ] && dumpDefs                   # dump parse-results
     writeMethod                                    # write method-definition
-  done < "$idf"
+  done < "$1"
 
 }
 
@@ -262,8 +278,6 @@ setDefaults
 parseArguments "$@"
 checkArguments
 
-writeClassHeader                                 # write class-header
-writeMethods                                     # generate methods
-writeClassTail                                   # and class-tail
+processInterfaceFiles
 
 exit 0

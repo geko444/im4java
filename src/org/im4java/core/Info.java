@@ -24,12 +24,14 @@ package org.im4java.core;
 import java.util.*;
 import java.io.*;
 
+import org.im4java.process.ArrayListOutputConsumer;
+
 /**
    This class implements an image-information object.
 
    <p>The class just calls "identify -verbose" and parses the output.</p>
    
-   @version $Revision: 1.5 $
+   @version $Revision: 1.6 $
    @author  $Author: bablokb $
 */
 
@@ -72,8 +74,10 @@ public class  Info {
 
     try {
       IdentifyCmd identify = new IdentifyCmd();
+      ArrayListOutputConsumer output = new ArrayListOutputConsumer();
+      identify.setOutputConsumer(output);
       identify.run(op);
-      ArrayList<String> cmdOutput = identify.getOutput();
+      ArrayList<String> cmdOutput = output.getOutput();
       for (String line:cmdOutput) {
 	parseLine(line);
       }

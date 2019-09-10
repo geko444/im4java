@@ -28,13 +28,14 @@ import javax.imageio.ImageIO;
 
 import org.im4java.core.*;
 import org.im4java.process.Pipe;
+import org.im4java.process.ArrayListOutputConsumer;
 import org.im4java.utils.*;
 
 
 /**
    This class implements various tests of the im4java-package.
 
-   @version $Revision: 1.24 $
+   @version $Revision: 1.28 $
    @author  $Author: bablokb $
 */
 
@@ -63,8 +64,8 @@ public class  Test {
                 "Available tests:\n" +
                 "\t 1: simple use of convert\n" +
                 "\t 2: operation and sub-operations\n" +
-                "\t 3: mixer\n" +
-                "\t 4: montage\n" +
+                "\t 3: montage\n" +
+                "\t 4: mixer\n" +
                 "\t 5: mogrify\n" +
                 "\t 6: identify\n" +
                 "\t 7: composite\n" +
@@ -75,6 +76,7 @@ public class  Test {
                 "\t12: Reading BufferedImage\n" +
                 "\t13: Writing BufferedImage\n" +
                 "\t14: GraphicsMagick\n" +
+                "\t15: jpegtran\n" +
 		""
 		);
       System.exit(1);
@@ -96,6 +98,7 @@ public class  Test {
 	test.testReadBufferedImage();
 	test.testWriteBufferedImage();
 	test.testGraphicsMagick();
+	test.testJpegtran();
       } else {
 	for (int i=0; i<args.length; ++i) {
 	  int nr = Integer.parseInt(args[i]);
@@ -141,6 +144,9 @@ public class  Test {
 	    break;
 	  case 14:
 	    test.testGraphicsMagick();
+	    break;
+	  case 15:
+	    test.testJpegtran();
 	    break;
 	  default:
 	    System.err.println("Test Nr " + nr + " not implemented yet!");
@@ -300,14 +306,12 @@ public class  Test {
     IdentifyCmd identify = new IdentifyCmd();
     System.out.println("   first run:");
     identify.run(op,"images/rose1.jpg","images/rose2.jpg");
-    ArrayList<String> cmdOutput = identify.getOutput();
-    for (String line:cmdOutput) {
-      System.out.println(line);
-    }
 
     System.out.println("   second run:");
+    ArrayListOutputConsumer output = new ArrayListOutputConsumer();
+    identify.setOutputConsumer(output);
     identify.run(op,"images/tulip1.jpg","images/tulip2.jpg");
-    cmdOutput = identify.getOutput();
+    ArrayList<String> cmdOutput = output.getOutput();
     for (String line:cmdOutput) {
       System.out.println(line);
     }
@@ -441,6 +445,8 @@ public class  Test {
 	      String img = (String) pImages[0];
 	      iso.addImage(img);
 	      IdentifyCmd identify = new IdentifyCmd();
+	      ArrayListOutputConsumer output = new ArrayListOutputConsumer();
+	      identify.setOutputConsumer(output);
 	      try {
 		identify.run(iso);
 	      } catch (Exception e) {
@@ -448,7 +454,7 @@ public class  Test {
 	      }
 	    			
 	      // now read the setting
-	      ArrayList<String> out = identify.getOutput();
+	      ArrayList<String> out = output.getOutput();
 	      int isoValue = Integer.parseInt(out.get(0));
 	      if (isoValue > 200) {
 		IMOperation op = new IMOperation();
@@ -557,4 +563,23 @@ public class  Test {
     }
   }
 
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Test of jpegtran.
+  */
+
+  public void testJpegtran() throws Exception {
+    System.err.println("15. Testing jpegtran ...");
+    JPTOperation op = new JPTOperation();
+    op.flip("horizontal");
+    op.outfile(Operation.IMG_PLACEHOLDER);
+    op.addImage();                            // input-filename
+
+    JpegtranCmd jpegtran = new JpegtranCmd();
+    jpegtran.run(op,"images/tulip2-flip.jpg","images/tulip2.jpg");
+
+    DisplayCmd.show("images/tulip2-flip.jpg");
+    (new File("images/tulip2-flip.jpg")).delete();
+  }
 }

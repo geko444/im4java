@@ -1,5 +1,6 @@
 /**************************************************************************
-/* This class wraps the IM command identify.
+/* This class is a container for objects logically wrapping stdin, stdout
+/* and stderr.
 /*
 /* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
 /*
@@ -19,52 +20,49 @@
 /* Boston, MA  02111-1307 USA
 /**************************************************************************/
 
-package org.im4java.core;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
-import org.im4java.process.OutputConsumer;
+package org.im4java.process;
 
 /**
-   This class wraps the IM command identify.
+   This class is a container for objects logically wrapping stdin, stdout
+   and stderr.
 
-   @version $Revision: 1.13 $
+   @version $Revision: 1.1 $
    @author  $Author: bablokb $
 */
 
-public class IdentifyCmd extends ImageCommand {
+public class StandardStream {
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     InputProvider wrapping System.in.
+  */
+
+  public static final InputProvider STDIN = new Pipe(System.in,null);
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     OutputConsumer wrapping System.out.
+  */
+
+  public static final OutputConsumer STDOUT = new Pipe(null,System.out);
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     ErrorConsumer wrapping System.err.
+  */
+
+  public static final ErrorConsumer STDERR = new Pipe(null,System.err);
 
  //////////////////////////////////////////////////////////////////////////////
 
   /**
-     Constructor. This saves the output into an internal field (array-list).
+     Private Constructor. Since this is just a container for predefined
+     objects, there is no need to instantiate this class.
   */
 
-  public  IdentifyCmd() {
-    super();
-    if (!Boolean.getBoolean("im4java.useGM")) {
-      setCommand("identify");
-    } else {
-      setCommand("gm","identify");
-    }
-  }
-
- //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     Constructor with option to use GraphicsMagick.
-  */
-
-  public  IdentifyCmd(boolean useGM) {
-    super();
-    if (useGM) {
-      setCommand("gm","identify");
-    } else {
-      setCommand("identify");
-    }
+  private StandardStream() {
   }
 }

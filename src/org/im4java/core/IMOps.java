@@ -24,7 +24,7 @@ package org.im4java.core;
 /**
    This class adds all the IM methods to an Operation.
 
-   @version $Revision: 1.11 $
+   @version $Revision: 1.12 $
    @author  $Author: bablokb $
 */
 
@@ -42,7 +42,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-blur (see ImageMagick-Documentation for details).
+     -adaptive-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveBlur() {
@@ -61,7 +61,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-blur (see ImageMagick-Documentation for details).
+     -adaptive-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveBlur(Double radius) {
@@ -83,7 +83,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-blur (see ImageMagick-Documentation for details).
+     -adaptive-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveBlur(Double radius, Double sigma) {
@@ -109,7 +109,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-resize (see ImageMagick-Documentation for details).
+     -adaptive-resize (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveResize() {
@@ -128,7 +128,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-resize (see ImageMagick-Documentation for details).
+     -adaptive-resize (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveResize(Integer width) {
@@ -150,7 +150,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-resize (see ImageMagick-Documentation for details).
+     -adaptive-resize (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveResize(Integer width, Integer height) {
@@ -176,7 +176,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-resize (see ImageMagick-Documentation for details).
+     -adaptive-resize (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveResize(Integer width, Integer height, Character special) {
@@ -205,7 +205,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-sharpen (see ImageMagick-Documentation for details).
+     -adaptive-sharpen (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveSharpen() {
@@ -224,7 +224,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-sharpen (see ImageMagick-Documentation for details).
+     -adaptive-sharpen (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveSharpen(Double radius) {
@@ -246,7 +246,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adaptive-sharpen (see ImageMagick-Documentation for details).
+     -adaptive-sharpen (see documentation of the underlying tool for details).
   */
 
   public IMOps adaptiveSharpen(Double radius, Double sigma) {
@@ -272,7 +272,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -adjoin (see ImageMagick-Documentation for details).
+     -adjoin (see documentation of the underlying tool for details).
   */
 
   public IMOps adjoin() {
@@ -291,7 +291,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +adjoin (see ImageMagick-Documentation for details).
+     +adjoin (see documentation of the underlying tool for details).
   */
 
   public IMOps p_adjoin() {
@@ -310,7 +310,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -affine (see ImageMagick-Documentation for details).
+     -affine (see documentation of the underlying tool for details).
   */
 
   public IMOps affine() {
@@ -329,7 +329,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -affine (see ImageMagick-Documentation for details).
+     -affine (see documentation of the underlying tool for details).
   */
 
   public IMOps affine(Double sx) {
@@ -351,7 +351,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -affine (see ImageMagick-Documentation for details).
+     -affine (see documentation of the underlying tool for details).
   */
 
   public IMOps affine(Double sx, Double rx) {
@@ -377,7 +377,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -affine (see ImageMagick-Documentation for details).
+     -affine (see documentation of the underlying tool for details).
   */
 
   public IMOps affine(Double sx, Double rx, Double ry) {
@@ -407,7 +407,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -affine (see ImageMagick-Documentation for details).
+     -affine (see documentation of the underlying tool for details).
   */
 
   public IMOps affine(Double sx, Double rx, Double ry, Double sy) {
@@ -441,7 +441,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -affine (see ImageMagick-Documentation for details).
+     -affine (see documentation of the underlying tool for details).
   */
 
   public IMOps affine(Double sx, Double rx, Double ry, Double sy, Double tx) {
@@ -479,7 +479,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -affine (see ImageMagick-Documentation for details).
+     -affine (see documentation of the underlying tool for details).
   */
 
   public IMOps affine(Double sx, Double rx, Double ry, Double sy, Double tx, Double ty) {
@@ -521,7 +521,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -alpha (see ImageMagick-Documentation for details).
+     -alpha (see documentation of the underlying tool for details).
   */
 
   public IMOps alpha() {
@@ -540,7 +540,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -alpha (see ImageMagick-Documentation for details).
+     -alpha (see documentation of the underlying tool for details).
   */
 
   public IMOps alpha(String type) {
@@ -562,7 +562,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -annotate (see ImageMagick-Documentation for details).
+     -annotate (see documentation of the underlying tool for details).
   */
 
   public IMOps annotate() {
@@ -581,7 +581,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -annotate (see ImageMagick-Documentation for details).
+     -annotate (see documentation of the underlying tool for details).
   */
 
   public IMOps annotate(Integer xr) {
@@ -603,7 +603,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -annotate (see ImageMagick-Documentation for details).
+     -annotate (see documentation of the underlying tool for details).
   */
 
   public IMOps annotate(Integer xr, Integer yr) {
@@ -629,7 +629,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -annotate (see ImageMagick-Documentation for details).
+     -annotate (see documentation of the underlying tool for details).
   */
 
   public IMOps annotate(Integer xr, Integer yr, Integer x) {
@@ -662,7 +662,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -annotate (see ImageMagick-Documentation for details).
+     -annotate (see documentation of the underlying tool for details).
   */
 
   public IMOps annotate(Integer xr, Integer yr, Integer x, Integer y) {
@@ -702,7 +702,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -annotate (see ImageMagick-Documentation for details).
+     -annotate (see documentation of the underlying tool for details).
   */
 
   public IMOps annotate(Integer xr, Integer yr, Integer x, Integer y, String text) {
@@ -747,7 +747,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -antialias (see ImageMagick-Documentation for details).
+     -antialias (see documentation of the underlying tool for details).
   */
 
   public IMOps antialias() {
@@ -766,7 +766,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +antialias (see ImageMagick-Documentation for details).
+     +antialias (see documentation of the underlying tool for details).
   */
 
   public IMOps p_antialias() {
@@ -785,7 +785,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -append (see ImageMagick-Documentation for details).
+     -append (see documentation of the underlying tool for details).
   */
 
   public IMOps append() {
@@ -804,7 +804,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +append (see ImageMagick-Documentation for details).
+     +append (see documentation of the underlying tool for details).
   */
 
   public IMOps p_append() {
@@ -823,7 +823,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -attenuate (see ImageMagick-Documentation for details).
+     -attenuate (see documentation of the underlying tool for details).
   */
 
   public IMOps attenuate() {
@@ -842,7 +842,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -attenuate (see ImageMagick-Documentation for details).
+     -attenuate (see documentation of the underlying tool for details).
   */
 
   public IMOps attenuate(Double value) {
@@ -864,7 +864,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -authenticate (see ImageMagick-Documentation for details).
+     -authenticate (see documentation of the underlying tool for details).
   */
 
   public IMOps authenticate() {
@@ -883,7 +883,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -authenticate (see ImageMagick-Documentation for details).
+     -authenticate (see documentation of the underlying tool for details).
   */
 
   public IMOps authenticate(String password) {
@@ -905,7 +905,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -auto-orient (see ImageMagick-Documentation for details).
+     -auto-orient (see documentation of the underlying tool for details).
   */
 
   public IMOps autoOrient() {
@@ -924,7 +924,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -average (see ImageMagick-Documentation for details).
+     -average (see documentation of the underlying tool for details).
   */
 
   public IMOps average() {
@@ -943,7 +943,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -backdrop (see ImageMagick-Documentation for details).
+     -backdrop (see documentation of the underlying tool for details).
   */
 
   public IMOps backdrop() {
@@ -962,7 +962,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -backdrop (see ImageMagick-Documentation for details).
+     -backdrop (see documentation of the underlying tool for details).
   */
 
   public IMOps backdrop(String color) {
@@ -984,7 +984,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -background (see ImageMagick-Documentation for details).
+     -background (see documentation of the underlying tool for details).
   */
 
   public IMOps background() {
@@ -1003,7 +1003,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -background (see ImageMagick-Documentation for details).
+     -background (see documentation of the underlying tool for details).
   */
 
   public IMOps background(String color) {
@@ -1025,7 +1025,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -bench (see ImageMagick-Documentation for details).
+     -bench (see documentation of the underlying tool for details).
   */
 
   public IMOps bench() {
@@ -1044,7 +1044,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -bench (see ImageMagick-Documentation for details).
+     -bench (see documentation of the underlying tool for details).
   */
 
   public IMOps bench(Integer iterations) {
@@ -1066,7 +1066,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blend (see ImageMagick-Documentation for details).
+     -blend (see documentation of the underlying tool for details).
   */
 
   public IMOps blend() {
@@ -1085,7 +1085,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blend (see ImageMagick-Documentation for details).
+     -blend (see documentation of the underlying tool for details).
   */
 
   public IMOps blend(Integer srcPercent) {
@@ -1107,7 +1107,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blend (see ImageMagick-Documentation for details).
+     -blend (see documentation of the underlying tool for details).
   */
 
   public IMOps blend(Integer srcPercent, Integer dstPercent) {
@@ -1133,7 +1133,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -bias (see ImageMagick-Documentation for details).
+     -bias (see documentation of the underlying tool for details).
   */
 
   public IMOps bias() {
@@ -1152,7 +1152,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -bias (see ImageMagick-Documentation for details).
+     -bias (see documentation of the underlying tool for details).
   */
 
   public IMOps bias(Integer value) {
@@ -1174,7 +1174,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -bias (see ImageMagick-Documentation for details).
+     -bias (see documentation of the underlying tool for details).
   */
 
   public IMOps bias(Integer value, Boolean percent) {
@@ -1200,7 +1200,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -black-point-compensation (see ImageMagick-Documentation for details).
+     -black-point-compensation (see documentation of the underlying tool for details).
   */
 
   public IMOps blackPointCompensation() {
@@ -1219,7 +1219,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -black-threshold (see ImageMagick-Documentation for details).
+     -black-threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps blackThreshold() {
@@ -1238,7 +1238,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -black-threshold (see ImageMagick-Documentation for details).
+     -black-threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps blackThreshold(Double threshold) {
@@ -1260,7 +1260,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blue-primary (see ImageMagick-Documentation for details).
+     -blue-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps bluePrimary() {
@@ -1279,7 +1279,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blue-primary (see ImageMagick-Documentation for details).
+     -blue-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps bluePrimary(Double x) {
@@ -1301,7 +1301,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blue-primary (see ImageMagick-Documentation for details).
+     -blue-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps bluePrimary(Double x, Double y) {
@@ -1327,7 +1327,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blur (see ImageMagick-Documentation for details).
+     -blur (see documentation of the underlying tool for details).
   */
 
   public IMOps blur() {
@@ -1346,7 +1346,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blur (see ImageMagick-Documentation for details).
+     -blur (see documentation of the underlying tool for details).
   */
 
   public IMOps blur(Double radius) {
@@ -1368,7 +1368,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -blur (see ImageMagick-Documentation for details).
+     -blur (see documentation of the underlying tool for details).
   */
 
   public IMOps blur(Double radius, Double sigma) {
@@ -1394,7 +1394,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -bordercolor (see ImageMagick-Documentation for details).
+     -bordercolor (see documentation of the underlying tool for details).
   */
 
   public IMOps bordercolor() {
@@ -1413,7 +1413,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -bordercolor (see ImageMagick-Documentation for details).
+     -bordercolor (see documentation of the underlying tool for details).
   */
 
   public IMOps bordercolor(String color) {
@@ -1435,7 +1435,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -border (see ImageMagick-Documentation for details).
+     -border (see documentation of the underlying tool for details).
   */
 
   public IMOps border(Integer width) {
@@ -1457,7 +1457,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -border (see ImageMagick-Documentation for details).
+     -border (see documentation of the underlying tool for details).
   */
 
   public IMOps border(Integer width, Integer height) {
@@ -1483,7 +1483,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -borderwidth (see ImageMagick-Documentation for details).
+     -borderwidth (see documentation of the underlying tool for details).
   */
 
   public IMOps borderwidth() {
@@ -1502,7 +1502,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -borderwidth (see ImageMagick-Documentation for details).
+     -borderwidth (see documentation of the underlying tool for details).
   */
 
   public IMOps borderwidth(Integer width) {
@@ -1524,7 +1524,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -borderwidth (see ImageMagick-Documentation for details).
+     -borderwidth (see documentation of the underlying tool for details).
   */
 
   public IMOps borderwidth(Integer width, Integer height) {
@@ -1550,7 +1550,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -borderwidth (see ImageMagick-Documentation for details).
+     -borderwidth (see documentation of the underlying tool for details).
   */
 
   public IMOps borderwidth(Integer width, Integer height, Integer xOffset) {
@@ -1583,7 +1583,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -borderwidth (see ImageMagick-Documentation for details).
+     -borderwidth (see documentation of the underlying tool for details).
   */
 
   public IMOps borderwidth(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -1623,7 +1623,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -cache (see ImageMagick-Documentation for details).
+     -cache (see documentation of the underlying tool for details).
   */
 
   public IMOps cache() {
@@ -1642,7 +1642,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -cache (see ImageMagick-Documentation for details).
+     -cache (see documentation of the underlying tool for details).
   */
 
   public IMOps cache(Double threshold) {
@@ -1664,7 +1664,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -caption (see ImageMagick-Documentation for details).
+     -caption (see documentation of the underlying tool for details).
   */
 
   public IMOps caption() {
@@ -1683,7 +1683,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -caption (see ImageMagick-Documentation for details).
+     -caption (see documentation of the underlying tool for details).
   */
 
   public IMOps caption(String text) {
@@ -1705,7 +1705,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +channel (see ImageMagick-Documentation for details).
+     +channel (see documentation of the underlying tool for details).
   */
 
   public IMOps p_channel() {
@@ -1724,7 +1724,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -channel (see ImageMagick-Documentation for details).
+     -channel (see documentation of the underlying tool for details).
   */
 
   public IMOps channel() {
@@ -1743,7 +1743,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -channel (see ImageMagick-Documentation for details).
+     -channel (see documentation of the underlying tool for details).
   */
 
   public IMOps channel(String type) {
@@ -1765,7 +1765,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -charcoal (see ImageMagick-Documentation for details).
+     -charcoal (see documentation of the underlying tool for details).
   */
 
   public IMOps charcoal() {
@@ -1784,7 +1784,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -charcoal (see ImageMagick-Documentation for details).
+     -charcoal (see documentation of the underlying tool for details).
   */
 
   public IMOps charcoal(Integer factor) {
@@ -1806,7 +1806,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -chop (see ImageMagick-Documentation for details).
+     -chop (see documentation of the underlying tool for details).
   */
 
   public IMOps chop() {
@@ -1825,7 +1825,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -chop (see ImageMagick-Documentation for details).
+     -chop (see documentation of the underlying tool for details).
   */
 
   public IMOps chop(Integer width) {
@@ -1847,7 +1847,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -chop (see ImageMagick-Documentation for details).
+     -chop (see documentation of the underlying tool for details).
   */
 
   public IMOps chop(Integer width, Integer height) {
@@ -1873,7 +1873,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -chop (see ImageMagick-Documentation for details).
+     -chop (see documentation of the underlying tool for details).
   */
 
   public IMOps chop(Integer width, Integer height, Integer x) {
@@ -1906,7 +1906,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -chop (see ImageMagick-Documentation for details).
+     -chop (see documentation of the underlying tool for details).
   */
 
   public IMOps chop(Integer width, Integer height, Integer x, Integer y) {
@@ -1946,7 +1946,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -chop (see ImageMagick-Documentation for details).
+     -chop (see documentation of the underlying tool for details).
   */
 
   public IMOps chop(Integer width, Integer height, Integer x, Integer y, Boolean percent) {
@@ -1990,7 +1990,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clip (see ImageMagick-Documentation for details).
+     -clip (see documentation of the underlying tool for details).
   */
 
   public IMOps clip() {
@@ -2009,7 +2009,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clip-mask (see ImageMagick-Documentation for details).
+     -clip-mask (see documentation of the underlying tool for details).
   */
 
   public IMOps clipMask() {
@@ -2028,7 +2028,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clip-path (see ImageMagick-Documentation for details).
+     -clip-path (see documentation of the underlying tool for details).
   */
 
   public IMOps clipPath() {
@@ -2047,7 +2047,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clip-path (see ImageMagick-Documentation for details).
+     -clip-path (see documentation of the underlying tool for details).
   */
 
   public IMOps clipPath(Integer id) {
@@ -2069,7 +2069,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +clone (see ImageMagick-Documentation for details).
+     +clone (see documentation of the underlying tool for details).
   */
 
   public IMOps p_clone() {
@@ -2088,7 +2088,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clone (see ImageMagick-Documentation for details).
+     -clone (see documentation of the underlying tool for details).
   */
 
   public IMOps clone() {
@@ -2107,7 +2107,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clone (see ImageMagick-Documentation for details).
+     -clone (see documentation of the underlying tool for details).
   */
 
   public IMOps clone(Integer index1) {
@@ -2129,7 +2129,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clone (see ImageMagick-Documentation for details).
+     -clone (see documentation of the underlying tool for details).
   */
 
   public IMOps clone(Integer index1, Integer index2) {
@@ -2155,7 +2155,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clone (see ImageMagick-Documentation for details).
+     -clone (see documentation of the underlying tool for details).
   */
 
   public IMOps clone(Integer index1, Integer index2, Integer index3) {
@@ -2185,7 +2185,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clone (see ImageMagick-Documentation for details).
+     -clone (see documentation of the underlying tool for details).
   */
 
   public IMOps clone(String indexes) {
@@ -2207,7 +2207,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -clut (see ImageMagick-Documentation for details).
+     -clut (see documentation of the underlying tool for details).
   */
 
   public IMOps clut() {
@@ -2226,7 +2226,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -coalesce (see ImageMagick-Documentation for details).
+     -coalesce (see documentation of the underlying tool for details).
   */
 
   public IMOps coalesce() {
@@ -2245,7 +2245,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colorize (see ImageMagick-Documentation for details).
+     -colorize (see documentation of the underlying tool for details).
   */
 
   public IMOps colorize() {
@@ -2264,7 +2264,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colorize (see ImageMagick-Documentation for details).
+     -colorize (see documentation of the underlying tool for details).
   */
 
   public IMOps colorize(Integer red) {
@@ -2286,7 +2286,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colorize (see ImageMagick-Documentation for details).
+     -colorize (see documentation of the underlying tool for details).
   */
 
   public IMOps colorize(Integer red, Integer blue) {
@@ -2312,7 +2312,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colorize (see ImageMagick-Documentation for details).
+     -colorize (see documentation of the underlying tool for details).
   */
 
   public IMOps colorize(Integer red, Integer blue, Integer green) {
@@ -2342,7 +2342,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colormap (see ImageMagick-Documentation for details).
+     -colormap (see documentation of the underlying tool for details).
   */
 
   public IMOps colormap() {
@@ -2361,7 +2361,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colormap (see ImageMagick-Documentation for details).
+     -colormap (see documentation of the underlying tool for details).
   */
 
   public IMOps colormap(String type) {
@@ -2383,7 +2383,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colors (see ImageMagick-Documentation for details).
+     -colors (see documentation of the underlying tool for details).
   */
 
   public IMOps colors() {
@@ -2402,7 +2402,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colors (see ImageMagick-Documentation for details).
+     -colors (see documentation of the underlying tool for details).
   */
 
   public IMOps colors(Integer value) {
@@ -2424,7 +2424,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colorspace (see ImageMagick-Documentation for details).
+     -colorspace (see documentation of the underlying tool for details).
   */
 
   public IMOps colorspace() {
@@ -2443,7 +2443,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -colorspace (see ImageMagick-Documentation for details).
+     -colorspace (see documentation of the underlying tool for details).
   */
 
   public IMOps colorspace(String value) {
@@ -2465,7 +2465,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -combine (see ImageMagick-Documentation for details).
+     -combine (see documentation of the underlying tool for details).
   */
 
   public IMOps combine() {
@@ -2484,7 +2484,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -comment (see ImageMagick-Documentation for details).
+     -comment (see documentation of the underlying tool for details).
   */
 
   public IMOps comment() {
@@ -2503,7 +2503,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -comment (see ImageMagick-Documentation for details).
+     -comment (see documentation of the underlying tool for details).
   */
 
   public IMOps comment(String text) {
@@ -2525,7 +2525,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -compose (see ImageMagick-Documentation for details).
+     -compose (see documentation of the underlying tool for details).
   */
 
   public IMOps compose() {
@@ -2544,7 +2544,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -compose (see ImageMagick-Documentation for details).
+     -compose (see documentation of the underlying tool for details).
   */
 
   public IMOps compose(String operator) {
@@ -2566,7 +2566,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -composite (see ImageMagick-Documentation for details).
+     -composite (see documentation of the underlying tool for details).
   */
 
   public IMOps composite() {
@@ -2585,7 +2585,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +compress (see ImageMagick-Documentation for details).
+     +compress (see documentation of the underlying tool for details).
   */
 
   public IMOps p_compress() {
@@ -2604,7 +2604,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -compress (see ImageMagick-Documentation for details).
+     -compress (see documentation of the underlying tool for details).
   */
 
   public IMOps compress() {
@@ -2623,7 +2623,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -compress (see ImageMagick-Documentation for details).
+     -compress (see documentation of the underlying tool for details).
   */
 
   public IMOps compress(String type) {
@@ -2645,7 +2645,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -contrast (see ImageMagick-Documentation for details).
+     -contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps contrast() {
@@ -2664,7 +2664,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +contrast (see ImageMagick-Documentation for details).
+     +contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps p_contrast() {
@@ -2683,7 +2683,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -contrast-stretch (see ImageMagick-Documentation for details).
+     -contrast-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps contrastStretch() {
@@ -2702,7 +2702,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -contrast-stretch (see ImageMagick-Documentation for details).
+     -contrast-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps contrastStretch(Integer blackPoint) {
@@ -2724,7 +2724,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -contrast-stretch (see ImageMagick-Documentation for details).
+     -contrast-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps contrastStretch(Integer blackPoint, Integer whitePoint) {
@@ -2750,7 +2750,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -contrast-stretch (see ImageMagick-Documentation for details).
+     -contrast-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps contrastStretch(Integer blackPoint, Integer whitePoint, Boolean percent) {
@@ -2780,7 +2780,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -convolve (see ImageMagick-Documentation for details).
+     -convolve (see documentation of the underlying tool for details).
   */
 
   public IMOps convolve() {
@@ -2799,7 +2799,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -convolve (see ImageMagick-Documentation for details).
+     -convolve (see documentation of the underlying tool for details).
   */
 
   public IMOps convolve(String kernel) {
@@ -2821,7 +2821,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -crop (see ImageMagick-Documentation for details).
+     -crop (see documentation of the underlying tool for details).
   */
 
   public IMOps crop() {
@@ -2840,7 +2840,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -crop (see ImageMagick-Documentation for details).
+     -crop (see documentation of the underlying tool for details).
   */
 
   public IMOps crop(Integer width) {
@@ -2862,7 +2862,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -crop (see ImageMagick-Documentation for details).
+     -crop (see documentation of the underlying tool for details).
   */
 
   public IMOps crop(Integer width, Integer height) {
@@ -2888,7 +2888,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -crop (see ImageMagick-Documentation for details).
+     -crop (see documentation of the underlying tool for details).
   */
 
   public IMOps crop(Integer width, Integer height, Integer x) {
@@ -2921,7 +2921,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -crop (see ImageMagick-Documentation for details).
+     -crop (see documentation of the underlying tool for details).
   */
 
   public IMOps crop(Integer width, Integer height, Integer x, Integer y) {
@@ -2961,7 +2961,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -crop (see ImageMagick-Documentation for details).
+     -crop (see documentation of the underlying tool for details).
   */
 
   public IMOps crop(Integer width, Integer height, Integer x, Integer y, Character special) {
@@ -3004,7 +3004,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -cycle (see ImageMagick-Documentation for details).
+     -cycle (see documentation of the underlying tool for details).
   */
 
   public IMOps cycle() {
@@ -3023,7 +3023,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -cycle (see ImageMagick-Documentation for details).
+     -cycle (see documentation of the underlying tool for details).
   */
 
   public IMOps cycle(Integer amount) {
@@ -3045,7 +3045,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +debug (see ImageMagick-Documentation for details).
+     +debug (see documentation of the underlying tool for details).
   */
 
   public IMOps p_debug() {
@@ -3064,7 +3064,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -debug (see ImageMagick-Documentation for details).
+     -debug (see documentation of the underlying tool for details).
   */
 
   public IMOps debug() {
@@ -3083,7 +3083,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -debug (see ImageMagick-Documentation for details).
+     -debug (see documentation of the underlying tool for details).
   */
 
   public IMOps debug(String events) {
@@ -3105,7 +3105,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -decipher (see ImageMagick-Documentation for details).
+     -decipher (see documentation of the underlying tool for details).
   */
 
   public IMOps decipher() {
@@ -3124,7 +3124,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -decipher (see ImageMagick-Documentation for details).
+     -decipher (see documentation of the underlying tool for details).
   */
 
   public IMOps decipher(String filename) {
@@ -3146,7 +3146,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -deconstruct (see ImageMagick-Documentation for details).
+     -deconstruct (see documentation of the underlying tool for details).
   */
 
   public IMOps deconstruct() {
@@ -3165,7 +3165,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +define (see ImageMagick-Documentation for details).
+     +define (see documentation of the underlying tool for details).
   */
 
   public IMOps p_define() {
@@ -3184,7 +3184,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +define (see ImageMagick-Documentation for details).
+     +define (see documentation of the underlying tool for details).
   */
 
   public IMOps p_define(String key) {
@@ -3206,7 +3206,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -define (see ImageMagick-Documentation for details).
+     -define (see documentation of the underlying tool for details).
   */
 
   public IMOps define() {
@@ -3225,7 +3225,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -define (see ImageMagick-Documentation for details).
+     -define (see documentation of the underlying tool for details).
   */
 
   public IMOps define(String keyValue) {
@@ -3247,7 +3247,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delay (see ImageMagick-Documentation for details).
+     -delay (see documentation of the underlying tool for details).
   */
 
   public IMOps delay() {
@@ -3266,7 +3266,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delay (see ImageMagick-Documentation for details).
+     -delay (see documentation of the underlying tool for details).
   */
 
   public IMOps delay(Integer ticks) {
@@ -3288,7 +3288,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delay (see ImageMagick-Documentation for details).
+     -delay (see documentation of the underlying tool for details).
   */
 
   public IMOps delay(Integer ticks, Integer ticksPerSecond) {
@@ -3314,7 +3314,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delay (see ImageMagick-Documentation for details).
+     -delay (see documentation of the underlying tool for details).
   */
 
   public IMOps delay(Integer ticks, Integer ticksPerSecond, Character special) {
@@ -3343,7 +3343,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +delete (see ImageMagick-Documentation for details).
+     +delete (see documentation of the underlying tool for details).
   */
 
   public IMOps p_delete() {
@@ -3362,7 +3362,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delete (see ImageMagick-Documentation for details).
+     -delete (see documentation of the underlying tool for details).
   */
 
   public IMOps delete() {
@@ -3381,7 +3381,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delete (see ImageMagick-Documentation for details).
+     -delete (see documentation of the underlying tool for details).
   */
 
   public IMOps delete(Integer index1) {
@@ -3403,7 +3403,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delete (see ImageMagick-Documentation for details).
+     -delete (see documentation of the underlying tool for details).
   */
 
   public IMOps delete(Integer index1, Integer index2) {
@@ -3429,7 +3429,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delete (see ImageMagick-Documentation for details).
+     -delete (see documentation of the underlying tool for details).
   */
 
   public IMOps delete(Integer index1, Integer index2, Integer index3) {
@@ -3459,7 +3459,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -delete (see ImageMagick-Documentation for details).
+     -delete (see documentation of the underlying tool for details).
   */
 
   public IMOps delete(String indexes) {
@@ -3481,7 +3481,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -density (see ImageMagick-Documentation for details).
+     -density (see documentation of the underlying tool for details).
   */
 
   public IMOps density() {
@@ -3500,7 +3500,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -density (see ImageMagick-Documentation for details).
+     -density (see documentation of the underlying tool for details).
   */
 
   public IMOps density(Integer width) {
@@ -3522,7 +3522,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -density (see ImageMagick-Documentation for details).
+     -density (see documentation of the underlying tool for details).
   */
 
   public IMOps density(Integer width, Integer height) {
@@ -3548,7 +3548,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -depth (see ImageMagick-Documentation for details).
+     -depth (see documentation of the underlying tool for details).
   */
 
   public IMOps depth() {
@@ -3567,7 +3567,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -depth (see ImageMagick-Documentation for details).
+     -depth (see documentation of the underlying tool for details).
   */
 
   public IMOps depth(Integer value) {
@@ -3589,7 +3589,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -descend (see ImageMagick-Documentation for details).
+     -descend (see documentation of the underlying tool for details).
   */
 
   public IMOps descend() {
@@ -3608,7 +3608,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -deskew (see ImageMagick-Documentation for details).
+     -deskew (see documentation of the underlying tool for details).
   */
 
   public IMOps deskew() {
@@ -3627,7 +3627,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -deskew (see ImageMagick-Documentation for details).
+     -deskew (see documentation of the underlying tool for details).
   */
 
   public IMOps deskew(Double threshold) {
@@ -3649,7 +3649,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -despeckle (see ImageMagick-Documentation for details).
+     -despeckle (see documentation of the underlying tool for details).
   */
 
   public IMOps despeckle() {
@@ -3668,7 +3668,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -displace (see ImageMagick-Documentation for details).
+     -displace (see documentation of the underlying tool for details).
   */
 
   public IMOps displace() {
@@ -3687,7 +3687,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -displace (see ImageMagick-Documentation for details).
+     -displace (see documentation of the underlying tool for details).
   */
 
   public IMOps displace(Double horizontalScale) {
@@ -3709,7 +3709,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -displace (see ImageMagick-Documentation for details).
+     -displace (see documentation of the underlying tool for details).
   */
 
   public IMOps displace(Double horizontalScale, Double verticalScale) {
@@ -3735,7 +3735,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -display (see ImageMagick-Documentation for details).
+     -display (see documentation of the underlying tool for details).
   */
 
   public IMOps display() {
@@ -3754,7 +3754,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -display (see ImageMagick-Documentation for details).
+     -display (see documentation of the underlying tool for details).
   */
 
   public IMOps display(String host) {
@@ -3776,7 +3776,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -display (see ImageMagick-Documentation for details).
+     -display (see documentation of the underlying tool for details).
   */
 
   public IMOps display(String host, Integer display) {
@@ -3802,7 +3802,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -display (see ImageMagick-Documentation for details).
+     -display (see documentation of the underlying tool for details).
   */
 
   public IMOps display(String host, Integer display, Integer screen) {
@@ -3832,7 +3832,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +dispose (see ImageMagick-Documentation for details).
+     +dispose (see documentation of the underlying tool for details).
   */
 
   public IMOps p_dispose() {
@@ -3851,7 +3851,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -dispose (see ImageMagick-Documentation for details).
+     -dispose (see documentation of the underlying tool for details).
   */
 
   public IMOps dispose() {
@@ -3870,7 +3870,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -dispose (see ImageMagick-Documentation for details).
+     -dispose (see documentation of the underlying tool for details).
   */
 
   public IMOps dispose(String method) {
@@ -3892,7 +3892,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -dissolve (see ImageMagick-Documentation for details).
+     -dissolve (see documentation of the underlying tool for details).
   */
 
   public IMOps dissolve() {
@@ -3911,7 +3911,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -dissolve (see ImageMagick-Documentation for details).
+     -dissolve (see documentation of the underlying tool for details).
   */
 
   public IMOps dissolve(Integer percent) {
@@ -3933,7 +3933,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -distort (see ImageMagick-Documentation for details).
+     -distort (see documentation of the underlying tool for details).
   */
 
   public IMOps distort() {
@@ -3952,7 +3952,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -distort (see ImageMagick-Documentation for details).
+     -distort (see documentation of the underlying tool for details).
   */
 
   public IMOps distort(String method) {
@@ -3974,7 +3974,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -distort (see ImageMagick-Documentation for details).
+     -distort (see documentation of the underlying tool for details).
   */
 
   public IMOps distort(String method, String arguments) {
@@ -4001,7 +4001,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +distort (see ImageMagick-Documentation for details).
+     +distort (see documentation of the underlying tool for details).
   */
 
   public IMOps p_distort() {
@@ -4020,7 +4020,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +distort (see ImageMagick-Documentation for details).
+     +distort (see documentation of the underlying tool for details).
   */
 
   public IMOps p_distort(String method) {
@@ -4042,7 +4042,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +distort (see ImageMagick-Documentation for details).
+     +distort (see documentation of the underlying tool for details).
   */
 
   public IMOps p_distort(String method, String arguments) {
@@ -4069,7 +4069,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +dither (see ImageMagick-Documentation for details).
+     +dither (see documentation of the underlying tool for details).
   */
 
   public IMOps p_dither() {
@@ -4088,7 +4088,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -dither (see ImageMagick-Documentation for details).
+     -dither (see documentation of the underlying tool for details).
   */
 
   public IMOps dither() {
@@ -4107,7 +4107,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -dither (see ImageMagick-Documentation for details).
+     -dither (see documentation of the underlying tool for details).
   */
 
   public IMOps dither(String method) {
@@ -4129,7 +4129,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -draw (see ImageMagick-Documentation for details).
+     -draw (see documentation of the underlying tool for details).
   */
 
   public IMOps draw() {
@@ -4148,7 +4148,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -draw (see ImageMagick-Documentation for details).
+     -draw (see documentation of the underlying tool for details).
   */
 
   public IMOps draw(String string) {
@@ -4170,7 +4170,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -edge (see ImageMagick-Documentation for details).
+     -edge (see documentation of the underlying tool for details).
   */
 
   public IMOps edge() {
@@ -4189,7 +4189,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -edge (see ImageMagick-Documentation for details).
+     -edge (see documentation of the underlying tool for details).
   */
 
   public IMOps edge(Double radius) {
@@ -4211,7 +4211,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -emboss (see ImageMagick-Documentation for details).
+     -emboss (see documentation of the underlying tool for details).
   */
 
   public IMOps emboss() {
@@ -4230,7 +4230,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -emboss (see ImageMagick-Documentation for details).
+     -emboss (see documentation of the underlying tool for details).
   */
 
   public IMOps emboss(Double radius) {
@@ -4252,7 +4252,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -encipher (see ImageMagick-Documentation for details).
+     -encipher (see documentation of the underlying tool for details).
   */
 
   public IMOps encipher() {
@@ -4271,7 +4271,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -encipher (see ImageMagick-Documentation for details).
+     -encipher (see documentation of the underlying tool for details).
   */
 
   public IMOps encipher(String filename) {
@@ -4293,7 +4293,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -encoding (see ImageMagick-Documentation for details).
+     -encoding (see documentation of the underlying tool for details).
   */
 
   public IMOps encoding() {
@@ -4312,7 +4312,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -encoding (see ImageMagick-Documentation for details).
+     -encoding (see documentation of the underlying tool for details).
   */
 
   public IMOps encoding(String type) {
@@ -4334,7 +4334,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +endian (see ImageMagick-Documentation for details).
+     +endian (see documentation of the underlying tool for details).
   */
 
   public IMOps p_endian() {
@@ -4353,7 +4353,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -endian (see ImageMagick-Documentation for details).
+     -endian (see documentation of the underlying tool for details).
   */
 
   public IMOps endian() {
@@ -4372,7 +4372,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -endian (see ImageMagick-Documentation for details).
+     -endian (see documentation of the underlying tool for details).
   */
 
   public IMOps endian(String type) {
@@ -4394,7 +4394,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -enhance (see ImageMagick-Documentation for details).
+     -enhance (see documentation of the underlying tool for details).
   */
 
   public IMOps enhance() {
@@ -4413,7 +4413,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -equalize (see ImageMagick-Documentation for details).
+     -equalize (see documentation of the underlying tool for details).
   */
 
   public IMOps equalize() {
@@ -4432,7 +4432,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -evaluate (see ImageMagick-Documentation for details).
+     -evaluate (see documentation of the underlying tool for details).
   */
 
   public IMOps evaluate() {
@@ -4451,7 +4451,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -evaluate (see ImageMagick-Documentation for details).
+     -evaluate (see documentation of the underlying tool for details).
   */
 
   public IMOps evaluate(String operator) {
@@ -4473,7 +4473,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -evaluate (see ImageMagick-Documentation for details).
+     -evaluate (see documentation of the underlying tool for details).
   */
 
   public IMOps evaluate(String operator, String constant) {
@@ -4500,7 +4500,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extent (see ImageMagick-Documentation for details).
+     -extent (see documentation of the underlying tool for details).
   */
 
   public IMOps extent() {
@@ -4519,7 +4519,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extent (see ImageMagick-Documentation for details).
+     -extent (see documentation of the underlying tool for details).
   */
 
   public IMOps extent(Integer width) {
@@ -4541,7 +4541,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extent (see ImageMagick-Documentation for details).
+     -extent (see documentation of the underlying tool for details).
   */
 
   public IMOps extent(Integer width, Integer height) {
@@ -4567,7 +4567,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extent (see ImageMagick-Documentation for details).
+     -extent (see documentation of the underlying tool for details).
   */
 
   public IMOps extent(Integer width, Integer height, Integer xOffset) {
@@ -4600,7 +4600,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extent (see ImageMagick-Documentation for details).
+     -extent (see documentation of the underlying tool for details).
   */
 
   public IMOps extent(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -4640,7 +4640,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extract (see ImageMagick-Documentation for details).
+     -extract (see documentation of the underlying tool for details).
   */
 
   public IMOps extract() {
@@ -4659,7 +4659,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extract (see ImageMagick-Documentation for details).
+     -extract (see documentation of the underlying tool for details).
   */
 
   public IMOps extract(Integer width) {
@@ -4681,7 +4681,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extract (see ImageMagick-Documentation for details).
+     -extract (see documentation of the underlying tool for details).
   */
 
   public IMOps extract(Integer width, Integer height) {
@@ -4707,7 +4707,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extract (see ImageMagick-Documentation for details).
+     -extract (see documentation of the underlying tool for details).
   */
 
   public IMOps extract(Integer width, Integer height, Integer xOffset) {
@@ -4740,7 +4740,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -extract (see ImageMagick-Documentation for details).
+     -extract (see documentation of the underlying tool for details).
   */
 
   public IMOps extract(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -4780,7 +4780,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -fill (see ImageMagick-Documentation for details).
+     -fill (see documentation of the underlying tool for details).
   */
 
   public IMOps fill() {
@@ -4799,7 +4799,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -fill (see ImageMagick-Documentation for details).
+     -fill (see documentation of the underlying tool for details).
   */
 
   public IMOps fill(String color) {
@@ -4821,7 +4821,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -filter (see ImageMagick-Documentation for details).
+     -filter (see documentation of the underlying tool for details).
   */
 
   public IMOps filter() {
@@ -4840,7 +4840,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -filter (see ImageMagick-Documentation for details).
+     -filter (see documentation of the underlying tool for details).
   */
 
   public IMOps filter(String type) {
@@ -4862,7 +4862,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -flatten (see ImageMagick-Documentation for details).
+     -flatten (see documentation of the underlying tool for details).
   */
 
   public IMOps flatten() {
@@ -4881,7 +4881,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -flip (see ImageMagick-Documentation for details).
+     -flip (see documentation of the underlying tool for details).
   */
 
   public IMOps flip() {
@@ -4900,7 +4900,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -floodfill (see ImageMagick-Documentation for details).
+     -floodfill (see documentation of the underlying tool for details).
   */
 
   public IMOps floodfill() {
@@ -4919,7 +4919,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -floodfill (see ImageMagick-Documentation for details).
+     -floodfill (see documentation of the underlying tool for details).
   */
 
   public IMOps floodfill(Integer x) {
@@ -4941,7 +4941,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -floodfill (see ImageMagick-Documentation for details).
+     -floodfill (see documentation of the underlying tool for details).
   */
 
   public IMOps floodfill(Integer x, Integer y) {
@@ -4968,7 +4968,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -floodfill (see ImageMagick-Documentation for details).
+     -floodfill (see documentation of the underlying tool for details).
   */
 
   public IMOps floodfill(Integer x, Integer y, String color) {
@@ -5000,7 +5000,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -flop (see ImageMagick-Documentation for details).
+     -flop (see documentation of the underlying tool for details).
   */
 
   public IMOps flop() {
@@ -5019,7 +5019,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -font (see ImageMagick-Documentation for details).
+     -font (see documentation of the underlying tool for details).
   */
 
   public IMOps font() {
@@ -5038,7 +5038,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -font (see ImageMagick-Documentation for details).
+     -font (see documentation of the underlying tool for details).
   */
 
   public IMOps font(String name) {
@@ -5060,7 +5060,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -foreground (see ImageMagick-Documentation for details).
+     -foreground (see documentation of the underlying tool for details).
   */
 
   public IMOps foreground() {
@@ -5079,7 +5079,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -foreground (see ImageMagick-Documentation for details).
+     -foreground (see documentation of the underlying tool for details).
   */
 
   public IMOps foreground(String color) {
@@ -5101,7 +5101,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -format (see ImageMagick-Documentation for details).
+     -format (see documentation of the underlying tool for details).
   */
 
   public IMOps format() {
@@ -5120,7 +5120,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -format (see ImageMagick-Documentation for details).
+     -format (see documentation of the underlying tool for details).
   */
 
   public IMOps format(String type) {
@@ -5142,7 +5142,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -frame (see ImageMagick-Documentation for details).
+     -frame (see documentation of the underlying tool for details).
   */
 
   public IMOps frame() {
@@ -5161,7 +5161,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -frame (see ImageMagick-Documentation for details).
+     -frame (see documentation of the underlying tool for details).
   */
 
   public IMOps frame(Integer width) {
@@ -5183,7 +5183,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -frame (see ImageMagick-Documentation for details).
+     -frame (see documentation of the underlying tool for details).
   */
 
   public IMOps frame(Integer width, Integer height) {
@@ -5209,7 +5209,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -frame (see ImageMagick-Documentation for details).
+     -frame (see documentation of the underlying tool for details).
   */
 
   public IMOps frame(Integer width, Integer height, Integer outerBevelWidth) {
@@ -5242,7 +5242,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -frame (see ImageMagick-Documentation for details).
+     -frame (see documentation of the underlying tool for details).
   */
 
   public IMOps frame(Integer width, Integer height, Integer outerBevelWidth, Integer innerBevelWidth) {
@@ -5282,7 +5282,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -fuzz (see ImageMagick-Documentation for details).
+     -fuzz (see documentation of the underlying tool for details).
   */
 
   public IMOps fuzz() {
@@ -5301,7 +5301,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -fuzz (see ImageMagick-Documentation for details).
+     -fuzz (see documentation of the underlying tool for details).
   */
 
   public IMOps fuzz(Double distance) {
@@ -5323,7 +5323,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -fuzz (see ImageMagick-Documentation for details).
+     -fuzz (see documentation of the underlying tool for details).
   */
 
   public IMOps fuzz(Double distance, Boolean percent) {
@@ -5349,7 +5349,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -fx (see ImageMagick-Documentation for details).
+     -fx (see documentation of the underlying tool for details).
   */
 
   public IMOps fx() {
@@ -5368,7 +5368,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -fx (see ImageMagick-Documentation for details).
+     -fx (see documentation of the underlying tool for details).
   */
 
   public IMOps fx(String expression) {
@@ -5390,7 +5390,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -gamma (see ImageMagick-Documentation for details).
+     -gamma (see documentation of the underlying tool for details).
   */
 
   public IMOps gamma() {
@@ -5409,7 +5409,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -gamma (see ImageMagick-Documentation for details).
+     -gamma (see documentation of the underlying tool for details).
   */
 
   public IMOps gamma(Double value) {
@@ -5431,7 +5431,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +gamma (see ImageMagick-Documentation for details).
+     +gamma (see documentation of the underlying tool for details).
   */
 
   public IMOps p_gamma() {
@@ -5450,7 +5450,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +gamma (see ImageMagick-Documentation for details).
+     +gamma (see documentation of the underlying tool for details).
   */
 
   public IMOps p_gamma(Double value) {
@@ -5472,7 +5472,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -gaussian-blur (see ImageMagick-Documentation for details).
+     -gaussian-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps gaussianBlur() {
@@ -5491,7 +5491,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -gaussian-blur (see ImageMagick-Documentation for details).
+     -gaussian-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps gaussianBlur(Double radius) {
@@ -5513,7 +5513,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -gaussian-blur (see ImageMagick-Documentation for details).
+     -gaussian-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps gaussianBlur(Double radius, Double sigma) {
@@ -5539,7 +5539,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -geometry (see ImageMagick-Documentation for details).
+     -geometry (see documentation of the underlying tool for details).
   */
 
   public IMOps geometry() {
@@ -5558,7 +5558,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -geometry (see ImageMagick-Documentation for details).
+     -geometry (see documentation of the underlying tool for details).
   */
 
   public IMOps geometry(Integer width) {
@@ -5580,7 +5580,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -geometry (see ImageMagick-Documentation for details).
+     -geometry (see documentation of the underlying tool for details).
   */
 
   public IMOps geometry(Integer width, Integer height) {
@@ -5606,7 +5606,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -geometry (see ImageMagick-Documentation for details).
+     -geometry (see documentation of the underlying tool for details).
   */
 
   public IMOps geometry(Integer width, Integer height, Integer x) {
@@ -5639,7 +5639,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -geometry (see ImageMagick-Documentation for details).
+     -geometry (see documentation of the underlying tool for details).
   */
 
   public IMOps geometry(Integer width, Integer height, Integer x, Integer y) {
@@ -5679,7 +5679,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -gravity (see ImageMagick-Documentation for details).
+     -gravity (see documentation of the underlying tool for details).
   */
 
   public IMOps gravity() {
@@ -5698,7 +5698,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -gravity (see ImageMagick-Documentation for details).
+     -gravity (see documentation of the underlying tool for details).
   */
 
   public IMOps gravity(String type) {
@@ -5720,7 +5720,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -green-primary (see ImageMagick-Documentation for details).
+     -green-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps greenPrimary() {
@@ -5739,7 +5739,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -green-primary (see ImageMagick-Documentation for details).
+     -green-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps greenPrimary(Double x) {
@@ -5761,7 +5761,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -green-primary (see ImageMagick-Documentation for details).
+     -green-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps greenPrimary(Double x, Double y) {
@@ -5787,7 +5787,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -help (see ImageMagick-Documentation for details).
+     -help (see documentation of the underlying tool for details).
   */
 
   public IMOps help() {
@@ -5806,7 +5806,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -highlight-color (see ImageMagick-Documentation for details).
+     -highlight-color (see documentation of the underlying tool for details).
   */
 
   public IMOps highlightColor() {
@@ -5825,7 +5825,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -highlight-color (see ImageMagick-Documentation for details).
+     -highlight-color (see documentation of the underlying tool for details).
   */
 
   public IMOps highlightColor(String color) {
@@ -5847,7 +5847,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -iconGeometry (see ImageMagick-Documentation for details).
+     -iconGeometry (see documentation of the underlying tool for details).
   */
 
   public IMOps iconGeometry() {
@@ -5866,7 +5866,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -iconGeometry (see ImageMagick-Documentation for details).
+     -iconGeometry (see documentation of the underlying tool for details).
   */
 
   public IMOps iconGeometry(Integer width) {
@@ -5888,7 +5888,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -iconGeometry (see ImageMagick-Documentation for details).
+     -iconGeometry (see documentation of the underlying tool for details).
   */
 
   public IMOps iconGeometry(Integer width, Integer height) {
@@ -5914,7 +5914,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -iconGeometry (see ImageMagick-Documentation for details).
+     -iconGeometry (see documentation of the underlying tool for details).
   */
 
   public IMOps iconGeometry(Integer width, Integer height, Integer xOffset) {
@@ -5947,7 +5947,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -iconGeometry (see ImageMagick-Documentation for details).
+     -iconGeometry (see documentation of the underlying tool for details).
   */
 
   public IMOps iconGeometry(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -5987,7 +5987,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -iconic (see ImageMagick-Documentation for details).
+     -iconic (see documentation of the underlying tool for details).
   */
 
   public IMOps iconic() {
@@ -6006,7 +6006,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -identify (see ImageMagick-Documentation for details).
+     -identify (see documentation of the underlying tool for details).
   */
 
   public IMOps identify() {
@@ -6025,7 +6025,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -immutable (see ImageMagick-Documentation for details).
+     -immutable (see documentation of the underlying tool for details).
   */
 
   public IMOps immutable() {
@@ -6044,7 +6044,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -implode (see ImageMagick-Documentation for details).
+     -implode (see documentation of the underlying tool for details).
   */
 
   public IMOps implode() {
@@ -6063,7 +6063,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -implode (see ImageMagick-Documentation for details).
+     -implode (see documentation of the underlying tool for details).
   */
 
   public IMOps implode(Double factor) {
@@ -6085,7 +6085,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -insert (see ImageMagick-Documentation for details).
+     -insert (see documentation of the underlying tool for details).
   */
 
   public IMOps insert() {
@@ -6104,7 +6104,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -insert (see ImageMagick-Documentation for details).
+     -insert (see documentation of the underlying tool for details).
   */
 
   public IMOps insert(Integer index) {
@@ -6126,7 +6126,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -intent (see ImageMagick-Documentation for details).
+     -intent (see documentation of the underlying tool for details).
   */
 
   public IMOps intent() {
@@ -6145,7 +6145,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -intent (see ImageMagick-Documentation for details).
+     -intent (see documentation of the underlying tool for details).
   */
 
   public IMOps intent(String type) {
@@ -6167,7 +6167,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -interlace (see ImageMagick-Documentation for details).
+     -interlace (see documentation of the underlying tool for details).
   */
 
   public IMOps interlace() {
@@ -6186,7 +6186,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -interlace (see ImageMagick-Documentation for details).
+     -interlace (see documentation of the underlying tool for details).
   */
 
   public IMOps interlace(String type) {
@@ -6208,7 +6208,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -interpolate (see ImageMagick-Documentation for details).
+     -interpolate (see documentation of the underlying tool for details).
   */
 
   public IMOps interpolate() {
@@ -6227,7 +6227,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -interpolate (see ImageMagick-Documentation for details).
+     -interpolate (see documentation of the underlying tool for details).
   */
 
   public IMOps interpolate(String type) {
@@ -6249,7 +6249,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -interword-spacing (see ImageMagick-Documentation for details).
+     -interword-spacing (see documentation of the underlying tool for details).
   */
 
   public IMOps interwordSpacing() {
@@ -6268,7 +6268,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -interword-spacing (see ImageMagick-Documentation for details).
+     -interword-spacing (see documentation of the underlying tool for details).
   */
 
   public IMOps interwordSpacing(Integer value) {
@@ -6290,7 +6290,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -kerning (see ImageMagick-Documentation for details).
+     -kerning (see documentation of the underlying tool for details).
   */
 
   public IMOps kerning() {
@@ -6309,7 +6309,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -kerning (see ImageMagick-Documentation for details).
+     -kerning (see documentation of the underlying tool for details).
   */
 
   public IMOps kerning(Integer value) {
@@ -6331,7 +6331,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +label (see ImageMagick-Documentation for details).
+     +label (see documentation of the underlying tool for details).
   */
 
   public IMOps p_label() {
@@ -6350,7 +6350,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -label (see ImageMagick-Documentation for details).
+     -label (see documentation of the underlying tool for details).
   */
 
   public IMOps label() {
@@ -6369,7 +6369,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -label (see ImageMagick-Documentation for details).
+     -label (see documentation of the underlying tool for details).
   */
 
   public IMOps label(String name) {
@@ -6391,7 +6391,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -lat (see ImageMagick-Documentation for details).
+     -lat (see documentation of the underlying tool for details).
   */
 
   public IMOps lat() {
@@ -6410,7 +6410,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -lat (see ImageMagick-Documentation for details).
+     -lat (see documentation of the underlying tool for details).
   */
 
   public IMOps lat(Integer width) {
@@ -6432,7 +6432,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -lat (see ImageMagick-Documentation for details).
+     -lat (see documentation of the underlying tool for details).
   */
 
   public IMOps lat(Integer width, Integer height) {
@@ -6458,7 +6458,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -lat (see ImageMagick-Documentation for details).
+     -lat (see documentation of the underlying tool for details).
   */
 
   public IMOps lat(Integer width, Integer height, Integer offset) {
@@ -6491,7 +6491,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -lat (see ImageMagick-Documentation for details).
+     -lat (see documentation of the underlying tool for details).
   */
 
   public IMOps lat(Integer width, Integer height, Integer offset, Boolean percent) {
@@ -6528,7 +6528,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -layers (see ImageMagick-Documentation for details).
+     -layers (see documentation of the underlying tool for details).
   */
 
   public IMOps layers() {
@@ -6547,7 +6547,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -layers (see ImageMagick-Documentation for details).
+     -layers (see documentation of the underlying tool for details).
   */
 
   public IMOps layers(String method) {
@@ -6569,7 +6569,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -level-colors (see ImageMagick-Documentation for details).
+     -level-colors (see documentation of the underlying tool for details).
   */
 
   public IMOps levelColors() {
@@ -6588,7 +6588,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -level-colors (see ImageMagick-Documentation for details).
+     -level-colors (see documentation of the underlying tool for details).
   */
 
   public IMOps levelColors(String black_color) {
@@ -6610,7 +6610,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -level-colors (see ImageMagick-Documentation for details).
+     -level-colors (see documentation of the underlying tool for details).
   */
 
   public IMOps levelColors(String black_color, String white_color) {
@@ -6636,7 +6636,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +level-colors (see ImageMagick-Documentation for details).
+     +level-colors (see documentation of the underlying tool for details).
   */
 
   public IMOps p_levelColors() {
@@ -6655,7 +6655,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +level-colors (see ImageMagick-Documentation for details).
+     +level-colors (see documentation of the underlying tool for details).
   */
 
   public IMOps p_levelColors(String black_color) {
@@ -6677,7 +6677,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +level-colors (see ImageMagick-Documentation for details).
+     +level-colors (see documentation of the underlying tool for details).
   */
 
   public IMOps p_levelColors(String black_color, String white_color) {
@@ -6703,7 +6703,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -level (see ImageMagick-Documentation for details).
+     -level (see documentation of the underlying tool for details).
   */
 
   public IMOps level(Double black_point) {
@@ -6725,7 +6725,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -level (see ImageMagick-Documentation for details).
+     -level (see documentation of the underlying tool for details).
   */
 
   public IMOps level(Double black_point, Double white_point) {
@@ -6751,7 +6751,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -level (see ImageMagick-Documentation for details).
+     -level (see documentation of the underlying tool for details).
   */
 
   public IMOps level(Double black_point, Double white_point, Boolean percent) {
@@ -6781,7 +6781,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -level (see ImageMagick-Documentation for details).
+     -level (see documentation of the underlying tool for details).
   */
 
   public IMOps level(Double black_point, Double white_point, Boolean percent, Double gamma) {
@@ -6815,7 +6815,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +level (see ImageMagick-Documentation for details).
+     +level (see documentation of the underlying tool for details).
   */
 
   public IMOps p_level(Double black_point) {
@@ -6837,7 +6837,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +level (see ImageMagick-Documentation for details).
+     +level (see documentation of the underlying tool for details).
   */
 
   public IMOps p_level(Double black_point, Double white_point) {
@@ -6863,7 +6863,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +level (see ImageMagick-Documentation for details).
+     +level (see documentation of the underlying tool for details).
   */
 
   public IMOps p_level(Double black_point, Double white_point, Boolean percent) {
@@ -6893,7 +6893,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +level (see ImageMagick-Documentation for details).
+     +level (see documentation of the underlying tool for details).
   */
 
   public IMOps p_level(Double black_point, Double white_point, Boolean percent, Double gamma) {
@@ -6927,7 +6927,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -limit (see ImageMagick-Documentation for details).
+     -limit (see documentation of the underlying tool for details).
   */
 
   public IMOps limit() {
@@ -6946,7 +6946,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -limit (see ImageMagick-Documentation for details).
+     -limit (see documentation of the underlying tool for details).
   */
 
   public IMOps limit(String type) {
@@ -6968,7 +6968,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -linear-stretch (see ImageMagick-Documentation for details).
+     -linear-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps linearStretch() {
@@ -6987,7 +6987,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -linear-stretch (see ImageMagick-Documentation for details).
+     -linear-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps linearStretch(Double blackPoint) {
@@ -7009,7 +7009,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -linear-stretch (see ImageMagick-Documentation for details).
+     -linear-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps linearStretch(Double blackPoint, Double whitePoint) {
@@ -7035,7 +7035,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -linear-stretch (see ImageMagick-Documentation for details).
+     -linear-stretch (see documentation of the underlying tool for details).
   */
 
   public IMOps linearStretch(Double blackPoint, Double whitePoint, Boolean percent) {
@@ -7065,7 +7065,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -linewidth (see ImageMagick-Documentation for details).
+     -linewidth (see documentation of the underlying tool for details).
   */
 
   public IMOps linewidth() {
@@ -7084,7 +7084,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -liquid-rescale (see ImageMagick-Documentation for details).
+     -liquid-rescale (see documentation of the underlying tool for details).
   */
 
   public IMOps liquidRescale() {
@@ -7103,7 +7103,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -liquid-rescale (see ImageMagick-Documentation for details).
+     -liquid-rescale (see documentation of the underlying tool for details).
   */
 
   public IMOps liquidRescale(Integer width) {
@@ -7125,7 +7125,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -liquid-rescale (see ImageMagick-Documentation for details).
+     -liquid-rescale (see documentation of the underlying tool for details).
   */
 
   public IMOps liquidRescale(Integer width, Integer height) {
@@ -7151,7 +7151,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -liquid-rescale (see ImageMagick-Documentation for details).
+     -liquid-rescale (see documentation of the underlying tool for details).
   */
 
   public IMOps liquidRescale(Integer width, Integer height, Integer xOffset) {
@@ -7184,7 +7184,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -liquid-rescale (see ImageMagick-Documentation for details).
+     -liquid-rescale (see documentation of the underlying tool for details).
   */
 
   public IMOps liquidRescale(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -7224,7 +7224,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -list (see ImageMagick-Documentation for details).
+     -list (see documentation of the underlying tool for details).
   */
 
   public IMOps list() {
@@ -7243,7 +7243,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -list (see ImageMagick-Documentation for details).
+     -list (see documentation of the underlying tool for details).
   */
 
   public IMOps list(String type) {
@@ -7265,7 +7265,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -log (see ImageMagick-Documentation for details).
+     -log (see documentation of the underlying tool for details).
   */
 
   public IMOps log() {
@@ -7284,7 +7284,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -log (see ImageMagick-Documentation for details).
+     -log (see documentation of the underlying tool for details).
   */
 
   public IMOps log(String text) {
@@ -7306,7 +7306,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -loop (see ImageMagick-Documentation for details).
+     -loop (see documentation of the underlying tool for details).
   */
 
   public IMOps loop() {
@@ -7325,7 +7325,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -loop (see ImageMagick-Documentation for details).
+     -loop (see documentation of the underlying tool for details).
   */
 
   public IMOps loop(Integer iterations) {
@@ -7347,7 +7347,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -lowlight-color (see ImageMagick-Documentation for details).
+     -lowlight-color (see documentation of the underlying tool for details).
   */
 
   public IMOps lowlightColor() {
@@ -7366,7 +7366,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -lowlight-color (see ImageMagick-Documentation for details).
+     -lowlight-color (see documentation of the underlying tool for details).
   */
 
   public IMOps lowlightColor(String color) {
@@ -7388,7 +7388,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -magnify (see ImageMagick-Documentation for details).
+     -magnify (see documentation of the underlying tool for details).
   */
 
   public IMOps magnify() {
@@ -7407,7 +7407,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -magnify (see ImageMagick-Documentation for details).
+     -magnify (see documentation of the underlying tool for details).
   */
 
   public IMOps magnify(Double factor) {
@@ -7429,7 +7429,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +map (see ImageMagick-Documentation for details).
+     +map (see documentation of the underlying tool for details).
   */
 
   public IMOps p_map() {
@@ -7448,7 +7448,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -map (see ImageMagick-Documentation for details).
+     -map (see documentation of the underlying tool for details).
   */
 
   public IMOps map() {
@@ -7467,7 +7467,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -map (see ImageMagick-Documentation for details).
+     -map (see documentation of the underlying tool for details).
   */
 
   public IMOps map(String components) {
@@ -7489,7 +7489,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +mask (see ImageMagick-Documentation for details).
+     +mask (see documentation of the underlying tool for details).
   */
 
   public IMOps p_mask() {
@@ -7508,7 +7508,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -mask (see ImageMagick-Documentation for details).
+     -mask (see documentation of the underlying tool for details).
   */
 
   public IMOps mask() {
@@ -7527,7 +7527,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -mask (see ImageMagick-Documentation for details).
+     -mask (see documentation of the underlying tool for details).
   */
 
   public IMOps mask(String filename) {
@@ -7549,7 +7549,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -mattecolor (see ImageMagick-Documentation for details).
+     -mattecolor (see documentation of the underlying tool for details).
   */
 
   public IMOps mattecolor() {
@@ -7568,7 +7568,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -mattecolor (see ImageMagick-Documentation for details).
+     -mattecolor (see documentation of the underlying tool for details).
   */
 
   public IMOps mattecolor(String color) {
@@ -7590,7 +7590,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -median (see ImageMagick-Documentation for details).
+     -median (see documentation of the underlying tool for details).
   */
 
   public IMOps median() {
@@ -7609,7 +7609,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -median (see ImageMagick-Documentation for details).
+     -median (see documentation of the underlying tool for details).
   */
 
   public IMOps median(Double radius) {
@@ -7631,7 +7631,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -metric (see ImageMagick-Documentation for details).
+     -metric (see documentation of the underlying tool for details).
   */
 
   public IMOps metric() {
@@ -7650,7 +7650,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -metric (see ImageMagick-Documentation for details).
+     -metric (see documentation of the underlying tool for details).
   */
 
   public IMOps metric(String type) {
@@ -7672,7 +7672,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -mode (see ImageMagick-Documentation for details).
+     -mode (see documentation of the underlying tool for details).
   */
 
   public IMOps mode() {
@@ -7691,7 +7691,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -mode (see ImageMagick-Documentation for details).
+     -mode (see documentation of the underlying tool for details).
   */
 
   public IMOps mode(String value) {
@@ -7713,7 +7713,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -modulate (see ImageMagick-Documentation for details).
+     -modulate (see documentation of the underlying tool for details).
   */
 
   public IMOps modulate() {
@@ -7732,7 +7732,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -modulate (see ImageMagick-Documentation for details).
+     -modulate (see documentation of the underlying tool for details).
   */
 
   public IMOps modulate(Double brightness) {
@@ -7754,7 +7754,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -modulate (see ImageMagick-Documentation for details).
+     -modulate (see documentation of the underlying tool for details).
   */
 
   public IMOps modulate(Double brightness, Double saturation) {
@@ -7780,7 +7780,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -modulate (see ImageMagick-Documentation for details).
+     -modulate (see documentation of the underlying tool for details).
   */
 
   public IMOps modulate(Double brightness, Double saturation, Double hue) {
@@ -7810,7 +7810,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -monitor (see ImageMagick-Documentation for details).
+     -monitor (see documentation of the underlying tool for details).
   */
 
   public IMOps monitor() {
@@ -7829,7 +7829,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -monochrome (see ImageMagick-Documentation for details).
+     -monochrome (see documentation of the underlying tool for details).
   */
 
   public IMOps monochrome() {
@@ -7848,7 +7848,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -morph (see ImageMagick-Documentation for details).
+     -morph (see documentation of the underlying tool for details).
   */
 
   public IMOps morph() {
@@ -7867,7 +7867,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -morph (see ImageMagick-Documentation for details).
+     -morph (see documentation of the underlying tool for details).
   */
 
   public IMOps morph(Integer frames) {
@@ -7889,7 +7889,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -mosaic (see ImageMagick-Documentation for details).
+     -mosaic (see documentation of the underlying tool for details).
   */
 
   public IMOps mosaic() {
@@ -7908,7 +7908,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -motion-blur (see ImageMagick-Documentation for details).
+     -motion-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps motionBlur() {
@@ -7927,7 +7927,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -motion-blur (see ImageMagick-Documentation for details).
+     -motion-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps motionBlur(Double radius) {
@@ -7949,7 +7949,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -motion-blur (see ImageMagick-Documentation for details).
+     -motion-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps motionBlur(Double radius, Double sigma) {
@@ -7975,7 +7975,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -motion-blur (see ImageMagick-Documentation for details).
+     -motion-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps motionBlur(Double radius, Double sigma, Double angle) {
@@ -8008,7 +8008,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -name (see ImageMagick-Documentation for details).
+     -name (see documentation of the underlying tool for details).
   */
 
   public IMOps name() {
@@ -8027,7 +8027,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -negate (see ImageMagick-Documentation for details).
+     -negate (see documentation of the underlying tool for details).
   */
 
   public IMOps negate() {
@@ -8046,7 +8046,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +negate (see ImageMagick-Documentation for details).
+     +negate (see documentation of the underlying tool for details).
   */
 
   public IMOps p_negate() {
@@ -8065,7 +8065,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -noise (see ImageMagick-Documentation for details).
+     -noise (see documentation of the underlying tool for details).
   */
 
   public IMOps noise() {
@@ -8084,7 +8084,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -noise (see ImageMagick-Documentation for details).
+     -noise (see documentation of the underlying tool for details).
   */
 
   public IMOps noise(Double radius) {
@@ -8106,7 +8106,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +noise (see ImageMagick-Documentation for details).
+     +noise (see documentation of the underlying tool for details).
   */
 
   public IMOps p_noise() {
@@ -8125,7 +8125,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +noise (see ImageMagick-Documentation for details).
+     +noise (see documentation of the underlying tool for details).
   */
 
   public IMOps p_noise(String type) {
@@ -8147,7 +8147,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -normalize (see ImageMagick-Documentation for details).
+     -normalize (see documentation of the underlying tool for details).
   */
 
   public IMOps normalize() {
@@ -8166,7 +8166,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -opaque (see ImageMagick-Documentation for details).
+     -opaque (see documentation of the underlying tool for details).
   */
 
   public IMOps opaque() {
@@ -8185,7 +8185,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -opaque (see ImageMagick-Documentation for details).
+     -opaque (see documentation of the underlying tool for details).
   */
 
   public IMOps opaque(String color) {
@@ -8207,7 +8207,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +opaque (see ImageMagick-Documentation for details).
+     +opaque (see documentation of the underlying tool for details).
   */
 
   public IMOps p_opaque() {
@@ -8226,7 +8226,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +opaque (see ImageMagick-Documentation for details).
+     +opaque (see documentation of the underlying tool for details).
   */
 
   public IMOps p_opaque(String color) {
@@ -8248,7 +8248,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -ordered-dither (see ImageMagick-Documentation for details).
+     -ordered-dither (see documentation of the underlying tool for details).
   */
 
   public IMOps orderedDither() {
@@ -8267,7 +8267,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -ordered-dither (see ImageMagick-Documentation for details).
+     -ordered-dither (see documentation of the underlying tool for details).
   */
 
   public IMOps orderedDither(String threshold_map) {
@@ -8289,7 +8289,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -ordered-dither (see ImageMagick-Documentation for details).
+     -ordered-dither (see documentation of the underlying tool for details).
   */
 
   public IMOps orderedDither(String threshold_map, String level) {
@@ -8315,7 +8315,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -orient (see ImageMagick-Documentation for details).
+     -orient (see documentation of the underlying tool for details).
   */
 
   public IMOps orient() {
@@ -8334,7 +8334,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -orient (see ImageMagick-Documentation for details).
+     -orient (see documentation of the underlying tool for details).
   */
 
   public IMOps orient(String imageOrientation) {
@@ -8356,7 +8356,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +page (see ImageMagick-Documentation for details).
+     +page (see documentation of the underlying tool for details).
   */
 
   public IMOps p_page() {
@@ -8375,7 +8375,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -page (see ImageMagick-Documentation for details).
+     -page (see documentation of the underlying tool for details).
   */
 
   public IMOps page() {
@@ -8394,7 +8394,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -page (see ImageMagick-Documentation for details).
+     -page (see documentation of the underlying tool for details).
   */
 
   public IMOps page(Integer width) {
@@ -8416,7 +8416,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -page (see ImageMagick-Documentation for details).
+     -page (see documentation of the underlying tool for details).
   */
 
   public IMOps page(Integer width, Integer height) {
@@ -8442,7 +8442,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -page (see ImageMagick-Documentation for details).
+     -page (see documentation of the underlying tool for details).
   */
 
   public IMOps page(Integer width, Integer height, Integer x) {
@@ -8475,7 +8475,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -page (see ImageMagick-Documentation for details).
+     -page (see documentation of the underlying tool for details).
   */
 
   public IMOps page(Integer width, Integer height, Integer x, Integer y) {
@@ -8515,7 +8515,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -page (see ImageMagick-Documentation for details).
+     -page (see documentation of the underlying tool for details).
   */
 
   public IMOps page(Integer width, Integer height, Integer x, Integer y, Character special) {
@@ -8558,7 +8558,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -paint (see ImageMagick-Documentation for details).
+     -paint (see documentation of the underlying tool for details).
   */
 
   public IMOps paint() {
@@ -8577,7 +8577,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -paint (see ImageMagick-Documentation for details).
+     -paint (see documentation of the underlying tool for details).
   */
 
   public IMOps paint(Double radius) {
@@ -8599,7 +8599,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -path (see ImageMagick-Documentation for details).
+     -path (see documentation of the underlying tool for details).
   */
 
   public IMOps path() {
@@ -8618,7 +8618,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -path (see ImageMagick-Documentation for details).
+     -path (see documentation of the underlying tool for details).
   */
 
   public IMOps path(String path) {
@@ -8640,7 +8640,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -pause (see ImageMagick-Documentation for details).
+     -pause (see documentation of the underlying tool for details).
   */
 
   public IMOps pause() {
@@ -8659,7 +8659,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -pause (see ImageMagick-Documentation for details).
+     -pause (see documentation of the underlying tool for details).
   */
 
   public IMOps pause(Integer seconds) {
@@ -8681,7 +8681,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -ping (see ImageMagick-Documentation for details).
+     -ping (see documentation of the underlying tool for details).
   */
 
   public IMOps ping() {
@@ -8700,7 +8700,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -pointsize (see ImageMagick-Documentation for details).
+     -pointsize (see documentation of the underlying tool for details).
   */
 
   public IMOps pointsize() {
@@ -8719,7 +8719,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -pointsize (see ImageMagick-Documentation for details).
+     -pointsize (see documentation of the underlying tool for details).
   */
 
   public IMOps pointsize(Integer value) {
@@ -8741,7 +8741,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -polaroid (see ImageMagick-Documentation for details).
+     -polaroid (see documentation of the underlying tool for details).
   */
 
   public IMOps polaroid() {
@@ -8760,7 +8760,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -polaroid (see ImageMagick-Documentation for details).
+     -polaroid (see documentation of the underlying tool for details).
   */
 
   public IMOps polaroid(Double angle) {
@@ -8782,7 +8782,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -posterize (see ImageMagick-Documentation for details).
+     -posterize (see documentation of the underlying tool for details).
   */
 
   public IMOps posterize() {
@@ -8801,7 +8801,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -posterize (see ImageMagick-Documentation for details).
+     -posterize (see documentation of the underlying tool for details).
   */
 
   public IMOps posterize(Integer levels) {
@@ -8823,7 +8823,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -preview (see ImageMagick-Documentation for details).
+     -preview (see documentation of the underlying tool for details).
   */
 
   public IMOps preview() {
@@ -8842,7 +8842,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -preview (see ImageMagick-Documentation for details).
+     -preview (see documentation of the underlying tool for details).
   */
 
   public IMOps preview(String type) {
@@ -8864,7 +8864,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -print (see ImageMagick-Documentation for details).
+     -print (see documentation of the underlying tool for details).
   */
 
   public IMOps print() {
@@ -8883,7 +8883,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -print (see ImageMagick-Documentation for details).
+     -print (see documentation of the underlying tool for details).
   */
 
   public IMOps print(String text) {
@@ -8905,7 +8905,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -process (see ImageMagick-Documentation for details).
+     -process (see documentation of the underlying tool for details).
   */
 
   public IMOps process() {
@@ -8924,7 +8924,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -process (see ImageMagick-Documentation for details).
+     -process (see documentation of the underlying tool for details).
   */
 
   public IMOps process(String command) {
@@ -8946,7 +8946,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -profile (see ImageMagick-Documentation for details).
+     -profile (see documentation of the underlying tool for details).
   */
 
   public IMOps profile() {
@@ -8965,7 +8965,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -profile (see ImageMagick-Documentation for details).
+     -profile (see documentation of the underlying tool for details).
   */
 
   public IMOps profile(String filename) {
@@ -8987,7 +8987,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +profile (see ImageMagick-Documentation for details).
+     +profile (see documentation of the underlying tool for details).
   */
 
   public IMOps p_profile() {
@@ -9006,7 +9006,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +profile (see ImageMagick-Documentation for details).
+     +profile (see documentation of the underlying tool for details).
   */
 
   public IMOps p_profile(String profileName) {
@@ -9028,7 +9028,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -quality (see ImageMagick-Documentation for details).
+     -quality (see documentation of the underlying tool for details).
   */
 
   public IMOps quality() {
@@ -9047,7 +9047,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -quality (see ImageMagick-Documentation for details).
+     -quality (see documentation of the underlying tool for details).
   */
 
   public IMOps quality(Double value) {
@@ -9069,7 +9069,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -quantize (see ImageMagick-Documentation for details).
+     -quantize (see documentation of the underlying tool for details).
   */
 
   public IMOps quantize() {
@@ -9088,7 +9088,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -quantize (see ImageMagick-Documentation for details).
+     -quantize (see documentation of the underlying tool for details).
   */
 
   public IMOps quantize(String colorspace) {
@@ -9110,7 +9110,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -quiet (see ImageMagick-Documentation for details).
+     -quiet (see documentation of the underlying tool for details).
   */
 
   public IMOps quiet() {
@@ -9129,7 +9129,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -radial-blur (see ImageMagick-Documentation for details).
+     -radial-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps radialBlur() {
@@ -9148,7 +9148,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -radial-blur (see ImageMagick-Documentation for details).
+     -radial-blur (see documentation of the underlying tool for details).
   */
 
   public IMOps radialBlur(Double angle) {
@@ -9170,7 +9170,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -raise (see ImageMagick-Documentation for details).
+     -raise (see documentation of the underlying tool for details).
   */
 
   public IMOps raise() {
@@ -9189,7 +9189,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -raise (see ImageMagick-Documentation for details).
+     -raise (see documentation of the underlying tool for details).
   */
 
   public IMOps raise(Integer width) {
@@ -9211,7 +9211,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -raise (see ImageMagick-Documentation for details).
+     -raise (see documentation of the underlying tool for details).
   */
 
   public IMOps raise(Integer width, Integer height) {
@@ -9237,7 +9237,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +raise (see ImageMagick-Documentation for details).
+     +raise (see documentation of the underlying tool for details).
   */
 
   public IMOps p_raise() {
@@ -9256,7 +9256,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +raise (see ImageMagick-Documentation for details).
+     +raise (see documentation of the underlying tool for details).
   */
 
   public IMOps p_raise(Integer width) {
@@ -9278,7 +9278,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +raise (see ImageMagick-Documentation for details).
+     +raise (see documentation of the underlying tool for details).
   */
 
   public IMOps p_raise(Integer width, Integer height) {
@@ -9304,7 +9304,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -random-threshold (see ImageMagick-Documentation for details).
+     -random-threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps randomThreshold() {
@@ -9323,7 +9323,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -random-threshold (see ImageMagick-Documentation for details).
+     -random-threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps randomThreshold(Double low) {
@@ -9345,7 +9345,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -random-threshold (see ImageMagick-Documentation for details).
+     -random-threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps randomThreshold(Double low, Double high) {
@@ -9371,7 +9371,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -recolor (see ImageMagick-Documentation for details).
+     -recolor (see documentation of the underlying tool for details).
   */
 
   public IMOps recolor() {
@@ -9390,7 +9390,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -recolor (see ImageMagick-Documentation for details).
+     -recolor (see documentation of the underlying tool for details).
   */
 
   public IMOps recolor(String matrix) {
@@ -9412,7 +9412,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -red-primary (see ImageMagick-Documentation for details).
+     -red-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps redPrimary() {
@@ -9431,7 +9431,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -red-primary (see ImageMagick-Documentation for details).
+     -red-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps redPrimary(Double x) {
@@ -9453,7 +9453,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -red-primary (see ImageMagick-Documentation for details).
+     -red-primary (see documentation of the underlying tool for details).
   */
 
   public IMOps redPrimary(Double x, Double y) {
@@ -9479,7 +9479,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -regard-warnings (see ImageMagick-Documentation for details).
+     -regard-warnings (see documentation of the underlying tool for details).
   */
 
   public IMOps regardWarnings() {
@@ -9498,7 +9498,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -region (see ImageMagick-Documentation for details).
+     -region (see documentation of the underlying tool for details).
   */
 
   public IMOps region() {
@@ -9517,7 +9517,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -region (see ImageMagick-Documentation for details).
+     -region (see documentation of the underlying tool for details).
   */
 
   public IMOps region(Integer width) {
@@ -9539,7 +9539,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -region (see ImageMagick-Documentation for details).
+     -region (see documentation of the underlying tool for details).
   */
 
   public IMOps region(Integer width, Integer height) {
@@ -9565,7 +9565,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -region (see ImageMagick-Documentation for details).
+     -region (see documentation of the underlying tool for details).
   */
 
   public IMOps region(Integer width, Integer height, Integer x) {
@@ -9598,7 +9598,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -region (see ImageMagick-Documentation for details).
+     -region (see documentation of the underlying tool for details).
   */
 
   public IMOps region(Integer width, Integer height, Integer x, Integer y) {
@@ -9638,7 +9638,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +remap (see ImageMagick-Documentation for details).
+     +remap (see documentation of the underlying tool for details).
   */
 
   public IMOps p_remap() {
@@ -9657,7 +9657,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -remap (see ImageMagick-Documentation for details).
+     -remap (see documentation of the underlying tool for details).
   */
 
   public IMOps remap() {
@@ -9676,7 +9676,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -remap (see ImageMagick-Documentation for details).
+     -remap (see documentation of the underlying tool for details).
   */
 
   public IMOps remap(String filename) {
@@ -9698,7 +9698,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -remote (see ImageMagick-Documentation for details).
+     -remote (see documentation of the underlying tool for details).
   */
 
   public IMOps remote() {
@@ -9717,7 +9717,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -render (see ImageMagick-Documentation for details).
+     -render (see documentation of the underlying tool for details).
   */
 
   public IMOps render() {
@@ -9736,7 +9736,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +render (see ImageMagick-Documentation for details).
+     +render (see documentation of the underlying tool for details).
   */
 
   public IMOps p_render() {
@@ -9755,7 +9755,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +repage (see ImageMagick-Documentation for details).
+     +repage (see documentation of the underlying tool for details).
   */
 
   public IMOps p_repage() {
@@ -9774,7 +9774,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -repage (see ImageMagick-Documentation for details).
+     -repage (see documentation of the underlying tool for details).
   */
 
   public IMOps repage() {
@@ -9793,7 +9793,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -repage (see ImageMagick-Documentation for details).
+     -repage (see documentation of the underlying tool for details).
   */
 
   public IMOps repage(Integer width) {
@@ -9815,7 +9815,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -repage (see ImageMagick-Documentation for details).
+     -repage (see documentation of the underlying tool for details).
   */
 
   public IMOps repage(Integer width, Integer height) {
@@ -9841,7 +9841,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -repage (see ImageMagick-Documentation for details).
+     -repage (see documentation of the underlying tool for details).
   */
 
   public IMOps repage(Integer width, Integer height, Integer xOffset) {
@@ -9874,7 +9874,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -repage (see ImageMagick-Documentation for details).
+     -repage (see documentation of the underlying tool for details).
   */
 
   public IMOps repage(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -9914,7 +9914,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -resample (see ImageMagick-Documentation for details).
+     -resample (see documentation of the underlying tool for details).
   */
 
   public IMOps resample() {
@@ -9933,7 +9933,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -resample (see ImageMagick-Documentation for details).
+     -resample (see documentation of the underlying tool for details).
   */
 
   public IMOps resample(Integer horizontal) {
@@ -9955,7 +9955,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -resample (see ImageMagick-Documentation for details).
+     -resample (see documentation of the underlying tool for details).
   */
 
   public IMOps resample(Integer horizontal, Integer vertical) {
@@ -9981,7 +9981,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -resize (see ImageMagick-Documentation for details).
+     -resize (see documentation of the underlying tool for details).
   */
 
   public IMOps resize() {
@@ -10000,7 +10000,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -resize (see ImageMagick-Documentation for details).
+     -resize (see documentation of the underlying tool for details).
   */
 
   public IMOps resize(Integer width) {
@@ -10022,7 +10022,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -resize (see ImageMagick-Documentation for details).
+     -resize (see documentation of the underlying tool for details).
   */
 
   public IMOps resize(Integer width, Integer height) {
@@ -10048,7 +10048,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -resize (see ImageMagick-Documentation for details).
+     -resize (see documentation of the underlying tool for details).
   */
 
   public IMOps resize(Integer width, Integer height, Character special) {
@@ -10077,7 +10077,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -respect-parenthesis (see ImageMagick-Documentation for details).
+     -respect-parenthesis (see documentation of the underlying tool for details).
   */
 
   public IMOps respectParenthesis() {
@@ -10096,7 +10096,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -reverse (see ImageMagick-Documentation for details).
+     -reverse (see documentation of the underlying tool for details).
   */
 
   public IMOps reverse() {
@@ -10115,7 +10115,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -roll (see ImageMagick-Documentation for details).
+     -roll (see documentation of the underlying tool for details).
   */
 
   public IMOps roll() {
@@ -10134,7 +10134,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -roll (see ImageMagick-Documentation for details).
+     -roll (see documentation of the underlying tool for details).
   */
 
   public IMOps roll(Integer x) {
@@ -10156,7 +10156,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -roll (see ImageMagick-Documentation for details).
+     -roll (see documentation of the underlying tool for details).
   */
 
   public IMOps roll(Integer x, Integer y) {
@@ -10185,7 +10185,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -rotate (see ImageMagick-Documentation for details).
+     -rotate (see documentation of the underlying tool for details).
   */
 
   public IMOps rotate() {
@@ -10204,7 +10204,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -rotate (see ImageMagick-Documentation for details).
+     -rotate (see documentation of the underlying tool for details).
   */
 
   public IMOps rotate(Double degrees) {
@@ -10226,7 +10226,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -rotate (see ImageMagick-Documentation for details).
+     -rotate (see documentation of the underlying tool for details).
   */
 
   public IMOps rotate(Double degrees, Character special) {
@@ -10251,7 +10251,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sample (see ImageMagick-Documentation for details).
+     -sample (see documentation of the underlying tool for details).
   */
 
   public IMOps sample() {
@@ -10270,7 +10270,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sample (see ImageMagick-Documentation for details).
+     -sample (see documentation of the underlying tool for details).
   */
 
   public IMOps sample(Integer width) {
@@ -10292,7 +10292,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sample (see ImageMagick-Documentation for details).
+     -sample (see documentation of the underlying tool for details).
   */
 
   public IMOps sample(Integer width, Integer height) {
@@ -10318,7 +10318,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sample (see ImageMagick-Documentation for details).
+     -sample (see documentation of the underlying tool for details).
   */
 
   public IMOps sample(Integer width, Integer height, Integer xOffset) {
@@ -10351,7 +10351,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sample (see ImageMagick-Documentation for details).
+     -sample (see documentation of the underlying tool for details).
   */
 
   public IMOps sample(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -10391,7 +10391,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sampling-factor (see ImageMagick-Documentation for details).
+     -sampling-factor (see documentation of the underlying tool for details).
   */
 
   public IMOps samplingFactor() {
@@ -10410,7 +10410,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sampling-factor (see ImageMagick-Documentation for details).
+     -sampling-factor (see documentation of the underlying tool for details).
   */
 
   public IMOps samplingFactor(Double horizontalFactor) {
@@ -10432,7 +10432,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sampling-factor (see ImageMagick-Documentation for details).
+     -sampling-factor (see documentation of the underlying tool for details).
   */
 
   public IMOps samplingFactor(Double horizontalFactor, Double verticalFactor) {
@@ -10458,7 +10458,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sarse-color (see ImageMagick-Documentation for details).
+     -sarse-color (see documentation of the underlying tool for details).
   */
 
   public IMOps sarseColor() {
@@ -10477,7 +10477,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sarse-color (see ImageMagick-Documentation for details).
+     -sarse-color (see documentation of the underlying tool for details).
   */
 
   public IMOps sarseColor(String method) {
@@ -10499,7 +10499,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sarse-color (see ImageMagick-Documentation for details).
+     -sarse-color (see documentation of the underlying tool for details).
   */
 
   public IMOps sarseColor(String method, String cinfo) {
@@ -10526,7 +10526,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -scale (see ImageMagick-Documentation for details).
+     -scale (see documentation of the underlying tool for details).
   */
 
   public IMOps scale() {
@@ -10545,7 +10545,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -scale (see ImageMagick-Documentation for details).
+     -scale (see documentation of the underlying tool for details).
   */
 
   public IMOps scale(Integer width) {
@@ -10567,7 +10567,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -scale (see ImageMagick-Documentation for details).
+     -scale (see documentation of the underlying tool for details).
   */
 
   public IMOps scale(Integer width, Integer height) {
@@ -10593,7 +10593,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -scale (see ImageMagick-Documentation for details).
+     -scale (see documentation of the underlying tool for details).
   */
 
   public IMOps scale(Integer width, Integer height, Integer xOffset) {
@@ -10626,7 +10626,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -scale (see ImageMagick-Documentation for details).
+     -scale (see documentation of the underlying tool for details).
   */
 
   public IMOps scale(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -10666,7 +10666,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -scene (see ImageMagick-Documentation for details).
+     -scene (see documentation of the underlying tool for details).
   */
 
   public IMOps scene() {
@@ -10685,7 +10685,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -scene (see ImageMagick-Documentation for details).
+     -scene (see documentation of the underlying tool for details).
   */
 
   public IMOps scene(Integer value) {
@@ -10707,7 +10707,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -screen (see ImageMagick-Documentation for details).
+     -screen (see documentation of the underlying tool for details).
   */
 
   public IMOps screen() {
@@ -10726,7 +10726,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -seed (see ImageMagick-Documentation for details).
+     -seed (see documentation of the underlying tool for details).
   */
 
   public IMOps seed() {
@@ -10745,7 +10745,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -segment (see ImageMagick-Documentation for details).
+     -segment (see documentation of the underlying tool for details).
   */
 
   public IMOps segment() {
@@ -10764,7 +10764,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -segment (see ImageMagick-Documentation for details).
+     -segment (see documentation of the underlying tool for details).
   */
 
   public IMOps segment(Integer clusterThreshold) {
@@ -10786,7 +10786,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -segment (see ImageMagick-Documentation for details).
+     -segment (see documentation of the underlying tool for details).
   */
 
   public IMOps segment(Integer clusterThreshold, Double smoothingThreshold) {
@@ -10812,7 +10812,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -separate (see ImageMagick-Documentation for details).
+     -separate (see documentation of the underlying tool for details).
   */
 
   public IMOps separate() {
@@ -10831,7 +10831,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sepia-tone (see ImageMagick-Documentation for details).
+     -sepia-tone (see documentation of the underlying tool for details).
   */
 
   public IMOps sepiaTone() {
@@ -10850,7 +10850,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sepia-tone (see ImageMagick-Documentation for details).
+     -sepia-tone (see documentation of the underlying tool for details).
   */
 
   public IMOps sepiaTone(Double threshold) {
@@ -10872,7 +10872,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -set (see ImageMagick-Documentation for details).
+     -set (see documentation of the underlying tool for details).
   */
 
   public IMOps set() {
@@ -10891,7 +10891,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -set (see ImageMagick-Documentation for details).
+     -set (see documentation of the underlying tool for details).
   */
 
   public IMOps set(String attribute) {
@@ -10913,7 +10913,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -set (see ImageMagick-Documentation for details).
+     -set (see documentation of the underlying tool for details).
   */
 
   public IMOps set(String attribute, String value) {
@@ -10940,7 +10940,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shade (see ImageMagick-Documentation for details).
+     -shade (see documentation of the underlying tool for details).
   */
 
   public IMOps shade() {
@@ -10959,7 +10959,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shade (see ImageMagick-Documentation for details).
+     -shade (see documentation of the underlying tool for details).
   */
 
   public IMOps shade(Double azimuth) {
@@ -10981,7 +10981,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shade (see ImageMagick-Documentation for details).
+     -shade (see documentation of the underlying tool for details).
   */
 
   public IMOps shade(Double azimuth, Double elevation) {
@@ -11007,7 +11007,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +shade (see ImageMagick-Documentation for details).
+     +shade (see documentation of the underlying tool for details).
   */
 
   public IMOps p_shade() {
@@ -11026,7 +11026,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +shade (see ImageMagick-Documentation for details).
+     +shade (see documentation of the underlying tool for details).
   */
 
   public IMOps p_shade(Double azimuth) {
@@ -11048,7 +11048,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +shade (see ImageMagick-Documentation for details).
+     +shade (see documentation of the underlying tool for details).
   */
 
   public IMOps p_shade(Double azimuth, Double elevation) {
@@ -11074,7 +11074,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shadow (see ImageMagick-Documentation for details).
+     -shadow (see documentation of the underlying tool for details).
   */
 
   public IMOps shadow() {
@@ -11093,7 +11093,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shadow (see ImageMagick-Documentation for details).
+     -shadow (see documentation of the underlying tool for details).
   */
 
   public IMOps shadow(Integer percentOpacity) {
@@ -11115,7 +11115,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shadow (see ImageMagick-Documentation for details).
+     -shadow (see documentation of the underlying tool for details).
   */
 
   public IMOps shadow(Integer percentOpacity, Double sigma) {
@@ -11141,7 +11141,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shadow (see ImageMagick-Documentation for details).
+     -shadow (see documentation of the underlying tool for details).
   */
 
   public IMOps shadow(Integer percentOpacity, Double sigma, Integer x) {
@@ -11174,7 +11174,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shadow (see ImageMagick-Documentation for details).
+     -shadow (see documentation of the underlying tool for details).
   */
 
   public IMOps shadow(Integer percentOpacity, Double sigma, Integer x, Integer y) {
@@ -11214,7 +11214,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shadow (see ImageMagick-Documentation for details).
+     -shadow (see documentation of the underlying tool for details).
   */
 
   public IMOps shadow(Integer percentOpacity, Double sigma, Integer x, Integer y, Boolean percent) {
@@ -11258,7 +11258,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shared-memory (see ImageMagick-Documentation for details).
+     -shared-memory (see documentation of the underlying tool for details).
   */
 
   public IMOps sharedMemory() {
@@ -11277,7 +11277,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sharpen (see ImageMagick-Documentation for details).
+     -sharpen (see documentation of the underlying tool for details).
   */
 
   public IMOps sharpen() {
@@ -11296,7 +11296,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sharpen (see ImageMagick-Documentation for details).
+     -sharpen (see documentation of the underlying tool for details).
   */
 
   public IMOps sharpen(Double radius) {
@@ -11318,7 +11318,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sharpen (see ImageMagick-Documentation for details).
+     -sharpen (see documentation of the underlying tool for details).
   */
 
   public IMOps sharpen(Double radius, Double sigma) {
@@ -11344,7 +11344,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shave (see ImageMagick-Documentation for details).
+     -shave (see documentation of the underlying tool for details).
   */
 
   public IMOps shave() {
@@ -11363,7 +11363,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shave (see ImageMagick-Documentation for details).
+     -shave (see documentation of the underlying tool for details).
   */
 
   public IMOps shave(Integer width) {
@@ -11385,7 +11385,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shave (see ImageMagick-Documentation for details).
+     -shave (see documentation of the underlying tool for details).
   */
 
   public IMOps shave(Integer width, Integer height) {
@@ -11411,7 +11411,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shave (see ImageMagick-Documentation for details).
+     -shave (see documentation of the underlying tool for details).
   */
 
   public IMOps shave(Integer width, Integer height, Boolean percent) {
@@ -11441,7 +11441,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shear (see ImageMagick-Documentation for details).
+     -shear (see documentation of the underlying tool for details).
   */
 
   public IMOps shear() {
@@ -11460,7 +11460,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shear (see ImageMagick-Documentation for details).
+     -shear (see documentation of the underlying tool for details).
   */
 
   public IMOps shear(Double xDegrees) {
@@ -11482,7 +11482,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -shear (see ImageMagick-Documentation for details).
+     -shear (see documentation of the underlying tool for details).
   */
 
   public IMOps shear(Double xDegrees, Double yDegrees) {
@@ -11508,7 +11508,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sigmoidal-contrast (see ImageMagick-Documentation for details).
+     -sigmoidal-contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps sigmoidalContrast() {
@@ -11527,7 +11527,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sigmoidal-contrast (see ImageMagick-Documentation for details).
+     -sigmoidal-contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps sigmoidalContrast(Double contrast) {
@@ -11549,7 +11549,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sigmoidal-contrast (see ImageMagick-Documentation for details).
+     -sigmoidal-contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps sigmoidalContrast(Double contrast, Double midPoint) {
@@ -11575,7 +11575,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +sigmoidal-contrast (see ImageMagick-Documentation for details).
+     +sigmoidal-contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps p_sigmoidalContrast() {
@@ -11594,7 +11594,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +sigmoidal-contrast (see ImageMagick-Documentation for details).
+     +sigmoidal-contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps p_sigmoidalContrast(Double contrast) {
@@ -11616,7 +11616,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +sigmoidal-contrast (see ImageMagick-Documentation for details).
+     +sigmoidal-contrast (see documentation of the underlying tool for details).
   */
 
   public IMOps p_sigmoidalContrast(Double contrast, Double midPoint) {
@@ -11642,7 +11642,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -silent (see ImageMagick-Documentation for details).
+     -silent (see documentation of the underlying tool for details).
   */
 
   public IMOps silent() {
@@ -11661,7 +11661,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -size (see ImageMagick-Documentation for details).
+     -size (see documentation of the underlying tool for details).
   */
 
   public IMOps size() {
@@ -11680,7 +11680,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -size (see ImageMagick-Documentation for details).
+     -size (see documentation of the underlying tool for details).
   */
 
   public IMOps size(Integer width) {
@@ -11702,7 +11702,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -size (see ImageMagick-Documentation for details).
+     -size (see documentation of the underlying tool for details).
   */
 
   public IMOps size(Integer width, Integer height) {
@@ -11728,7 +11728,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -size (see ImageMagick-Documentation for details).
+     -size (see documentation of the underlying tool for details).
   */
 
   public IMOps size(Integer width, Integer height, Integer offset) {
@@ -11761,7 +11761,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sketch (see ImageMagick-Documentation for details).
+     -sketch (see documentation of the underlying tool for details).
   */
 
   public IMOps sketch() {
@@ -11780,7 +11780,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sketch (see ImageMagick-Documentation for details).
+     -sketch (see documentation of the underlying tool for details).
   */
 
   public IMOps sketch(Double radius) {
@@ -11802,7 +11802,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sketch (see ImageMagick-Documentation for details).
+     -sketch (see documentation of the underlying tool for details).
   */
 
   public IMOps sketch(Double radius, Double sigma) {
@@ -11828,7 +11828,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -sketch (see ImageMagick-Documentation for details).
+     -sketch (see documentation of the underlying tool for details).
   */
 
   public IMOps sketch(Double radius, Double sigma, Double angle) {
@@ -11861,7 +11861,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -snaps (see ImageMagick-Documentation for details).
+     -snaps (see documentation of the underlying tool for details).
   */
 
   public IMOps snaps() {
@@ -11880,7 +11880,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -snaps (see ImageMagick-Documentation for details).
+     -snaps (see documentation of the underlying tool for details).
   */
 
   public IMOps snaps(Integer value) {
@@ -11902,7 +11902,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -solarize (see ImageMagick-Documentation for details).
+     -solarize (see documentation of the underlying tool for details).
   */
 
   public IMOps solarize() {
@@ -11921,7 +11921,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -solarize (see ImageMagick-Documentation for details).
+     -solarize (see documentation of the underlying tool for details).
   */
 
   public IMOps solarize(Double threshold) {
@@ -11943,7 +11943,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -splice (see ImageMagick-Documentation for details).
+     -splice (see documentation of the underlying tool for details).
   */
 
   public IMOps splice() {
@@ -11962,7 +11962,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -splice (see ImageMagick-Documentation for details).
+     -splice (see documentation of the underlying tool for details).
   */
 
   public IMOps splice(Double width) {
@@ -11984,7 +11984,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -splice (see ImageMagick-Documentation for details).
+     -splice (see documentation of the underlying tool for details).
   */
 
   public IMOps splice(Double width, Double height) {
@@ -12010,7 +12010,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -splice (see ImageMagick-Documentation for details).
+     -splice (see documentation of the underlying tool for details).
   */
 
   public IMOps splice(Double width, Double height, Double x) {
@@ -12043,7 +12043,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -splice (see ImageMagick-Documentation for details).
+     -splice (see documentation of the underlying tool for details).
   */
 
   public IMOps splice(Double width, Double height, Double x, Double y) {
@@ -12083,7 +12083,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -splice (see ImageMagick-Documentation for details).
+     -splice (see documentation of the underlying tool for details).
   */
 
   public IMOps splice(Double width, Double height, Double x, Double y, Boolean percent) {
@@ -12127,7 +12127,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -spread (see ImageMagick-Documentation for details).
+     -spread (see documentation of the underlying tool for details).
   */
 
   public IMOps spread() {
@@ -12146,7 +12146,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -spread (see ImageMagick-Documentation for details).
+     -spread (see documentation of the underlying tool for details).
   */
 
   public IMOps spread(Integer amount) {
@@ -12168,7 +12168,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -stegano (see ImageMagick-Documentation for details).
+     -stegano (see documentation of the underlying tool for details).
   */
 
   public IMOps stegano() {
@@ -12187,7 +12187,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -stegano (see ImageMagick-Documentation for details).
+     -stegano (see documentation of the underlying tool for details).
   */
 
   public IMOps stegano(Integer offset) {
@@ -12209,7 +12209,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -stereo (see ImageMagick-Documentation for details).
+     -stereo (see documentation of the underlying tool for details).
   */
 
   public IMOps stereo() {
@@ -12228,7 +12228,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -stereo (see ImageMagick-Documentation for details).
+     -stereo (see documentation of the underlying tool for details).
   */
 
   public IMOps stereo(Integer x) {
@@ -12250,7 +12250,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -stereo (see ImageMagick-Documentation for details).
+     -stereo (see documentation of the underlying tool for details).
   */
 
   public IMOps stereo(Integer x, Integer y) {
@@ -12279,7 +12279,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -storage-type (see ImageMagick-Documentation for details).
+     -storage-type (see documentation of the underlying tool for details).
   */
 
   public IMOps storageType() {
@@ -12298,7 +12298,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -storage-type (see ImageMagick-Documentation for details).
+     -storage-type (see documentation of the underlying tool for details).
   */
 
   public IMOps storageType(String type) {
@@ -12320,7 +12320,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -strip (see ImageMagick-Documentation for details).
+     -strip (see documentation of the underlying tool for details).
   */
 
   public IMOps strip() {
@@ -12339,7 +12339,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -stroke (see ImageMagick-Documentation for details).
+     -stroke (see documentation of the underlying tool for details).
   */
 
   public IMOps stroke() {
@@ -12358,7 +12358,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -stroke (see ImageMagick-Documentation for details).
+     -stroke (see documentation of the underlying tool for details).
   */
 
   public IMOps stroke(String color) {
@@ -12380,7 +12380,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -strokewidth (see ImageMagick-Documentation for details).
+     -strokewidth (see documentation of the underlying tool for details).
   */
 
   public IMOps strokewidth() {
@@ -12399,7 +12399,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -strokewidth (see ImageMagick-Documentation for details).
+     -strokewidth (see documentation of the underlying tool for details).
   */
 
   public IMOps strokewidth(Integer value) {
@@ -12421,7 +12421,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +swap (see ImageMagick-Documentation for details).
+     +swap (see documentation of the underlying tool for details).
   */
 
   public IMOps p_swap() {
@@ -12440,7 +12440,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -swap (see ImageMagick-Documentation for details).
+     -swap (see documentation of the underlying tool for details).
   */
 
   public IMOps swap() {
@@ -12459,7 +12459,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -swap (see ImageMagick-Documentation for details).
+     -swap (see documentation of the underlying tool for details).
   */
 
   public IMOps swap(Integer pos1) {
@@ -12481,7 +12481,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -swap (see ImageMagick-Documentation for details).
+     -swap (see documentation of the underlying tool for details).
   */
 
   public IMOps swap(Integer pos1, Integer pos2) {
@@ -12507,7 +12507,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -swirl (see ImageMagick-Documentation for details).
+     -swirl (see documentation of the underlying tool for details).
   */
 
   public IMOps swirl() {
@@ -12526,7 +12526,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -swirl (see ImageMagick-Documentation for details).
+     -swirl (see documentation of the underlying tool for details).
   */
 
   public IMOps swirl(Double degrees) {
@@ -12548,7 +12548,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -taint (see ImageMagick-Documentation for details).
+     -taint (see documentation of the underlying tool for details).
   */
 
   public IMOps taint() {
@@ -12567,7 +12567,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -text-font (see ImageMagick-Documentation for details).
+     -text-font (see documentation of the underlying tool for details).
   */
 
   public IMOps textFont() {
@@ -12586,7 +12586,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -text-font (see ImageMagick-Documentation for details).
+     -text-font (see documentation of the underlying tool for details).
   */
 
   public IMOps textFont(String name) {
@@ -12608,7 +12608,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -texture (see ImageMagick-Documentation for details).
+     -texture (see documentation of the underlying tool for details).
   */
 
   public IMOps texture() {
@@ -12627,7 +12627,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -texture (see ImageMagick-Documentation for details).
+     -texture (see documentation of the underlying tool for details).
   */
 
   public IMOps texture(String filename) {
@@ -12649,7 +12649,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -threshold (see ImageMagick-Documentation for details).
+     -threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps threshold() {
@@ -12668,7 +12668,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -threshold (see ImageMagick-Documentation for details).
+     -threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps threshold(Integer red) {
@@ -12690,7 +12690,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -threshold (see ImageMagick-Documentation for details).
+     -threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps threshold(Integer red, Integer green) {
@@ -12716,7 +12716,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -threshold (see ImageMagick-Documentation for details).
+     -threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps threshold(Integer red, Integer green, Integer blue) {
@@ -12746,7 +12746,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -threshold (see ImageMagick-Documentation for details).
+     -threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps threshold(Integer red, Integer green, Integer blue, Integer opacity) {
@@ -12780,7 +12780,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -threshold (see ImageMagick-Documentation for details).
+     -threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps threshold(Integer red, Integer green, Integer blue, Integer opacity, Boolean percent) {
@@ -12818,7 +12818,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -thumbnail (see ImageMagick-Documentation for details).
+     -thumbnail (see documentation of the underlying tool for details).
   */
 
   public IMOps thumbnail() {
@@ -12837,7 +12837,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -thumbnail (see ImageMagick-Documentation for details).
+     -thumbnail (see documentation of the underlying tool for details).
   */
 
   public IMOps thumbnail(Integer width) {
@@ -12859,7 +12859,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -thumbnail (see ImageMagick-Documentation for details).
+     -thumbnail (see documentation of the underlying tool for details).
   */
 
   public IMOps thumbnail(Integer width, Integer height) {
@@ -12885,7 +12885,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -thumbnail (see ImageMagick-Documentation for details).
+     -thumbnail (see documentation of the underlying tool for details).
   */
 
   public IMOps thumbnail(Integer width, Integer height, Character special) {
@@ -12914,7 +12914,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile (see ImageMagick-Documentation for details).
+     -tile (see documentation of the underlying tool for details).
   */
 
   public IMOps tile() {
@@ -12933,7 +12933,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile (see ImageMagick-Documentation for details).
+     -tile (see documentation of the underlying tool for details).
   */
 
   public IMOps tile(Integer width) {
@@ -12955,7 +12955,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile (see ImageMagick-Documentation for details).
+     -tile (see documentation of the underlying tool for details).
   */
 
   public IMOps tile(Integer width, Integer height) {
@@ -12981,7 +12981,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile (see ImageMagick-Documentation for details).
+     -tile (see documentation of the underlying tool for details).
   */
 
   public IMOps tile(Integer width, Integer height, Integer xOffset) {
@@ -13014,7 +13014,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile (see ImageMagick-Documentation for details).
+     -tile (see documentation of the underlying tool for details).
   */
 
   public IMOps tile(Integer width, Integer height, Integer xOffset, Integer yOffset) {
@@ -13054,7 +13054,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile-offset (see ImageMagick-Documentation for details).
+     -tile-offset (see documentation of the underlying tool for details).
   */
 
   public IMOps tileOffset() {
@@ -13073,7 +13073,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile-offset (see ImageMagick-Documentation for details).
+     -tile-offset (see documentation of the underlying tool for details).
   */
 
   public IMOps tileOffset(Integer x) {
@@ -13095,7 +13095,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile-offset (see ImageMagick-Documentation for details).
+     -tile-offset (see documentation of the underlying tool for details).
   */
 
   public IMOps tileOffset(Integer x, Integer y) {
@@ -13124,7 +13124,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tile (see ImageMagick-Documentation for details).
+     -tile (see documentation of the underlying tool for details).
   */
 
   public IMOps tile(String filename) {
@@ -13146,7 +13146,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tint (see ImageMagick-Documentation for details).
+     -tint (see documentation of the underlying tool for details).
   */
 
   public IMOps tint() {
@@ -13165,7 +13165,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -tint (see ImageMagick-Documentation for details).
+     -tint (see documentation of the underlying tool for details).
   */
 
   public IMOps tint(Double value) {
@@ -13187,7 +13187,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -title (see ImageMagick-Documentation for details).
+     -title (see documentation of the underlying tool for details).
   */
 
   public IMOps title() {
@@ -13206,7 +13206,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -title (see ImageMagick-Documentation for details).
+     -title (see documentation of the underlying tool for details).
   */
 
   public IMOps title(String text) {
@@ -13228,7 +13228,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -transform (see ImageMagick-Documentation for details).
+     -transform (see documentation of the underlying tool for details).
   */
 
   public IMOps transform() {
@@ -13247,7 +13247,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -transparent-color (see ImageMagick-Documentation for details).
+     -transparent-color (see documentation of the underlying tool for details).
   */
 
   public IMOps transparentColor() {
@@ -13266,7 +13266,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -transparent-color (see ImageMagick-Documentation for details).
+     -transparent-color (see documentation of the underlying tool for details).
   */
 
   public IMOps transparentColor(String color) {
@@ -13288,7 +13288,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -transparent (see ImageMagick-Documentation for details).
+     -transparent (see documentation of the underlying tool for details).
   */
 
   public IMOps transparent(String color) {
@@ -13310,7 +13310,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -transpose (see ImageMagick-Documentation for details).
+     -transpose (see documentation of the underlying tool for details).
   */
 
   public IMOps transpose() {
@@ -13329,7 +13329,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -transverse (see ImageMagick-Documentation for details).
+     -transverse (see documentation of the underlying tool for details).
   */
 
   public IMOps transverse() {
@@ -13348,7 +13348,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -treedepth (see ImageMagick-Documentation for details).
+     -treedepth (see documentation of the underlying tool for details).
   */
 
   public IMOps treedepth() {
@@ -13367,7 +13367,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -treedepth (see ImageMagick-Documentation for details).
+     -treedepth (see documentation of the underlying tool for details).
   */
 
   public IMOps treedepth(Integer value) {
@@ -13389,7 +13389,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -trim (see ImageMagick-Documentation for details).
+     -trim (see documentation of the underlying tool for details).
   */
 
   public IMOps trim() {
@@ -13408,7 +13408,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -type (see ImageMagick-Documentation for details).
+     -type (see documentation of the underlying tool for details).
   */
 
   public IMOps type() {
@@ -13427,7 +13427,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -type (see ImageMagick-Documentation for details).
+     -type (see documentation of the underlying tool for details).
   */
 
   public IMOps type(String type) {
@@ -13449,7 +13449,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -undercolor (see ImageMagick-Documentation for details).
+     -undercolor (see documentation of the underlying tool for details).
   */
 
   public IMOps undercolor() {
@@ -13468,7 +13468,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -undercolor (see ImageMagick-Documentation for details).
+     -undercolor (see documentation of the underlying tool for details).
   */
 
   public IMOps undercolor(String color) {
@@ -13490,7 +13490,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -unique-colors (see ImageMagick-Documentation for details).
+     -unique-colors (see documentation of the underlying tool for details).
   */
 
   public IMOps uniqueColors() {
@@ -13509,7 +13509,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -units (see ImageMagick-Documentation for details).
+     -units (see documentation of the underlying tool for details).
   */
 
   public IMOps units() {
@@ -13528,7 +13528,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -units (see ImageMagick-Documentation for details).
+     -units (see documentation of the underlying tool for details).
   */
 
   public IMOps units(String type) {
@@ -13550,7 +13550,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -unsharp (see ImageMagick-Documentation for details).
+     -unsharp (see documentation of the underlying tool for details).
   */
 
   public IMOps unsharp() {
@@ -13569,7 +13569,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -unsharp (see ImageMagick-Documentation for details).
+     -unsharp (see documentation of the underlying tool for details).
   */
 
   public IMOps unsharp(Double radius) {
@@ -13591,7 +13591,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -unsharp (see ImageMagick-Documentation for details).
+     -unsharp (see documentation of the underlying tool for details).
   */
 
   public IMOps unsharp(Double radius, Double sigma) {
@@ -13617,7 +13617,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -unsharp (see ImageMagick-Documentation for details).
+     -unsharp (see documentation of the underlying tool for details).
   */
 
   public IMOps unsharp(Double radius, Double sigma, Double amount) {
@@ -13650,7 +13650,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -unsharp (see ImageMagick-Documentation for details).
+     -unsharp (see documentation of the underlying tool for details).
   */
 
   public IMOps unsharp(Double radius, Double sigma, Double amount, Double threshold) {
@@ -13690,7 +13690,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -update (see ImageMagick-Documentation for details).
+     -update (see documentation of the underlying tool for details).
   */
 
   public IMOps update() {
@@ -13709,7 +13709,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -update (see ImageMagick-Documentation for details).
+     -update (see documentation of the underlying tool for details).
   */
 
   public IMOps update(Integer seconds) {
@@ -13731,7 +13731,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -verbose (see ImageMagick-Documentation for details).
+     -verbose (see documentation of the underlying tool for details).
   */
 
   public IMOps verbose() {
@@ -13750,7 +13750,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -version (see ImageMagick-Documentation for details).
+     -version (see documentation of the underlying tool for details).
   */
 
   public IMOps version() {
@@ -13769,7 +13769,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -view (see ImageMagick-Documentation for details).
+     -view (see documentation of the underlying tool for details).
   */
 
   public IMOps view() {
@@ -13788,7 +13788,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -view (see ImageMagick-Documentation for details).
+     -view (see documentation of the underlying tool for details).
   */
 
   public IMOps view(String text) {
@@ -13810,7 +13810,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -vignette (see ImageMagick-Documentation for details).
+     -vignette (see documentation of the underlying tool for details).
   */
 
   public IMOps vignette() {
@@ -13829,7 +13829,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -vignette (see ImageMagick-Documentation for details).
+     -vignette (see documentation of the underlying tool for details).
   */
 
   public IMOps vignette(Double radius) {
@@ -13851,7 +13851,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -vignette (see ImageMagick-Documentation for details).
+     -vignette (see documentation of the underlying tool for details).
   */
 
   public IMOps vignette(Double radius, Double sigma) {
@@ -13877,7 +13877,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -vignette (see ImageMagick-Documentation for details).
+     -vignette (see documentation of the underlying tool for details).
   */
 
   public IMOps vignette(Double radius, Double sigma, Double x) {
@@ -13910,7 +13910,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -vignette (see ImageMagick-Documentation for details).
+     -vignette (see documentation of the underlying tool for details).
   */
 
   public IMOps vignette(Double radius, Double sigma, Double x, Double y) {
@@ -13950,7 +13950,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -vignette (see ImageMagick-Documentation for details).
+     -vignette (see documentation of the underlying tool for details).
   */
 
   public IMOps vignette(Double radius, Double sigma, Double x, Double y, Boolean percent) {
@@ -13994,7 +13994,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -virtual-pixel (see ImageMagick-Documentation for details).
+     -virtual-pixel (see documentation of the underlying tool for details).
   */
 
   public IMOps virtualPixel() {
@@ -14013,7 +14013,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -virtual-pixel (see ImageMagick-Documentation for details).
+     -virtual-pixel (see documentation of the underlying tool for details).
   */
 
   public IMOps virtualPixel(String method) {
@@ -14035,7 +14035,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -visual (see ImageMagick-Documentation for details).
+     -visual (see documentation of the underlying tool for details).
   */
 
   public IMOps visual() {
@@ -14054,7 +14054,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -visual (see ImageMagick-Documentation for details).
+     -visual (see documentation of the underlying tool for details).
   */
 
   public IMOps visual(String type) {
@@ -14076,7 +14076,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -watermark (see ImageMagick-Documentation for details).
+     -watermark (see documentation of the underlying tool for details).
   */
 
   public IMOps watermark() {
@@ -14095,7 +14095,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -watermark (see ImageMagick-Documentation for details).
+     -watermark (see documentation of the underlying tool for details).
   */
 
   public IMOps watermark(Double brightness) {
@@ -14117,7 +14117,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -wave (see ImageMagick-Documentation for details).
+     -wave (see documentation of the underlying tool for details).
   */
 
   public IMOps wave() {
@@ -14136,7 +14136,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -wave (see ImageMagick-Documentation for details).
+     -wave (see documentation of the underlying tool for details).
   */
 
   public IMOps wave(Double amplitude) {
@@ -14158,7 +14158,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -wave (see ImageMagick-Documentation for details).
+     -wave (see documentation of the underlying tool for details).
   */
 
   public IMOps wave(Double amplitude, Double wavelength) {
@@ -14184,7 +14184,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -white-point (see ImageMagick-Documentation for details).
+     -white-point (see documentation of the underlying tool for details).
   */
 
   public IMOps whitePoint() {
@@ -14203,7 +14203,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -white-point (see ImageMagick-Documentation for details).
+     -white-point (see documentation of the underlying tool for details).
   */
 
   public IMOps whitePoint(Double x) {
@@ -14225,7 +14225,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -white-point (see ImageMagick-Documentation for details).
+     -white-point (see documentation of the underlying tool for details).
   */
 
   public IMOps whitePoint(Double x, Double y) {
@@ -14251,7 +14251,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -white-threshold (see ImageMagick-Documentation for details).
+     -white-threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps whiteThreshold() {
@@ -14270,7 +14270,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -white-threshold (see ImageMagick-Documentation for details).
+     -white-threshold (see documentation of the underlying tool for details).
   */
 
   public IMOps whiteThreshold(Double threshold) {
@@ -14292,7 +14292,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -window-group (see ImageMagick-Documentation for details).
+     -window-group (see documentation of the underlying tool for details).
   */
 
   public IMOps windowGroup() {
@@ -14311,7 +14311,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -window (see ImageMagick-Documentation for details).
+     -window (see documentation of the underlying tool for details).
   */
 
   public IMOps window(String id) {
@@ -14333,7 +14333,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -write (see ImageMagick-Documentation for details).
+     -write (see documentation of the underlying tool for details).
   */
 
   public IMOps write() {
@@ -14352,7 +14352,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     -write (see ImageMagick-Documentation for details).
+     -write (see documentation of the underlying tool for details).
   */
 
   public IMOps write(String filename) {
@@ -14374,7 +14374,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +write (see ImageMagick-Documentation for details).
+     +write (see documentation of the underlying tool for details).
   */
 
   public IMOps p_write() {
@@ -14393,7 +14393,7 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     +write (see ImageMagick-Documentation for details).
+     +write (see documentation of the underlying tool for details).
   */
 
   public IMOps p_write(String filename) {

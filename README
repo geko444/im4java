@@ -37,9 +37,8 @@ Features
 - BufferedImage support, i.e you can use BufferedImages as input to
   IM commands and pipe output of IM commands into a BufferedImage
 - scarce documentation (but many examples in src/org/im4java/test/Test.java)
-- easy support of additional commandline-tools (GraphicsMagick is a first
-  candidate - first experimental support of gm convert as a proof of concept
-  is available)
+- the architecture supports arbitrary commandline-tools (already implemented:
+  GraphicsMagick and jpegtran)
 
 
 INSTALLATION

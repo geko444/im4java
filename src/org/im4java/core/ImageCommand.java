@@ -36,13 +36,14 @@ import javax.imageio.ImageIO;
 
 import org.im4java.process.ErrorConsumer;
 import org.im4java.process.ProcessStarter;
+import org.im4java.process.StandardStream;
 
 /**
    This class implements the processing of image operations. It replaces
    placeholders within the argument-stack and passes all arguments to the
    generic run-method of ProcessStarter.
 
-   @version $Revision: 1.11 $
+   @version $Revision: 1.13 $
    @author  $Author: bablokb $
 */
 
@@ -90,6 +91,7 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
     super();
     iCommands = new LinkedList<String>();
     iTmpFiles = new LinkedList<String>();
+    setOutputConsumer(StandardStream.STDOUT);
     setErrorConsumer(this);
   }
 
@@ -154,7 +156,7 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
     for (Object obj:pImages) {
       // find the next placeholder
       while (argIterator.hasNext()) {
-	if (argIterator.next().equals("?img?")) {
+	if (argIterator.next().equals(Operation.IMG_PLACEHOLDER)) {
 	  break;
 	}
       }
@@ -200,7 +202,7 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
 
       // find the next placeholder
       while (argIterator.hasNext()) {
-	if (argIterator.next().equals("?dop?")) {
+	if (argIterator.next().equals(Operation.DOP_PLACEHOLDER)) {
 	  break;
 	}
       }

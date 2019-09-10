@@ -25,7 +25,7 @@ package org.im4java.core;
 /**
    This class wraps the IM command convert.
 
-   @version $Revision: 1.4 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
 */
 
@@ -38,7 +38,12 @@ public class ConvertCmd extends ImageCommand {
   */
 
   public  ConvertCmd() {
-    super("convert");
+    super();
+    if (!Boolean.getBoolean("im4java.useGM")) {
+      setCommand("convert");
+    } else {
+      setCommand("gm","convert");
+    }
   }
 
  //////////////////////////////////////////////////////////////////////////////

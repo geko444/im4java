@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
    This class wraps the IM command display.
 
-   @version $Revision: 1.9 $
+   @version $Revision: 1.11 $
    @author  $Author: bablokb $
 */
 
@@ -39,7 +39,27 @@ public class DisplayCmd extends ImageCommand {
   */
 
   public  DisplayCmd() {
-    super("display");
+    super();
+    if (!Boolean.getBoolean("im4java.useGM")) {
+      setCommand("display");
+    } else {
+      setCommand("gm","display");
+    }
+  }
+
+ //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Constructor with option to use GraphicsMagick.
+  */
+
+  public  DisplayCmd(boolean useGM) {
+    super();
+    if (useGM) {
+      setCommand("gm","display");
+    } else {
+      setCommand("display");
+    }
   }
 
   //////////////////////////////////////////////////////////////////////////////

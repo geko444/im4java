@@ -2,7 +2,7 @@
 # Makefile for im4java
 #
 # $Author: bablokb $
-# $Revision: 1.19 $
+# $Revision: 1.22 $
 #
 # License: GPL2 (see COPYING)
 # -----------------------------------------------------------------------------
@@ -77,7 +77,11 @@ clean:
 	rm -fr build/* images
 
 distclean: clean
-	rm -fr src/$(subst .,/,$(JAVA_PACKAGE))/IMOps.java
+	rm -fr src/$(subst .,/,$(JAVA_PACKAGE))/*Ops.java
+
+update-changelog:
+	cvs2cl.pl --group-within-date --no-times --accum
+	rm -f ChangeLog.bak
 
 srcdist: predist srcarch postdist
 

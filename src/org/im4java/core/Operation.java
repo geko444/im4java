@@ -29,11 +29,27 @@ import java.util.List;
    Objects of this class hold the arguments in a list and keep
    track of special "dynamic" operations.
 
-   @version $Revision: 1.5 $
+   @version $Revision: 1.6 $
    @author  $Author: bablokb $
 */
 
 public  class Operation {
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Placeholder-string for images.
+  */
+
+  public final static String IMG_PLACEHOLDER = "?img?";
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Placeholder-string for dynamic operations.
+  */
+
+  final static String DOP_PLACEHOLDER = "?dop?";
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -157,7 +173,7 @@ public  class Operation {
 
   public Operation addImage(int n) {
     for (int i=0; i<n; ++i) {
-      iCmdArgs.add("?img?");
+      iCmdArgs.add(IMG_PLACEHOLDER);
     }
     return this;
   }
@@ -184,7 +200,7 @@ public  class Operation {
 
     public Operation addDynamicOperation(DynamicOperation pOperation) {
       iDynamicOperations.add(pOperation);
-      iCmdArgs.add("?dop?");
+      iCmdArgs.add(DOP_PLACEHOLDER);
       return this;
     }
 

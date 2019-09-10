@@ -29,7 +29,7 @@ import org.im4java.core.ImageCommand;
 /**
    This class wraps the IM command mogrify.
 
-   @version $Revision: 1.3 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
 */
 
@@ -42,6 +42,26 @@ public class MogrifyCmd extends ImageCommand {
   */
 
   public  MogrifyCmd() {
-    super("mogrify");
+    super();
+    if (!Boolean.getBoolean("im4java.useGM")) {
+      setCommand("mogrify");
+    } else {
+      setCommand("gm","mogrify");
+    }
+  }
+
+ //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Constructor with option to use GraphicsMagick.
+  */
+
+  public  MogrifyCmd(boolean useGM) {
+    super();
+    if (useGM) {
+      setCommand("gm","mogrify");
+    } else {
+      setCommand("mogrify");
+    }
   }
 }

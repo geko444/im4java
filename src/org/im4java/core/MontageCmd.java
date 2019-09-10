@@ -29,7 +29,7 @@ import org.im4java.core.ImageCommand;
 /**
    This class wraps the IM command montage.
 
-   @version $Revision: 1.3 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
 */
 
@@ -42,6 +42,26 @@ public class MontageCmd extends ImageCommand {
   */
 
   public  MontageCmd() {
-    super("montage");
+    super();
+    if (!Boolean.getBoolean("im4java.useGM")) {
+      setCommand("montage");
+    } else {
+      setCommand("gm","montage");
+    }
+  }
+
+ //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Constructor with option to use GraphicsMagick.
+  */
+
+  public  MontageCmd(boolean useGM) {
+    super();
+    if (useGM) {
+      setCommand("gm","montage");
+    } else {
+      setCommand("montage");
+    }
   }
 }
