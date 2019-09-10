@@ -1,0 +1,269 @@
+#!/bin/bash
+#
+# This script creates the core im4java methods from an
+# interface-definition-file
+#
+# $Author: bablokb $
+# $Revision: 1.16 $
+#
+# License: GPL2
+# -----------------------------------------------------------------------------
+
+# usage message   -------------------------------------------------------------
+
+usage() {
+  echo -e "\n`basename $0`: create core im4java methods\n\
+  \nusage: `basename $0` [options]\n\
+  possible options:\n\
+    -i file     use interface-definition-file file (default: $idf)\n\
+    -o dir      create results in dir (default: $outputDir)\n\
+    -p package  create im4java class in package (default: $package)\n\
+    -h          show this help\n\
+    -q          run quiet\n\
+    -v          verbose messages (default)\n\
+"
+  exit 3
+}
+
+# set defaults   --------------------------------------------------------------
+
+setDefaults() {
+ binDir=`dirname "$0"`
+ outputDir="$binDir/../src"
+ inputDir="$binDir/../input"
+ package="org.im4java.core"
+ idf="$binDir/../input/IMinterface.txt"
+ CLASS_HEAD="$inputDir/IMOps.java.head"
+ DEBUG=0
+ quiet=0
+}
+
+# parse arguments and set variables -------------------------------------------
+
+parseArguments() {
+  while getopts ":i:o:p:hqvd" opt; do
+    case $opt in
+      i) idf="$OPTARG";;
+      o) outputDir="$OPTARG";;
+      p) package="$OPTARG";;
+      h) usage;;
+      q) quiet=1;;
+      v) quiet=0;;
+      d) let DEBUG+=1;;
+      ?) echo "error: illegal option: $OPTARG" >&2
+           usage;;
+    esac
+  done
+  #shift $((OPTIND-1))
+}
+
+# check arguments   -----------------------------------------------------------
+
+checkArguments() {
+  if [ ! -f "$idf" ]; then
+    echo "error: interface-definition-file does not exist!" >&2
+    usage
+  elif [ ! -d "$outputDir" ]; then
+    echo "error: output-directory $outputDir does not exist!" >&2
+    usage
+  fi
+
+  targetDir="$outputDir/${package//.//}"
+  mkdir -p "$targetDir"
+  targetFile="$targetDir/IMOps.java"
+}
+
+# parse a single line of the idf   --------------------------------------------
+
+parseLine() {
+  optionName="$1"
+
+  # convert option-name to method-name:
+  #   -append           -> append
+  #   +append           -> p_append
+  #   -adaptive-sharpen -> adaptiveSharpen
+  methodName=`sed -e 's/^-//' -e 's/^+/p_/' -e 's/-\(.\)/\U\1\E/g' <<< $optionName`  
+
+  # extract (optional arguments)
+  shift
+  declare -i i=0
+  while test $# -gt 0; do
+    token="$1"
+    varType[$i]="${token%:*}"
+    varName[$i]="${token#*:}"
+    shift
+    if [ $# -gt 0 ]; then
+      oper[$i]="$1"
+      shift
+    fi
+    let i+=1
+  done
+  argc="$i"
+}
+
+# dump interface-defintion   --------------------------------------------------
+
+dumpDefs() {
+  declare -i i
+
+  echo "optionName=$optionName"
+  echo "methodName=$methodName"
+  echo "argc=$argc"
+
+  for (( i=0; i<$argc; ++i )); do
+    echo "varType[$i]=${varType[$i]}"   
+    echo "varName[$i]=${varName[$i]}"   
+    echo "oper[$i]=${oper[$i]}"   
+  done
+}
+
+# write class-header   --------------------------------------------------------
+
+writeClassHeader() {
+  sed -e "s/_PACKAGE_/$package/" "$CLASS_HEAD" > "$targetFile"
+}
+
+# write method-header   -------------------------------------------------------
+
+writeMethodHeader() {
+  local maxArgs="$1"
+
+  # method comment and start
+  cat >> "$targetFile" <<EOF
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     $optionName (see ImageMagick-Documentation for details).
+  */
+
+EOF
+
+  # add method-signature
+  declare -i i
+  echo -en "  public IMOps $methodName(" >> "$targetFile"
+  for (( i=0; i<$maxArgs-1; ++i )); do
+    echo -en "${varType[$i]} ${varName[$i]}, "
+  done  >> "$targetFile"
+  [ $i -lt $maxArgs ] && \
+                     echo -en "${varType[$i]} ${varName[$i]}" >> "$targetFile"
+  echo -e ") {\n" >> "$targetFile"
+
+  # add start of code
+  cat >> "$targetFile" <<EOF
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+
+    iCmdArgs.add("$optionName");
+
+EOF
+}
+
+# write method-body  ----------------------------------------------------------
+
+writeMethodBody() {
+  local maxArgs="$1"
+  declare -i i
+  for (( i=0; i<$maxArgs-1; ++i )); do
+    writeVariable
+    writeOperator
+  done
+  if [ $i -lt $maxArgs ]; then
+    writeVariable
+  fi
+}
+
+# write method-tail   ---------------------------------------------------------
+
+writeMethodTail() {
+  echo -e "    if (buf.length()>0) {" >> "$targetFile"
+  echo -e "      iCmdArgs.add(buf.toString());" >> "$targetFile"
+  echo -e "    }" >> "$targetFile"
+  echo -e "    return this;\n  }\n" >> "$targetFile"
+}
+
+# write processing of given variable   ----------------------------------------
+
+writeVariable() {
+    echo -e "    if (${varName[$i]} != null) {" >> "$targetFile"
+    if [ "${varType[$i]}" = "Boolean" ]; then
+      echo -e "      if (${varName[$i]}.booleanValue())" >> "$targetFile"
+      echo -e "        buf.append(\"%\");" >> "$targetFile"
+    else
+      echo -e "      buf.append(${varName[$i]}.toString());" >> "$targetFile"
+    fi
+    echo -e "    }" >> "$targetFile"
+}
+
+# write processing of given operator   ----------------------------------------
+
+writeOperator() {
+    if [ "${oper[$i]}" = "_" ]; then
+      echo -e "    iCmdArgs.add(buf.toString());" >> "$targetFile"
+      echo -e "    buf.setLength(0);" >> "$targetFile"
+    elif [ "${oper[$i]}" = "+" ]; then
+      echo -e "    oper=\"+\";" >> "$targetFile"
+      echo -e "    if (${varName[$i+1]}.doubleValue() < 0)" >> "$targetFile"
+      echo -e "      oper=\"\";" >> "$targetFile"
+      echo -e "    buf.append(oper);" >> "$targetFile"
+    elif [ "${oper[$i]}" != "@" ]; then
+      echo -e "    buf.append(\"${oper[$i]}\");" >> "$targetFile"
+    fi
+}
+
+# write methods for a single-definition   -------------------------------------
+
+writeMethod() {
+  [ $quiet -eq 0 ] && echo "processing $optionName" >&2
+
+  # we create all variants with 0 to argc arguments
+  declare -i i
+  for (( i=0; i<=$argc; ++i )); do
+    if [ $i -eq 0 ]; then
+      methodSignature="$methodName"
+    else
+      methodSignature="${methodSignature}_${varType[$i-1]}"
+     fi
+    [ $DEBUG -gt 1 ] && echo $methodSignature 2>&1
+    if [ "${allMethods/ $methodSignature}" != "$allMethods" ]; then
+      [ $DEBUG -gt 1 ] && echo "$methodSignature already generated" 2>&1
+      continue
+    fi
+    writeMethodHeader $i
+    writeMethodBody $i
+    writeMethodTail $i
+    allMethods="$allMethods ${methodSignature}"
+  done
+}
+
+# parse interface-definition-file and write methods   -------------------------
+
+writeMethods() {
+  local line
+  declare -a varType varName oper
+
+  while read line; do
+    [ "${line:0:1}" = "#" ] && continue            # strip comment lines
+    parseLine $line                                # parse given line
+    [ $DEBUG -gt 0 ] && dumpDefs                   # dump parse-results
+    writeMethod                                    # write method-definition
+  done < "$idf"
+
+}
+
+# write class-tail   ----------------------------------------------------------
+
+writeClassTail() {
+  echo -e "\n}" >> "$targetFile"
+}
+
+# main program   --------------------------------------------------------------
+
+setDefaults
+parseArguments "$@"
+checkArguments
+
+writeClassHeader                                 # write class-header
+writeMethods                                     # generate methods
+writeClassTail                                   # and class-tail
+
+exit 0

@@ -1,0 +1,27 @@
+BUGS
+====
+
+- core methods are generated automatically. There are methods generating
+  invalid convert-syntax (e.g. resize()).
+
+- probably some wrong or missing interface-definitions
+
+TODO
+====
+
+- GraphicsMagick
+  * add input/GMinterface.txt to generate GMOps.java
+  * add src.org.im4java.core.GMOperation extends GMOps
+  * change mk-im4java to process all interface files
+  * update src/org/im4java/core/*Cmd.java to support GM
+  * define and use system property to switch between IM and GM at runtime
+
+- Info
+  * change to initially collect only a small number of properties
+    (option of the constructor)
+  * add methods returning these properties:
+    int getWidth(), int getHeight(), Size getSize(), ... (TBD)
+  * query the full set at first request
+
+- Pipe
+  * add method setBufferSize()
