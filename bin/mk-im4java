@@ -4,7 +4,7 @@
 # interface-definition-file
 #
 # $Author: bablokb $
-# $Revision: 1.23 $
+# $Revision: 1.29 $
 #
 # License: GPL2
 # -----------------------------------------------------------------------------
@@ -34,6 +34,8 @@ setDefaults() {
  eval idfs=(`find "$binDir/../input/" -type f \
                                        -name "*interface.txt" -printf '"%p" '`)
  CLASS_HEAD="$inputDir/java.class.head"
+ TEMPLATE_OPERATION="$inputDir/operation.java.template"
+ TEMPLATE_CMD="$inputDir/cmd.java.template"
  DEBUG=0
  quiet=0
 }
@@ -82,16 +84,40 @@ processInterfaceFiles() {
     # reset config-variables
     code=""
     validInterface=""
+    toolName=""
 
     getIdfSettings "$f"
     : ${code:=$defCode}                     # set code from defCode if not
     targetFile="$targetDir/${code}Ops.java" # set by idf
 
+    # generate java-sourcefile for xxxOps
     echo -e "writing $targetFile" >&2
     allMethods=""
     writeClassHeader                        # write class-header
     writeMethods "$f"                       # parse file and generate methods
     writeClassTail                          # and write class-tail
+
+    # generate java-sourcefile for xxxOperation
+    targetFile="$targetDir/${code}Operation.java"
+    echo -e "writing $targetFile" >&2
+    if [ -f "$targetFile" ]; then
+      echo -e "$targetFile already exists" >&2
+    else
+      writeOperationClass
+    fi
+
+    # generate java-sourcefile for xxxCmd
+    # upper-case first character of toolName, because we use it as part of
+    # the class name
+    local toolNameU=`sed -e 's/.*/\u&/' <<< $toolName`
+    targetFile="$targetDir/${toolNameU}Cmd.java"
+    echo -e "writing $targetFile" >&2
+    if [ "`find $targetDir -iname ${toolName}Cmd.java \
+                  -exec echo 1 \; -quit`" = "1" ]; then
+      echo -e "$targetFile already exists" >&2
+    else
+      writeCmdClass
+    fi
   done
 }
 
@@ -101,11 +127,19 @@ processInterfaceFiles() {
 parseLine() {
   optionName="$1"
 
-  # convert option-name to method-name:
-  #   -append           -> append
-  #   +append           -> p_append
-  #   -adaptive-sharpen -> adaptiveSharpen
-  methodName=`sed -e 's/^-*//' -e 's/=$//' -e 's/^+/p_/' -e 's/-\(.\)/\U\1\E/g' <<< $optionName`  
+  # use explicit method-name if available
+  methodName="${optionName#*|}"
+  if [ "$methodName" = "$optionName" ]; then
+    # convert option-name to method-name:
+    #   -append           -> append
+    #   +append           -> p_append
+    #   -adaptive-sharpen -> adaptiveSharpen
+    methodName=`sed -e 's/^-*//' -e 's/=$//' -e 's/^+/p_/' \
+                                 -e 's/-\(.\)/\U\1\E/g' <<< $optionName`
+  else
+    # strip explicit methodName from optionName
+    optionName="${optionName%|*}"
+  fi
 
   # check for option type
   if [ "${optionName: -1:1}" = "=" ]; then
@@ -117,8 +151,18 @@ parseLine() {
   # extract (optional) arguments
   shift
   declare -i i=0
+  attachVarToOption=0
   while test $# -gt 0; do
     token="$1"
+    if [ $i -eq 0 ]; then
+      if [ "$token" = "@" ]; then
+        attachVarToOption=1
+        shift
+        token="$1"
+      else
+        attachVarToOption=0
+      fi
+    fi
     varType[$i]="${token%:*}"
     varName[$i]="${token#*:}"
     shift
@@ -150,8 +194,23 @@ dumpDefs() {
 # write class-header   --------------------------------------------------------
 
 writeClassHeader() {
-  sed -e "s/_PACKAGE_/$package/" "$CLASS_HEAD" \
-                                          -e "s/_CODE_/$code/g" > "$targetFile"
+  sed -e "s/_PACKAGE_/$package/" -e "s/_CODE_/$code/g" \
+                    -e "s/_TOOLNAME_/$toolName/g" "$CLASS_HEAD" > "$targetFile"
+}
+
+# write template-class for operation ------------------------------------------
+
+writeOperationClass() {
+  sed -e "s/_PACKAGE_/$package/" -e "s/_CODE_/$code/g" \
+            -e "s/_TOOLNAME_/$toolName/g" "$TEMPLATE_OPERATION" > "$targetFile"
+}
+
+# write template-class for cmd ------------------------------------------------
+
+writeCmdClass() {
+  sed -e "s/_PACKAGE_/$package/" -e "s/_CODE_/$code/g" \
+            -e "s/_TOOLNAME_/$toolName/g" -e "s/_TOOLNAMEU_/$toolNameU/g" \
+                                                "$TEMPLATE_CMD" > "$targetFile"
 }
 
 # write method-header   -------------------------------------------------------
@@ -164,7 +223,8 @@ writeMethodHeader() {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     $optionName (see documentation of the underlying tool for details).
+     Add option $optionName to the $toolName commandline
+     (see the documentation of $toolName for details).
   */
 
 EOF
@@ -185,12 +245,11 @@ EOF
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
 EOF
 
-  if [ "$optionType" = "short" ]; then
+  if [ "$optionType" = "short" -a $attachVarToOption -eq 0 ]; then
     echo -e "    iCmdArgs.add(\"$optionName\");\n" >>  "$targetFile"
   else
     echo -e "    buf.append(\"$optionName\");\n" >>  "$targetFile"
   fi
-
 }
 
 # write method-body  ----------------------------------------------------------

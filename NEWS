@@ -3,6 +3,11 @@ NEWS
 
 For a detailed list of changes, have a look at the ChangeLog.
 
+Version 0.98.0
+  * Added support for exiftool
+  * Added support for dcraw
+  * minor fixes to interface-definition-files
+
 Version 0.97.0
   * Added support for ufraw
   * Added support for asynchronous execution of commands

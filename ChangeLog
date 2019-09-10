@@ -1,4 +1,105 @@
+2009-05-06
+
+	* version.inc: upgraded version to 0.98.0
+
+	* src/org/im4java/test/Test.java: testExiftool: capture output to
+	  ArrayList
+
+	* src/org/im4java/core/: GraphicsMagickCmd.java,
+	  ImageMagickCmd.java: initial entry
+
+	* input/IMinterface.txt: added '@ Boolean:percent' to
+	  -random-threshold
+
+2009-05-04
+
+	* NEWS: updated for release 0.98.0
+
+	* web/index.html: added exiftool and ufraw to the list of supported
+	  cmdline tools incremented version number to 0.98
+
+	* README: added dcraw to the list of supported cmdline-tools
+
+	* src/org/im4java/core/DcrawCmd.java: initial entry
+
+	* src/org/im4java/test/Test.java: added testDCRaw()
+
+	* src/org/im4java/core/DCRAWOperation.java: initial entry
+
+	* bin/mk-im4java: bugfix: set attachVarToOption=0 as default, since
+	  not all methods have arguments
+
+	* input/DCRAWinterface.txt: initial entry
+
+2009-03-07
+
+	* src/org/im4java/test/Test.java: added testExiftool()
+
+	* src/org/im4java/core/ETOperation.java: bugfix: all methods should
+	  be public
+
+	* src/org/im4java/core/ETOperation.java: fixed placement of "..."
+
+	* src/org/im4java/core/ETOperation.java: added special
+	  tag-manipulation methods
+
+	* input/ETinterface.txt, input/cmd.java.template,
+	  input/operation.java.template,
+	  src/org/im4java/core/ETOperation.java,
+	  src/org/im4java/core/ExiftoolCmd.java: initial entry
+
+	* doc-src/xdocs/images/icon.png: initial entry
+
+	* doc-src/: classes/CatalogManager.properties,
+	  resources/schema/catalog.xcat, resources/schema/hello-v10.dtd,
+	  resources/stylesheets/hello2document.xsl, .cvsignore,
+	  forrest.properties, forrest.properties.xml, sitemap.xmap,
+	  skinconf.xml, template.xml, xdocs/.cvsignore,
+	  xdocs/images/group-logo.gif, xdocs/images/project-logo.gif,
+	  xdocs/images/usemap.gif, xdocs/images/group.svg,
+	  xdocs/images/project.svg: initial entry
+
+2009-03-06
+
+	* input/IMinterface.txt: added the option +polaroid
+
+2009-03-05
+
+	* bin/mk-im4java: support special case where option arguments are
+	  attached to option name
+
+	* bin/mk-im4java: support explicit method-names in idf
+
+	* bin/mk-im4java: Ignore case when searching for already existing
+	  xxxCmd.java
+
+	* bin/mk-im4java: added code to generate simple xxxOperation and
+	  xxxCmd classes
+
+	* bin/mk-im4java: improved generated class and method comments
+
+	* input/java.class.head: fixed wording
+
+	* input/java.class.head: use new template-var _TOOLNAME_
+
+	* input/: GMinterface.txt, IMinterface.txt, JPTinterface.txt,
+	  UFRawinterface.txt: added config-variable toolName
+
+	* misc/make-release: added item to list
+
+	* .cvsignore: added doc
+
+	* Makefile: implemented target api-doc added doc-dirs to target
+	  clean
+
+	* Makefile: added targets forrest and api-doc
+
 2009-02-27
+
+	* Makefile: binarch: don't make clean after building jar (only
+	  remove build/*)
+
+	* ChangeLog: upated ChangeLog for version 0.97.0
 
 	* version.inc: upgraded version to 0.97.0
 

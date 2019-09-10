@@ -7,9 +7,10 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.2 $
+# $Revision: 1.3 $
 #
 !validInterface=true
+!toolName=ufraw
 #
 --conf= String:pFile
 --wb= String:pType

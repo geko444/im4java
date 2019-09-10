@@ -2,12 +2,13 @@
 # Makefile for im4java
 #
 # $Author: bablokb $
-# $Revision: 1.25 $
+# $Revision: 1.28 $
 #
 # License: GPL2 (see COPYING)
 # -----------------------------------------------------------------------------
 
 .PHONY: all src test test-prepare jar clean distclean \
+        forrest api-doc \
         srcdist bindist predist srcarch binarch postdist \
         inc-dist-major inc-dist-minor inc-dist-pl
 
@@ -41,6 +42,7 @@ default:
 	@echo -e "\tcompile:   compile source-code"
 	@echo -e "\tjar:       create im4java-library file $(DIST_NAME).jar"
 	@echo -e "\ttest:      run test-suite\n"
+	@echo -e "\tdoc:       create documentation\n"
 	@echo -e "\tsrcdist:   create source-distribution"
 	@echo -e "\tbindist:   create binary-distribution (also includes source)\n"
 	@echo -e "\tclean:     cleanup after compile and test"
@@ -70,10 +72,38 @@ test-prepare:
 test: test-prepare
 	java $(JAVA_OPTS) -cp build $(JAVA_TEST_CLASS) $(TESTS)
 
+# targets (documentation) -----------------------------------------------------
+
+DOC_SRC_DIR=./doc-src
+FORREST_API_ROOT="$(DOC_SRC_DIR)/xdocs/ref"
+
+NAME      = The im4java Library
+HOMEPAGE  = http://im4java.sourceforge.net/
+COPYRIGHT = Released under the LGPL, (c) Bernhard Bablok 2008-2009
+WTITLE    = "$(NAME)"
+DTITLE    = "$(NAME), Version $(VERSION)"
+DBOTTOM   = "$(COPYRIGHT)<br>Homepage: <a href="$(HOMEPAGE)">$(HOMEPAGE)</a>"
+DHEADER   = "<strong>$(NAME), Version $(VERSION)</strong>"
+DFOOTER   = "<strong>$(NAME), Version $(VERSION)</strong>"
+
+doc: api-doc forrest
+
+forrest:
+	cd $(DOC_SRC_DIR); \
+	forrest; \
+	cp -avu build/site/* ../doc
+
+api-doc:
+	javadoc -sourcepath src -d $(FORREST_API_ROOT) -windowtitle $(WTITLE) \
+                -doctitle $(DTITLE) -footer $(DFOOTER) -header $(DHEADER) \
+                -bottom $(DBOTTOM) \
+                -version -author -subpackages org.im4java
+
 # targets (cleanup and distribution) ------------------------------------------
 
 clean:
-	rm -fr $(DIST)-*.tar.bz2 build/* images $(DIST_NAME).jar
+	rm -fr $(DIST)-*.tar.bz2 build/* doc/* doc-src/build/* \
+                 $(FORREST_API_ROOT)/* images $(DIST_NAME).jar
 
 distclean: clean
 	rm -fr src/$(subst .,/,$(JAVA_PACKAGE))/*Ops.java
@@ -104,7 +134,7 @@ srcarch:
 binarch:
 	(cd $(DIST_NAME); tar -xpzf ../$(DIST_NAME).tgz; \
          $(MAKE) distclean src jar; \
-         $(MAKE) clean \
+         rm -fr build/* \
         )
 	tar -cpjf $(DIST_NAME)-bin.tar.bz2 $(DIST_NAME)
 

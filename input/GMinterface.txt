@@ -1,13 +1,15 @@
 # Interface defintion for GraphicsMagick (Version 1.2.5)
 #
-# Syntax: IM-option varType:varName operator [...]
+# Syntax: GM-option varType:varName operator [...]
 #
 #         Operator: _     space
 #                   @     attach without space
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.3 $
+# $Revision: 1.4 $
+#
+!toolName=GraphicsMagick
 #
 -adjoin
 +adjoin

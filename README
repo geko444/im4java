@@ -39,7 +39,7 @@ Features
   IM commands and pipe output of IM commands into a BufferedImage
 - scarce documentation (but many examples in src/org/im4java/test/Test.java)
 - the architecture supports arbitrary commandline-tools (already implemented:
-  ImageMagick, GraphicsMagick, jpegtran, ufraw)
+  ImageMagick, GraphicsMagick, jpegtran, ufraw, exiftool, dcraw)
 
 
 INSTALLATION

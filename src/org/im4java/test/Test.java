@@ -37,7 +37,7 @@ import org.im4java.utils.*;
 /**
    This class implements various tests of the im4java-package.
 
-   @version $Revision: 1.33 $
+   @version $Revision: 1.36 $
    @author  $Author: bablokb $
  */
 
@@ -81,6 +81,8 @@ public class  Test {
           "\t15: jpegtran\n" +
           "\t16: asynchronous execution\n" +
           "\t17: ufraw-batch\n" +
+          "\t18: exiftool\n" +
+          "\t19: dcraw\n" +
           ""
       );
       System.exit(1);
@@ -105,6 +107,8 @@ public class  Test {
         test.testJpegtran();
         test.testAsync();
         test.testUFRaw();
+        test.testExiftool();
+        test.testDCRaw();
       } else {
         for (int i=0; i<args.length; ++i) {
           int nr = Integer.parseInt(args[i]);
@@ -159,6 +163,12 @@ public class  Test {
               break;
             case 17:
               test.testUFRaw();
+              break;
+            case 18:
+              test.testExiftool();
+              break;
+            case 19:
+              test.testDCRaw();
               break;
             default:
               System.err.println("Test Nr " + nr + " not implemented yet!");
@@ -662,6 +672,75 @@ public class  Test {
     DisplayCmd.show(outfile);
     (new File(outfile)).delete();
   }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Test of exiftool.
+   */
+
+  public void testExiftool() throws Exception {
+    System.err.println("18. Testing exiftool ...");
+
+    ETOperation op = new ETOperation();
+    op.getTags("Filename","ImageWidth","ImageHeight","FNumber",
+                                                           "ExposureTime","iso");
+    op.addImage();
+
+    // setup command and execute it (capture output)
+    ArrayListOutputConsumer output = new ArrayListOutputConsumer();
+    ExiftoolCmd et = new ExiftoolCmd();
+    et.setOutputConsumer(output);
+    et.run(op,"images/spathiphyllum.jpg");
+
+    // dump output
+    ArrayList<String> cmdOutput = output.getOutput();
+    for (String line:cmdOutput) {
+      System.out.println(line);
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Test of dcraw.
+   */
+
+  public void testDCRaw() throws Exception {
+    System.err.println("19. Testing dcraw ...");
+    String outfile="images/rawfile.tif";
+    String infile=System.getProperty("im4java.testDcraw.infile");
+    if (infile == null) {
+      System.err.println(
+         "\nSkipping this test since input-file is not defined.\n" +
+         "Set the system-property im4java.testDcraw.infile to\n" +
+         "your input-file for dcraw:\n" +
+         "\tpass JAVA_OPTS=-Dim4java.testDcraw.infile=... to \"make test\" or\n" +
+         "\texport JAVA_OPTS=-Dim4java.testDcraw.infile=...\n\n"
+      );
+      return;
+    }
+
+    DCRAWOperation op = new DCRAWOperation();
+    op.halfSize();
+    op.createTIFF();
+    op.write2stdout();
+    op.addImage(infile);                                 // input-filename
+
+    // create pipe for output
+    FileOutputStream fos = new FileOutputStream(outfile);
+    Pipe pipeOut = new Pipe(null,fos);
+
+    // set up and run command
+    DcrawCmd dcraw = new DcrawCmd();
+    dcraw.setOutputConsumer(pipeOut);
+    dcraw.run(op);
+    fos.close();
+
+    DisplayCmd.show(outfile);
+    (new File(outfile)).delete();
+  }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////

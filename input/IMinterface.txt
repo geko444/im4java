@@ -7,7 +7,9 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.11 $
+# $Revision: 1.14 $
+#
+!toolName=ImageMagick
 #
                -adaptive-blur Double:radius x Double:sigma
                -adaptive-resize Integer:width x Integer:height @ Character:special
@@ -183,6 +185,7 @@
                -ping
                -pointsize Integer:value
                -polaroid Double:angle
+               +polaroid
                -posterize Integer:levels
                -preview String:type
                -print String:text
@@ -195,7 +198,7 @@
                -radial-blur Double:angle
                -raise Integer:width x Integer:height
                +raise Integer:width x Integer:height
-               -random-threshold Double:low x Double:high
+               -random-threshold Double:low x Double:high @ Boolean:percent
                -recolor String:matrix
                -red-primary Double:x , Double:y
                -regard-warnings
