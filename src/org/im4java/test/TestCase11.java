@@ -28,8 +28,10 @@ import org.im4java.process.*;
 /**
    This class implements a test of dynamic operations.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class TestCase11 extends AbstractTestCase {

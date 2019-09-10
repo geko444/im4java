@@ -28,8 +28,10 @@ import org.im4java.core.*;
 /**
    This class is an abstract implementation of a ScriptGenerator.
 
-   @version $Revision: 1.6 $
+   @version $Revision: 1.7 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 abstract public class AbstractScriptGenerator implements ScriptGenerator {

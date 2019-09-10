@@ -1,7 +1,7 @@
 /**************************************************************************
 /* This class implements a test of the composite command.
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2009-2010 by Bernhard Bablok (mail@bablokb.de)
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -25,8 +25,10 @@ import org.im4java.core.*;
 /**
    This class implements a test of the composite command.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.4 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class TestCase7 extends AbstractTestCase {
@@ -63,9 +65,12 @@ public class TestCase7 extends AbstractTestCase {
     System.err.println(" 7. Testing composite ...");
     IMOperation op = new IMOperation();
     op.blend(50);
-    op.addImage(3);
+    op.addImage("[300x200+0+0]");  // read and crop first image
+    op.addImage("[300x200+0+0]");  // read and crop second image
+    op.addImage();                 // output image
 
     CompositeCmd composite = new CompositeCmd();
+    composite.createScript(iImageDir+"composite.sh",op);
     composite.run(op,iImageDir+"rose1.jpg",iImageDir+"rose2.jpg",iTmpImage);
     DisplayCmd.show(iTmpImage);
   }

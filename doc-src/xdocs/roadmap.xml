@@ -4,7 +4,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.1 $
+  $Revision: 1.2 $
   $Author: bablokb $
 -->
 
@@ -21,8 +21,9 @@
 	The following releases will feature:
       </p>
       <ul>
-	<li>better documentation</li>
-	<li>support for parallel processing of multiple images</li>
+	<li>update interface definitions (catch up with new options)</li>
+	<li>do some benchmarking to support a better decision between JMagick
+	  and im4java</li>
 	<li>integration with java buildtools (e.g. ant and maven)</li>
 	<li>support of additional commandline tools (suggestions welcome)</li>
 	<li>add example programs</li>

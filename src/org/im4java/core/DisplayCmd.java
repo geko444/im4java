@@ -26,8 +26,10 @@ import java.io.IOException;
 /**
    This class wraps the IM command display.
 
-   @version $Revision: 1.13 $
+   @version $Revision: 1.14 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class DisplayCmd extends ImageCommand {

@@ -25,8 +25,10 @@ package org.im4java.core;
 /**
    This class wraps the IM command convert.
 
-   @version $Revision: 1.5 $
+   @version $Revision: 1.6 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class ConvertCmd extends ImageCommand {

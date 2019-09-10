@@ -32,8 +32,10 @@ import org.im4java.process.OutputConsumer;
 /**
    This class wraps the IM command identify.
 
-   @version $Revision: 1.13 $
+   @version $Revision: 1.14 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class IdentifyCmd extends ImageCommand {

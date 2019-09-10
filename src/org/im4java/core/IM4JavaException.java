@@ -27,8 +27,10 @@ import java.io.*;
 /**
    This class is the base class of all im4java -exceptions.
 
-   @version $Revision: 1.4 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class IM4JavaException extends Exception {

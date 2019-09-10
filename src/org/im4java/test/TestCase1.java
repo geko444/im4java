@@ -25,8 +25,10 @@ import org.im4java.core.*;
 /**
    This class implements the basic test of convert.
 
-   @version $Revision: 1.5 $
+   @version $Revision: 1.6 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class TestCase1 extends AbstractTestCase {

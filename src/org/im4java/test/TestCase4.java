@@ -27,8 +27,10 @@ import org.im4java.utils.*;
 /**
    This class implements a test of the ChannelMixer.
 
-   @version $Revision: 1.5 $
+   @version $Revision: 1.6 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class TestCase4 extends AbstractTestCase {

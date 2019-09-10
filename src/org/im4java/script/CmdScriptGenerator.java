@@ -28,8 +28,10 @@ import org.im4java.core.*;
 /**
    This class implements a CmdScriptGenerator.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class CmdScriptGenerator extends AbstractScriptGenerator {

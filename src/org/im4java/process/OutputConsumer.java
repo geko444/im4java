@@ -28,8 +28,10 @@ import java.io.IOException;
    This interface defines an OutputConsumer. An OutputConsumer reads
    output from a process' stdout.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public interface OutputConsumer {

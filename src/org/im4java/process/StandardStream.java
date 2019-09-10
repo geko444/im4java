@@ -26,8 +26,10 @@ package org.im4java.process;
    This class is a container for objects logically wrapping stdin, stdout
    and stderr.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class StandardStream {

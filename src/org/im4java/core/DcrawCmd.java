@@ -24,8 +24,10 @@ package org.im4java.core;
 /**
    This class wraps the dcraw command.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 0.98
 */
 
 public class DcrawCmd extends ImageCommand {

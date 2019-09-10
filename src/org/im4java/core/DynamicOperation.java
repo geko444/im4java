@@ -24,8 +24,10 @@ package org.im4java.core;
 /**
    This interface defines a DynamicOperation.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public interface DynamicOperation {

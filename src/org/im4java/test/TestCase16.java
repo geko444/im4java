@@ -27,8 +27,10 @@ import org.im4java.process.*;
 /**
    This class implements a test of asynchronous execution. 
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class TestCase16 extends AbstractTestCase {
@@ -74,8 +76,8 @@ public class TestCase16 extends AbstractTestCase {
     display.setAsyncMode(true);
 
     // helper-class defined at the end of this file
-    AsyncTestProcessListener pl = new AsyncTestProcessListener();
-    display.addProcessListener(pl);
+    AsyncTestProcessEventListener pl = new AsyncTestProcessEventListener();
+    display.addProcessEventListener(pl);
     IMOperation dispOp = new IMOperation();
     dispOp.addImage(iTmpImage);
     display.run(dispOp);
@@ -100,18 +102,25 @@ public class TestCase16 extends AbstractTestCase {
    something more sensible like update a GUI.
 */
 
-class AsyncTestProcessListener implements ProcessListener {
+class AsyncTestProcessEventListener implements ProcessEventListener {
   private Process iProcess     = null;
   private boolean isTerminated = false;
 
+  // empty implementation
+  public void processInitiated(ProcessEvent pEvent) {
+    System.err.println("process initiated");
+  }
+
   // save the started process
-  public void processStarted(Process pProcess) {
+  public void processStarted(ProcessEvent pEvent) {
+    System.err.println("process started");
     isTerminated=false;
-    iProcess = pProcess;
+    iProcess = pEvent.getProcess();
   }
 
   // print return-code or stack-trace
   public void processTerminated(ProcessEvent pEvent) {
+    System.err.println("process terminated");
     synchronized(iProcess) {
       iProcess = null;
     }

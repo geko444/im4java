@@ -28,8 +28,10 @@ import org.im4java.process.*;
 /**
    This class implements a test of the dcraw-command.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class TestCase19 extends AbstractTestCase {

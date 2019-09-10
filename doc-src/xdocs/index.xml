@@ -4,7 +4,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.4 $
+  $Revision: 1.7 $
   $Author: bablokb $
 -->
 
@@ -14,7 +14,7 @@
   </header>
 
   <body>
-    <note>The current version of im4java is 1.0.0</note>
+    <note>The current version of im4java is 1.1.0</note>
 
     <section id="intro">
       <title>Introduction</title>
@@ -93,6 +93,7 @@
 	  BufferedImage
 	</li>
 	<li>asynchronous execution of commands possible</li>
+	<li>parallel processing of multiple input-images</li>
 	<li>the architecture supports arbitrary commandline-tools</li>
 	<li>supports GraphicsMagick</li>
 	<li>supports jpegtran</li>
@@ -107,12 +108,39 @@
 
       <p>Source and binary packages are available for download. See the <a
 	  href="ext:download">download area</a> of the
-	im4java-project. The current version is <strong>1.0.0</strong>.
+	im4java-project. The current version is <strong>1.1.0</strong>.
       </p>
 
       <p>You can find a comprehensive list of changes in the <a
 	  href="site:relnotes">release notes</a>  and all the details in the file <em>ChangeLog</em>.
       </p>
+    </section>
+
+    <section id="maven">
+    <title>Maven-Repository</title>
+
+      <p>
+	The im4java-library is also available from a 
+	<a href="ext:maven">maven-repository</a>.
+	(kudos to the people at cedarsoft). Note that this repository
+	is not supported by the im4java-project. There are plans to
+	directly support maven, but this will be done in a future
+	release.
+      </p>
+
+      <p>
+	The necessary pom-entry for the repository is:
+      </p>
+
+      <source>
+&lt;repositories&gt;
+  &lt;repository&gt;
+    &lt;id&gt;cedarsoft-thirdparty&lt;/id&gt;
+    &lt;url&gt;http://maven.cedarsoft.com/content/repositories/thirdparty/&lt;/url&gt;
+  &lt;/repository&gt;
+&lt;/repositories&gt;
+      </source>
+
     </section>
 
     <section id="maillist">

@@ -1,4 +1,461 @@
+2010-07-24
+
+	* doc-src/xdocs/docs/dev-guide.xml: fixed a number of misspellings
+
+2010-07-23
+
+	* doc-src/xdocs/docs/dev-guide.xml: request feedback for parallel
+	  processing
+
+	* doc-src/xdocs/relnotes.xml: added note about possible bugs and
+	  race-conditions with parallel processing
+
+	* src/org/im4java/process/ProcessExecutor.java: bugfix: fixed start
+	  of processes during shutdownNow()
+
+	* src/org/im4java/process/Pipe.java: removed debug-output
+
+2010-07-19
+
+	* src/org/im4java/process/Pipe.java: bugfix: don't synchronize
+	  copyBytes, but synchronize low-level write
+
+2010-07-17
+
+	* Makefile: fixed targets jar-1.5 and jar-contrib-1.5
+
+2010-07-11
+
+	* doc-src/xdocs/roadmap.xml: updated roadmap
+
+	* version.inc: upgraded version to 1.1.0
+
+	* doc-src/xdocs/relnotes.xml: added section for release 1.1.0
+
+	* doc-src/xdocs/index.xml: changed version from 1.0.0 to 1.1.0
+
+	* doc-src/xdocs/site.xml: added external reference "maven"
+
+	* doc-src/xdocs/index.xml: added section about maven
+
+	* doc-src/xdocs/index.xml: updated feature-list
+
+	* doc-src/xdocs/install/index.xml: added section about jre 1.5
+	  support
+
+	* doc-src/xdocs/site.xml: fixed installation-tab
+
+	* Makefile: support java 1.5 as target during compilation
+
+	* Makefile: add generated source to srcdist added various
+	  dependencies to prevent excessive regeneration of source/doc
+
+	* doc-src/xdocs/docs/dev-guide.xml: bugfix: added missing tags
+
+	* src/org/im4java/: core/package.html, process/package.html,
+	  script/package.html, test/package.html, utils/package.html:
+	  initial entry
+
+	* Makefile: added some more target-descriptions to default-target
+
+	* src/org/im4java/utils/BatchConverter.java: fixed wrong link in
+	  class-doc
+
+	* src/org/im4java/: core/CommandException.java,
+	  core/CompositeCmd.java, core/ConvertCmd.java,
+	  core/DCRAWOperation.java, core/DcrawCmd.java,
+	  core/DisplayCmd.java, core/DynamicOperation.java,
+	  core/ETOperation.java, core/ExiftoolCmd.java,
+	  core/GMOperation.java, core/GraphicsMagickCmd.java,
+	  core/IM4JavaException.java, core/IMOperation.java,
+	  core/IdentifyCmd.java, core/ImageCommand.java,
+	  core/ImageMagickCmd.java, core/Info.java,
+	  core/InfoException.java, core/JPTOperation.java,
+	  core/JpegtranCmd.java, core/MogrifyCmd.java,
+	  core/MontageCmd.java, core/Operation.java,
+	  core/Stream2BufferedImage.java, core/UFRawCmd.java,
+	  core/UFRawOperation.java, process/ArrayListOutputConsumer.java,
+	  process/ErrorConsumer.java, process/InputProvider.java,
+	  process/OutputConsumer.java, process/Pipe.java,
+	  process/ProcessEvent.java, process/ProcessEventListener.java,
+	  process/ProcessExecutor.java, process/ProcessListener.java,
+	  process/ProcessStarter.java, process/ProcessTask.java,
+	  process/StandardStream.java, script/AbstractScriptGenerator.java,
+	  script/BashScriptGenerator.java, script/CmdScriptGenerator.java,
+	  script/ScriptGenerator.java, test/AbstractTestCase.java,
+	  test/Test.java, test/TestCase.java, test/TestCase1.java,
+	  test/TestCase10.java, test/TestCase11.java, test/TestCase12.java,
+	  test/TestCase13.java, test/TestCase14.java, test/TestCase15.java,
+	  test/TestCase16.java, test/TestCase16a.java,
+	  test/TestCase16b.java, test/TestCase17.java,
+	  test/TestCase18.java, test/TestCase19.java, test/TestCase2.java,
+	  test/TestCase20.java, test/TestCase21.java, test/TestCase22.java,
+	  test/TestCase3.java, test/TestCase4.java, test/TestCase5.java,
+	  test/TestCase6.java, test/TestCase7.java, test/TestCase8.java,
+	  test/TestCase9.java, utils/BaseFilter.java,
+	  utils/BatchConverter.java, utils/ChannelMixer.java,
+	  utils/ExtensionFilter.java, utils/FilenameLoader.java,
+	  utils/FilenamePatternResolver.java, utils/GlobbingFilter.java,
+	  utils/NoiseFilter.java, utils/RegexFilter.java: added @since-tag
+
+2010-07-10
+
+	* contrib/org/im4java/examples/Convert.java: initial entry
+
+	* src/org/im4java/process/Pipe.java: synchronize consumeOutput()
+	  and consumeError() on iSink
+
+	* src/org/im4java/process/ProcessStarter.java: added patch from
+	  Jaroslav Snajdr (prevents deadlock on Windows)
+
+	* contrib/org/im4java/examples/Thumbnail.java: removed wrong
+	  comment
+
+2010-06-22
+
+	* doc-src/xdocs/docs/dev-guide.xml: describe the different modes of
+	  BatchConverter
+
+2010-06-21
+
+	* doc-src/xdocs/docs/dev-guide.xml: added note about
+	  BatchConverter.getFailedConversions()
+
+	* src/org/im4java/test/TestCase22.java: adapted to new interface of
+	  BatchConverter
+
+	* src/org/im4java/utils/BatchConverter.java: redesign: save
+	  exceptions and related indices in a list
+
+2010-06-16
+
+	* doc-src/xdocs/docs/dev-guide.xml: updated and added various
+	  sections
+
+2010-06-09
+
+	* doc-src/xdocs/docs/reference.xml: improve wordings. Add
+	  documentation for TestCase22
+
+	* doc-src/xdocs/docs/reference.xml: documented test-cases 16a and
+	  16b
+
+2010-05-19
+
+	* doc-src/xdocs/docs/dev-guide.xml: added section "About
+	  ImageCommand"
+
+2010-05-18
+
+	* doc-src/xdocs/docs/dev-guide.xml: added a note about the im4java
+	  architecture and complexity vs. efficiency
+
+2010-04-23
+
+	* src/org/im4java/test/TestCase21.java: optimized IMOperation:
+	  added size-hint
+
+	* src/org/im4java/utils/BatchConverter.java: added method getMode()
+
+	* src/org/im4java/test/TestCase22.java: bugfix: target-pattern was
+	  wrong
+
+	* src/org/im4java/test/TestCase22.java: minor tweak in terminated()
+
+	* src/org/im4java/utils/BatchConverter.java: fixed runBatch().
+	  Added exception-handling and cleaned up the code.
+
+2010-04-20
+
+	* src/org/im4java/utils/BatchConverter.java: preliminary
+	  implementation of runBatch()
+
+	* src/org/im4java/utils/FilenamePatternResolver.java: changed
+	  visbility of get-methods to public
+
+	* src/org/im4java/utils/FilenamePatternResolver.java: bugfix in
+	  getExt(): return empty string if no extension is present
+
+	* src/org/im4java/utils/BatchConverter.java: implemented method
+	  runPar()
+
+	* src/org/im4java/test/TestCase22.java: use subclass of
+	  BatchConverter to utilize terminated() callback
+
+	* src/org/im4java/: test/TestCase22.java,
+	  utils/BatchConverter.java: initial entry
+
+	* src/org/im4java/utils/FilenamePatternResolver.java: implemented
+	  support for %D escape-sequence
+
+	* Makefile: removed -Xlint:unchecked option from compile-targets
+
+	* src/org/im4java/process/ProcessStarter.java: added
+	  @SuppressWarnings for use of deprecated ProcessListener
+
+	* doc-src/xdocs/docs/dev-guide.xml: added note about UNC-names for
+	  %D-escape-sequence
+
+2010-04-19
+
+	* src/org/im4java/utils/: BaseFilter.java, GlobbingFilter.java,
+	  RegexFilter.java: initial entry
+
+	* doc-src/xdocs/docs/dev-guide.xml: adapted section FilenameLoader
+	  to new interface of ExtensionFilter and FilenameLoader
+
+	* src/org/im4java/test/TestCase21.java: adapt to new interface of
+	  ExtensionFilter and FilenameLoader
+
+	* src/org/im4java/utils/ExtensionFilter.java: extend BaseFilter and
+	  use BaseFilter.acceptDir() to check directories
+
+	* src/org/im4java/utils/FilenameLoader.java: refactored code into
+	  BaseFilter
+
+	* src/org/im4java/utils/ExtensionFilter.java: removed IM_IMAGES,
+	  since the list is so large that it will be useless
+
+	* src/org/im4java/test/TestCase21.java: added comment about strange
+	  ExtensionFilter
+
+	* doc-src/xdocs/docs/dev-guide.xml: fixed section about predefined
+	  ExtensionFilters
+
+	* src/org/im4java/utils/: ExtensionFilter.java,
+	  FilenameLoader.java: refactored predefined ExtensionFilters from
+	  FilenameLoader to ExtensionFilter
+
+	* src/org/im4java/utils/FilenameLoader.java: fixed predefined
+	  ExtensionFilter RAW_IMAGES
+
+	* doc-src/xdocs/docs/dev-guide.xml: fixed the section about
+	  BufferedImage
+
+	* src/org/im4java/core/ImageCommand.java: removed code for special
+	  case "output directly to BufferedImage"
+
+	* src/org/im4java/core/ImageCommand.java: bugfix: call
+	  removeTmpFile() in finish()
+
+2010-04-16
+
+	* src/org/im4java/test/TestCase16b.java: initial entry
+
+	* src/org/im4java/: core/Operation.java,
+	  utils/ExtensionFilter.java, process/ProcessStarter.java: fixed
+	  javadoc-issues
+
+	* src/org/im4java/test/TestCase21.java: fixed javadoc-error
+
+	* src/org/im4java/test/: TestCase21.java, TestCase16a.java:
+	  replaced exec.submit() with exec.execute()
+
+2010-04-15
+
+	* src/org/im4java/test/TestCase21.java: implemented
+	  execution-control
+
+	* src/org/im4java/process/ProcessStarter.java: use static
+	  iPIDCounter and non-static iPID
+
+	* src/org/im4java/process/ProcessStarter.java: made setPID static
+
+	* src/org/im4java/process/ProcessStarter.java: changed PID to
+	  AtomicInteger
+
+	* doc-src/xdocs/docs/reference.xml: replaced ProcessManager with
+	  ProcessExecutor and deleted im4java.usePM
+
+	* src/org/im4java/process/: ProcessGroup.java,
+	  ProcessGroupListener.java, ProcessManager.java: superseeded by
+	  ProcessExecutor
+
+	* src/org/im4java/test/TestCase21.java: use ProcessExecutor to
+	  control execution
+
+	* src/org/im4java/process/ProcessExecutor.java: initial entry
+
+	* src/org/im4java/process/ProcessTask.java: initial entry
+
+	* src/org/im4java/process/ProcessStarter.java: added method
+	  removeProcessEventListener()
+
+	* src/org/im4java/core/ImageCommand.java: refactored common code of
+	  run() and getProcessTask() into prepareArguments()
+
+	* src/org/im4java/test/TestCase16a.java: initial entry
+
+2010-04-14
+
+	* src/org/im4java/core/ImageCommand.java: added method
+	  getProcessTask()
+
+	* src/org/im4java/process/ProcessStarter.java: refactored
+	  task-creation into new method getProcessTask()
+
+	* src/org/im4java/test/TestCase16.java: added messages to
+	  ProcessEventListener-methods
+
+2010-04-12
+
+	* src/org/im4java/process/ProcessStarter.java: refactored
+	  method-body of anonymous Runnable into new method runAndNotify()
+
+	* src/org/im4java/: test/TestCase21.java,
+	  process/ProcessStarter.java: removed ProcessManager
+
+2010-04-10
+
+	* src/org/im4java/process/ProcessEvent.java: added PID and
+	  ProcessStarter-fields
+
+	* src/org/im4java/core/ImageCommand.java: remove resetErrorText()
+	  again and reset automatically in consumeError()
+
+	* src/org/im4java/process/ProcessStarter.java: support PID
+
+2010-04-06
+
+	* src/org/im4java/core/ImageCommand.java: added method
+	  resetErrorText() call resetErrorText() from run() in sync-mode
+
+2010-04-03
+
+	* doc-src/xdocs/docs/dev-guide.xml: replaced ProcessListener with
+	  ProcessEventListener in section "Asynchronous Execution"
+
+	* src/org/im4java/: process/ProcessGroup.java,
+	  process/ProcessManager.java, process/ProcessStarter.java,
+	  test/TestCase16.java, test/TestCase21.java: replaced
+	  ProcessListener with ProcessEventListener
+
+	* src/org/im4java/test/TestCase21.java: changed call
+	  addProcessListener to addProcessEventListener
+
+	* src/org/im4java/test/Test.java: removed import of ProcessListener
+
+2010-04-02
+
+	* src/org/im4java/process/ProcessStarter.java: added code for
+	  ProcessEventListener
+
+	* src/org/im4java/process/ProcessEventListener.java: initial entry
+
+	* src/org/im4java/process/ProcessListener.java: marked as
+	  deprecated
+
+2010-04-01
+
+	* doc-src/xdocs/docs/dev-guide.xml: documented
+	  FilenamePatternResolver
+
+	* doc-src/xdocs/docs/dev-guide.xml: reordered sections don't indent
+	  source-sections documented FilenameLoader
+
+	* src/org/im4java/: utils/FilenameLoader.java,
+	  test/TestCase21.java: renamed setIgnoreDotDirs to ignoreDotDirs
+
+	* src/org/im4java/test/TestCase21.java: use FilenamePatternResolver
+
+	* src/org/im4java/utils/FilenamePatternResolver.java: initial entry
+
+	* src/org/im4java/test/TestCase21.java: refactored operation from
+	  run() to class
+
+2010-03-29
+
+	* src/org/im4java/test/TestCase21.java: use predefined
+	  extension-filter FilenameLoader.STANDARD_IMAGES
+
+	* src/org/im4java/utils/FilenameLoader.java: added some predefined
+	  ExtensionFilters
+
+	* src/org/im4java/process/ProcessGroup.java: updated
+	  class-documentation
+
+	* src/org/im4java/process/ProcessGroup.java: fixed logic: cannot
+	  use processStarted() to track finishing of group
+
+	* src/org/im4java/test/TestCase21.java: use new interface of
+	  ProcessGroup
+
+	* src/org/im4java/process/ProcessManager.java: changed visibility
+	  of class and of some methods to public.  Added support for
+	  setting status and maximum number of concurrently running procs.
+
+	* src/org/im4java/test/TestCase21.java: recfactored to use
+	  ProcessGroup
+
+	* src/org/im4java/core/ImageCommand.java: added method
+	  getErrorText()
+
+	* src/org/im4java/utils/FilenameLoader.java: support filtering
+	  directories beginning with a dot
+
+	* src/org/im4java/test/TestCase21.java: use ExtensionFilter to
+	  limit processing to images
+
+	* src/org/im4java/utils/ExtensionFilter.java: initial entry
+
+	* src/org/im4java/test/TestCase21.java: configure ProcessManager
+	  from within the class
+
+	* src/org/im4java/test/TestCase21.java: only print exception-msg if
+	  not null
+
+	* src/org/im4java/process/ProcessStarter.java: added
+	  finished()-methods for subclass-specific post-processing
+
+	* src/org/im4java/core/ImageCommand.java: move post-processing to
+	  new method finished()
+
+2010-03-25
+
+	* doc-src/xdocs/docs/reference.xml: added TestCase21
+
+	* src/org/im4java/test/TestCase21.java: initial entry
+
+	* src/org/im4java/process/ProcessManager.java: removed debug-code
+
+	* doc-src/xdocs/docs/reference.xml: added documentation for
+	  im4java.usePM and im4java.maxProcs
+
+	* src/org/im4java/process/ProcessStarter.java: integrate the
+	  ProcessManager
+
+	* src/org/im4java/process/ProcessManager.java: initial entry
+
+	* src/org/im4java/utils/FilenameLoader.java: initial entry
+
+	* src/org/im4java/test/AbstractTestCase.java: save arguments prior
+	  to running the test
+
+	* src/org/im4java/process/: ProcessGroup.java,
+	  ProcessGroupListener.java: initial entry
+
+	* src/org/im4java/process/ProcessStarter.java: set the
+	  Process-field of the ProcessEvent
+
+	* src/org/im4java/process/ProcessEvent.java: added a Process-field
+	  to the class
+
+2010-03-23
+
+	* doc-src/xdocs/docs/dev-guide.xml: documented the new
+	  read-modifier feature
+
+	* src/org/im4java/core/: ImageCommand.java, Operation.java: support
+	  read-modifiers for image placeholders
+
+	* src/org/im4java/test/TestCase7.java: crop source-images with a
+	  read-modifier
+
+	* misc/make-release: make doc before update-web
+
 2010-03-22
+
+	* ChangeLog: upated ChangeLog for version 1.0.0
 
 	* doc-src/xdocs/: index.xml, docs/dev-guide.xml, relnotes.xml:
 	  fixed version number (1.0.0 instead of 1.00.0)

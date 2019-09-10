@@ -1,7 +1,7 @@
 /**************************************************************************
 /* The base class for image-based commandline operations.
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2009-2010 by Bernhard Bablok (mail@bablokb.de)
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -25,12 +25,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
-   This class models the command-line of an image-command. 
-   Objects of this class hold the arguments in a list and keep
-   track of special "dynamic" operations.
+   The base class for image-based commandline operations. The class
+   provides some standard methods for all subclasses.
 
-   @version $Revision: 1.6 $
+   <p>This class models the command-line of an image-command. 
+   Objects of this class hold the arguments in a list and keep
+   track of special "dynamic" operations.</p>
+
+   @version $Revision: 1.9 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public  class Operation {
@@ -149,7 +154,13 @@ public  class Operation {
   public Operation addImage(String... pImages) {
     for (String img:pImages) {
       if (img != null) {
-	iCmdArgs.add(img);
+        if (img.charAt(0) == '[' && img.charAt(img.length()-1) == ']') {
+          // special case: img is a read-modifier [WxH+X+Y] without
+          // an image-name. So prefix it with a placeholder.
+          iCmdArgs.add(IMG_PLACEHOLDER+img);
+	} else {
+	  iCmdArgs.add(img);
+	}
       }
     }
     return this;
@@ -194,8 +205,9 @@ public  class Operation {
   /**
    * Add a DynamicOperation to this Operation. We just save the DynamicOperation
    * in the internal list and add a placeholder for the operation.
-   @param pOperation
-   @return
+
+   @param pOperation the dynamic operation to add
+   @return this Operation-object
   */
 
     public Operation addDynamicOperation(DynamicOperation pOperation) {
@@ -209,7 +221,8 @@ public  class Operation {
 
     /**
      * Return the list of DynmicOperations.
-     @return
+
+     @return the list of DynamicOperations
     */
 
     public LinkedList<DynamicOperation> getDynamicOperations() {

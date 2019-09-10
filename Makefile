@@ -2,15 +2,16 @@
 # Makefile for im4java
 #
 # $Author: bablokb $
-# $Revision: 1.39 $
+# $Revision: 1.44 $
 #
 # License: GPL2 (see COPYING)
 # -----------------------------------------------------------------------------
 
-.PHONY: all src test test-prepare clean distclean \
+.PHONY: all src test test-prepare clean dist-clean \
         compile compile-lib compile-contrib \
-        jar jar-lib jar-contrib \
-        forrest api-doc show-news update-changelog \
+        jar jar-lib jar-contrib jar-1.5 jar-contrib-1.5 \
+        forrest api-doc doc-clean \
+        show-news update-changelog \
         srcdist bindist predist srcarch binarch postdist \
         upload-files update-web \
         inc-dist-major inc-dist-minor inc-dist-pl
@@ -43,44 +44,63 @@ SHAREDIR  = $(PREFIX)/share/$(DIST)
 
 default:
 	@echo -e "\nmain targets:\n"
-	@echo -e "\tall:         recreates source and jar from scratch"
-	@echo -e "\tsrc:         create java-sources from interface-definitions"
-	@echo -e "\tcompile:     compile source-code"
-	@echo -e "\tjar:         create im4java-library file $(DIST_NAME).jar"
-	@echo -e "\tjar-contrib: create im4java-library file $(DIST_NAME)-contrib.jar"
-	@echo -e "\ttest:        run test-suite\n"
-	@echo -e "\tdoc:         create documentation\n"
-	@echo -e "\tsrcdist:     create source-distribution"
-	@echo -e "\tbindist:     create binary-distribution (also includes source)\n"
-	@echo -e "\tclean:       cleanup after compile and test"
-	@echo -e "\tdistclean:   complete cleanup"
+	@echo -e "\tall:              recreates source and jar from scratch"
+	@echo -e "\tsrc:              create java-sources from interface-definitions"
+	@echo -e "\tcompile:          compile source-code"
+	@echo -e "\tcompile-contrib:  compile contrib-source-code\n"
+	@echo -e "\tjar:              create $(DIST_NAME).jar"
+	@echo -e "\tjar-contrib:      create $(DIST_NAME)-contrib.jar\n"
+	@echo -e "\ttest:             run test-suite"
+	@echo -e "\ttest-prepare:     prepare tests\n"
+	@echo -e "\tdoc:              create documentation"
+	@echo -e "\tapi-doc:          create API-documentation"
+	@echo -e "\tforrest:          create HTML-documentation"
+	@echo -e "\tdoc-clean:        cleanup generated documentation\n"
+	@echo -e "\tshow-news:        list of changes since last release"
+	@echo -e "\tupdate-changelog: update ChangeLog for next release\n"
+	@echo -e "\tsrcdist:          create source-distribution"
+	@echo -e "\tbindist:          create binary-distribution (also includes source)\n"
+	@echo -e "\tclean:            cleanup after compile and test"
+	@echo -e "\tdist-clean:       complete cleanup"
 	@echo -e ""
 
 all: clean src jar
 
-src:
+# targets (compilation) -------------------------------------------------------
+
+# prevent excessive regeneration of source
+src: src/org/im4java/core/IMOps.java
+src/org/im4java/core/IMOps.java:
 	bin/mk-im4java -p $(JAVA_PACKAGE)
 
 compile: compile-lib
 
-compile-lib:
+TARGET=1.6
+compile-lib: src
 	rm -fr build/*
 	mkdir -p build
-	javac -Xlint:unchecked -d build/  `find src -name "*.java"`
+	javac -target $(TARGET) -d build/  `find src -name "*.java"`
 
 compile-contrib: compile-lib
 	rm -fr build.contrib/*
 	mkdir -p build.contrib
-	javac -Xlint:unchecked -d build.contrib/ \
-                       -cp build `find contrib -name "*.java"`
+	javac -target $(TARGET) -d build.contrib/ \
+                              -cp build `find contrib -name "*.java"`
 
 jar: jar-lib
 
 jar-lib: compile-lib
 	jar cmf input/manifest.mf $(DIST_NAME).jar -C build/ .
 
+jar-1.5:
+	$(MAKE) jar TARGET=1.5 DIST_NAME=$(DIST_NAME)-1.5
+
 jar-contrib: compile-contrib
 	jar cmf input/manifest.mf $(DIST_NAME)-contrib.jar -C build.contrib/ .
+
+jar-contrib-1.5:
+	$(MAKE) jar-contrib TARGET=1.5 DIST_NAME=$(DIST_NAME)-1.5
+
 
 # targets (test) --------------------------------------------------------------
 
@@ -107,26 +127,29 @@ DFOOTER   = "<strong>$(NAME), Version $(VERSION)</strong>"
 
 doc: api-doc forrest
 
-forrest:
+forrest: doc/index.html
+doc/index.html:
 	cd $(DOC_SRC_DIR); \
 	forrest && \
 	cp -au build/site/* ../$(DOC_DIR)
 
-api-doc:
+api-doc: src
 	mkdir -p $(DOC_DIR)/api
 	javadoc -sourcepath src -d $(DOC_DIR)/api -windowtitle $(WTITLE) \
                 -doctitle $(DTITLE) -footer $(DFOOTER) -header $(DHEADER) \
                 -bottom $(DBOTTOM) \
                 -version -author -subpackages org.im4java
 
+doc-clean:
+	rm -fr $(DOC_DIR)/* $(DOC_SRC_DIR)/build/*
+
 # targets (cleanup and distribution) ------------------------------------------
 
 clean:
 	rm -fr $(DIST)-*.tar.bz2 build/* build.contrib/* $(DIST_DIR) \
-                 $(DOC_DIR)/* $(DOC_SRC_DIR)/build/* \
-                    images $(DIST_NAME).jar $(DIST_NAME)-contrib.jar
+                    images $(DIST_NAME)*.jar
 
-distclean: clean
+dist-clean: clean doc-clean
 	rm -fr src/$(subst .,/,$(JAVA_PACKAGE))/*Ops.java
 
 show-news:
@@ -154,14 +177,14 @@ predist:
 srcarch:
 	rm -f $(DIST_DIR)/$(DIST_NAME)-src.tar.bz2
 	(cd $(DIST_NAME); tar -xpzf ../$(DIST_NAME).tgz; \
-         $(MAKE) distclean \
+         $(MAKE) dist-clean src \
         )
 	tar -cpjf $(DIST_DIR)/$(DIST_NAME)-src.tar.bz2 $(DIST_NAME)
 
 binarch:
 	rm -f $(DIST_DIR)/$(DIST_NAME)-bin.tar.bz2
 	(cd $(DIST_NAME); tar -xpzf ../$(DIST_NAME).tgz; \
-         $(MAKE) distclean src jar doc; \
+         $(MAKE) dist-clean src jar jar-1.5 doc; \
          rm -fr Makefile version.inc build src contrib doc-src input \
         )
 	tar -cpjf  $(DIST_DIR)/$(DIST_NAME)-bin.tar.bz2 $(DIST_NAME)
@@ -175,7 +198,7 @@ postdist:
 upload-files:
 	rsync -avP -e ssh $(DIST_DIR) bablokb,im4java@frs.sourceforge.net:$(SF_DIR)
 
-update-web:
+update-web: doc
 	rsync -avP -e ssh doc/  bablokb,im4java@web.sourceforge.net:htdocs/
 
 # targets (version management)  -----------------------------------------------

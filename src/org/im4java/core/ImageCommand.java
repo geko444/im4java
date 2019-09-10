@@ -1,7 +1,7 @@
 /**************************************************************************
 /* This class implements the processing of image-commands.
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2009-2010 by Bernhard Bablok (mail@bablokb.de)
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -39,6 +39,7 @@ import javax.imageio.ImageIO;
 
 import org.im4java.process.ErrorConsumer;
 import org.im4java.process.ProcessStarter;
+import org.im4java.process.ProcessTask;
 import org.im4java.process.StandardStream;
 import org.im4java.script.ScriptGenerator;
 import org.im4java.script.BashScriptGenerator;
@@ -49,8 +50,10 @@ import org.im4java.script.CmdScriptGenerator;
    placeholders within the argument-stack and passes all arguments to the
    generic run-method of ProcessStarter.
 
-   @version $Revision: 1.19 $
+   @version $Revision: 1.29 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class ImageCommand extends ProcessStarter implements ErrorConsumer {
@@ -78,14 +81,6 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
   */
 
   private LinkedList<String> iTmpFiles;
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     Temporary output file.
-  */
-
-  private String iTmpOutputFile;
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -167,25 +162,93 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Get the error-text associated with this command (might be null).
+
+     @return The error-text associated with this command.
+   */
+
+  public ArrayList<String> getErrorText() {
+    return iErrorText;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Execute the command (replace given placeholders).
-     * @throws IM4JavaException 
-     */
+
+     @param  pOperation The Operation to execute
+     @param  images     Zero or more images (replace placeholders in pOperation)
+     @throws IM4JavaException 
+  */
+
+  private LinkedList<String> prepareArguments(Operation pOperation, 
+                                                               Object... images) 
+                                            throws IOException, IM4JavaException {
+    LinkedList<String> args = new LinkedList<String>(pOperation.getCmdArgs());
+    args.addAll(0,iCommands);
+    resolveImages(args,images);
+    resolveDynamicOperations(pOperation,args,images);
+    return args;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Execute the command (replace given placeholders).
+
+     @param  pOperation The Operation to execute
+     @param  images     Zero or more images (replace placeholders in pOperation)
+     @throws IOException, InterruptedException, IM4JavaException 
+  */
 
   public void run(Operation pOperation, Object... images) 
     throws IOException, InterruptedException, IM4JavaException {
 
     // prepare list of arguments
-    LinkedList<String> args = new LinkedList<String>(pOperation.getCmdArgs());
-    args.addAll(0,iCommands);
-    resolveImages(args,images);
-    resolveDynamicOperations(pOperation,args,images);
+    LinkedList<String> args = prepareArguments(pOperation,images);
 
-    int rc=run(args);
-    removeTmpFiles();
-    if (rc > 0) {
-      CommandException ce = new CommandException();
+    try {
+      run(args);
+    } catch (Exception e) {
+      removeTmpFiles();
+      CommandException ce = new CommandException(e);
+      ce.fillInStackTrace();
+      throw ce;
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Return a ProcessTask for future execution (replace given placeholders).
+
+     @param  pOperation The Operation to execute
+     @param  images     Zero or more images (replace placeholders in pOperation)
+     @throws IOException, IM4JavaException 
+  */
+
+  public ProcessTask getProcessTask(Operation pOperation, Object... images) 
+                                          throws IOException, IM4JavaException {
+    LinkedList<String> args = prepareArguments(pOperation,images);
+    return getProcessTask(args);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Post-processing after the process has terminated. Implements
+     the method of the base class.
+
+     @param pReturnCode  the return-code of the process
+  */
+    
+  protected void finished(int pReturnCode) throws Exception {
+    if (pReturnCode > 0) {
+      CommandException ce = new CommandException(iErrorText.get(0));
       ce.setErrorText(iErrorText);
       throw ce;
+    } else {
+      removeTmpFiles();
     }
   }
 
@@ -199,27 +262,29 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
                                                             throws IOException {
     ListIterator<String> argIterator = pArgs.listIterator();
     int i = 0;
+    String currentArg = null;
     for (Object obj:pImages) {
       // find the next placeholder
       while (argIterator.hasNext()) {
-	if (argIterator.next().equals(Operation.IMG_PLACEHOLDER)) {
+        currentArg = argIterator.next();
+	if (currentArg.startsWith(Operation.IMG_PLACEHOLDER)) {
 	  break;
 	}
       }
       if (obj instanceof String) {
-	argIterator.set((String) obj);
+        if (currentArg.length() == Operation.IMG_PLACEHOLDER.length()) {
+          // a pure image-placeholder
+	  argIterator.set((String) obj);
+        } else {
+          // an image-placeholder with read-modifier
+          String modifier = 
+                      currentArg.substring(Operation.IMG_PLACEHOLDER.length());
+	  argIterator.set(((String) obj)+modifier);
+        }
       } else if (obj instanceof BufferedImage) {
-	if (i<pImages.length) {
-	  // write BufferedImage to temporary file
-	  // and replace the placeholder with the temporary file
-	  String tmpFile = convert2TmpFile((BufferedImage) obj);
-	  argIterator.set(tmpFile);
-	  iTmpFiles.add(tmpFile);
-	} else {
-	  // special case: BufferedImage is last image, so just create name
-	  iTmpOutputFile=getTmpFile();
-	  argIterator.set(iTmpOutputFile);
-	}
+	String tmpFile = convert2TmpFile((BufferedImage) obj);
+	argIterator.set(tmpFile);
+	iTmpFiles.add(tmpFile);
       } else {
 	throw new IllegalArgumentException(obj.getClass().getName() +
 					   " is an unsupported image-type");
@@ -284,9 +349,7 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
     InputStreamReader esr = new InputStreamReader(pInputStream);
     BufferedReader reader = new BufferedReader(esr);
     String line;
-    if (iErrorText == null) {
-      iErrorText= new ArrayList<String>();
-    }
+    iErrorText= new ArrayList<String>();
     while ((line=reader.readLine()) != null) {
       iErrorText.add(line);
     }
@@ -326,12 +389,12 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
    */
 
   private void removeTmpFiles() {
-    try {
-      for (String file:iTmpFiles) {
+    for (String file:iTmpFiles) {
+      try {
 	(new File(file)).delete();
+      } catch (Exception e) {
+	// ignore, since if we can't delete the file, we can't do anything about it
       }
-    } catch (Exception e) {
-      // ignore, since if we can't delete the file, we can't do anything about it
     }
   }
 

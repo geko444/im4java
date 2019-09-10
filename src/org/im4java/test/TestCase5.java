@@ -25,8 +25,10 @@ import org.im4java.core.*;
 /**
    This class implements a test of the mogrify command.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class TestCase5 extends AbstractTestCase {

@@ -24,8 +24,10 @@ package org.im4java.test;
 /**
    This interface defines the methods for a single test-case.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public interface TestCase {

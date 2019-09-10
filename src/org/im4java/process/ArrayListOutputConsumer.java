@@ -31,8 +31,10 @@ import java.util.ArrayList;
 /**
    This class is an OutputConsumer which saves the output to an ArrayList.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class ArrayListOutputConsumer implements OutputConsumer {

@@ -28,8 +28,10 @@ import java.io.IOException;
    This interface defines an ErrorConsumer. An ErrorConsumer reads
    output from a process' stderr.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public interface ErrorConsumer {

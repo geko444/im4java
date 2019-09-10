@@ -29,8 +29,10 @@ import org.im4java.core.ImageCommand;
 /**
    This class wraps the IM command mogrify.
 
-   @version $Revision: 1.5 $
+   @version $Revision: 1.6 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class MogrifyCmd extends ImageCommand {

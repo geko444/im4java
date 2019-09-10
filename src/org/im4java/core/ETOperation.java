@@ -30,8 +30,10 @@ package org.im4java.core;
    the methods of this class don't follow the usual 1:1 relationship
    between method-names and commandline option-names.
 
-   @version $Revision: 1.4 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
+ 
+   @since 0.98
 */
 
 public class ETOperation extends ETOps {

@@ -28,8 +28,10 @@ import org.im4java.core.*;
 /**
    This class implements a BashScriptGenerator.
 
-   @version $Revision: 1.6 $
+   @version $Revision: 1.7 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class BashScriptGenerator extends AbstractScriptGenerator {

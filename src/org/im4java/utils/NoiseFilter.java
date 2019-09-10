@@ -26,8 +26,10 @@ import org.im4java.core.*;
 /**
    This class is the base class of all   noise-remover classes.
 
-   @version $Revision: 1.6 $
+   @version $Revision: 1.7 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class NoiseFilter extends IMOperation {

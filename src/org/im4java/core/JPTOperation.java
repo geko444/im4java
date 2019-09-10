@@ -25,8 +25,10 @@ package org.im4java.core;
 /**
    This class models the command-line of jpegtran. 
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 0.96
 */
 
 public class JPTOperation extends JPTOps {

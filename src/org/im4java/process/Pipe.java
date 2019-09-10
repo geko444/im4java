@@ -34,8 +34,10 @@ import java.io.IOException;
    But you cannot use the same Pipe-object as an OutputConsumer and
    ErrorConsumer at the same time.</p>
 
-   @version $Revision: 1.4 $
+   @version $Revision: 1.8 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class Pipe implements InputProvider, OutputConsumer, ErrorConsumer {
@@ -124,7 +126,10 @@ public class Pipe implements InputProvider, OutputConsumer, ErrorConsumer {
      if (byteCount == -1) {
        break;
      }
-     pOs.write(buffer,0,byteCount);
+     // synchronize on OutputStream
+     synchronized(pOs) {
+       pOs.write(buffer,0,byteCount);
+     }
     }
     pOs.flush();
    }

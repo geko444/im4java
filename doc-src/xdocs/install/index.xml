@@ -5,7 +5,7 @@
 <!--
  Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
- $Revision: 1.2 $
+ $Revision: 1.3 $
  $Author: bablokb $
 -->
 
@@ -46,6 +46,21 @@
       <source>
 	$ &gt; make doc
       </source>
+    </section>
+
+    <section id="java15">
+      <title>Support for JRE 1.5</title>
+      <p>
+	In case you need a version compatible with JRE 1.5, you can
+	create a 1.5-compatible version from source with
+      </p>
+      <source>
+	$ &gt; make src jar-1.5
+      </source>
+      <p>
+	The binary distribution already has a 1.5-compatible version
+	named  <code>im4java-version-1.5.jar</code>.
+      </p>
     </section>
 
     <section id="start">

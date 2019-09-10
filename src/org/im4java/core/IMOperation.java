@@ -34,8 +34,10 @@ package org.im4java.core;
    limit yourself to the subset of options
    common to both implementations.</p>
 
-   @version $Revision: 1.11 $
+   @version $Revision: 1.12 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class IMOperation extends IMOps {

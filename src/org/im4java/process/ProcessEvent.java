@@ -1,7 +1,7 @@
 /**************************************************************************
 /* This class wraps return-code and Exceptions of a terminated process.
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2009-2010 by Bernhard Bablok (mail@bablokb.de)
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -24,11 +24,38 @@ package org.im4java.process;
 /**
    This class  wraps return-code and Exceptions of a terminated process. 
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.4 $
    @author  $Author: bablokb $
+ 
+   @since 0.06
  */
 
 public class ProcessEvent {
+  
+  ////////////////////////////////////////////////////////////////////////////
+
+  /**
+     The Process this ProcessEvent belongs to.
+  */
+
+  private Process iProcess;
+  
+  ////////////////////////////////////////////////////////////////////////////
+
+  /**
+     The Process-ID of the process. Note that this ID has nothing to do with
+     the process-id of the operating-system for the given process.
+  */
+
+  private int iPID;
+  
+  ////////////////////////////////////////////////////////////////////////////
+
+  /**
+     The ProcessStarter which started the given process.
+  */
+
+  private ProcessStarter iProcessStarter;
   
   ////////////////////////////////////////////////////////////////////////////
   
@@ -47,20 +74,28 @@ public class ProcessEvent {
   
   private Exception iException=null;
 
-  ///////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
   
   /**
-   * Default constructor.
+     Constructor (sets pid and ProcessStarter).
+
+     @param pPID             the process-id of this proces
+     @param pProcessStarter  the ProcessStarter generating this event
   */
   
-  public ProcessEvent() {
+  public ProcessEvent(int pPID, ProcessStarter pProcessStarter) {
+    iPID = pPID;
+    iProcessStarter = pProcessStarter;
   }
 
   ///////////////////////////////////////////////////////////////////////////////
 
   /**
-    @param pReturnCode the iReturnCode to set
+     Set the return-code of the process.
+
+     @param pReturnCode the return-code to set.
   */
+
   public void setReturnCode(int pReturnCode) {
     iReturnCode = pReturnCode;
   }
@@ -68,16 +103,44 @@ public class ProcessEvent {
   ////////////////////////////////////////////////////////////////////////////
   
   /**
-    @return the iReturnCode
+     Get the return-code of the process. The return-code is only valid if
+     no exception occured.
+
+     @return the return-code of this Process.
   */
+  
   public int getReturnCode() {
     return iReturnCode;
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Set the Process-object of this ProcessEvent.
+
+     @param pProcess the Process to set
+  */
+  public void setProcess(Process pProcess) {
+    iProcess = pProcess;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Get the Process-object of this ProcessEvent.
+
+     @return the Process-object
+  */
+  public Process getProcess() {
+    return iProcess;
   }
 
   /////////////////////////////////////////////////////////////////////////////
   
   /**
-    @param pException the iException to set
+     Set the exception-field of this event.
+
+     @param pException the iException to set
   */
   public void setException(Exception pException) {
     iException = pException;
@@ -86,9 +149,33 @@ public class ProcessEvent {
   ////////////////////////////////////////////////////////////////////////////
   
   /**
-    @return the iException
+     Query the exception-field of this event.
+
+     @return the exception-field of this event
   */
   public Exception getException() {
     return iException;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Query the process-id field of this event.
+
+     @return the process-id of the process related to this event.
+  */
+  public int getPID() {
+    return iPID;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Query the ProcessStarter field of this event.
+
+     @return the ProcessStarter which startetd the process related to this event.
+  */
+  public ProcessStarter getProcessStarter() {
+    return iProcessStarter;
   }
 }

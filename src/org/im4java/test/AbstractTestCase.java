@@ -28,8 +28,10 @@ import org.im4java.core.*;
 /**
    This class implements an abstract base class for all test-cases.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.4 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public abstract class AbstractTestCase implements TestCase {
@@ -53,10 +55,21 @@ public abstract class AbstractTestCase implements TestCase {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     Run test and catch execptions.
+     Program arguments.
   */
 
-  public void runTest(String[] args) {
+  protected String[] iArgs;
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Run test and catch execptions.
+
+     @param pArgs Additional arguments for the test.
+  */
+
+  public void runTest(String[] pArgs) {
+    iArgs=pArgs;
     try {
       run();
     } catch (CommandException ce) {

@@ -31,8 +31,10 @@ import org.im4java.process.ArrayListOutputConsumer;
 
    <p>The class just calls "identify -verbose" and parses the output.</p>
    
-   @version $Revision: 1.6 $
+   @version $Revision: 1.7 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class  Info {

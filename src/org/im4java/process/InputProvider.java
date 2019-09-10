@@ -28,8 +28,10 @@ import java.io.IOException;
    This interface defines an InputProvider. An InputProvider supplies
    input for a process.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public interface InputProvider {

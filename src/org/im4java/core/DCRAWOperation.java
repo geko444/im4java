@@ -25,8 +25,10 @@ package org.im4java.core;
 /**
    This class models the command-line of dcraw. 
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 0.98
 */
 
 public class DCRAWOperation extends DCRAWOps {

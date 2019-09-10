@@ -32,8 +32,10 @@ import org.im4java.process.OutputConsumer;
 /**
    This helper class reads an InputStream and creates a BufferedImage.
 
-   @version $Revision: 1.1 $
+   @version $Revision: 1.2 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class Stream2BufferedImage implements OutputConsumer {

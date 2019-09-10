@@ -29,13 +29,26 @@ import java.io.OutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
 
 /**
    This class implements the processing of os-commands using a
    ProcessBuilder. 
 
-   @version $Revision: 1.21 $
+   <p>
+     This is the core class of the im4java-library where all the
+     magic takes place. It does add some overhead compared to a
+     direct call of ProcessBuilder, but you gain additional features
+     like piping and asynchronous execution.
+   </p>
+
+   @version $Revision: 1.38 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class ProcessStarter {
@@ -64,6 +77,22 @@ public class ProcessStarter {
   */
 
   private String iSearchPath = null;
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     The value of the global process-id counter.
+  */
+
+  private static AtomicInteger iPIDCounter = new AtomicInteger(0);
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     The value of the process-id of the ProcessStarter.
+  */
+
+  private int iPID;
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -102,8 +131,22 @@ public class ProcessStarter {
   
   /**
     The ProcessListeners for this ProcessStarter.
+
+    <p>
+    This field is for compatibility only and will be removed in future
+    versions.
+    </p>
   */
+
+  @SuppressWarnings("deprecation")
   private LinkedList<ProcessListener> iProcessListener;
+  
+  ////////////////////////////////////////////////////////////////////////////
+  
+  /**
+    The ProcessEventListeners for this ProcessStarter.
+  */
+  private LinkedList<ProcessEventListener> iProcessEventListener;
   
   //////////////////////////////////////////////////////////////////////////////
 
@@ -121,8 +164,11 @@ public class ProcessStarter {
      Constructor.
   */
 
+  @SuppressWarnings("deprecation")
   protected ProcessStarter() {
     iProcessListener = new LinkedList<ProcessListener>();
+    iProcessEventListener = new LinkedList<ProcessEventListener>();
+    iPID = iPIDCounter.getAndAdd(1);
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -158,9 +204,37 @@ public class ProcessStarter {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Add a ProcessListener to this ProcessStarter.
-   * 
-   @param pProcessListener the ProcessListener to add
+     Add a ProcessEventListener to this ProcessStarter.
+
+     @param pListener the ProcessEventListener to add
+
+   */
+
+  public void addProcessEventListener(ProcessEventListener pListener) {
+    iProcessEventListener.add(pListener);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Remove a ProcessEventListener from this ProcessStarter.
+
+     @param pListener the ProcessEventListener to remove
+
+   */
+
+  public void removeProcessEventListener(ProcessEventListener pListener) {
+    iProcessEventListener.remove(pListener);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add a ProcessListener to this ProcessStarter.
+
+     @param pProcessListener the ProcessListener to add
+
+     @deprecated use {@link #addProcessEventListener} instead
    */
   public void addProcessListener(ProcessListener pProcessListener) {
     iProcessListener.add(pProcessListener);
@@ -225,36 +299,86 @@ public class ProcessStarter {
  //////////////////////////////////////////////////////////////////////////////
   
   /**
-       Execute the command.
+     Execute the command.
+
+     @param pArgs         arguments for ProcessBuilder
    */ 
   
-  protected int run(final LinkedList<String> pArgs) 
-                                      throws IOException, InterruptedException {
+  protected int run(LinkedList<String> pArgs) 
+                          throws IOException, InterruptedException, Exception {
+
+    // create and execute process (synchronous mode)
     if (! iAsyncMode) {
       Process pr = startProcess(pArgs);
-      return waitForProcess(pr);
+      int rc = waitForProcess(pr);
+      finished(rc);
+      return rc;
     } else {
-      Runnable r = new Runnable() {
-        public void run() {
-          int rc;
-          ProcessEvent pe = new ProcessEvent();
-          try {
-            Process pr = startProcess(pArgs);
-	    for (ProcessListener pl:iProcessListener) {
-	      pl.processStarted(pr);
-	    }
-            rc = waitForProcess(pr);
-            pe.setReturnCode(rc);
-          } catch (Exception e) {
-            pe.setException(e);
-          }
-          for (ProcessListener pl:iProcessListener) {
-            pl.processTerminated(pe);
-          }
-        }
-      };
-      (new Thread(r)).start();
+      ProcessTask pt = getProcessTask(pArgs);
+      (new Thread(pt)).start();
       return 0;
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Return a ProcessTask for future execution.
+
+     @param pArgs         arguments for ProcessBuilder
+   */ 
+  
+  protected ProcessTask getProcessTask(LinkedList<String> pArgs)  {
+    // prepare ProcessEvent and call processInitiated
+    final ProcessEvent pe = new ProcessEvent(iPID,this);
+    pe.setReturnCode(-1);
+    for (ProcessEventListener pel:iProcessEventListener) {
+      pel.processInitiated(pe);
+    }
+
+    // create ProcessTask for future execution
+    return new ProcessTask(this,pArgs,pe);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Run the process and notify all listeners.
+
+     @param pArgs         arguments for ProcessBuilder
+     @param pProcessEvent store state in this ProcessEvent
+  */
+
+  @SuppressWarnings("deprecation")
+  void runAndNotify(LinkedList<String> pArgs, ProcessEvent pProcessEvent) {
+    int rc;
+    try {
+      Process pr = startProcess(pArgs);
+      pProcessEvent.setProcess(pr);
+      for (ProcessEventListener pel:iProcessEventListener) {
+	pel.processStarted(pProcessEvent);
+      }
+      // TODO: remove in future version
+      for (ProcessListener pl:iProcessListener) {
+	pl.processStarted(pr);
+      }
+      rc = waitForProcess(pr);
+      pProcessEvent.setReturnCode(rc);
+      finished(rc);
+    } catch (Exception e) {
+      pProcessEvent.setException(e);
+      try {
+	finished(e);
+      } catch (Exception e2) {
+	pProcessEvent.setException(e2);
+      }
+    }
+    for (ProcessEventListener pel:iProcessEventListener) {
+      pel.processTerminated(pProcessEvent);
+    }
+    // TODO: remove in future version
+    for (ProcessListener pl:iProcessListener) {
+      pl.processTerminated(pProcessEvent);
     }
   }
 
@@ -289,17 +413,57 @@ public class ProcessStarter {
        Perform process input/output and wait for process to terminate.
    */	
   
-  private int waitForProcess(Process pProcess) 
+  private int waitForProcess(final Process pProcess) 
                       throws IOException, InterruptedException {
 
+    FutureTask<Object> outTask = null;
+    FutureTask<Object> errTask = null;
+    
     if (iInputProvider != null) {
       processInput(pProcess.getOutputStream());
     }
+
+    // Process stdout and stderr of subprocess in parallel.
+    // This prevents deadlock under Windows, if there is a lot of
+    // stderr-output (e.g. from ghostscript called by convert)
+
     if (iOutputConsumer != null) {
-      processOutput(pProcess.getInputStream(),iOutputConsumer);
+      outTask = new FutureTask<Object>(new Callable<Object>() {
+        public Object call() throws IOException {
+          processOutput(pProcess.getInputStream(), iOutputConsumer);
+          return null;
+        }
+      });
+      new Thread(outTask).start();
     }
     if (iErrorConsumer != null) {
-        processError(pProcess.getErrorStream(),iErrorConsumer);
+      errTask = new FutureTask<Object>(new Callable<Object>() {
+        public Object call() throws IOException {
+          processError(pProcess.getErrorStream(), iErrorConsumer);
+          return null;
+        }
+      });
+      new Thread(errTask).start();
+    }
+    
+    // Wait and check IO exceptions (FutureTask.get() blocks).
+    try {
+      if (outTask != null) {
+        outTask.get();
+      }
+      if (errTask != null) {
+        errTask.get();
+      }
+    } catch (ExecutionException e) {
+      Throwable t = e.getCause();
+			
+      if (t instanceof IOException) {
+        throw (IOException) t;
+      } else if(t instanceof RuntimeException) {
+        throw (RuntimeException) t;
+      } else {
+        throw new IllegalStateException(e);
+      }
     }
     
     pProcess.waitFor();
@@ -354,8 +518,6 @@ public class ProcessStarter {
   
   /**
      Query the global (static) search path.
-
-     @param pGlobalSearchPath the global search path
   */
 
   public static String getGlobalSearchPath() {
@@ -379,8 +541,6 @@ public class ProcessStarter {
   
   /**
      Query the per object search path.
-
-     @param pSearchPath the  search path
   */
 
   public String getSearchPath() {
@@ -390,9 +550,77 @@ public class ProcessStarter {
   /////////////////////////////////////////////////////////////////////////////
   
   /**
+     Set the process-id counter of the class.
+
+     @param pPID the process-id
+  */
+
+  public static void setPIDCounter(int pPID) {
+    iPIDCounter.set(pPID);
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Set the process-id of this ProcessStarter.
+
+     @param pPID the process-id
+  */
+
+  public void setPID(int pPID) {
+    iPID = pPID;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Query the process-id.
+  */
+
+  public int getPID() {
+    return iPID;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Post-processing after the process has terminated. Subclasses might
+     override this method to do some specific post-processing.
+
+     @param pReturnCode  the return-code of the process
+  */
+    
+  protected void finished(int pReturnCode) throws Exception {
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Post-processing after the process has terminated with an 
+     exception. Subclasses might override this method to do some 
+     specific post-processing. This method is only called in
+     asynchronous execution mode (in synchronous mode, the exception
+     just propagates as usual to the caller).
+
+     <p>Note that if this method throws an exception in asynchronous
+       execution mode, the original exception is lost and not propagated
+       to any ProcessEventListeners. Therefore, you should take care to fill
+       in any exception and stack-trace information.
+     </p>
+
+     @param pException  the exception of the process
+  */
+    
+  protected void finished(Exception pException) throws Exception {
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
      Query the per object search path.
 
-     @param pSearchPath the  search path
+     @param pCmd  the  command to search for
+     @param pPath the  search path
   */
 
   public String searchForCmd(String pCmd, String pPath)

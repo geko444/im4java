@@ -33,8 +33,10 @@ package org.im4java.core;
    you have to limit yourself to the subset of options
    common to both implementations.</p>
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 0.96
 */
 
 public class GMOperation extends GMOps {

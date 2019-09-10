@@ -26,8 +26,10 @@ import java.util.ArrayList;
 /**
    This class wraps exceptions during image-attribute retrivial.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
  */
 
 @SuppressWarnings("serial")

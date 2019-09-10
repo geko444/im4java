@@ -28,8 +28,10 @@ import org.im4java.core.*;
 /**
    This interface defines the methods for a ScriptGenerator.
 
-   @version $Revision: 1.4 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public interface ScriptGenerator {

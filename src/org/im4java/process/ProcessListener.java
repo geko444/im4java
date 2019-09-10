@@ -24,8 +24,12 @@ package org.im4java.process;
 /**
    This interface defines methods for a ProcessListener.
 
-   @version $Revision: 1.3 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
+ 
+   @since 0.96
+
+   @deprecated This interface has been superseeded by ProcessEventListener
  */
 
 public interface ProcessListener {

@@ -30,7 +30,6 @@ import org.im4java.core.*;
 import org.im4java.process.Pipe;
 import org.im4java.process.ArrayListOutputConsumer;
 import org.im4java.process.ProcessEvent;
-import org.im4java.process.ProcessListener;
 import org.im4java.process.ProcessStarter;
 import org.im4java.utils.*;
 
@@ -38,8 +37,10 @@ import org.im4java.utils.*;
 /**
    This class implements various tests of the im4java-package.
 
-   @version $Revision: 1.40 $
+   @version $Revision: 1.42 $
    @author  $Author: bablokb $
+ 
+   @since 1.0.0
  */
 
 public class  Test {

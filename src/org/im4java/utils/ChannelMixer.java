@@ -28,8 +28,10 @@ import org.im4java.core.*;
    not natively define a channel-mixer operation, but you can implement
    a channel-mixer with standard ImageMagick operations.
 
-   @version $Revision: 1.6 $
+   @version $Revision: 1.7 $
    @author  $Author: bablokb $
+ 
+   @since 0.95
 */
 
 public class ChannelMixer extends IMOperation {

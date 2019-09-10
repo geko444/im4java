@@ -29,7 +29,7 @@ import org.im4java.script.*;
 /**
    Create a thumbnail from a given Image
 
-   @version $Revision: 1.4 $
+   @version $Revision: 1.5 $
    @author  $Author: bablokb $
  */
 
@@ -38,8 +38,7 @@ public class Thumbnail {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-     Main method. Just calls AbstractTestCase.runTest(), which catches and
-     prints exceptions.
+     Main method.
   */
 
   public static void main(String[] args) {

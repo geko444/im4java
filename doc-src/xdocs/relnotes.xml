@@ -5,7 +5,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.4 $
+  $Revision: 1.6 $
   $Author: bablokb $
 -->
 
@@ -17,6 +17,41 @@
     <note>
       For a detailed list of changes, have a look at the ChangeLog.
     </note>
+
+    <section id="R_1_1_0">
+      <title>Release 1.1.0</title>
+      <ul>
+	<li>Support ImageMagick's read-modifier for image-placeholders</li>
+	<li>Support <a
+	    href="./docs/dev-guide.html#parallelProcessing">parallel
+	    processing</a> of images. This feature will
+	  efficiently use your multi-processor computer (note that
+	  this is mainly useful for desktop-applications). Note that
+	  the im4java-API for parallel processing is not yet
+	  considered as stable. This depends on feedback and
+	  bug-reports. I am not overly optimistic that I found and
+	  fixed all bugs and race-conditions.
+	</li>
+	<li>The interface <code>org.im4java.process.ProcessListener</code> is
+	  deprecated and is replaced with
+	  <code>org.im4java.process.ProcessEventListener</code>.
+	  Transition should be easy, since the interfaces are very
+	  similar. This change was necessary to support parallel
+	  processing. The old interface will be removed with the first
+	  release after beginning of 2011.
+	</li>
+	<li>Fixed a serious bug in the implementation which could lead
+	  to deadlocks under Windows (thanks to Jaroslav Snajdr for
+	  pointing this out and providing a patch).
+	</li>
+	<li>The binary-distribution now contains two versions of the
+	  im4java-jar: one for JRE 1.6, one for 1.5.
+	</li>
+	<li>The source-distribution will again contain all generated
+	  java-source-files.
+	</li>
+      </ul>
+    </section>
 
     <section id="R_1_0_0">
       <title>Release 1.0.0</title>
