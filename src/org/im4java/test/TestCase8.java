@@ -27,7 +27,7 @@ import org.im4java.core.*;
 /**
    This class implements a test of the Info-class.
 
-   @version $Revision: 1.3 $
+   @version $Revision: 1.7 $
    @author  $Author: bablokb $
  
    @since 1.0.0
@@ -67,24 +67,78 @@ public class TestCase8 extends AbstractTestCase {
     System.err.println(" 8. Testing info ...");
 
     // create and output complete information
-    Info imageInfo = new Info(iImageDir+"firelily.jpg");
+    Info imageInfo = new Info(iImageDir+"multi-scene.gif");
+
+    // dump all that is available
     Enumeration<String> props = imageInfo.getPropertyNames();
     if (props == null) {
       return;
     }
+
+    System.out.println("\n==================================");
+    System.out.println("complete info (all attributes)");
+    System.out.println("==================================\n");
+
     while (props.hasMoreElements()) {
       String prop=props.nextElement();
       System.out.println(prop+"="+imageInfo.getProperty(prop));
     }
-    System.out.println("----------------------------------");
+    System.out.println("\n==================================");
+    System.out.println("some attributes for every scene");
+    System.out.println("==================================\n");
+
+    int n = imageInfo.getSceneCount();
+    for (int i=0; i<n; ++i) {
+      System.out.println(i+": geometry=" + imageInfo.getProperty("Geometry",i));
+      System.out.println(i+": page geometry=" + 
+			 imageInfo.getProperty("Page geometry",i));
+    }
+
+    System.out.println("\n==================================");
+    System.out.println("basic information from complete info");
+    System.out.println("==================================\n");
+
+    // check that basic information is also available
+    dumpBasicInfo(imageInfo);
+    System.out.println("\n==================================");
+    System.out.println("basic information (base only)");
+    System.out.println("==================================\n");
 
     // create and output basic information
-    imageInfo = new Info(iImageDir+"firelily.jpg",true);
-    System.out.println("Format: " + imageInfo.getImageFormat());
-    System.out.println("Width: " + imageInfo.getImageWidth());
-    System.out.println("Height: " + imageInfo.getImageHeight());
-    System.out.println("Geometry: " + imageInfo.getImageGeometry());
-    System.out.println("Depth: " + imageInfo.getImageDepth());
-    System.out.println("Class: " + imageInfo.getImageClass());
+    imageInfo = new Info(iImageDir+"multi-scene.gif",true);
+    dumpBasicInfo(imageInfo);
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Dump all the basic image-information
+  */
+
+  private void dumpBasicInfo(Info pImageInfo) throws InfoException {
+    System.out.println("Format: " + pImageInfo.getImageFormat());
+    System.out.println("Width: " + pImageInfo.getImageWidth());
+    System.out.println("Height: " + pImageInfo.getImageHeight());
+    System.out.println("Geometry: " + pImageInfo.getImageGeometry());
+    System.out.println("PageWidth: " + pImageInfo.getPageWidth());
+    System.out.println("PageHeight: " + pImageInfo.getPageHeight());
+    System.out.println("PageGeometry: " + pImageInfo.getPageGeometry());
+    System.out.println("Depth: " + pImageInfo.getImageDepth());
+    System.out.println("Class: " + pImageInfo.getImageClass());
+
+    // and the same for all scenes
+    int n = pImageInfo.getSceneCount();
+    for (int i=0; i<n; ++i) {
+      System.out.println("--------------- " + i + " -------------------");
+      System.out.println("Format: " + pImageInfo.getImageFormat(i));
+      System.out.println("Width: " + pImageInfo.getImageWidth(i));
+      System.out.println("Height: " + pImageInfo.getImageHeight(i));
+      System.out.println("Geometry: " + pImageInfo.getImageGeometry(i));
+      System.out.println("PageWidth: " + pImageInfo.getPageWidth(i));
+      System.out.println("PageHeight: " + pImageInfo.getPageHeight(i));
+      System.out.println("PageGeometry: " + pImageInfo.getPageGeometry(i));
+      System.out.println("Depth: " + pImageInfo.getImageDepth(i));
+      System.out.println("Class: " + pImageInfo.getImageClass(i));
+    }
   }
 }

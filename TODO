@@ -10,11 +10,17 @@ BUGS
 - probably some wrong or missing interface-definitions
 
 
+1.4.0
+=====
+
+- update interfaces
+
+
 TODO/WISHLIST
 =============
 
 - bin/mk-im4java
-  * fix method-signature for argc > 0
+  * fix method-signature for argc > 0 ???
 
 - test chaining of commands
   * try deadlock linux:
@@ -35,10 +41,6 @@ TODO/WISHLIST
     sync2 + op2-error: ok
   * write section in dev-guide
   * fix run/start-error
-
-- support the IM compare command
-
-- update interfaces
 
 - add ant support
 

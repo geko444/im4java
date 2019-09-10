@@ -1,7 +1,7 @@
 /**************************************************************************
-/* This class implements a test of writing BufferedImages.
+/* This class implements a test for the IM compare command
 /*
-/* Copyright (c) 2009 by Bernhard Bablok (mail@bablokb.de)
+/* Copyright (c) 2012 by Bernhard Bablok (mail@bablokb.de)
 /*
 /* This program is free software; you can redistribute it and/or modify
 /* it under the terms of the GNU Library General Public License as published
@@ -21,21 +21,20 @@
 
 package org.im4java.test;
 
-import java.io.*;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
 import org.im4java.core.*;
+import org.im4java.process.*;
+import org.im4java.utils.*;
 
 /**
-   This class implements a test of writing BufferedImages.
+   This class implements a test for the IM compare command.
 
-   @version $Revision: 1.3 $
+   @version $Revision: 1.1 $
    @author  $Author: bablokb $
  
-   @since 1.0.0
+   @since 1.3.0
  */
 
-public class TestCase13 extends AbstractTestCase {
+public class TestCase24 extends AbstractTestCase {
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -44,7 +43,7 @@ public class TestCase13 extends AbstractTestCase {
   */
 
   public String getDescription() {
-    return "Writing BufferedImage";
+    return "compare";
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -55,7 +54,7 @@ public class TestCase13 extends AbstractTestCase {
   */
 
   public static void main(String[] args) {
-    TestCase13 tc = new TestCase13();
+    TestCase24 tc = new TestCase24();
     tc.runTest(args);
   }
 
@@ -66,33 +65,28 @@ public class TestCase13 extends AbstractTestCase {
   */
 
   public void run() throws Exception {
-    System.err.println("13. Testing writing BufferedImages ...");
-
-    // use first parameter as output-format (default: png)
-    String outputFormat = "png";
-    if (iArgs != null && iArgs.length > 0) {
-      outputFormat = iArgs[0];
-    }
-
+    System.err.println(" 24. Testing compare ...");
     IMOperation op = new IMOperation();
-    op.addImage(iImageDir+"tulip2.jpg");     // input
-    op.blur(2.0).paint(10.0);
-    op.addImage(outputFormat+":-");          // output: stdout
 
-
-    // set up command
+    // sharpen the firelily
+    op.addImage(iImageDir+"firelily.jpg");           // input image
+    op.unsharp(0.0,1.0);
+    op.addImage(iImageDir+"firelily-sharpen.jpg");   // output image
     ConvertCmd convert = new ConvertCmd();
-    Stream2BufferedImage s2b = new Stream2BufferedImage();
-    convert.setOutputConsumer(s2b);
     convert.run(op);
 
-    // save result to disk
-    BufferedImage img = s2b.getImage();
-    ImageIO.write(img,"PNG",new File(iImageDir+"tmpfile.png"));
+    // run the diff
+    CompareCmd  compare = new CompareCmd();
+    compare.setErrorConsumer(StandardStream.STDERR);  // for metric-output
+    IMOperation cmpOp = new IMOperation();
+    cmpOp.addImage();
+    cmpOp.addImage();
+    cmpOp.metric("RMSE");  // root mean squared (normalized root mean squared)
+    cmpOp.addImage();
+    compare.run(cmpOp,iImageDir+"firelily.jpg",
+                      iImageDir+"firelily-sharpen.jpg",
+                      iImageDir+"firelily-diff.jpg");
 
-
-    // show result
-    DisplayCmd.show(iImageDir+"tmpfile.png");
-    (new File(iImageDir+"tmpfile.png")).delete();
+    DisplayCmd.show(iImageDir+"firelily-diff.jpg");
   }
 }

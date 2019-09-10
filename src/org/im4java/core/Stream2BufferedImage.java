@@ -23,8 +23,11 @@ package org.im4java.core;
 
 import java.io.InputStream;
 import java.io.IOException;
+import java.util.Iterator;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
+import javax.imageio.ImageReader;
 
 
 import org.im4java.process.OutputConsumer;
@@ -32,7 +35,7 @@ import org.im4java.process.OutputConsumer;
 /**
    This helper class reads an InputStream and creates a BufferedImage.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.4 $
    @author  $Author: bablokb $
  
    @since 0.95
@@ -66,7 +69,21 @@ public class Stream2BufferedImage implements OutputConsumer {
   */
     
   public void consumeOutput(InputStream pInputStream) throws IOException {
-    iImage = ImageIO.read(pInputStream);
+    ImageInputStream iis = ImageIO.createImageInputStream(pInputStream);
+    if (iis != null) {
+      Iterator<ImageReader> iter = ImageIO.getImageReaders(iis);
+      if (iter.hasNext()) {
+	ImageReader reader = iter.next();
+	reader.setInput(iis);
+	iImage = reader.read(0);
+	iis.close();
+	reader.dispose();
+      } else {
+	throw new IllegalStateException("no ImageReader for given format");
+      }
+    } else {
+      throw new IllegalStateException("failed to create ImageInputStream");
+    }
   }
   
   //////////////////////////////////////////////////////////////////////////////

@@ -3,9 +3,9 @@
 "http://forrest.apache.org/dtd/document-v20.dtd">
 
 <!--
- Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
+ Copyright (c) 2010-2012 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
- $Revision: 1.1 $
+ $Revision: 1.2 $
  $Author: bablokb $
 -->
 
@@ -27,6 +27,8 @@
 	<dd>automatically generated, do not use directly</dd>
 	<dt><code>org.im4java.core.IMOperation</code></dt>
 	<dd>Wrapper to commandline-options</dd>
+	<dt><code>org.im4java.core.CompareCmd</code></dt>
+	<dd>Wraps <em>compare</em></dd>
 	<dt><code>org.im4java.core.CompositeCmd</code></dt>
 	<dd>Wraps <em>composite</em></dd>
 	<dt><code>org.im4java.core.ConvertCmd</code></dt>

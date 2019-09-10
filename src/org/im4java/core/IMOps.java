@@ -2622,6 +2622,47 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -color-matrix to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps colorMatrix() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-color-matrix");
+
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -color-matrix to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps colorMatrix(String matrix) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-color-matrix");
+
+    if (matrix != null) {
+      buf.append(matrix.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -colors to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
@@ -5270,6 +5311,47 @@ public class IMOps extends Operation {
 
     if (method != null) {
       buf.append(method.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -dissimilarity-threshold to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps dissimilarityThreshold() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-dissimilarity-threshold");
+
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -dissimilarity-threshold to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps dissimilarityThreshold(Double value) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-dissimilarity-threshold");
+
+    if (value != null) {
+      buf.append(value.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -10322,6 +10404,47 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -passphrase to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps passphrase() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-passphrase");
+
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -passphrase to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps passphrase(String filename) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-passphrase");
+
+    if (filename != null) {
+      buf.append(filename.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -pause to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
@@ -11876,6 +11999,25 @@ public class IMOps extends Operation {
     if (special != null) {
       buf.append(special.toString());
     }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -respect-parentheses to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps respectParentheses() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-respect-parentheses");
+
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }
@@ -14337,6 +14479,25 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -subimage-search to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps subimageSearch() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-subimage-search");
+
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option +swap to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
@@ -14457,6 +14618,25 @@ public class IMOps extends Operation {
     if (degrees != null) {
       buf.append(degrees.toString());
     }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -synchronize to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps synchronize() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-synchronize");
+
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }

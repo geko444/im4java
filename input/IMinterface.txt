@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.20 $
+# $Revision: 1.22 $
 #
 !toolName=ImageMagick
 #
@@ -57,6 +57,7 @@
                -coalesce
                -colorize Integer:red , Integer:blue , Integer:green
                -colormap String:type
+               -color-matrix String:matrix
                -colors Integer:value
                -colorspace String:value
                -combine
@@ -91,6 +92,7 @@
                -display String:host : Integer:display . Integer:screen
                +dispose
                -dispose String:method
+               -dissimilarity-threshold Double:value
                -dissolve Integer:percent
                -distort String:method _ String:arguments
                +distort String:method _ String:arguments
@@ -186,6 +188,7 @@
                -page Integer:width x Integer:height + Integer:x + Integer:y @ String:special
                -paint Double:radius
                -path String:path
+               -passphrase String:filename
                -pause Integer:seconds
                -ping
                -pointsize Integer:value
@@ -218,6 +221,7 @@
                -resample Integer:horizontal x Integer:vertical
                -resize Integer:width x Integer:height @ Character:special
                -resize Integer:width x Integer:height @ String:special
+               -respect-parentheses
                -respect-parenthesis
                -reverse
                -roll Integer:x + Integer:y
@@ -255,9 +259,11 @@
                -strip
                -stroke String:color
                -strokewidth Integer:value
+               -subimage-search
                +swap
                -swap Integer:pos1 , Integer:pos2
                -swirl Double:degrees
+               -synchronize
                -taint
                -text-font String:name
                -texture String:filename

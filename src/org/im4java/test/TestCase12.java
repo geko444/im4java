@@ -29,7 +29,7 @@ import org.im4java.core.*;
 /**
    This class implements a test of reading BufferedImages.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
  
    @since 1.0.0
@@ -68,6 +68,17 @@ public class TestCase12 extends AbstractTestCase {
   public void run() throws Exception {
     System.err.println("12. Testing reading BufferedImages ...");
 
+    // use first parameter as source for BufferedImage
+    String imgSource = iImageDir+"tulip1.jpg";
+    if (iArgs != null && iArgs.length > 0) {
+      imgSource = iArgs[0];
+    }
+    // use second parameter as output filename
+    String outFile = iImageDir+"buf2file.jpg";
+    if (iArgs != null && iArgs.length > 1) {
+      outFile = iArgs[1];
+    }
+
     IMOperation op = new IMOperation();
     op.addImage();                        // input
     op.blur(2.0).paint(10.0);
@@ -76,11 +87,13 @@ public class TestCase12 extends AbstractTestCase {
 
     // set up command
     ConvertCmd convert = new ConvertCmd();
-    BufferedImage img = ImageIO.read(new File(iImageDir+"tulip1.jpg"));
-    convert.run(op,img,iImageDir+"buf2file.jpg");
+    BufferedImage img = ImageIO.read(new File(imgSource));
+    if (img == null) {
+      throw new IllegalStateException("could not read " + imgSource);
+    }
+    convert.run(op,img,outFile);
 
     // show result
-    DisplayCmd.show(iImageDir+"buf2file.jpg");
-    (new File(iImageDir+"buf2file.jpg")).delete();
+    DisplayCmd.show(outFile);
   }
 }

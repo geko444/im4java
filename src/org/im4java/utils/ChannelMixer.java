@@ -28,7 +28,7 @@ import org.im4java.core.*;
    not natively define a channel-mixer operation, but you can implement
    a channel-mixer with standard ImageMagick operations.
 
-   @version $Revision: 1.7 $
+   @version $Revision: 1.8 $
    @author  $Author: bablokb $
  
    @since 0.95
@@ -236,7 +236,7 @@ public class ChannelMixer extends IMOperation {
   */
 
   public ChannelMixer(double red, double green, double blue) {
-    addRawArgs("-recolor",String.format("%g,%g,%g,%g,%g,%g,%g,%g,%g",
+    addRawArgs("-color-matrix",String.format("%g,%g,%g,%g,%g,%g,%g,%g,%g",
                                 red,green,blue,
                                 red,green,blue,
                                 red,green,blue));

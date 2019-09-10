@@ -34,7 +34,11 @@ import java.util.LinkedList;
 import java.util.Properties;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Iterator;
 import javax.imageio.ImageIO;
+import javax.imageio.ImageWriter;
+import javax.imageio.ImageTypeSpecifier;
+import javax.imageio.stream.FileImageOutputStream;
 
 
 import org.im4java.process.ErrorConsumer;
@@ -50,7 +54,7 @@ import org.im4java.script.CmdScriptGenerator;
    placeholders within the argument-stack and passes all arguments to the
    generic run-method of ProcessStarter.
 
-   @version $Revision: 1.31 $
+   @version $Revision: 1.32 $
    @author  $Author: bablokb $
  
    @since 0.95
@@ -392,7 +396,21 @@ public class ImageCommand extends ProcessStarter implements ErrorConsumer {
   private String convert2TmpFile(BufferedImage pBufferedImage)
                                                              throws IOException {
     String tmpFile = getTmpFile();
-    ImageIO.write(pBufferedImage,"PNG",new File(tmpFile));
+    ImageTypeSpecifier spec = 
+      ImageTypeSpecifier.createFromRenderedImage(pBufferedImage);
+    Iterator<ImageWriter> iter;
+    iter = ImageIO.getImageWriters(spec,"TIFF");
+    if (!iter.hasNext()) {
+      iter = ImageIO.getImageWriters(spec,"PNG");
+    }
+    if (iter.hasNext()) {
+      ImageWriter writer = (ImageWriter) iter.next();
+      FileImageOutputStream fios = new FileImageOutputStream(new File(tmpFile));
+      writer.setOutput(fios);
+      writer.write(pBufferedImage);
+      fios.close();
+      writer.dispose();
+    }
     return tmpFile;
   }
 

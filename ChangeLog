@@ -1,4 +1,99 @@
+2012-03-07
+
+	* version.inc: upgraded version to 1.3.0
+
+	* doc-src/xdocs/relnotes.xml: updated for version 1.3.0
+
+	* images.src/multi-scene.gif, misc/multi-scene-gif: changed
+	  image-size of first image
+
+	* doc-src/xdocs/index.xml: updated for 1.3.0
+
+	* input/IMinterface.txt: new option -color-matrix
+
+	* images.src/firelily-cymk.tif: initial entry
+
+	* src/org/im4java/core/CompareCmd.java: initial entry
+
+2012-02-28
+
+	* src/org/im4java/core/ImageCommand.java: convert2TmpFile(): first
+	  try TIFF-format, then use PNG as fallback
+
+	* src/org/im4java/test/TestCase12.java: optionally pass parameters
+	  to this test-case (input-file and output-file)
+
+	* src/org/im4java/core/Stream2BufferedImage.java: consumeOutput():
+	  close ImageInputStream and dispose reader
+
+	* src/org/im4java/core/Stream2BufferedImage.java: consumeOutput():
+	  create ImageReader that supports the image-format of the given
+	  InputStream
+
+2012-02-26
+
+	* doc-src/xdocs/docs/dev-guide.xml: updated the section about the
+	  Info-class
+
+	* src/org/im4java/test/TestCase13.java: pass optional output-format
+	  as first argument
+
+2012-02-23
+
+	* src/org/im4java/utils/ChannelMixer.java: replaced (deprecated)
+	  -recolor with -color-matrix
+
+	* doc-src/xdocs/tools/index.xml: documented CompareCmd
+
+	* src/org/im4java/test/TestCase24.java: initial entry
+
+2012-02-02
+
+	* src/org/im4java/test/TestCase8.java: call new methods of Info
+	  (test multi-scene support)
+
+	* src/org/im4java/core/Info.java: support more than one scene
+
+2012-01-22
+
+	* src/org/im4java/test/TestCase8.java: use new multi-scene.gif as
+	  testimage
+
+	* src/org/im4java/core/Info.java: bugfix in getImageDepth()
+
+	* misc/multi-scene-gif: initial entry
+
+	* images.src/multi-scene.gif: initial entry
+
+	* src/org/im4java/test/TestCase8.java: use new methods
+	  getPageWidth(), getPageHeight(), getPageGeometry()
+
+	* src/org/im4java/core/Info.java: added getPageWidth(),
+	  getPageHeight(), getPageGeometry() fixed getImageWidth(),
+	  getImageHeight()
+
+2012-01-13
+
+	* input/IMinterface.txt: added compare-specific options
+
+2012-01-09
+
+	* src/org/im4java/core/Info.java: bugfix: getImageWidth(),
+	  getImageHeight() and getImageDepth() failed if constructor was
+	  told to gather complete information
+
+	* src/org/im4java/test/TestCase8.java: print basic information also
+	  for the full-information constructor
+
+2012-01-06
+
+	* misc/make-release: prepare for 1.3.0
+
+	* version.inc: upgraded version to 1.2.2
+
 2011-12-14
+
+	* ChangeLog: upated ChangeLog for version 1.2.1
 
 	* doc-src/xdocs/index.xml: changed version to 1.2.1 updated section
 	  about maven

@@ -4,7 +4,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.21 $
+  $Revision: 1.22 $
   $Author: bablokb $
 -->
 
@@ -723,9 +723,10 @@ if (exec.awaitTermination(10,TimeUnit.SECONDS)) {
 	<title>Image Information</title>
 	<p>
 	  If you only want to query image-information (e.g. width and
-	  height), you could typically use the
-	  <code>IdentifyCommand</code>. Instead of using this command
-	  directly, you could use the <code>Info</code> class. The
+	  height), you could typically use the class
+	  <code>IdentifyCmd</code>, wrapping ImageMagick's
+	  <em>identify</em>-command. Instead of using this class
+	  directly, you could instead use the <code>Info</code> class. The
 	  following code-snippet demonstrates its use:
 	</p>
 	<source>
@@ -738,10 +739,45 @@ System.out.println("Depth: " + imageInfo.getImageDepth());
 System.out.println("Class: " + imageInfo.getImageClass());
 	</source>
 	<p>
-	  The <code>Info</code>-class also allows you to parse the
-	  complete (verbose) output of the
-	  <code>IndentifyCommand</code>. See the test-case class
+	  The second parameter (<em>true</em>) in the example requests
+	  <em>basic</em>-information. This is a bit faster than
+	  requesting and parsing the
+	  complete (verbose) output of the class
+	  <code>IndentifyCmd</code>. See the test-case class
 	  <code>org.im4java.test.TestCase8</code> for a complete example.
+	</p>
+	<p>
+	  Prior to version 1.3.0 the implementation of the
+	  <code>Info</code>-class was severely flawed. It did not take
+	  into account that there are image-formats like TIF or GIF
+	  that support multiple images (ImageMagick calls them
+	  <em>scenes</em>) within a single file. As a consequence, the
+	  method
+	</p>
+	<source>
+imageInfo.getImageWidth()
+	</source>
+	<p>
+	  returns the image-width of the <em>first</em> scene (from
+	  basic-information), whereas the method
+	</p>
+	<source>
+imageInfo.getProperty("Width")
+	</source>
+	<p>
+	  will return the image-width of the <em>last</em>
+	  scene (from complete information). Starting with version
+	  1.3.0, there are new methods with an additional parameter,
+	  the scene-number, e.g. 
+	</p>
+	<source>
+imageInfo.getImageWidth(3)
+imageInfo.getProperty("Width",3)
+	</source>
+	<p>
+	  To query the number of scenes use the method
+	  <code>getSceneCount()</code>. Note that information about
+	  multiple scenes is only available with complete-information.
 	</p>
       </section>
 
