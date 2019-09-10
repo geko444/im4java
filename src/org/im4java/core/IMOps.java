@@ -16159,6 +16159,34 @@ public class IMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -watermark to the ImageMagick commandline
+   (see the documentation of ImageMagick for details).
+   */
+
+  public IMOps watermark(Double brightness, Double saturation) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-watermark");
+
+    if (brightness != null) {
+      buf.append(brightness.toString());
+    }
+    if (brightness != null || saturation != null) {
+      buf.append("x");
+    }
+    if (saturation != null) {
+      buf.append(saturation.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -wave to the ImageMagick commandline
      (see the documentation of ImageMagick for details).
   */
