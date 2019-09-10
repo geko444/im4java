@@ -3,6 +3,10 @@ NEWS
 
 For a detailed list of changes, have a look at the ChangeLog.
 
+Version 0.99.0
+  * Added support for defining search paths
+  * minor fixes to interface-definition-files
+
 Version 0.98.0
   * Added support for exiftool
   * Added support for dcraw

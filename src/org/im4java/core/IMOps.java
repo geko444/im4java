@@ -2081,11 +2081,52 @@ public class IMOps extends Operation {
      (see the documentation of ImageMagick for details).
   */
 
-  public IMOps clipPath(Integer id) {
+  public IMOps clipPath(String id) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-clip-path");
+
+    if (id != null) {
+      buf.append(id.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option +clip-path to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps p_clipPath() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("+clip-path");
+
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option +clip-path to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps p_clipPath(String id) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("+clip-path");
 
     if (id != null) {
       buf.append(id.toString());
@@ -6636,6 +6677,25 @@ public class IMOps extends Operation {
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
     iCmdArgs.add("-help");
+
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -hald-clut to the ImageMagick commandline
+     (see the documentation of ImageMagick for details).
+  */
+
+  public IMOps haldClut() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-hald-clut");
 
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());

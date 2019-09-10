@@ -2,13 +2,13 @@
 # Makefile for im4java
 #
 # $Author: bablokb $
-# $Revision: 1.28 $
+# $Revision: 1.29 $
 #
 # License: GPL2 (see COPYING)
 # -----------------------------------------------------------------------------
 
 .PHONY: all src test test-prepare jar clean distclean \
-        forrest api-doc \
+        forrest api-doc show-news update-changelog \
         srcdist bindist predist srcarch binarch postdist \
         inc-dist-major inc-dist-minor inc-dist-pl
 
@@ -107,6 +107,11 @@ clean:
 
 distclean: clean
 	rm -fr src/$(subst .,/,$(JAVA_PACKAGE))/*Ops.java
+
+show-news:
+	cvs2cl.pl --group-within-date --no-times --accum --stdout > ChangeLog.new
+	diff -ubB ChangeLog ChangeLog.new | less
+	rm -f ChangeLog.new
 
 update-changelog:
 	cvs2cl.pl --group-within-date --no-times --accum

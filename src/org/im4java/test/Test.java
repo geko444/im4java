@@ -31,13 +31,14 @@ import org.im4java.process.Pipe;
 import org.im4java.process.ArrayListOutputConsumer;
 import org.im4java.process.ProcessEvent;
 import org.im4java.process.ProcessListener;
+import org.im4java.process.ProcessStarter;
 import org.im4java.utils.*;
 
 
 /**
    This class implements various tests of the im4java-package.
 
-   @version $Revision: 1.36 $
+   @version $Revision: 1.38 $
    @author  $Author: bablokb $
  */
 
@@ -83,6 +84,7 @@ public class  Test {
           "\t17: ufraw-batch\n" +
           "\t18: exiftool\n" +
           "\t19: dcraw\n" +
+          "\t20: setting search PATHs\n" +
           ""
       );
       System.exit(1);
@@ -109,6 +111,7 @@ public class  Test {
         test.testUFRaw();
         test.testExiftool();
         test.testDCRaw();
+        test.testSearchPath();
       } else {
         for (int i=0; i<args.length; ++i) {
           int nr = Integer.parseInt(args[i]);
@@ -169,6 +172,9 @@ public class  Test {
               break;
             case 19:
               test.testDCRaw();
+              break;
+            case 20:
+              test.testSearchPath();
               break;
             default:
               System.err.println("Test Nr " + nr + " not implemented yet!");
@@ -741,8 +747,63 @@ public class  Test {
     (new File(outfile)).delete();
   }
 
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Test of search path tweaking.
+   */
+
+  public void testSearchPath() throws Exception {
+    System.err.println("20. Testing search path ...");
+
+    String searchPath=System.getProperty("im4java.testSearchPath.path");
+    if (searchPath == null) {
+      System.err.println(
+         "\nSkipping this test since search path is not defined.\n" +
+         "Set the system-property im4java.testSearchPath.path to\n" +
+         "your search path:\n" +
+         "\tpass JAVA_OPTS=-Dim4java.testSearchPath.path=... to \"make test\" or\n" +
+         "\texport JAVA_OPTS=-Dim4java.testSearchPath.path=...\n\n"
+      );
+      return;
+    }
+
+    ETOperation op = new ETOperation();
+    op.getTags("Filename","ImageWidth","ImageHeight","FNumber",
+                                                           "ExposureTime","iso");
+    op.addImage();
+
+    // setup command and execute it (capture output)
+    ArrayListOutputConsumer output = new ArrayListOutputConsumer();
+    ExiftoolCmd et = new ExiftoolCmd();
+    et.setSearchPath(searchPath);
+    et.setOutputConsumer(output);
+    et.run(op,"images/spathiphyllum.jpg");
+
+    // dump output
+    System.out.println("--- using per object search path ---");
+    ArrayList<String> cmdOutput = output.getOutput();
+    for (String line:cmdOutput) {
+      System.out.println(line);
+    }
+
+    // use global path
+    et.setSearchPath(null);
+    ProcessStarter.setGlobalSearchPath(searchPath);
+    cmdOutput.clear();
+    et.run(op,"images/spathiphyllum.jpg");
+
+    // dump output
+    System.out.println("--- using global search path ---");
+    cmdOutput = output.getOutput();
+    for (String line:cmdOutput) {
+      System.out.println(line);
+    }
+  }
 }
 
+////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 /**

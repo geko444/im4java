@@ -66,6 +66,34 @@ $ > java -jar im4java-<version>.jar all
 to run all the tests.
 
 
+Setting PATH
+============
+
+im4java calls commands just by their name (no path-component).
+Therefore you must insure to add the relevant directories to you PATH.
+
+Windows-users watch out: there is a convert.exe in you system32-directory!
+
+Adding the directories of the IM-binaries to the PATH is the preferred method,
+but since this is not always possible (not every user has full control
+over the execution environment), I have added a new feature to im4java-0.99.
+
+Since im4java 0.99, you can also set the search path from within
+your java program using:
+
+ProcessStarter.setGlobalSearchPath(myPath);
+
+As an alternative, you can also set the search path for each command-object
+seperately:
+
+ConvertCmd convert = new ConvertCmd();
+convert.setSearchPath(myPath);
+
+Since this feature is new I would be glad to receive some feedback on
+this approach. I would especially appreciate feedback from Windows and
+Mac-users on this issue, since I don't have access to these platforms.
+
+
 USAGE
 =====
 

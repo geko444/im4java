@@ -1,4 +1,56 @@
+2009-12-14
+
+	* version.inc: upgraded version to 0.99.0
+
+	* web/index.html: added section "Future Plans" updated for release
+	  0.99.0
+
+	* NEWS: updated for release 0.99.0
+
+	* Makefile: added target show-news
+
+	* README: added the section "Setting PATH"
+
+2009-11-05
+
+	* src/org/im4java/process/ProcessStarter.java: support .bat and
+	  .cmd in addition to .exe on windows while searching for
+	  executable
+
+2009-10-17
+
+	* src/org/im4java/core/IMOperation.java: added convinience-method
+	  haldClut(String pCLUTImage)
+
+	* input/IMinterface.txt: added the -hald-clut option
+
+2009-10-13
+
+	* input/IMinterface.txt: bugfix: changed signature of -clip-path
+	  from Integer:id to String:id added +clip-path String:id
+
+	* src/org/im4java/process/ProcessStarter.java: added support for
+	  search paths
+
+	* src/org/im4java/test/Test.java: added test-case for global search
+	  path
+
+	* src/org/im4java/test/Test.java: added new method testSearchPath()
+
+	* src/org/im4java/process/ProcessStarter.java: added fields and
+	  methods for search paths
+
+	* src/org/im4java/process/ProcessStarter.java: fixed class comment
+
+2009-08-31
+
+	* input/ETinterface.txt: added -json option
+
 2009-05-06
+
+	* misc/make-release: added notes to todo-list
+
+	* ChangeLog: upated ChangeLog for version 0.98.0
 
 	* version.inc: upgraded version to 0.98.0
 

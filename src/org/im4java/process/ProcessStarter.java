@@ -26,14 +26,15 @@ import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 
 /**
-   This class implements the processing of os-commands using Runtime.exec().
-   The class does not use the newer ProcessBuilder, since it has no
-   knowledge about the valid os-arguments of the generated command.
+   This class implements the processing of os-commands using a
+   ProcessBuilder. 
 
-   @version $Revision: 1.16 $
+   @version $Revision: 1.20 $
    @author  $Author: bablokb $
 */
 
@@ -47,6 +48,22 @@ public class ProcessStarter {
   */
 
   public static final int BUFFER_SIZE=65536;
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Static global search path for executables.
+  */
+
+  private static String iGlobalSearchPath = null;
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Per instance search path for executables.
+  */
+
+  private String iSearchPath = null;
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -239,6 +256,19 @@ public class ProcessStarter {
   
   private Process startProcess(LinkedList<String> pArgs) 
                       throws IOException, InterruptedException {
+
+    // if a global or per object search path is set, resolve the
+    // the executable
+
+    if (iSearchPath != null) {
+      String cmd = pArgs.getFirst();
+      cmd = searchForCmd(cmd,iSearchPath);
+      pArgs.set(0,cmd);
+    } else if (iGlobalSearchPath != null) {
+      String cmd = pArgs.getFirst();
+      cmd = searchForCmd(cmd,iGlobalSearchPath);
+      pArgs.set(0,cmd);
+    }
     ProcessBuilder builder = new ProcessBuilder(pArgs);
     return builder.start();
   }
@@ -278,7 +308,9 @@ public class ProcessStarter {
   /////////////////////////////////////////////////////////////////////////////
   
   /**
-    @param pAsyncMode the iAsyncMode to set
+     Set the async-execution mode.
+
+     @param pAsyncMode the iAsyncMode to set
   */
   public void setAsyncMode(boolean pAsyncMode) {
     iAsyncMode = pAsyncMode;
@@ -287,10 +319,107 @@ public class ProcessStarter {
   ////////////////////////////////////////////////////////////////////////////
   
   /**
-    @return the iAsyncMode
+     Query the async-execution mode.
+
+     @return the iAsyncMode
   */
   public boolean isAsyncMode() {
     return iAsyncMode;
   }
 
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Set the global (static) search path. You can override this search path
+     on a per object basis.
+
+     @param pGlobalSearchPath the global search path
+  */
+
+  public static void setGlobalSearchPath(String pGlobalSearchPath) {
+    iGlobalSearchPath = pGlobalSearchPath;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Query the global (static) search path.
+
+     @param pGlobalSearchPath the global search path
+  */
+
+  public static String getGlobalSearchPath() {
+    return iGlobalSearchPath;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Set the per object search path. This overrides the global search path
+     (if set).
+
+     @param pSearchPath the search path
+  */
+
+  public void setSearchPath(String pSearchPath) {
+    iSearchPath = pSearchPath;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Query the per object search path.
+
+     @param pSearchPath the  search path
+  */
+
+  public String getSearchPath() {
+    return iSearchPath;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+     Query the per object search path.
+
+     @param pSearchPath the  search path
+  */
+
+  public String searchForCmd(String pCmd, String pPath)
+                                   throws IOException, FileNotFoundException {
+    // check is pCmd is absolute
+    if ((new File(pCmd)).isAbsolute()) {
+      return pCmd;
+    }
+
+    // special processing on windows-systems.
+    // File.pathSeparator is hopefully more robust than 
+    // System.getProperty("os.name") ?!
+    boolean isWindows=File.pathSeparator.equals(";");
+
+    String dirs[] = pPath.split(File.pathSeparator);
+    for (int i=0; i<dirs.length; ++i) {
+      if (isWindows) {
+	// try thre typical extensions
+	File cmd = new File(dirs[i],pCmd+".exe");
+	if (cmd.exists()) {
+	  return cmd.getCanonicalPath();
+	} 
+        cmd = new File(dirs[i],pCmd+".cmd");
+	if (cmd.exists()) {
+	  return cmd.getCanonicalPath();
+	} 
+	cmd = new File(dirs[i],pCmd+".bat");
+	if (cmd.exists()) {
+	  return cmd.getCanonicalPath();
+	} 
+      } else {
+	File cmd = new File(dirs[i],pCmd);
+	if (cmd.exists()) {
+	  return cmd.getCanonicalPath();
+	}
+      }
+    }
+    throw new FileNotFoundException(pCmd);
+  }
 }

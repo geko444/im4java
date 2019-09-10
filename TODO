@@ -13,6 +13,10 @@ BUGS
 TODO/WISHLIST
 =============
 
+- add ant support
+
+- add im4java to a maven repo
+
 - add documentation
   * write documentation
     + index.xml

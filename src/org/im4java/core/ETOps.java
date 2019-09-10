@@ -497,6 +497,25 @@ public class ETOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+     Add option -json to the exiftool commandline
+     (see the documentation of exiftool for details).
+  */
+
+  public ETOps json() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-json");
+
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -pause to the exiftool commandline
      (see the documentation of exiftool for details).
   */

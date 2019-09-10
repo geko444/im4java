@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.14 $
+# $Revision: 1.16 $
 #
 !toolName=ImageMagick
 #
@@ -47,7 +47,8 @@
                -chop Integer:width x Integer:height + Integer:x + Integer:y @ Boolean:percent
                -clip
                -clip-mask
-               -clip-path Integer:id
+               -clip-path String:id
+               +clip-path String:id
                +clone
                -clone Integer:index1 , Integer:index2 , Integer:index3
                -clone String:indexes
@@ -124,6 +125,7 @@
                -gravity String:type
                -green-primary Double:x , Double:y
                -help
+               -hald-clut
                -highlight-color String:color
                -iconGeometry Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
                -iconic

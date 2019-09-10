@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.1 $
+# $Revision: 1.2 $
 #
 !validInterface=true
 !toolName=exiftool
@@ -48,6 +48,7 @@
        -htmlDump @ String:pOffset
        -ignore String:pDirectory
        -if|ifCondition String:pExpression
+       -json
        -pause
        -long|longOutputFormat
        -latin
