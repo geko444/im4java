@@ -27,7 +27,7 @@ import org.im4java.core.*;
 /**
    This class implements a test of the Info-class.
 
-   @version $Revision: 1.7 $
+   @version $Revision: 1.9 $
    @author  $Author: bablokb $
  
    @since 1.0.0
@@ -66,8 +66,14 @@ public class TestCase8 extends AbstractTestCase {
   public void run() throws Exception {
     System.err.println(" 8. Testing info ...");
 
+    // use first parameter as input image
+    String imgName = iImageDir+"multi-scene.gif";
+    if (iArgs != null && iArgs.length > 0) {
+      imgName = iArgs[0];
+    }
+
     // create and output complete information
-    Info imageInfo = new Info(iImageDir+"multi-scene.gif");
+    Info imageInfo = new Info(imgName);
 
     // dump all that is available
     Enumeration<String> props = imageInfo.getPropertyNames();
@@ -105,7 +111,7 @@ public class TestCase8 extends AbstractTestCase {
     System.out.println("==================================\n");
 
     // create and output basic information
-    imageInfo = new Info(iImageDir+"multi-scene.gif",true);
+    imageInfo = new Info(imgName,true);
     dumpBasicInfo(imageInfo);
   }
 

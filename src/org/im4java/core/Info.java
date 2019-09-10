@@ -27,11 +27,29 @@ import java.io.*;
 import org.im4java.process.ArrayListOutputConsumer;
 
 /**
-   This class implements an image-information object.
+   This class implements an image-information object. The one-argument
+   constructor expects a filename and parses the output of the
+   "identify -verbose" command to create a hashtable of properties. This
+   is the so called complete information. The two-argument constructor
+   has a boolean flag as second argument. If you pass true, the Info-object
+   only creates a set of so called basic information. This is more
+   efficient since only a subset of the attributes of the image are
+   requested and parsed.
 
-   <p>The class just calls "identify -verbose" and parses the output.</p>
+   <p>
+   Since the output of "identify -verbose" is meant as an human-readable
+   interface parsing it is inherently flawed. This implementation
+   interprets every line with a colon as a key-value-pair. This is not
+   necessarely correct, e.g. the comment-field could be multi-line with
+   colons within the comment.
+   </p>
    
-   @version $Revision: 1.12 $
+   <p>
+   An alternative to the Info-class is to use the exiftool-command and
+   the wrapper for it provided by im4java.
+   </p>
+
+   @version $Revision: 1.14 $
    @author  $Author: bablokb $
  
    @since 0.95
@@ -130,8 +148,28 @@ public class  Info {
       identify.setOutputConsumer(output);
       identify.run(op);
       ArrayList<String> cmdOutput = output.getOutput();
+
+      StringBuilder lineAccu = new StringBuilder(80);
       for (String line:cmdOutput) {
-	parseLine(line);
+	if (line.length() == 0) {
+	  // accumulate empty line as part of current attribute
+	  lineAccu.append("\n\n");
+	} else if (line.indexOf(':') == -1) {
+	  // interpret this as a continuation-line of the current attribute
+	  lineAccu.append("\n").append(line);
+	} else if (lineAccu.length() > 0) {
+	  // new attribute, process old attribute first
+	  parseLine(lineAccu.toString());
+	  lineAccu = new StringBuilder(80);
+	  lineAccu.append(line);
+	} else {
+          // new attribute, but nothing old to process
+	  lineAccu.append(line);
+	}
+      }
+      // process last item
+      if (lineAccu.length() > 0) {
+	parseLine(lineAccu.toString());
       }
 
       // finish and add last hashtable to linked-list
@@ -153,13 +191,20 @@ public class  Info {
 
   private void addBaseInfo() {
     // complete output does not include width, height, depth
-    String[] dim = iAttributes.get("Geometry").split("x|\\+");
-    iAttributes.put("Width",dim[0]);
-    iAttributes.put("Height",dim[1]);
-    dim = iAttributes.get("Page geometry").split("x|\\+");
-    iAttributes.put("PageWidth",dim[0]);
-    iAttributes.put("PageHeight",dim[1]);
-    iAttributes.put("PageGeometry",iAttributes.get("Page geometry"));
+    String[] dim;
+    String geo = iAttributes.get("Geometry");
+    if (geo != null) {
+      dim = geo.split("x|\\+");
+      iAttributes.put("Width",dim[0]);
+      iAttributes.put("Height",dim[1]);
+    }
+    geo = iAttributes.get("Page geometry");
+    if (geo != null) {
+      dim = geo.split("x|\\+");
+      iAttributes.put("PageWidth",dim[0]);
+      iAttributes.put("PageHeight",dim[1]);
+      iAttributes.put("PageGeometry",geo);
+    }
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -172,8 +217,7 @@ public class  Info {
     // structure:
     //    indent attribute: value
 
-    int indent = pLine.indexOf(pLine.trim())/2;
-    if (indent == 0) {
+    if (pLine.startsWith("Image:")) {
       // start of a new scene
       if (iAttributes != null) {
 	addBaseInfo();
@@ -181,6 +225,7 @@ public class  Info {
       }
       iAttributes = new Hashtable<String,String>();
     }
+    int indent = pLine.indexOf(pLine.trim())/2;
 
     String[] parts = pLine.trim().split(": ",2);
 
@@ -208,7 +253,6 @@ public class  Info {
       iAttributes.put(iPrefix+parts[0],parts[1]);
     }
   }
-
 
   //////////////////////////////////////////////////////////////////////////////
 

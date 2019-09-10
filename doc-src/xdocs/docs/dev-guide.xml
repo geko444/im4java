@@ -4,7 +4,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.22 $
+  $Revision: 1.23 $
   $Author: bablokb $
 -->
 
@@ -778,6 +778,19 @@ imageInfo.getProperty("Width",3)
 	  To query the number of scenes use the method
 	  <code>getSceneCount()</code>. Note that information about
 	  multiple scenes is only available with complete-information.
+	</p>
+	<p>
+	  Note that parsing the output of <code>identify
+	    -verbose</code> is inherently flawed, since this output is
+	  meant to be human-readable and not an an interface for computer
+	  programs. The parser makes a number of assumptions about the
+	  output, some of them are known to be incorrect in special
+	  situations (e.g. multi-line attribute-values with embedded
+	  colons). Also note that basic-information should always be
+	  correct, since it uses a different method to aquire the
+	  information. As an alternative to the
+	  <code>Info</code>-class you might consider using the wrapper
+	  class <code>ExiftoolCmd</code> for <code>exiftool</code>.
 	</p>
       </section>
 
