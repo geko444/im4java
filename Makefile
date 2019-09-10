@@ -2,7 +2,7 @@
 # Makefile for im4java
 #
 # $Author: bablokb $
-# $Revision: 1.22 $
+# $Revision: 1.25 $
 #
 # License: GPL2 (see COPYING)
 # -----------------------------------------------------------------------------
@@ -68,13 +68,12 @@ test-prepare:
 	chmod +w images/*.jpg
 
 test: test-prepare
-	java -cp build $(JAVA_TEST_CLASS) $(TESTS)
+	java $(JAVA_OPTS) -cp build $(JAVA_TEST_CLASS) $(TESTS)
 
 # targets (cleanup and distribution) ------------------------------------------
 
 clean:
-	rm -fr $(DIST)-*.tar.bz2
-	rm -fr build/* images
+	rm -fr $(DIST)-*.tar.bz2 build/* images $(DIST_NAME).jar
 
 distclean: clean
 	rm -fr src/$(subst .,/,$(JAVA_PACKAGE))/*Ops.java
@@ -82,6 +81,7 @@ distclean: clean
 update-changelog:
 	cvs2cl.pl --group-within-date --no-times --accum
 	rm -f ChangeLog.bak
+	cvs commit -m"upated ChangeLog for version $(VERSION)" ChangeLog
 
 srcdist: predist srcarch postdist
 

@@ -4,7 +4,7 @@
 # interface-definition-file
 #
 # $Author: bablokb $
-# $Revision: 1.17 $
+# $Revision: 1.23 $
 #
 # License: GPL2
 # -----------------------------------------------------------------------------
@@ -74,16 +74,24 @@ checkArguments() {
 processInterfaceFiles() {
   for f in "${idfs[@]}"; do
     echo -e "processing $f" >&2
-    code="${f##*/}"
 
     # set target-filename from interface-definition
-    code="${code%interface.txt}"
-    targetFile="$targetDir/${code}Ops.java"
+    defCode="${f##*/}"
+    defCode="${defCode%interface.txt}"
 
+    # reset config-variables
+    code=""
+    validInterface=""
+
+    getIdfSettings "$f"
+    : ${code:=$defCode}                     # set code from defCode if not
+    targetFile="$targetDir/${code}Ops.java" # set by idf
+
+    echo -e "writing $targetFile" >&2
     allMethods=""
-    writeClassHeader                                 # write class-header
-    writeMethods "$f"                                # generate methods
-    writeClassTail                                   # and class-tail
+    writeClassHeader                        # write class-header
+    writeMethods "$f"                       # parse file and generate methods
+    writeClassTail                          # and write class-tail
   done
 }
 
@@ -97,9 +105,16 @@ parseLine() {
   #   -append           -> append
   #   +append           -> p_append
   #   -adaptive-sharpen -> adaptiveSharpen
-  methodName=`sed -e 's/^-//' -e 's/^+/p_/' -e 's/-\(.\)/\U\1\E/g' <<< $optionName`  
+  methodName=`sed -e 's/^-*//' -e 's/=$//' -e 's/^+/p_/' -e 's/-\(.\)/\U\1\E/g' <<< $optionName`  
 
-  # extract (optional arguments)
+  # check for option type
+  if [ "${optionName: -1:1}" = "=" ]; then
+    optionType="long"
+  else
+    optionType="short"
+  fi  
+
+  # extract (optional) arguments
   shift
   declare -i i=0
   while test $# -gt 0; do
@@ -168,10 +183,14 @@ EOF
   cat >> "$targetFile" <<EOF
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("$optionName");
-
 EOF
+
+  if [ "$optionType" = "short" ]; then
+    echo -e "    iCmdArgs.add(\"$optionName\");\n" >>  "$targetFile"
+  else
+    echo -e "    buf.append(\"$optionName\");\n" >>  "$targetFile"
+  fi
+
 }
 
 # write method-body  ----------------------------------------------------------
@@ -179,13 +198,15 @@ EOF
 writeMethodBody() {
   local maxArgs="$1"
   declare -i i
+  if [ $maxArgs -eq 0 ]; then
+    return
+  fi
   for (( i=0; i<$maxArgs-1; ++i )); do
     writeVariable
     writeOperator
   done
-  if [ $i -lt $maxArgs ]; then
-    writeVariable
-  fi
+  # write last variable
+  writeVariable
 }
 
 # write method-tail   ---------------------------------------------------------
@@ -233,7 +254,13 @@ writeMethod() {
 
   # we create all variants with 0 to argc arguments
   declare -i i
-  for (( i=0; i<=$argc; ++i )); do
+  local iStart
+  if [ "$validInterface" = "true" ]; then
+    iStart=$argc                                   # argc is from parseLine
+  else
+    iStart=0         
+  fi
+  for (( i=$iStart; i<=$argc; ++i )); do
     if [ $i -eq 0 ]; then
       methodSignature="$methodName"
     else
@@ -259,6 +286,7 @@ writeMethods() {
 
   while read line; do
     [ "${line:0:1}" = "#" ] && continue            # strip comment lines
+    [ "${line:0:1}" = '!' ] && continue            # strip settings
     parseLine $line                                # parse given line
     [ $DEBUG -gt 0 ] && dumpDefs                   # dump parse-results
     writeMethod                                    # write method-definition
@@ -270,6 +298,12 @@ writeMethods() {
 
 writeClassTail() {
   echo -e "\n}" >> "$targetFile"
+}
+
+# extract and apply idf-settings   --------------------------------------------
+
+getIdfSettings() {
+  eval `sed -ne '/^!/s/!//p' "$1"`
 }
 
 # main program   --------------------------------------------------------------

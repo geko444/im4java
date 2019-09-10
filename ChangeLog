@@ -1,4 +1,108 @@
+2009-02-27
+
+	* version.inc: upgraded version to 0.97.0
+
+	* NEWS, web/index.html: updated for release 0.97.0
+
+	* README: updated feature-list
+
+	* Makefile: test: pass JAVA_OPTS to java command
+
+	* src/org/im4java/test/Test.java: testUFRaw(): use infile from
+	  system-property
+
+	* images.src/dsc_2289.nef: removed raw-file because of bloat
+
+2009-02-24
+
+	* bin/mk-im4java: writeMethodBody(): changed code to make it more
+	  readable
+
+	* src/org/im4java/test/Test.java: don't print stack-trace in
+	  AsyncTestProcessListener.processTerminated()
+
+	* src/org/im4java/test/Test.java: changed testAsync() to use new
+	  ProcessListener interface (created helper-class
+	  AsyncTestProcessListener)
+
+	* src/org/im4java/process/ProcessListener.java: changed
+	  implementation: pass Process instead of Thread-object to
+	  processStarted()
+
+	* src/org/im4java/process/ProcessStarter.java: changed
+	  implementation of run() (split runInternal() into startProcess()
+	  and waitForProcess())
+
+	* src/org/im4java/process/ProcessListener.java: added method
+	  processStarted()
+
+2009-02-21
+
+	* src/org/im4java/test/Test.java: added testUFRaw
+
+	* bin/mk-im4java: bugfix: generate different code for long-type
+	  options
+
+2009-02-20
+
+	* input/UFRawinterface.txt: changed argument-type of --size to
+	  Integer
+
+	* images.src/dsc_2289.nef: initial entry
+
+	* src/org/im4java/core/UFRawCmd.java: initial entry
+
+	* src/org/im4java/core/UFRawOperation.java: initial entry
+
+	* bin/mk-im4java: bugfix: reset variable validInterface for every
+	  new idf
+
+	* input/UFRawinterface.txt: initial entry
+
+	* bin/mk-im4java: bugfix: reset variable code for every new idf new
+	  feature: support long-style options (--foo=bar)
+
+2009-02-07
+
+	* bin/mk-im4java: support setting validInterface=true
+
+	* input/JPTinterface.txt: completely define interface and set
+	  validInterface=true
+
+	* bin/mk-im4java: support settings in idfs
+
+	* input/: GMinterface.txt, IMinterface.txt: minor fixes/additions
+	  to idfs
+
+2009-02-05
+
+	* src/org/im4java/test/Test.java: added testAsync()
+
+	* src/org/im4java/process/ProcessStarter.java: added support for
+	  asynchronous execution
+
+	* src/.settings/org.eclipse.jdt.ui.prefs,
+	  src/.settings/org.eclipse.ltk.core.refactoring.prefs,
+	  misc/im4java-codetemplates.xml,
+	  src/org/im4java/process/ProcessEvent.java,
+	  src/org/im4java/process/ProcessListener.java: initial entry
+
 2009-01-31
+
+	* Makefile: clean: also remove jar-file
+
+	* Makefile: update-changelog: automatically commit new ChangeLog to
+	  cvs
+
+	* web/index.html: updated for version 0.96.0
+
+	* misc/make-release: changed order of items
+
+	* version.inc: upgraded version to 0.96.1
+
+	* ChangeLog: updated for release 0.96.0
+
+	* misc/make-release: added item
 
 	* Makefile: update-changelog: added --group-within-date option /
 	  remove backup-file

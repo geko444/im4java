@@ -7,11 +7,16 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.1 $
+# $Revision: 1.2 $
+#
+!validInterface=true
 #
 -copy String:pCopyType
 -optimize
 -progressive
+-crop Integer:pWidth
+-crop Integer:pWidth x Integer:pHeight
+-crop Integer:pWidth x Integer:pHeight + Integer:pXoffset
 -crop Integer:pWidth x Integer:pHeight + Integer:pXoffset + Integer:pYoffset
 -grayscale
 -flip String:type

@@ -3,6 +3,13 @@ NEWS
 
 For a detailed list of changes, have a look at the ChangeLog.
 
+Version 0.97.0
+  * Added support for ufraw
+  * Added support for asynchronous execution of commands
+  * Source-generation now supports commands with long-style (--foo=bar)
+    options
+
+
 Version 0.96.0
   * Source-generation now supports more than one interface-definition-file
   * Added support for GraphicsMagick. You can hard-code GM-usage, but

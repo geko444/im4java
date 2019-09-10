@@ -16,18 +16,11 @@ TODO/WISHLIST
   * create org.im4java.core.ExiftoolCmd
   * add test-case
 
-- support ufraw
-  * create idf input/UFRinterface.txt
-  * create org.im4java.core.UFROperation extends UFROps
-  * create org.im4java.core.UfrawCmd
-  * add test-case
+- improve method-comments
+  * add config-var "toolName" to idfs
+  * use config-var "toolName" in generated files
 
 - add documentation
-
-- build system
-  * bin/mk-im4java: support config-settings in idfs
-  * add and support setting for completely validated idfs
-    (don't automatically create all possible methods)
 
 - validate IM and GM interfaces
 

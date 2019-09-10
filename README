@@ -34,11 +34,12 @@ Features
     -append                -> .append()
     +append                -> .p_append()
 - you can pipe input to and from ImageMagick commands
+- you can execute the commands asynchronously
 - BufferedImage support, i.e you can use BufferedImages as input to
   IM commands and pipe output of IM commands into a BufferedImage
 - scarce documentation (but many examples in src/org/im4java/test/Test.java)
 - the architecture supports arbitrary commandline-tools (already implemented:
-  GraphicsMagick and jpegtran)
+  ImageMagick, GraphicsMagick, jpegtran, ufraw)
 
 
 INSTALLATION

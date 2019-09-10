@@ -33,7 +33,7 @@ import java.util.LinkedList;
    The class does not use the newer ProcessBuilder, since it has no
    knowledge about the valid os-arguments of the generated command.
 
-   @version $Revision: 1.14 $
+   @version $Revision: 1.16 $
    @author  $Author: bablokb $
 */
 
@@ -72,13 +72,30 @@ public class ProcessStarter {
 
   private ErrorConsumer iErrorConsumer = null;
 
-   //////////////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////////////////////////////////////////////////////
+  
+  /**
+    Execution-mode. If true, run asynchronously.
+  */
+  
+  private boolean iAsyncMode = false;
+
+  ////////////////////////////////////////////////////////////////////////////
+  
+  /**
+    The ProcessListeners for this ProcessStarter.
+  */
+  private LinkedList<ProcessListener> iProcessListener;
+  
+  //////////////////////////////////////////////////////////////////////////////
 
   /**
      Constructor.
   */
 
   protected ProcessStarter() {
+    iProcessListener = new LinkedList<ProcessListener>();
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -113,6 +130,17 @@ public class ProcessStarter {
 
   //////////////////////////////////////////////////////////////////////////////
 
+  /**
+   * Add a ProcessListener to this ProcessStarter.
+   * 
+   @param pProcessListener the ProcessListener to add
+   */
+  public void addProcessListener(ProcessListener pProcessListener) {
+    iProcessListener.add(pProcessListener);
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
   /**
      Pipe input to the command. This is done asynchronously.
   */
@@ -167,41 +195,102 @@ public class ProcessStarter {
     }
   }
  
- 
+ //////////////////////////////////////////////////////////////////////////////
+  
+  /**
+       Execute the command.
+   */ 
+  
+  protected int run(final LinkedList<String> pArgs) 
+                                      throws IOException, InterruptedException {
+    if (! iAsyncMode) {
+      Process pr = startProcess(pArgs);
+      return waitForProcess(pr);
+    } else {
+      Runnable r = new Runnable() {
+        public void run() {
+          int rc;
+          ProcessEvent pe = new ProcessEvent();
+          try {
+            Process pr = startProcess(pArgs);
+	    for (ProcessListener pl:iProcessListener) {
+	      pl.processStarted(pr);
+	    }
+            rc = waitForProcess(pr);
+            pe.setReturnCode(rc);
+          } catch (Exception e) {
+            pe.setException(e);
+          }
+          for (ProcessListener pl:iProcessListener) {
+            pl.processTerminated(pe);
+          }
+        }
+      };
+      (new Thread(r)).start();
+      return 0;
+    }
+  }
+
   //////////////////////////////////////////////////////////////////////////////
   
   /**
        Execute the command.
    */	
   
-  public int run(LinkedList<String> pArgs) 
+  private Process startProcess(LinkedList<String> pArgs) 
+                      throws IOException, InterruptedException {
+    ProcessBuilder builder = new ProcessBuilder(pArgs);
+    return builder.start();
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  
+  /**
+       Perform process input/output and wait for process to terminate.
+   */	
+  
+  private int waitForProcess(Process pProcess) 
                       throws IOException, InterruptedException {
 
-   // create process using a ProcessBuilder
-    ProcessBuilder builder = new ProcessBuilder(pArgs);
-    Process process = builder.start();
-
     if (iInputProvider != null) {
-      processInput(process.getOutputStream());
+      processInput(pProcess.getOutputStream());
     }
     if (iOutputConsumer != null) {
-      processOutput(process.getInputStream(),iOutputConsumer);
+      processOutput(pProcess.getInputStream(),iOutputConsumer);
     }
     if (iErrorConsumer != null) {
-        processError(process.getErrorStream(),iErrorConsumer);
+        processError(pProcess.getErrorStream(),iErrorConsumer);
     }
     
-    process.waitFor();
-    int rc=process.exitValue();
+    pProcess.waitFor();
+    int rc=pProcess.exitValue();
      
     // just to be on the safe side
     try {
-      process.getInputStream().close();
-      process.getOutputStream().close();
-      process.getErrorStream().close();
+      pProcess.getInputStream().close();
+      pProcess.getOutputStream().close();
+      pProcess.getErrorStream().close();
     } catch (Exception e) {
     }
     return rc;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  
+  /**
+    @param pAsyncMode the iAsyncMode to set
+  */
+  public void setAsyncMode(boolean pAsyncMode) {
+    iAsyncMode = pAsyncMode;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////
+  
+  /**
+    @return the iAsyncMode
+  */
+  public boolean isAsyncMode() {
+    return iAsyncMode;
   }
 
 }

@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.2 $
+# $Revision: 1.3 $
 #
 -adjoin
 +adjoin
@@ -20,6 +20,7 @@
 -average
 -backdrop
 -background String:color
+-black-threshold Double:threshold @ Boolean:percent
 -blue-primary Double:x , Double:y
 -blur Double:radius x Double:sigma
 -bordercolor String:color
@@ -41,6 +42,7 @@
 -compress String:type
 -contrast
 +contrast
+-convolve Integer:k1 , Integer:k2 , Integer:k3 , Integer:k4 , Integer:k5 , Integer:k6 , Integer:k7 , Integer:k8 , Integer:k9 , Integer:k10 , Integer:k11 , Integer:k12 , Integer:k13 , Integer:k14 , Integer:k15 , Integer:k16
 -crop Integer:width x Integer:height + Integer:x + Integer:y @ Character:special
 -cycle Integer:amount
 +debug
@@ -103,6 +105,7 @@
 -monochrome
 -morph Integer:frames
 -mosaic
+-motion-blur Double:radius x Double:sigma + Double:angle
 -negate
 +negate
 -noise Double:radius
@@ -174,5 +177,6 @@
 -virtual-pixel String:method
 -wave Double:amplitude x Double:wavelength
 -white-point Double:x , Double:y
+-white-threshold Double:threshold @ Boolean:percent
 -write String:filename
 +write String:filename

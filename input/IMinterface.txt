@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.10 $
+# $Revision: 1.11 $
 #
                -adaptive-blur Double:radius x Double:sigma
                -adaptive-resize Integer:width x Integer:height @ Character:special
@@ -31,7 +31,7 @@
                -blend Integer:srcPercent x Integer:dstPercent
                -bias Integer:value @ Boolean:percent
                -black-point-compensation
-               -black-threshold Double:threshold
+               -black-threshold Double:threshold @ Boolean:percent
                -blue-primary Double:x , Double:y
                -blur Double:radius x Double:sigma
                -bordercolor String:color
@@ -64,7 +64,7 @@
                -contrast
                +contrast
                -contrast-stretch Integer:blackPoint x Integer:whitePoint @ Boolean:percent
-               -convolve String:kernel
+               -convolve Integer:k1 , Integer:k2 , Integer:k3 , Integer:k4 , Integer:k5 , Integer:k6 , Integer:k7 , Integer:k8 , Integer:k9 , Integer:k10 , Integer:k11 , Integer:k12 , Integer:k13 , Integer:k14 , Integer:k15 , Integer:k16
                -crop Integer:width x Integer:height + Integer:x + Integer:y @ Character:special
                -cycle Integer:amount
                +debug
@@ -281,7 +281,7 @@
                -watermark Double:brightness
                -wave Double:amplitude x Double:wavelength
                -white-point Double:x , Double:y
-               -white-threshold Double:threshold
+               -white-threshold Double:threshold @ Boolean:percent
                -window-group
                -window String:id
                -write String:filename

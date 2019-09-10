@@ -45,30 +45,10 @@ public class JPTOps extends Operation {
      -copy (see documentation of the underlying tool for details).
   */
 
-  public JPTOps copy() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-copy");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -copy (see documentation of the underlying tool for details).
-  */
-
   public JPTOps copy(String pCopyType) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-copy");
 
     if (pCopyType != null) {
@@ -90,7 +70,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-optimize");
 
     if (buf.length()>0) {
@@ -109,27 +88,7 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-progressive");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -crop (see documentation of the underlying tool for details).
-  */
-
-  public JPTOps crop() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-crop");
 
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -147,7 +106,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-crop");
 
     if (pWidth != null) {
@@ -169,7 +127,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-crop");
 
     if (pWidth != null) {
@@ -195,7 +152,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-crop");
 
     if (pWidth != null) {
@@ -228,7 +184,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-crop");
 
     if (pWidth != null) {
@@ -268,27 +223,7 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-grayscale");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -flip (see documentation of the underlying tool for details).
-  */
-
-  public JPTOps flip() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-flip");
 
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -306,7 +241,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-flip");
 
     if (type != null) {
@@ -328,27 +262,7 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-perfect");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -rotate (see documentation of the underlying tool for details).
-  */
-
-  public JPTOps rotate() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-rotate");
 
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -366,7 +280,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-rotate");
 
     if (pDegrees != null) {
@@ -388,7 +301,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-transpose");
 
     if (buf.length()>0) {
@@ -407,7 +319,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-transverse");
 
     if (buf.length()>0) {
@@ -426,27 +337,7 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-trim");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -restart (see documentation of the underlying tool for details).
-  */
-
-  public JPTOps restart() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-restart");
 
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -464,7 +355,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-restart");
 
     if (pNumber != null) {
@@ -482,30 +372,10 @@ public class JPTOps extends Operation {
      -maxmemory (see documentation of the underlying tool for details).
   */
 
-  public JPTOps maxmemory() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-maxmemory");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -maxmemory (see documentation of the underlying tool for details).
-  */
-
   public JPTOps maxmemory(Integer pSize) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-maxmemory");
 
     if (pSize != null) {
@@ -523,30 +393,10 @@ public class JPTOps extends Operation {
      -outfile (see documentation of the underlying tool for details).
   */
 
-  public JPTOps outfile() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-outfile");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -outfile (see documentation of the underlying tool for details).
-  */
-
   public JPTOps outfile(String pFilename) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-outfile");
 
     if (pFilename != null) {
@@ -568,7 +418,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-verbose");
 
     if (buf.length()>0) {
@@ -587,27 +436,7 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-debug");
-
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     -scans (see documentation of the underlying tool for details).
-  */
-
-  public JPTOps scans() {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
-    iCmdArgs.add("-scans");
 
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -625,7 +454,6 @@ public class JPTOps extends Operation {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
-
     iCmdArgs.add("-scans");
 
     if (pFilename != null) {
