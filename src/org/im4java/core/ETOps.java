@@ -791,8 +791,10 @@ public class ETOps extends Operation {
     if (pGroupSpec != null) {
       buf.append(pGroupSpec.toString());
     }
-    iCmdArgs.add(buf.toString());
-    buf.setLength(0);
+    if (pGroupSpec != null || pType != null) {
+      iCmdArgs.add(buf.toString());
+      buf.setLength(0);
+    }
     if (pType != null) {
       buf.append(pType.toString());
     }
@@ -1232,6 +1234,25 @@ public class ETOps extends Operation {
     if (pLevel != null) {
       buf.append(pLevel.toString());
     }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+     Add option -ver to the exiftool commandline
+     (see the documentation of exiftool for details).
+  */
+
+  public ETOps ver() {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-ver");
+
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }

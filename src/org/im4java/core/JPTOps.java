@@ -141,7 +141,9 @@ public class JPTOps extends Operation {
     if (pWidth != null) {
       buf.append(pWidth.toString());
     }
-    buf.append("x");
+    if (pWidth != null || pHeight != null) {
+      buf.append("x");
+    }
     if (pHeight != null) {
       buf.append(pHeight.toString());
     }
@@ -167,14 +169,18 @@ public class JPTOps extends Operation {
     if (pWidth != null) {
       buf.append(pWidth.toString());
     }
-    buf.append("x");
+    if (pWidth != null || pHeight != null) {
+      buf.append("x");
+    }
     if (pHeight != null) {
       buf.append(pHeight.toString());
     }
-    oper="+";
-    if (pXoffset.doubleValue() < 0)
-      oper="";
-    buf.append(oper);
+    if (pHeight != null || pXoffset != null) {
+      oper="+";
+      if (pXoffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
     if (pXoffset != null) {
       buf.append(pXoffset.toString());
     }
@@ -200,21 +206,27 @@ public class JPTOps extends Operation {
     if (pWidth != null) {
       buf.append(pWidth.toString());
     }
-    buf.append("x");
+    if (pWidth != null || pHeight != null) {
+      buf.append("x");
+    }
     if (pHeight != null) {
       buf.append(pHeight.toString());
     }
-    oper="+";
-    if (pXoffset.doubleValue() < 0)
-      oper="";
-    buf.append(oper);
+    if (pHeight != null || pXoffset != null) {
+      oper="+";
+      if (pXoffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
     if (pXoffset != null) {
       buf.append(pXoffset.toString());
     }
-    oper="+";
-    if (pYoffset.doubleValue() < 0)
-      oper="";
-    buf.append(oper);
+    if (pXoffset != null || pYoffset != null) {
+      oper="+";
+      if (pYoffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
     if (pYoffset != null) {
       buf.append(pYoffset.toString());
     }

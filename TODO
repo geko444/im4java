@@ -13,11 +13,29 @@ BUGS
 TODO/WISHLIST
 =============
 
+- test chaining of commands
+  * try deadlock linux:
+    sync1: ok
+    sync2: ok
+  * try deadlock windows:
+    sync1: 
+    sync2: 
+  * errorhandling linux:
+    sync1 + op1-error: ok
+    sync1 + op2-error: ok
+    sync2 + op1-error: ok
+    sync2 + op2-error: ok
+  * errorhandling windows:
+    sync1 + op1-error: ok
+    sync1 + op2-error: ok
+    sync2 + op1-error: ok
+    sync2 + op2-error: ok
+  * write section in dev-guide
+  * fix run/start-error
+
 - support the IM compare command
 
 - update interfaces
-
-- fix performance issue of mk-im4java
 
 - add ant support
 
@@ -35,12 +53,6 @@ TODO/WISHLIST
 
 - validate IM and GM interfaces
 
-- Info
-  * change to initially collect only a small number of properties
-    (option of the constructor)
-  * add methods returning these properties:
-    int getWidth(), int getHeight(), Size getSize(), ... (TBD)
-  * query the full set at first request
 
 - Pipe
   * add method setBufferSize()

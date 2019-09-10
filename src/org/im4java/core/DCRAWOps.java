@@ -346,7 +346,9 @@ public class DCRAWOps extends Operation {
     if (pLeft != null) {
       buf.append(pLeft.toString());
     }
-    buf.append("Integer:pTop");
+    if (pLeft != null || pWidth != null) {
+      buf.append("Integer:pTop");
+    }
     if (pWidth != null) {
       buf.append(pWidth.toString());
     }
@@ -372,7 +374,9 @@ public class DCRAWOps extends Operation {
     if (pMult0 != null) {
       buf.append(pMult0.toString());
     }
-    buf.append("Double:pMult1");
+    if (pMult0 != null || pMult2 != null) {
+      buf.append("Double:pMult1");
+    }
     if (pMult2 != null) {
       buf.append(pMult2.toString());
     }

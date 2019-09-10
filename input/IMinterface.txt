@@ -7,7 +7,7 @@
 #                   else  given character
 #
 # $Author: bablokb $
-# $Revision: 1.18 $
+# $Revision: 1.20 $
 #
 !toolName=ImageMagick
 #
@@ -112,7 +112,7 @@
                -filter String:type
                -flatten
                -flip
-               -floodfill Integer:x _ Integer:y _ String:color
+               -floodfill + Integer:x + Integer:y _ String:color
                -flop
                -font String:name
                -foreground String:color

@@ -27,7 +27,7 @@ import org.im4java.core.*;
 /**
    This class implements a test of the Info-class.
 
-   @version $Revision: 1.2 $
+   @version $Revision: 1.3 $
    @author  $Author: bablokb $
  
    @since 1.0.0
@@ -65,6 +65,8 @@ public class TestCase8 extends AbstractTestCase {
 
   public void run() throws Exception {
     System.err.println(" 8. Testing info ...");
+
+    // create and output complete information
     Info imageInfo = new Info(iImageDir+"firelily.jpg");
     Enumeration<String> props = imageInfo.getPropertyNames();
     if (props == null) {
@@ -74,5 +76,15 @@ public class TestCase8 extends AbstractTestCase {
       String prop=props.nextElement();
       System.out.println(prop+"="+imageInfo.getProperty(prop));
     }
+    System.out.println("----------------------------------");
+
+    // create and output basic information
+    imageInfo = new Info(iImageDir+"firelily.jpg",true);
+    System.out.println("Format: " + imageInfo.getImageFormat());
+    System.out.println("Width: " + imageInfo.getImageWidth());
+    System.out.println("Height: " + imageInfo.getImageHeight());
+    System.out.println("Geometry: " + imageInfo.getImageGeometry());
+    System.out.println("Depth: " + imageInfo.getImageDepth());
+    System.out.println("Class: " + imageInfo.getImageClass());
   }
 }

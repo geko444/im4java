@@ -4,7 +4,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.20 $
+  $Revision: 1.21 $
   $Author: bablokb $
 -->
 
@@ -718,6 +718,33 @@ if (exec.awaitTermination(10,TimeUnit.SECONDS)) {
 	This section describes a number of utility-classes which
 	facilitate the coding.
       </p>
+
+      <section id="Info">
+	<title>Image Information</title>
+	<p>
+	  If you only want to query image-information (e.g. width and
+	  height), you could typically use the
+	  <code>IdentifyCommand</code>. Instead of using this command
+	  directly, you could use the <code>Info</code> class. The
+	  following code-snippet demonstrates its use:
+	</p>
+	<source>
+Info imageInfo = new Info(filename,true);
+System.out.println("Format: " + imageInfo.getImageFormat());
+System.out.println("Width: " + imageInfo.getImageWidth());
+System.out.println("Height: " + imageInfo.getImageHeight());
+System.out.println("Geometry: " + imageInfo.getImageGeometry());
+System.out.println("Depth: " + imageInfo.getImageDepth());
+System.out.println("Class: " + imageInfo.getImageClass());
+	</source>
+	<p>
+	  The <code>Info</code>-class also allows you to parse the
+	  complete (verbose) output of the
+	  <code>IndentifyCommand</code>. See the test-case class
+	  <code>org.im4java.test.TestCase8</code> for a complete example.
+	</p>
+      </section>
+
       <section id="FilenameLoader">
 	<title>FilenameLoader</title>
 	<p>

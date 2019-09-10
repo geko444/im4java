@@ -5,7 +5,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.6 $
+  $Revision: 1.7 $
   $Author: bablokb $
 -->
 
@@ -17,6 +17,16 @@
     <note>
       For a detailed list of changes, have a look at the ChangeLog.
     </note>
+
+    <section id="R_1_2_0">
+      <title>Release 1.2.0</title>
+      <ul>
+	<li>Code generation is much faster</li>
+	<li>Improved <code>Info</code> class: simple interface to
+	  retrieve basic image-properties</li>
+	<li>fixed a number of bugs</li>
+      </ul>
+    </section>
 
     <section id="R_1_1_0">
       <title>Release 1.1.0</title>

@@ -25,7 +25,7 @@ import org.im4java.core.*;
 /**
    This class implements the basic test of convert.
 
-   @version $Revision: 1.6 $
+   @version $Revision: 1.7 $
    @author  $Author: bablokb $
  
    @since 1.0.0
@@ -63,8 +63,19 @@ public class TestCase1 extends AbstractTestCase {
 
   public void run() throws Exception {
     System.err.println(" 1. Testing convert ...");
+ 
+    // setup optional control-variables
+    boolean induceError = false;
+    if (iArgs != null && iArgs.length > 0) {
+      induceError = Boolean.parseBoolean(iArgs[0]);
+    }
+
     IMOperation op = new IMOperation();
-    op.addImage().addImage();
+    op.addImage();
+    if (!induceError) {
+      // with induceError == true, we will have more images than placeholders
+      op.addImage();
+    }
     op.bordercolor("darkgray");
     op.border(10,10);
     op.appendHorizontally();

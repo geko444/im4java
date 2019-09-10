@@ -4,7 +4,7 @@
 # interface-definition-file
 #
 # $Author: bablokb $
-# $Revision: 1.29 $
+# $Revision: 1.32 $
 #
 # License: GPL2
 # -----------------------------------------------------------------------------
@@ -93,9 +93,9 @@ processInterfaceFiles() {
     # generate java-sourcefile for xxxOps
     echo -e "writing $targetFile" >&2
     allMethods=""
-    writeClassHeader                        # write class-header
-    writeMethods "$f"                       # parse file and generate methods
-    writeClassTail                          # and write class-tail
+    writeClassHeader    > "$targetFile"     # write class-header
+    writeMethods "$f"  >> "$targetFile"     # parse file and generate methods
+    writeClassTail     >> "$targetFile"     # and write class-tail
 
     # generate java-sourcefile for xxxOperation
     targetFile="$targetDir/${code}Operation.java"
@@ -103,7 +103,7 @@ processInterfaceFiles() {
     if [ -f "$targetFile" ]; then
       echo -e "$targetFile already exists" >&2
     else
-      writeOperationClass
+      writeOperationClass > "$targetFile"
     fi
 
     # generate java-sourcefile for xxxCmd
@@ -116,7 +116,7 @@ processInterfaceFiles() {
                   -exec echo 1 \; -quit`" = "1" ]; then
       echo -e "$targetFile already exists" >&2
     else
-      writeCmdClass
+      writeCmdClass  > "$targetFile"
     fi
   done
 }
@@ -151,7 +151,7 @@ parseLine() {
   # extract (optional) arguments
   shift
   declare -i i=0
-  attachVarToOption=0
+  attachVarToOption=0 preOper=""
   while test $# -gt 0; do
     token="$1"
     if [ $i -eq 0 ]; then
@@ -161,6 +161,11 @@ parseLine() {
         token="$1"
       else
         attachVarToOption=0
+        if [ "${#token}" -eq 1 ]; then
+          preOper="$token"
+          shift
+          token="$1"
+        fi
       fi
     fi
     varType[$i]="${token%:*}"
@@ -195,14 +200,14 @@ dumpDefs() {
 
 writeClassHeader() {
   sed -e "s/_PACKAGE_/$package/" -e "s/_CODE_/$code/g" \
-                    -e "s/_TOOLNAME_/$toolName/g" "$CLASS_HEAD" > "$targetFile"
+                    -e "s/_TOOLNAME_/$toolName/g" "$CLASS_HEAD"
 }
 
 # write template-class for operation ------------------------------------------
 
 writeOperationClass() {
   sed -e "s/_PACKAGE_/$package/" -e "s/_CODE_/$code/g" \
-            -e "s/_TOOLNAME_/$toolName/g" "$TEMPLATE_OPERATION" > "$targetFile"
+            -e "s/_TOOLNAME_/$toolName/g" "$TEMPLATE_OPERATION"
 }
 
 # write template-class for cmd ------------------------------------------------
@@ -210,7 +215,7 @@ writeOperationClass() {
 writeCmdClass() {
   sed -e "s/_PACKAGE_/$package/" -e "s/_CODE_/$code/g" \
             -e "s/_TOOLNAME_/$toolName/g" -e "s/_TOOLNAMEU_/$toolNameU/g" \
-                                                "$TEMPLATE_CMD" > "$targetFile"
+                                                "$TEMPLATE_CMD"
 }
 
 # write method-header   -------------------------------------------------------
@@ -219,7 +224,7 @@ writeMethodHeader() {
   local maxArgs="$1"
 
   # method comment and start
-  cat >> "$targetFile" <<EOF
+  cat <<EOF
   //////////////////////////////////////////////////////////////////////////////
 
   /**
@@ -231,24 +236,24 @@ EOF
 
   # add method-signature
   declare -i i
-  echo -en "  public ${code}Ops $methodName(" >> "$targetFile"
+  echo -en "  public ${code}Ops $methodName("
   for (( i=0; i<$maxArgs-1; ++i )); do
     echo -en "${varType[$i]} ${varName[$i]}, "
-  done  >> "$targetFile"
+  done
   [ $i -lt $maxArgs ] && \
-                     echo -en "${varType[$i]} ${varName[$i]}" >> "$targetFile"
-  echo -e ") {\n" >> "$targetFile"
+                     echo -en "${varType[$i]} ${varName[$i]}"
+  echo -e ") {\n"
 
   # add start of code
-  cat >> "$targetFile" <<EOF
+  cat  <<EOF
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
 EOF
 
   if [ "$optionType" = "short" -a $attachVarToOption -eq 0 ]; then
-    echo -e "    iCmdArgs.add(\"$optionName\");\n" >>  "$targetFile"
+    echo -e "    iCmdArgs.add(\"$optionName\");\n"
   else
-    echo -e "    buf.append(\"$optionName\");\n" >>  "$targetFile"
+    echo -e "    buf.append(\"$optionName\");\n"
   fi
 }
 
@@ -260,9 +265,10 @@ writeMethodBody() {
   if [ $maxArgs -eq 0 ]; then
     return
   fi
+  [ -n "$preOper" ] &&  writeOperator "$preOper" "${varName[0]}"
   for (( i=0; i<$maxArgs-1; ++i )); do
     writeVariable
-    writeOperator
+    writeOperator "${oper[$i]}" "${varName[$i+1]}"  "${varName[$i]}" 
   done
   # write last variable
   writeVariable
@@ -271,38 +277,45 @@ writeMethodBody() {
 # write method-tail   ---------------------------------------------------------
 
 writeMethodTail() {
-  echo -e "    if (buf.length()>0) {" >> "$targetFile"
-  echo -e "      iCmdArgs.add(buf.toString());" >> "$targetFile"
-  echo -e "    }" >> "$targetFile"
-  echo -e "    return this;\n  }\n" >> "$targetFile"
+  echo -e "    if (buf.length()>0) {"
+  echo -e "      iCmdArgs.add(buf.toString());"
+  echo -e "    }"
+  echo -e "    return this;\n  }\n"
 }
 
 # write processing of given variable   ----------------------------------------
 
 writeVariable() {
-    echo -e "    if (${varName[$i]} != null) {" >> "$targetFile"
+    echo -e "    if (${varName[$i]} != null) {"
     if [ "${varType[$i]}" = "Boolean" ]; then
-      echo -e "      if (${varName[$i]}.booleanValue())" >> "$targetFile"
-      echo -e "        buf.append(\"%\");" >> "$targetFile"
+      echo -e "      if (${varName[$i]}.booleanValue())"
+      echo -e "        buf.append(\"%\");"
     else
-      echo -e "      buf.append(${varName[$i]}.toString());" >> "$targetFile"
+      echo -e "      buf.append(${varName[$i]}.toString());"
     fi
-    echo -e "    }" >> "$targetFile"
+    echo -e "    }"
 }
 
 # write processing of given operator   ----------------------------------------
 
 writeOperator() {
-    if [ "${oper[$i]}" = "_" ]; then
-      echo -e "    iCmdArgs.add(buf.toString());" >> "$targetFile"
-      echo -e "    buf.setLength(0);" >> "$targetFile"
-    elif [ "${oper[$i]}" = "+" ]; then
-      echo -e "    oper=\"+\";" >> "$targetFile"
-      echo -e "    if (${varName[$i+1]}.doubleValue() < 0)" >> "$targetFile"
-      echo -e "      oper=\"\";" >> "$targetFile"
-      echo -e "    buf.append(oper);" >> "$targetFile"
-    elif [ "${oper[$i]}" != "@" ]; then
-      echo -e "    buf.append(\"${oper[$i]}\");" >> "$targetFile"
+  local op="$1" nameNext="$2" namePrev="$3"
+    if [ -n "$namePrev" ]; then
+      echo -e "    if ($namePrev != null || $nameNext != null) {"
+    fi
+    if [ "$op" = "_" ]; then
+      echo -e "      iCmdArgs.add(buf.toString());" 
+      echo -e "      buf.setLength(0);" 
+    elif [ "$op" = "+" ]; then
+      echo -e "      oper=\"+\";" 
+      echo -e "      if ($nameNext.doubleValue() < 0)" 
+      echo -e "        oper=\"\";" 
+      echo -e "      buf.append(oper);" 
+    elif [ "$op" != "@" ]; then
+      echo -e "      buf.append(\"$op\");" 
+    fi
+    if [ -n "$namePrev" ]; then
+      echo -e "    }"
     fi
 }
 
@@ -326,10 +339,11 @@ writeMethod() {
       methodSignature="${methodSignature}_${varType[$i-1]}"
      fi
     [ $DEBUG -gt 1 ] && echo $methodSignature 2>&1
-    if [ "${allMethods/ $methodSignature}" != "$allMethods" ]; then
-      [ $DEBUG -gt 1 ] && echo "$methodSignature already generated" 2>&1
+    if grep -qw "$methodSignature" <<< "$allMethods"; then
+      [ $quiet -eq 0 ] && echo "skipping      $methodSignature" >&2
       continue
     fi
+    [ $quiet -eq 0 ] && echo "processing    $methodSignature" >&2
     writeMethodHeader $i
     writeMethodBody $i
     writeMethodTail $i
@@ -356,7 +370,7 @@ writeMethods() {
 # write class-tail   ----------------------------------------------------------
 
 writeClassTail() {
-  echo -e "\n}" >> "$targetFile"
+  echo -e "\n}" 
 }
 
 # extract and apply idf-settings   --------------------------------------------
