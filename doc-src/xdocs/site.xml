@@ -3,7 +3,7 @@
 <!--
  Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
- $Revision: 1.5 $
+ $Revision: 1.6 $
  $Author: bablokb $
 -->
 
@@ -55,7 +55,8 @@
 
   <!-- external references -->
   <external-refs>
-    <maven           href="http://maven.cedarsoft.com/content/repositories/thirdparty/"/>
+    <maven           href="http://mvnrepository.com/artifact/org.im4java/im4java"/>
+    <mavenalt        href="http://maven.cedarsoft.com/content/repositories/thirdparty/"/>
     <forrest         href="http://forrest.apache.org"/>
     <jmagick         href="http://www.jmagick.org"/>
     <jmagickpro      href="http://www.sourceforge.net/projects/jmagick"/>

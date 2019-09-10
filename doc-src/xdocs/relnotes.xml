@@ -5,7 +5,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.7 $
+  $Revision: 1.8 $
   $Author: bablokb $
 -->
 
@@ -17,6 +17,13 @@
     <note>
       For a detailed list of changes, have a look at the ChangeLog.
     </note>
+
+    <section id="R_1_2_1">
+      <title>Release 1.2.1</title>
+      <ul>
+	<li>Documentation-update: im4java is available at maven-central</li>
+      </ul>
+    </section>
 
     <section id="R_1_2_0">
       <title>Release 1.2.0</title>

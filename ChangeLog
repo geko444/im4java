@@ -1,3 +1,25 @@
+2011-12-14
+
+	* doc-src/xdocs/index.xml: changed version to 1.2.1 updated section
+	  about maven
+
+	* doc-src/xdocs/site.xml: moved maven to mavenalt and readded maven
+
+2011-12-12
+
+	* doc-src/xdocs/relnotes.xml: added release-notes for 1.2.1
+
+2011-09-01
+
+	* bin/mk-im4java: writeMethod(): fixed bug in initializing
+	  methodSignature for validated interfaces
+
+	* version.inc: upgraded version to 1.2.1
+
+2011-08-22
+
+	* ChangeLog: upated ChangeLog for version 1.2.0
+
 2011-08-16
 
 	* version.inc: upgraded version to 1.2.0

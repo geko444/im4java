@@ -13,6 +13,9 @@ BUGS
 TODO/WISHLIST
 =============
 
+- bin/mk-im4java
+  * fix method-signature for argc > 0
+
 - test chaining of commands
   * try deadlock linux:
     sync1: ok

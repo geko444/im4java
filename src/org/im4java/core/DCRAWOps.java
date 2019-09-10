@@ -453,28 +453,6 @@ public class DCRAWOps extends Operation {
      (see the documentation of dcraw for details).
   */
 
-  public DCRAWOps setOutputColorSpace(String pColorProfileFile) {
-
-    String       oper;                      // only used in some methods
-    StringBuffer buf = new StringBuffer();  // local buffer for option-args
-    iCmdArgs.add("-o");
-
-    if (pColorProfileFile != null) {
-      buf.append(pColorProfileFile.toString());
-    }
-    if (buf.length()>0) {
-      iCmdArgs.add(buf.toString());
-    }
-    return this;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-
-  /**
-     Add option -o to the dcraw commandline
-     (see the documentation of dcraw for details).
-  */
-
   public DCRAWOps setCameraColorSpace(String pColorProfileFile) {
 
     String       oper;                      // only used in some methods

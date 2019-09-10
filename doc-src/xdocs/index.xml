@@ -4,7 +4,7 @@
 <!--
   Copyright (c) 2010-2010 by Bernhard Bablok (bablokb@users.sourceforge.net)
 
-  $Revision: 1.8 $
+  $Revision: 1.9 $
   $Author: bablokb $
 -->
 
@@ -14,7 +14,7 @@
   </header>
 
   <body>
-    <note>The current version of im4java is 1.2.0</note>
+    <note>The current version of im4java is 1.2.1</note>
 
     <section id="intro">
       <title>Introduction</title>
@@ -108,7 +108,7 @@
 
       <p>Source and binary packages are available for download. See the <a
 	  href="ext:download">download area</a> of the
-	im4java-project. The current version is <strong>1.2.0</strong>.
+	im4java-project. The current version is <strong>1.2.1</strong>.
       </p>
 
       <p>You can find a comprehensive list of changes in the <a
@@ -118,18 +118,18 @@
 
     <section id="maven">
     <title>Maven-Repository</title>
-
       <p>
-	The im4java-library is also available from a 
-	<a href="ext:maven">maven-repository</a>.
-	(kudos to the people at cedarsoft). Note that this repository
-	is not supported by the im4java-project. There are plans to
-	directly support maven, but this will be done in a future
-	release.
+	Thanks to the effort of users, the im4java-library is also
+	available from
+	<a href="ext:maven">maven</a>. An alternative site is <a
+	  href="ext:mavenalt">here</a> 
+	(kudos to the people at cedarsoft). Note that maven
+	is not supported by the im4java-project due to lack of
+	expertise.
       </p>
 
       <p>
-	The necessary pom-entry for the repository is:
+	The necessary pom-entry for the alternative repository is:
       </p>
 
       <source>

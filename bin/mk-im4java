@@ -4,7 +4,7 @@
 # interface-definition-file
 #
 # $Author: bablokb $
-# $Revision: 1.32 $
+# $Revision: 1.33 $
 #
 # License: GPL2
 # -----------------------------------------------------------------------------
@@ -333,7 +333,7 @@ writeMethod() {
     iStart=0         
   fi
   for (( i=$iStart; i<=$argc; ++i )); do
-    if [ $i -eq 0 ]; then
+    if [ $i -eq $iStart ]; then
       methodSignature="$methodName"
     else
       methodSignature="${methodSignature}_${varType[$i-1]}"
