@@ -402,6 +402,20 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -auto-orient to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps autoOrient() {
+
+    iCmdArgs.add("-auto-orient");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -average to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -1418,6 +1432,42 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -colormap to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps colormap() {
+
+    iCmdArgs.add("-colormap");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -colormap to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps colormap(String type) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-colormap");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -colors to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -1516,6 +1566,42 @@ public class GMOps extends Operation {
 
     if (text != null) {
       buf.append(text.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -compose to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps compose() {
+
+    iCmdArgs.add("-compose");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -compose to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps compose(String operator) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-compose");
+
+    if (operator != null) {
+      buf.append(operator.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -3257,6 +3343,20 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -descend to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps descend() {
+
+    iCmdArgs.add("-descend");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -despeckle to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -3265,6 +3365,70 @@ public class GMOps extends Operation {
 
     iCmdArgs.add("-despeckle");
 
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -displace to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps displace() {
+
+    iCmdArgs.add("-displace");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -displace to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps displace(Double horizontalScale) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-displace");
+
+    if (horizontalScale != null) {
+      buf.append(horizontalScale.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -displace to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps displace(Double horizontalScale, Double verticalScale) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-displace");
+
+    if (horizontalScale != null) {
+      buf.append(horizontalScale.toString());
+    }
+    if (horizontalScale != null || verticalScale != null) {
+      buf.append("x");
+    }
+    if (verticalScale != null) {
+      buf.append(verticalScale.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
     return this;
   }
 
@@ -3395,6 +3559,42 @@ public class GMOps extends Operation {
 
     if (method != null) {
       buf.append(method.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -dissolve to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps dissolve() {
+
+    iCmdArgs.add("-dissolve");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -dissolve to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps dissolve(Integer percent) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-dissolve");
+
+    if (percent != null) {
+      buf.append(percent.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -3677,6 +3877,153 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -extent to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps extent() {
+
+    iCmdArgs.add("-extent");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -extent to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps extent(Integer width) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-extent");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -extent to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps extent(Integer width, Integer height) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-extent");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -extent to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps extent(Integer width, Integer height, Integer xOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-extent");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -extent to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps extent(Integer width, Integer height, Integer xOffset, Integer yOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-extent");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (xOffset != null || yOffset != null) {
+      oper="+";
+      if (yOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (yOffset != null) {
+      buf.append(yOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -fill to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -3817,6 +4164,78 @@ public class GMOps extends Operation {
 
     if (name != null) {
       buf.append(name.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -foreground to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps foreground() {
+
+    iCmdArgs.add("-foreground");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -foreground to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps foreground(String color) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-foreground");
+
+    if (color != null) {
+      buf.append(color.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -format to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps format() {
+
+    iCmdArgs.add("-format");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -format to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps format(String type) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-format");
+
+    if (type != null) {
+      buf.append(type.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -4435,6 +4854,20 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -hald-clut to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps haldClut() {
+
+    iCmdArgs.add("-hald-clut");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -help to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -4442,6 +4875,217 @@ public class GMOps extends Operation {
   public GMOps help() {
 
     iCmdArgs.add("-help");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -highlight-color to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps highlightColor() {
+
+    iCmdArgs.add("-highlight-color");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -highlight-color to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps highlightColor(String color) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-highlight-color");
+
+    if (color != null) {
+      buf.append(color.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -iconGeometry to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps iconGeometry() {
+
+    iCmdArgs.add("-iconGeometry");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -iconGeometry to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps iconGeometry(Integer width) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-iconGeometry");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -iconGeometry to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps iconGeometry(Integer width, Integer height) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-iconGeometry");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -iconGeometry to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps iconGeometry(Integer width, Integer height, Integer xOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-iconGeometry");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -iconGeometry to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps iconGeometry(Integer width, Integer height, Integer xOffset, Integer yOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-iconGeometry");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (xOffset != null || yOffset != null) {
+      oper="+";
+      if (yOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (yOffset != null) {
+      buf.append(yOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -iconic to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps iconic() {
+
+    iCmdArgs.add("-iconic");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -immutable to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps immutable() {
+
+    iCmdArgs.add("-immutable");
 
     return this;
   }
@@ -4925,6 +5569,20 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -linewidth to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps linewidth() {
+
+    iCmdArgs.add("-linewidth");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -list to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -5023,6 +5681,42 @@ public class GMOps extends Operation {
 
     if (iterations != null) {
       buf.append(iterations.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -magnify to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps magnify() {
+
+    iCmdArgs.add("-magnify");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -magnify to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps magnify(Double factor) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-magnify");
+
+    if (factor != null) {
+      buf.append(factor.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -5161,6 +5855,42 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -mattecolor to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps mattecolor() {
+
+    iCmdArgs.add("-mattecolor");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -mattecolor to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps mattecolor(String color) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-mattecolor");
+
+    if (color != null) {
+      buf.append(color.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -median to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -5187,6 +5917,78 @@ public class GMOps extends Operation {
 
     if (radius != null) {
       buf.append(radius.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -metric to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps metric() {
+
+    iCmdArgs.add("-metric");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -metric to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps metric(String type) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-metric");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -mode to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps mode() {
+
+    iCmdArgs.add("-mode");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -mode to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps mode(String value) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-mode");
+
+    if (value != null) {
+      buf.append(value.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -5468,6 +6270,20 @@ public class GMOps extends Operation {
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -name to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps name() {
+
+    iCmdArgs.add("-name");
+
     return this;
   }
 
@@ -5836,6 +6652,42 @@ public class GMOps extends Operation {
     }
     if (N != null) {
       buf.append(N.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -orient to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps orient() {
+
+    iCmdArgs.add("-orient");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -orient to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps orient(String imageOrientation) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-orient");
+
+    if (imageOrientation != null) {
+      buf.append(imageOrientation.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -6688,6 +7540,42 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -recolor to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps recolor() {
+
+    iCmdArgs.add("-recolor");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -recolor to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps recolor(String matrix) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-recolor");
+
+    if (matrix != null) {
+      buf.append(matrix.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -red-primary to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -6913,6 +7801,20 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -remote to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps remote() {
+
+    iCmdArgs.add("-remote");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -render to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -6935,6 +7837,167 @@ public class GMOps extends Operation {
 
     iCmdArgs.add("+render");
 
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option +repage to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps p_repage() {
+
+    iCmdArgs.add("+repage");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -repage to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps repage() {
+
+    iCmdArgs.add("-repage");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -repage to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps repage(Integer width) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-repage");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -repage to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps repage(Integer width, Integer height) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-repage");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -repage to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps repage(Integer width, Integer height, Integer xOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-repage");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -repage to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps repage(Integer width, Integer height, Integer xOffset, Integer yOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-repage");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (xOffset != null || yOffset != null) {
+      oper="+";
+      if (yOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (yOffset != null) {
+      buf.append(yOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
     return this;
   }
 
@@ -7074,6 +8137,39 @@ public class GMOps extends Operation {
   */
 
   public GMOps resize(Integer width, Integer height, Character special) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-resize");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || special != null) {
+    }
+    if (special != null) {
+      buf.append(special.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -resize to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps resize(Integer width, Integer height, String special) {
 
     String       oper;                      // only used in some methods
     StringBuffer buf = new StringBuffer();  // local buffer for option-args
@@ -7626,6 +8722,20 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -screen to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps screen() {
+
+    iCmdArgs.add("-screen");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -seed to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -7897,6 +9007,84 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -shadow to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps shadow() {
+
+    iCmdArgs.add("-shadow");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -shadow to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps shadow(Double radius) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-shadow");
+
+    if (radius != null) {
+      buf.append(radius.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -shadow to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps shadow(Double radius, Double sigma) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-shadow");
+
+    if (radius != null) {
+      buf.append(radius.toString());
+    }
+    if (radius != null || sigma != null) {
+      buf.append("x");
+    }
+    if (sigma != null) {
+      buf.append(sigma.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -shared-memory to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps sharedMemory() {
+
+    iCmdArgs.add("-shared-memory");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -sharpen to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -8123,6 +9311,20 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -silent to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps silent() {
+
+    iCmdArgs.add("-silent");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -size to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -8224,6 +9426,42 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -snaps to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps snaps() {
+
+    iCmdArgs.add("-snaps");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -snaps to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps snaps(Integer value) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-snaps");
+
+    if (value != null) {
+      buf.append(value.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -solarize to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -8290,6 +9528,70 @@ public class GMOps extends Operation {
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
     }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -stegano to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps stegano() {
+
+    iCmdArgs.add("-stegano");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -stegano to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps stegano(Integer offset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-stegano");
+
+    if (offset != null) {
+      buf.append(offset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -stereo to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps stereo() {
+
+    iCmdArgs.add("-stereo");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -strip to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps strip() {
+
+    iCmdArgs.add("-strip");
+
     return this;
   }
 
@@ -8404,6 +9706,42 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -text-font to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps textFont() {
+
+    iCmdArgs.add("-text-font");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -text-font to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps textFont(String name) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-text-font");
+
+    if (name != null) {
+      buf.append(name.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -texture to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -8504,6 +9842,136 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -thumbnail to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps thumbnail() {
+
+    iCmdArgs.add("-thumbnail");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -thumbnail to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps thumbnail(Integer width) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-thumbnail");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -thumbnail to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps thumbnail(Integer width, Integer height) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-thumbnail");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -thumbnail to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps thumbnail(Integer width, Integer height, Character special) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-thumbnail");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || special != null) {
+    }
+    if (special != null) {
+      buf.append(special.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -thumbnail to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps thumbnail(Integer width, Integer height, String special) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-thumbnail");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || special != null) {
+    }
+    if (special != null) {
+      buf.append(special.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -tile to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -8515,6 +9983,138 @@ public class GMOps extends Operation {
     return this;
   }
 
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -tile to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps tile(Integer width) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-tile");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -tile to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps tile(Integer width, Integer height) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-tile");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -tile to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps tile(Integer width, Integer height, Integer xOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-tile");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -tile to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps tile(Integer width, Integer height, Integer xOffset, Integer yOffset) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-tile");
+
+    if (width != null) {
+      buf.append(width.toString());
+    }
+    if (width != null || height != null) {
+      buf.append("x");
+    }
+    if (height != null) {
+      buf.append(height.toString());
+    }
+    if (height != null || xOffset != null) {
+      oper="+";
+      if (xOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (xOffset != null) {
+      buf.append(xOffset.toString());
+    }
+    if (xOffset != null || yOffset != null) {
+      oper="+";
+      if (yOffset.doubleValue() < 0)
+        oper="";
+      buf.append(oper);
+    }
+    if (yOffset != null) {
+      buf.append(yOffset.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
   //////////////////////////////////////////////////////////////////////////////
 
   /**
@@ -8530,6 +10130,42 @@ public class GMOps extends Operation {
 
     if (filename != null) {
       buf.append(filename.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -title to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps title() {
+
+    iCmdArgs.add("-title");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -title to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps title(String text) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-title");
+
+    if (text != null) {
+      buf.append(text.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -8895,6 +10531,42 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
+   Add option -update to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps update() {
+
+    iCmdArgs.add("-update");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -update to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps update(Integer seconds) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-update");
+
+    if (seconds != null) {
+      buf.append(seconds.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
      Add option -verbose to the GraphicsMagick commandline
      (see the documentation of GraphicsMagick for details).
   */
@@ -8985,6 +10657,106 @@ public class GMOps extends Operation {
 
     if (method != null) {
       buf.append(method.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -visual to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps visual() {
+
+    iCmdArgs.add("-visual");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -visual to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps visual(String type) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-visual");
+
+    if (type != null) {
+      buf.append(type.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -watermark to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps watermark() {
+
+    iCmdArgs.add("-watermark");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -watermark to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps watermark(Double brightness) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-watermark");
+
+    if (brightness != null) {
+      buf.append(brightness.toString());
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -watermark to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps watermark(Double brightness, Double saturation) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-watermark");
+
+    if (brightness != null) {
+      buf.append(brightness.toString());
+    }
+    if (brightness != null || saturation != null) {
+      buf.append("x");
+    }
+    if (saturation != null) {
+      buf.append(saturation.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
@@ -9177,6 +10949,56 @@ public class GMOps extends Operation {
     if (percent != null) {
       if (percent.booleanValue())
         buf.append("%");
+    }
+    if (buf.length()>0) {
+      iCmdArgs.add(buf.toString());
+    }
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -window-group to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps windowGroup() {
+
+    iCmdArgs.add("-window-group");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -window to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps window() {
+
+    iCmdArgs.add("-window");
+
+    return this;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   Add option -window to the GraphicsMagick commandline
+   (see the documentation of GraphicsMagick for details).
+   */
+
+  public GMOps window(String id) {
+
+    String       oper;                      // only used in some methods
+    StringBuffer buf = new StringBuffer();  // local buffer for option-args
+    iCmdArgs.add("-window");
+
+    if (id != null) {
+      buf.append(id.toString());
     }
     if (buf.length()>0) {
       iCmdArgs.add(buf.toString());
