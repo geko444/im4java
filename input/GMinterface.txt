@@ -19,6 +19,7 @@
 -append
 +append
 -authenticate String:password
+-auto-orient
 -average
 -backdrop
 -background String:color
@@ -37,9 +38,11 @@
 -clippath
 -coalesce
 -colorize Integer:red / Integer:blue / Integer:green
+-colormap String:type
 -colors Integer:value
 -colorspace String:value
 -comment String:text
+-compose String:operator
 +compress
 -compress String:type
 -contrast
@@ -55,9 +58,12 @@
 -delay Integer:ticks x Integer:ticksPerSecond @ Character:special
 -density Integer:width x Integer:height
 -depth Integer:value
+-descend
 -despeckle
+-displace Double:horizontalScale x Double:verticalScale
 -display String:host : Integer:display . Integer:screen
 -dispose String:method
+-dissolve Integer:percent
 +dither
 -dither String:method
 -draw String:string
@@ -68,12 +74,15 @@
 -endian String:type
 -enhance
 -equalize
+-extent Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
 -fill String:color
 -filter String:type
 -flatten
 -flip
 -flop
 -font String:name
+-foreground String:color
+-format String:type
 -frame Integer:width x Integer:height + Integer:outerBevelWidth + Integer:innerBevelWidth
 +frame
 -fuzz Double:distance @ Boolean:percent
@@ -83,7 +92,12 @@
 -geometry Integer:width x Integer:height + Integer:x + Integer:y
 -gravity String:type
 -green-primary Double:x , Double:y
+-hald-clut
 -help
+-highlight-color String:color
+-iconGeometry Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
+-iconic
+-immutable
 -implode Double:factor
 -intent String:type
 -interlace String:type
@@ -92,22 +106,28 @@
 -lat Integer:width x Integer:height + Integer:offset @ Boolean:percent
 -level Double:black_point , Double:white_point @ Boolean:percent , Double:gamma
 -limit String:type String:value
+-linewidth
 -list String:type
 -log String:text
 -loop Integer:iterations
+-magnify Double:factor
 +map
 -map String:filename
 +mask
 -mask String:filename
 -matte
 +matte
+-mattecolor String:color
 -median Double:radius
+-metric String:type
+-mode String:value
 -modulate Double:brightness , Double:saturation , Double:hue
 -monitor
 -monochrome
 -morph Integer:frames
 -mosaic
 -motion-blur Double:radius x Double:sigma + Double:angle
+-name
 -negate
 +negate
 -noise Double:radius
@@ -117,6 +137,7 @@
 -opaque String:color
 -operator String:channel _ String:operator _ Double:rvalue @ Boolean:percent
 -ordered-dither String:channelType _ Integer:N
+-orient String:imageOrientation
 -output-directory String:pDirectory
 +page
 -page Integer:width x Integer:height + Integer:x + Integer:y @ Character:special
@@ -135,36 +156,54 @@
 -raise Integer:width x Integer:height
 +raise Integer:width x Integer:height
 -random-threshold String:channelType _ Double:low x Double:high
+-recolor String:matrix
 -red-primary Double:x , Double:y
 -region Integer:width x Integer:height + Integer:x + Integer:y
 +remap
+-remote
 -render
 +render
++repage
+-repage Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
 -resample Integer:horizontal x Integer:vertical
 -resize Integer:width x Integer:height @ Character:special
+-resize Integer:width x Integer:height @ String:special
 -roll Integer:x + Integer:y
 -rotate Double:degrees @ Character:special
 -sample Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
 -sampling-factor Double:horizontalFactor x Double:verticalFactor
 -scale Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
 -scene Integer:value
+-screen
 -seed
 -segment Integer:clusterThreshold x Double:smoothingThreshold
 -set String:attribute _ String:value
 -shade Double:azimuth x Double:elevation
 +shade Double:azimuth x Double:elevation
+-shadow Double:radius x Double:sigma
+-shared-memory
 -sharpen Double:radius x Double:sigma
 -shave Integer:width x Integer:height @ Boolean:percent
 -shear Double:xDegrees x Double:yDegrees
+-silent
 -size Integer:width x Integer:height + Integer:offset
+-snaps Integer:value
 -solarize Double:threshold
 -spread Integer:amount
+-stegano Integer:offset
+-stereo
+-strip
 -stroke String:color
 -strokewidth Integer:value
 -swirl Double:degrees
+-text-font String:name
 -texture String:filename
 -threshold Integer:value @ Boolean:percent
+-thumbnail Integer:width x Integer:height @ Character:special
+-thumbnail Integer:width x Integer:height @ String:special
+-tile Integer:width x Integer:height + Integer:xOffset + Integer:yOffset
 -tile String:filename
+-title String:text
 -transform
 -transparent String:color
 -treedepth Integer:value
@@ -173,12 +212,17 @@
 -undercolor String:color
 -units String:type
 -unsharp Double:radius x Double:sigma + Double:amount + Double:threshold
+-update Integer:seconds
 -verbose
 -version
 -view String:text
 -virtual-pixel String:method
+-visual String:type
+-watermark Double:brightness x Double:saturation
 -wave Double:amplitude x Double:wavelength
 -white-point Double:x , Double:y
 -white-threshold Double:threshold @ Boolean:percent
+-window-group
+-window String:id
 -write String:filename
 +write String:filename

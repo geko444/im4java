@@ -402,9 +402,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -auto-orient to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -auto-orient to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps autoOrient() {
 
@@ -1432,9 +1432,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -colormap to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -colormap to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps colormap() {
 
@@ -1446,9 +1446,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -colormap to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -colormap to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps colormap(String type) {
 
@@ -1576,9 +1576,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -compose to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -compose to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps compose() {
 
@@ -1590,9 +1590,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -compose to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -compose to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps compose(String operator) {
 
@@ -3343,9 +3343,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -descend to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -descend to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps descend() {
 
@@ -3371,9 +3371,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -displace to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -displace to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps displace() {
 
@@ -3385,9 +3385,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -displace to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -displace to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps displace(Double horizontalScale) {
 
@@ -3407,9 +3407,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -displace to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -displace to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps displace(Double horizontalScale, Double verticalScale) {
 
@@ -3569,9 +3569,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -dissolve to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -dissolve to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps dissolve() {
 
@@ -3583,9 +3583,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -dissolve to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -dissolve to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps dissolve(Integer percent) {
 
@@ -3877,9 +3877,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -extent to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -extent to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps extent() {
 
@@ -3891,9 +3891,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -extent to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -extent to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps extent(Integer width) {
 
@@ -3913,9 +3913,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -extent to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -extent to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps extent(Integer width, Integer height) {
 
@@ -3941,9 +3941,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -extent to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -extent to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps extent(Integer width, Integer height, Integer xOffset) {
 
@@ -3978,9 +3978,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -extent to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -extent to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps extent(Integer width, Integer height, Integer xOffset, Integer yOffset) {
 
@@ -4174,9 +4174,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -foreground to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -foreground to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps foreground() {
 
@@ -4188,9 +4188,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -foreground to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -foreground to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps foreground(String color) {
 
@@ -4210,9 +4210,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -format to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -format to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps format() {
 
@@ -4224,9 +4224,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -format to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -format to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps format(String type) {
 
@@ -4854,9 +4854,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -hald-clut to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -hald-clut to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps haldClut() {
 
@@ -4882,9 +4882,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -highlight-color to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -highlight-color to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps highlightColor() {
 
@@ -4896,9 +4896,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -highlight-color to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -highlight-color to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps highlightColor(String color) {
 
@@ -4918,9 +4918,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -iconGeometry to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -iconGeometry to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps iconGeometry() {
 
@@ -4932,9 +4932,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -iconGeometry to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -iconGeometry to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps iconGeometry(Integer width) {
 
@@ -4954,9 +4954,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -iconGeometry to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -iconGeometry to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps iconGeometry(Integer width, Integer height) {
 
@@ -4982,9 +4982,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -iconGeometry to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -iconGeometry to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps iconGeometry(Integer width, Integer height, Integer xOffset) {
 
@@ -5019,9 +5019,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -iconGeometry to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -iconGeometry to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps iconGeometry(Integer width, Integer height, Integer xOffset, Integer yOffset) {
 
@@ -5065,9 +5065,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -iconic to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -iconic to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps iconic() {
 
@@ -5079,9 +5079,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -immutable to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -immutable to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps immutable() {
 
@@ -5569,9 +5569,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -linewidth to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -linewidth to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps linewidth() {
 
@@ -5691,9 +5691,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -magnify to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -magnify to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps magnify() {
 
@@ -5705,9 +5705,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -magnify to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -magnify to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps magnify(Double factor) {
 
@@ -5855,9 +5855,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -mattecolor to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -mattecolor to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps mattecolor() {
 
@@ -5869,9 +5869,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -mattecolor to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -mattecolor to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps mattecolor(String color) {
 
@@ -5927,9 +5927,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -metric to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -metric to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps metric() {
 
@@ -5941,9 +5941,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -metric to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -metric to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps metric(String type) {
 
@@ -5963,9 +5963,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -mode to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -mode to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps mode() {
 
@@ -5977,9 +5977,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -mode to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -mode to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps mode(String value) {
 
@@ -6276,9 +6276,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -name to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -name to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps name() {
 
@@ -6662,9 +6662,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -orient to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -orient to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps orient() {
 
@@ -6676,9 +6676,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -orient to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -orient to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps orient(String imageOrientation) {
 
@@ -7540,9 +7540,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -recolor to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -recolor to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps recolor() {
 
@@ -7554,9 +7554,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -recolor to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -recolor to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps recolor(String matrix) {
 
@@ -7801,9 +7801,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -remote to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -remote to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps remote() {
 
@@ -7843,9 +7843,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option +repage to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option +repage to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps p_repage() {
 
@@ -7857,9 +7857,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -repage to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -repage to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps repage() {
 
@@ -7871,9 +7871,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -repage to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -repage to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps repage(Integer width) {
 
@@ -7893,9 +7893,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -repage to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -repage to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps repage(Integer width, Integer height) {
 
@@ -7921,9 +7921,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -repage to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -repage to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps repage(Integer width, Integer height, Integer xOffset) {
 
@@ -7958,9 +7958,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -repage to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -repage to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps repage(Integer width, Integer height, Integer xOffset, Integer yOffset) {
 
@@ -8165,9 +8165,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -resize to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -resize to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps resize(Integer width, Integer height, String special) {
 
@@ -8722,9 +8722,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -screen to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -screen to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps screen() {
 
@@ -9007,9 +9007,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -shadow to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -shadow to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps shadow() {
 
@@ -9021,9 +9021,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -shadow to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -shadow to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps shadow(Double radius) {
 
@@ -9043,9 +9043,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -shadow to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -shadow to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps shadow(Double radius, Double sigma) {
 
@@ -9071,9 +9071,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -shared-memory to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -shared-memory to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps sharedMemory() {
 
@@ -9311,9 +9311,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -silent to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -silent to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps silent() {
 
@@ -9426,9 +9426,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -snaps to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -snaps to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps snaps() {
 
@@ -9440,9 +9440,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -snaps to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -snaps to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps snaps(Integer value) {
 
@@ -9534,9 +9534,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -stegano to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -stegano to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps stegano() {
 
@@ -9548,9 +9548,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -stegano to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -stegano to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps stegano(Integer offset) {
 
@@ -9570,9 +9570,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -stereo to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -stereo to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps stereo() {
 
@@ -9584,9 +9584,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -strip to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -strip to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps strip() {
 
@@ -9706,9 +9706,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -text-font to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -text-font to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps textFont() {
 
@@ -9720,9 +9720,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -text-font to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -text-font to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps textFont(String name) {
 
@@ -9842,9 +9842,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -thumbnail to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -thumbnail to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps thumbnail() {
 
@@ -9856,9 +9856,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -thumbnail to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -thumbnail to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps thumbnail(Integer width) {
 
@@ -9878,9 +9878,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -thumbnail to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -thumbnail to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps thumbnail(Integer width, Integer height) {
 
@@ -9906,9 +9906,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -thumbnail to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -thumbnail to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps thumbnail(Integer width, Integer height, Character special) {
 
@@ -9939,9 +9939,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -thumbnail to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -thumbnail to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps thumbnail(Integer width, Integer height, String special) {
 
@@ -9986,9 +9986,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -tile to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -tile to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps tile(Integer width) {
 
@@ -10008,9 +10008,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -tile to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -tile to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps tile(Integer width, Integer height) {
 
@@ -10036,9 +10036,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -tile to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -tile to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps tile(Integer width, Integer height, Integer xOffset) {
 
@@ -10073,9 +10073,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -tile to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -tile to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps tile(Integer width, Integer height, Integer xOffset, Integer yOffset) {
 
@@ -10115,6 +10115,7 @@ public class GMOps extends Operation {
     }
     return this;
   }
+
   //////////////////////////////////////////////////////////////////////////////
 
   /**
@@ -10140,9 +10141,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -title to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -title to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps title() {
 
@@ -10154,9 +10155,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -title to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -title to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps title(String text) {
 
@@ -10531,9 +10532,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -update to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -update to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps update() {
 
@@ -10545,9 +10546,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -update to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -update to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps update(Integer seconds) {
 
@@ -10667,9 +10668,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -visual to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -visual to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps visual() {
 
@@ -10681,9 +10682,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -visual to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -visual to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps visual(String type) {
 
@@ -10703,9 +10704,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -watermark to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -watermark to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps watermark() {
 
@@ -10717,9 +10718,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -watermark to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -watermark to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps watermark(Double brightness) {
 
@@ -10739,9 +10740,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -watermark to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -watermark to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps watermark(Double brightness, Double saturation) {
 
@@ -10959,9 +10960,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -window-group to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -window-group to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps windowGroup() {
 
@@ -10973,9 +10974,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -window to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -window to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps window() {
 
@@ -10987,9 +10988,9 @@ public class GMOps extends Operation {
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   Add option -window to the GraphicsMagick commandline
-   (see the documentation of GraphicsMagick for details).
-   */
+     Add option -window to the GraphicsMagick commandline
+     (see the documentation of GraphicsMagick for details).
+  */
 
   public GMOps window(String id) {
 
