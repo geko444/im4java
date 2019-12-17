@@ -319,7 +319,7 @@
                -vignette Double:radius x Double:sigma + Double:x + Double:y @ Boolean:percent
                -virtual-pixel String:method
                -visual String:type
-               -watermark Double:brightness
+               -watermark Double:brightness x Double:saturation
                -wave Double:amplitude x Double:wavelength
                -weight String:fontWeight
                -weight Integer:fontWeight

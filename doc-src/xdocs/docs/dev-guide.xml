@@ -132,7 +132,7 @@ cmd.run(op);
       <p>
 	All command-classes subclass <code>ImageCommand</code>, which
 	itself subclasses
-	<code>org.im4java.process.ProcessStarter</code>. The latter
+	<code>com.github.geko444.im4java.process.ProcessStarter</code>. The latter
 	class wraps <code>java.lang.ProcessBuilder</code>, handles
 	input and output streams and supports <a
 	  href="#asynchronousExecution">asynchronous execution</a>.  
@@ -252,7 +252,7 @@ op.addImage(Operation.IMG_PLACEHOLDER+"[300x200]");
       </source>
 
       <p>
-	The test-case class <code>org.im4java.test.TestCase7</code>
+	The test-case class <code>com.github.geko444.im4java.test.TestCase7</code>
 	uses read-modifiers to crop the source-images prior to
 	composing them:
       </p>
@@ -340,7 +340,7 @@ row.p_append();
 	target-size. For special cases not directly supported by
 	ImageMagick, you can make use of im4java's <em>Dynamic
 	  Operations</em>. Basically, you implement the interface
-	<code>org.im4java.core.DynamicOperation</code>, which has
+	<code>com.github.geko444.im4java.core.DynamicOperation</code>, which has
 	exactly one method <em>resolveOperation()</em>. At execution
 	time, this method gets all argument images passed as
 	parameters, and it must return an <code>Operation</code>. The
@@ -348,7 +348,7 @@ row.p_append();
 	<code>Operation</code> is added.
       </p>
       <p>
-	The test-case class <code>org.im4java.test.TestCase11</code>
+	The test-case class <code>com.github.geko444.im4java.test.TestCase11</code>
 	shows an example of dynamic operations. In this case, the
 	<code>despeckle()</code> method is only added for images with
 	a high iso-noise level.
@@ -367,7 +367,7 @@ row.p_append();
 	and <code>ImageCommand.setErrorConsumer(ErrorConsumer
 	  ec)</code>. Both <code>OutputConsumer</code> and
 	<code>ErrorConsumer</code> are interfaces in the
-	<code>org.im4java.process</code>-package with single methods
+	<code>com.github.geko444.im4java.process</code>-package with single methods
 	(<code>consumeOutput()</code> and
 	<code>consumeError()</code>). These methods just read
 	everything from the argument <code>InputStream</code>.
@@ -384,7 +384,7 @@ row.p_append();
       <p>
 	Most commandline tools allow piping of input or output. With
 	the im4java-library you can create instances of
-	<code>org.im4java.process.Pipe</code> to mimic this
+	<code>com.github.geko444.im4java.process.Pipe</code> to mimic this
 	behaviour. This class implements the
 	<code>OutputConsumer</code> and
 	<code>ErrorConsumer</code>-interfaces mentioned above and are
@@ -403,7 +403,7 @@ row.p_append();
 	stdin of the respective <code>ImageCommand</code>.
       </p>
       <p>
-	The test-case <code>org.im4java.test.TestCase10</code>
+	The test-case <code>com.github.geko444.im4java.test.TestCase10</code>
 	features pipes, reading from one image and writing to
 	another. In real-life, you would of course process the files
 	directly, but the example just wants to demonstrate what to do:
@@ -458,7 +458,7 @@ convert.run(op,img,outfile);
 	If you need to write to a <code>BufferedImage</code>, you must
 	pipe the output of the commandline-tool to stdout,
 	create an instance of the class 
-	<code>org.im4java.core.Stream2BufferedImage</code> and set it
+	<code>com.github.geko444.im4java.core.Stream2BufferedImage</code> and set it
 	as the <code>OutputConsumer</code> of the command:
       </p>
       <source>
@@ -502,14 +502,14 @@ cmd.run(op);
 	failure. If you need feedback (e.g. because you want to
 	asynchronously convert a file and load the result into a
 	window), you must write a class implementing the interface
-	<code>org.im4java.process.ProcessEventListener</code>. This
+	<code>com.github.geko444.im4java.process.ProcessEventListener</code>. This
 	interface defines three methods:
 	<code>processInitiated()</code>, <code>processStarted()</code>
 	and <code>processTerminated()</code>. The first method is
 	called synchronously from the original thread calling the
 	run-method, the latter two methods are callbacks from the
 	asynchronous thread. See
-	<code>org.im4java.test.TestCase16</code> for a complete example.
+	<code>com.github.geko444.im4java.test.TestCase16</code> for a complete example.
       </p>
 
       <p>
@@ -532,7 +532,7 @@ exec.shutdown();
 	variant, test-case 16b replaces the standard executor returned
 	by <code>Executors.newSingleThreadExecutor()</code> with an
 	instance of class
-	<code>org.im4java.process.ProcessExecutor</code>. For a
+	<code>com.github.geko444.im4java.process.ProcessExecutor</code>. For a
 	discussion of this class, proceed to the next section.
       </p>
     </section>
@@ -571,7 +571,7 @@ for (String img:images) {
 	The following sections deal with these three issues. This is
 	advanced stuff, and you might not even need it. If you have to
 	convert multiple images, you could first try to use the class
-	<code>org.im4java.utils.BatchConverter</code>, which uses the
+	<code>com.github.geko444.im4java.utils.BatchConverter</code>, which uses the
 	building blocks described below. The class
 	<code>BatchConverter</code> is covered <a
 	  href="#BatchConverter">here</a>. 
@@ -595,7 +595,7 @@ for (String img:images) {
 	  within a java-thread, the thread will not be killable due to
 	  the active process. Therefore you should not use any of the
 	  standard executors, but use an instance of the class
-	  <code>org.im4java.process.ProcessExecutor</code>. A basic
+	  <code>com.github.geko444.im4java.process.ProcessExecutor</code>. A basic
 	  usage is very simple, the example above then looks like
 	  this:
 	</p>
@@ -707,7 +707,7 @@ if (exec.awaitTermination(10,TimeUnit.SECONDS)) {
 	
 	<p>
 	  For a complete example using these methods, see the class
-	  <code>org.im4java.test.TestCase21</code>. 
+	  <code>com.github.geko444.im4java.test.TestCase21</code>.
 	</p>
       </section>
     </section>
@@ -744,7 +744,7 @@ System.out.println("Class: " + imageInfo.getImageClass());
 	  requesting and parsing the
 	  complete (verbose) output of the class
 	  <code>IndentifyCmd</code>. See the test-case class
-	  <code>org.im4java.test.TestCase8</code> for a complete example.
+	  <code>com.github.geko444.im4java.test.TestCase8</code> for a complete example.
 	</p>
 	<p>
 	  Prior to version 1.3.0 the implementation of the
@@ -797,7 +797,7 @@ imageInfo.getProperty("Width",3)
       <section id="FilenameLoader">
 	<title>FilenameLoader</title>
 	<p>
-	  The class <code>org.im4java.utils.FilenameLoader</code> is
+	  The class <code>com.github.geko444.im4java.utils.FilenameLoader</code> is
 	  useful for batch-processing a number of files from a
 	  directory. The core method is <code> public
 	    List&lt;String&gt; loadFilenames(String pDir)</code>. It
@@ -835,7 +835,7 @@ List&lt;String&gt; files = loader.loadFilenames(mydir);
 	</p>
 	<p>
 	  This is where the class
-	  <code>org.im4java.utils.FilenamePatternResolver</code> is
+	  <code>com.github.geko444.im4java.utils.FilenamePatternResolver</code> is
 	  useful. The following snippet will convert all
 	  argument-files to tif.
 	</p>
@@ -879,7 +879,7 @@ for (String img:files) {
 	<title>BatchConverter</title>
 
 	<p>
-	  The class <code>org.im4java.utils.BatchConverter</code> is a
+	  The class <code>com.github.geko444.im4java.utils.BatchConverter</code> is a
 	  utility-class for client-applications. It will convert a
 	  given list of files in parallel making use of all available processors
 	  to speed up execution. It is not well suited for

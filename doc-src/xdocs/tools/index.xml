@@ -23,25 +23,25 @@
 	supported by im4java. Available classes:
       </p>
       <dl>
-	<dt><code>org.im4java.core.IMOps</code></dt>
+	<dt><code>com.github.geko444.im4java.core.IMOps</code></dt>
 	<dd>automatically generated, do not use directly</dd>
-	<dt><code>org.im4java.core.IMOperation</code></dt>
+	<dt><code>com.github.geko444.im4java.core.IMOperation</code></dt>
 	<dd>Wrapper to commandline-options</dd>
-	<dt><code>org.im4java.core.CompareCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.CompareCmd</code></dt>
 	<dd>Wraps <em>compare</em></dd>
-	<dt><code>org.im4java.core.CompositeCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.CompositeCmd</code></dt>
 	<dd>Wraps <em>composite</em></dd>
-	<dt><code>org.im4java.core.ConvertCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.ConvertCmd</code></dt>
 	<dd>Wraps <em>convert</em></dd>
-	<dt><code>org.im4java.core.DisplayCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.DisplayCmd</code></dt>
 	<dd>Wraps <em>display</em></dd>
-	<dt><code>org.im4java.core.IdentifyCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.IdentifyCmd</code></dt>
 	<dd>Wraps <em>identify</em></dd>
-	<dt><code>org.im4java.core.ImageMagickCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.ImageMagickCmd</code></dt>
 	<dd>This class lets you pass the command to the constructor</dd>
-	<dt><code>org.im4java.core.MogrifyCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.MogrifyCmd</code></dt>
 	<dd>Wraps <em>mogrify</em></dd>
-	<dt><code>org.im4java.core.MontageCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.MontageCmd</code></dt>
 	<dd>Wraps <em>montage</em></dd>
       </dl>
     </section>
@@ -55,11 +55,11 @@
 	the daily work it the tool of choice. Available classes:
       </p>
       <dl>
-	<dt><code>org.im4java.core.GMOps</code></dt>
+	<dt><code>com.github.geko444.im4java.core.GMOps</code></dt>
 	<dd>automatically generated, do not use directly</dd>
-	<dt><code>org.im4java.core.GMOperation</code></dt>
+	<dt><code>com.github.geko444.im4java.core.GMOperation</code></dt>
 	<dd>Wrapper to commandline-options</dd>
-	<dt><code>org.im4java.core.GraphicsMagickCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.GraphicsMagickCmd</code></dt>
 	<dd>This class lets you pass the (sub)-command to the constructor</dd>
       </dl>
       <p>Note that you can also use the specific command-classes of
@@ -74,11 +74,11 @@
 	standard formats like tiff. Available classes:
       </p>
       <dl>
-	<dt><code>org.im4java.core.DCRAWOps</code></dt>
+	<dt><code>com.github.geko444.im4java.core.DCRAWOps</code></dt>
 	<dd>automatically generated, do not use directly</dd>
-	<dt><code>org.im4java.core.DCRAWOperation</code></dt>
+	<dt><code>com.github.geko444.im4java.core.DCRAWOperation</code></dt>
 	<dd>Wrapper to commandline-options</dd>
-	<dt><code>org.im4java.core.DcrawCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.DcrawCmd</code></dt>
 	<dd>Wraps <em>dcraw</em></dd>
       </dl>
     </section>
@@ -89,11 +89,11 @@
 	image-formats. Available classes:
       </p>
       <dl>
-	<dt><code>org.im4java.core.UFRawOps</code></dt>
+	<dt><code>com.github.geko444.im4java.core.UFRawOps</code></dt>
 	<dd>automatically generated, do not use directly</dd>
-	<dt><code>org.im4java.core.UFRawOperation</code></dt>
+	<dt><code>com.github.geko444.im4java.core.UFRawOperation</code></dt>
 	<dd>Wrapper to commandline-options</dd>
-	<dt><code>org.im4java.core.UFRawCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.UFRawCmd</code></dt>
 	<dd>Wraps <em>ufraw</em> and <em>ufraw-batch</em>. The
 	  constructor has a boolean argument <em>batchMode</em>, if
 	  true, the wrapper runs <em>ufraw-batch</em>.</dd>
@@ -106,15 +106,15 @@
 	image-metadata. Available classes:
       </p>
       <dl>
-	<dt><code>org.im4java.core.ETOps</code></dt>
+	<dt><code>com.github.geko444.im4java.core.ETOps</code></dt>
 	<dd>automatically generated, do not use directly</dd>
-	<dt><code>org.im4java.core.ETOperation</code></dt>
+	<dt><code>com.github.geko444.im4java.core.ETOperation</code></dt>
 	<dd>Wrapper to commandline-options. Exiftool differs from
 	  other tools: it supports hundreds of exif-tags as
 	  commandline-switches. To prevent bloat, im4java supports the
 	tags differently (see the methods <code>getTags</code>,
 	  <code>setTags</code> etc.)</dd>
-	<dt><code>org.im4java.core.ExiftoolCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.ExiftoolCmd</code></dt>
 	<dd>Wraps <em>exiftool</em></dd>
       </dl>
     </section>
@@ -126,11 +126,11 @@
 	classes: 
       </p>
       <dl>
-	<dt><code>org.im4java.core.JPTOps</code></dt>
+	<dt><code>com.github.geko444.im4java.core.JPTOps</code></dt>
 	<dd>automatically generated, do not use directly</dd>
-	<dt><code>org.im4java.core.JPTOperation</code></dt>
+	<dt><code>com.github.geko444.im4java.core.JPTOperation</code></dt>
 	<dd>Wrapper to commandline-options</dd>
-	<dt><code>org.im4java.core.JpegtranCmd</code></dt>
+	<dt><code>com.github.geko444.im4java.core.JpegtranCmd</code></dt>
 	<dd>Wraps <em>jpegtran</em></dd>
       </dl>
     </section>

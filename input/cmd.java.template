@@ -19,7 +19,7 @@
 /* Boston, MA  02111-1307 USA
 /**************************************************************************/
 
-package org.im4java.core;
+package com.github.geko444.im4java.core;
 
 /**
    This class wraps the _TOOLNAME_ command.

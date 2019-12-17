@@ -36,7 +36,7 @@
       <dl>
 	<dt>im4java.maxProcs (system-property)</dt>
 	<dd>The maximum number of asynchronous processes the
-	  <code>org.im4java.process.ProcessExecutor</code> will run
+	  <code>com.github.geko444.im4java.process.ProcessExecutor</code> will run
 	  concurrently.  If unset or if the 
 	  property has the value <em>auto</em>, the number returned by
 	  <code>Runtime.availableProcessors()</code> is used. Note

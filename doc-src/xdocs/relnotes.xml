@@ -118,9 +118,9 @@
 	  bug-reports. I am not overly optimistic that I found and
 	  fixed all bugs and race-conditions.
 	</li>
-	<li>The interface <code>org.im4java.process.ProcessListener</code> is
+	<li>The interface <code>com.github.geko444.im4java.process.ProcessListener</code> is
 	  deprecated and is replaced with
-	  <code>org.im4java.process.ProcessEventListener</code>.
+	  <code>com.github.geko444.im4java.process.ProcessEventListener</code>.
 	  Transition should be easy, since the interfaces are very
 	  similar. This change was necessary to support parallel
 	  processing. The old interface will be removed with the first
@@ -198,11 +198,11 @@
 	<li>Added some utility-classes in org.im4java.process</li>
 	<li>ImageCommand now sends stdout to System.out as default</li>
 	<li>
-	  Incompatible change to IdentifyCmd: output is not
-	  captured by default anymore. To capture output, use the new
-	  class org.im4java.process.ArrayListOutputConsumer. See
-	  org.im4java.test.Test.testIdentify() for an example.
-	</li>
+        Incompatible change to IdentifyCmd: output is not
+        captured by default anymore. To capture output, use the new
+        class com.github.geko444.im4java.process.ArrayListOutputConsumer. See
+        com.github.geko444.im4java.test.Test.testIdentify() for an example.
+    </li>
       </ul>
     </section>
 
