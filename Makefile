@@ -28,8 +28,8 @@ DIST_STUFF := $(wildcard README* NEWS TODO INSTALL ChangeLog COPYING*) Makefile 
 
 SF_DIR := /home/frs/project/i/im/im4java
 
-JAVA_PACKAGE=org.im4java.core
-JAVA_TEST_CLASS=org.im4java.test.Test
+JAVA_PACKAGE=com.github.geko444.im4java.core
+JAVA_TEST_CLASS=Test
 
 PREFIX    = /usr/local
 BINDIR    = $(PREFIX)/bin
@@ -138,7 +138,7 @@ api-doc: src
 	javadoc -sourcepath src -d $(DOC_DIR)/api -windowtitle $(WTITLE) \
                 -doctitle $(DTITLE) -footer $(DFOOTER) -header $(DHEADER) \
                 -bottom $(DBOTTOM) \
-                -version -author -subpackages org.im4java
+                -version -author -subpackages com.github.geko444.im4java
 
 doc-clean:
 	rm -fr $(DOC_DIR)/* $(DOC_SRC_DIR)/build/*

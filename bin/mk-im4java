@@ -28,9 +28,9 @@ usage() {
 
 setDefaults() {
  binDir=`dirname "$0"`
- outputDir="$binDir/../src"
+ outputDir="$binDir/../src/main/java"
  inputDir="$binDir/../input"
- package="org.im4java.core"
+ package="com.github.geko444.im4java.core"
  eval idfs=(`find "$binDir/../input/" -type f \
                                        -name "*interface.txt" -printf '"%p" '`)
  CLASS_HEAD="$inputDir/java.class.head"
