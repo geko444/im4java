@@ -21,18 +21,14 @@
 
 package com.github.geko444.im4java.process;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.nio.file.LinkOption;
+import java.nio.file.Paths;
 import java.util.LinkedList;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
    This class implements the processing of os-commands using a
@@ -654,7 +650,7 @@ public class ProcessStarter {
       } else {
 	File cmd = new File(dirs[i],pCmd);
 	if (cmd.exists()) {
-	  return cmd.getCanonicalPath();
+	  return Paths.get(cmd.getPath()).toRealPath(LinkOption.NOFOLLOW_LINKS).toString();
 	}
       }
     }
